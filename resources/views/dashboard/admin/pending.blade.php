@@ -58,7 +58,7 @@
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead class="w-full text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-                <th scope="col" class="pr-3 py-3">ID </th>
+                <th scope="col" class="pr-3 py-3">User ID </th>
                 <th scope="col" class="pr-3 py-3">Owner </th>
                 <th scope="col" class="pr-3 py-3">Organization </th>
                 <th scope="col" class="pr-3 py-3">Number </th>
@@ -67,27 +67,28 @@
                 <th scope="col" class="pr-3 py-3">Email </th>
                 <th scope="col" class="pr-3 py-3">Employee Id </th>
                 <th scope="col" class="pr-3 py-3">Employee Name </th>
-
+                <!-- <th scope="col" class="pr-3 py-3">Admin Id </th> -->
+                @foreach($userInfoNew as $userInfo)
+                @if($userInfo->admin_id)
                 <th class="pr-3"> Admin id </th>
                 <th class="pr-3"> Admin Name </th>
+                @else
+                @endif
 
 
+                @if($userInfo->supperAdmin_id)
                 <th class="pr-3"> Super Admin id </th>
                 <th class="pr-3"> Super Admin Name </th>
-
-
+                @else
+                @endif
+                @endforeach
                 <th scope="col" class="pr-3 py-3">Action </th>
             </tr>
         </thead>
         <tbody>
             @foreach($userInfoNew as $userInfo)
-            @if($userInfo->pending === 'pending')
-            <tr class="text-md bg-green-200 border-b dark:bg-gray-900 dark:border-gray-700">
-                @else
             <tr class="text-md bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                @endif
-                <!-- <tr class="text-md bg-white border-b dark:bg-gray-900 dark:border-gray-700"> -->
-                <td class="pr-3 "> {{ $userInfo->id }} </td>
+                <td class="pr-3 "> {{ $userInfo->owner_id }} </td>
                 <!-- <td class="pr-3 "> {{ $userInfo->owner_name }} </td> -->
                 <td class="pr-3 ">
                     <div class="flex items-center gap-5">
@@ -110,32 +111,36 @@
                 <td class="pr-3 "> {{ $userInfo->owner_email }} </td>
                 <td class="pr-3 "> {{ $userInfo->emp_id }} </td>
                 <td class="pr-3 "> {{ $userInfo->emp_name }} </td>
+
+                @if($userInfo->admin_id)
                 <td class="pr-3"> {{ $userInfo->admin_id }} </td>
                 <td class="pr-3"> {{ $userInfo->admin_name }} </td>
-                <td class="pr-3"> {{ $userInfo->supperAdmin_id }} </td>
-                <td class="pr-3"> {{ $userInfo->supperAdmin_name }} </td>
-                <td class="pr-3 ">
-
-
-                @if($userInfo->pending === 'pending')
-                <button  class="btn btn-sm btn-secondary">Pending</button>
                 @else
-                <a href="{{ url('edit_userInfo_profile', $userInfo->id) }}" class="btn btn-sm bg-blue-500 hover:bg-blue-700 text-white">Edit</a>
-                <form method="POST" action="{{ url('deleteUserInfo', $userInfo->id) }}">
-                        @csrf
-                        @method('DELETE')
-                        <button class="btn btn-sm bg-red-500 hover:bg-red-700 text-white">
-
-                            Delete
-                        </button>
-                    </form>
                 @endif
 
 
-                   
-                  
-                </td>
+                @if($userInfo->supperAdmin_id)
+                <td class="pr-3"> {{ $userInfo->supperAdmin_id }} </td>
+                <td class="pr-3"> {{ $userInfo->supperAdmin_name }} </td>
+                @else
+                @endif
 
+
+                <td class="pr-3 ">
+                    <a href="{{ url('edit_pendingUserInfo_profile', $userInfo->id) }}" class="btn btn-sm bg-blue-500 hover:bg-blue-700 text-white">Edit</a>
+                    <!-- <a href="{{ url('confirm_pendingUserInfo_profile', $userInfo->id) }}" class="btn btn-sm bg-success  ">Confirm</a> -->
+                    
+
+                    <form action="{{ url('confirm_pendingUserInfo_profile', $userInfo->id) }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                        <button type="submit" class="btn btn-sm btn-success  ">Confirm</button>
+
+                    </form>
+
+
+                </td>
+                <!-- <td class="pr-3 "> <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> </td> -->
 
             </tr>
             @endforeach
@@ -150,6 +155,7 @@
 
     {{ $userInfoNew->links('pagination::tailwind') }}
 </div>
+
 
 
 

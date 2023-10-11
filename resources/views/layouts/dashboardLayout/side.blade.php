@@ -73,7 +73,7 @@
                         </li>
                         <!-- Smart Home -->
                         <li>
-                            <a href="/adminDashboard" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
+                            <a href="/pendingUserInfo" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
                                 <span>Pending</span>
                             </a>
                         </li>

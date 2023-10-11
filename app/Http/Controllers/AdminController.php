@@ -78,6 +78,7 @@ class AdminController extends Controller
     }
 
 
+
     public function admin_dashboard()
     {
         $data = null;
@@ -94,24 +95,11 @@ class AdminController extends Controller
     }
 
 
-
-
-
-
-
-
-    public function admin_info()
-    {
-        $allAdminData = DB::table('admin_info')->get();
-        return view('dashboard/admin/adminInfo', compact('allAdminData'));
-    }
-
     public function emp_info()
     {
         $allEmpData = DB::table('employee_info')->get();
         return view('dashboard/admin/empInfo', compact('allEmpData'));
     }
-
 
 
     public function user_info_old(Request $request)
@@ -135,35 +123,6 @@ class AdminController extends Controller
         return view('dashboard/admin/userInfoOld', compact('userInfoOld'));
     }
 
-
-
-    public function user_info(Request $request)
-    {
-
-        $perPage = $request->input('perPage', 10);
-        $search = $request->input('search');
-
-        $query = DB::table('user_info')
-            ->select('*')
-            ->when($search, function ($query) use ($search) {
-                $query->where('id', 'LIKE', '%' . $search . '%')
-                    ->orWhere('owner_name', 'LIKE', '%' . $search . '%')
-                    ->orWhere('organization_name', 'LIKE', '%' . $search . '%')
-                    ->orWhere('owner_email', 'LIKE', '%' . $search . '%')
-                    ->orWhere('owner_number', 'LIKE', '%' . $search . '%')
-                    ->orWhere('owner_role', 'LIKE', '%' . $search . '%')
-                    ->orWhere('emp_id', 'LIKE', '%' . $search . '%')
-                    ->orWhere('business_type', 'LIKE', '%' . $search . '%')
-                    ->orWhere('owner_address', 'LIKE', '%' . $search . '%');
-            });
-
-        $userInfoNew = $query->paginate($perPage)->onEachSide(1)->withQueryString();
-
-        return view('dashboard/admin/userInfo', compact('userInfoNew'));
-    }
-
-
-
     public function logout()
     {
         Session::flush();
@@ -171,114 +130,21 @@ class AdminController extends Controller
     }
 
 
-    public function delete_admin($id)
-    {
-        $admin = DB::table('admin_info')->find($id);
-        if ($admin) {
-            DB::delete('delete from admin_info where id=?', [$id]);
-            return redirect('/adminInfo')->with('Success', 'ID Delete Successfully.');
-        } else {
-            return redirect('/adminInfo')->with('Fail', 'Delate Fail, Please try again');
-        }
-    }
+
 
 
     // Mostafizur ----------------------------------------
     // Mostafizur ----------------------------------------
     // Mostafizur ----------------------------------------
 
-    // ---------------------------------------- Start User Info Edit ----------------------------------------
-    public function editUserInfoProfile($id)
+    // ---------------------------------------- Start Admin Info Edit ----------------------------------------
+
+    public function admin_info()
     {
-        $data = null;
-        $userInfo = DB::table('user_info')->find($id);
-        if ($userInfo) {
-            $editUserInfo = $userInfo;
-            // dd($editAdmin);
-            return view('dashboard.admin.edit.editUserInfoProfile', compact('editUserInfo'));
-        } else {
-            return redirect('userInfo');
-        }
+        $allAdminData = DB::table('admin_info')->get();
+        return view('dashboard/admin/adminInfo', compact('allAdminData'));
     }
 
-    public function update_InfoProfile_Profile(Request $request, $id)
-    {
-        // Find the user_info record by ID
-        $update = DB::table('user_info')
-            ->where('id', $id)
-            ->first();
-    
-        // Check if the record exists
-        if (!$update) {
-            return redirect("/edit_userInfo_profile/$id")->with('error', 'Record not found');
-        }
-    
-        $request->validate([
-            'owner_name' => 'required',
-            'organization_name' => 'required',
-            'owner_number' => 'required|max:11|unique:user_info,owner_number,' . $id,
-            'owner_address' => 'required',
-            'business_type' => 'required',
-            'owner_email' => 'required|email|unique:user_info,owner_email,' . $id,
-            'owner_image' => 'file|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
-    
-        // Handle the owner image upload
-        if ($request->hasFile('owner_image')) {
-            $uploadedImage = $request->file('owner_image');
-            $imagePath = $uploadedImage->store('images/user_image');
-            $user_image = $imagePath; // Set to the new image path
-        } else {
-            $user_image = $update->owner_image; // Keep the existing image path
-        }
-    
-        // Prepare data for update
-        $updateData = [
-            'owner_name' => $request->input('owner_name'),
-            'organization_name' => $request->input('organization_name'),
-            'owner_address' => $request->input('owner_address'),
-            'business_type' => $request->input('business_type'),
-            'owner_email' => $request->input('owner_email'),
-            'owner_number' => $request->input('owner_number'),
-            'owner_image' => $user_image,
-        ];
-    
-        // Check and update admin/superadmin related data
-        $adminId = Session::get('id');
-        $adminData = DB::table('admin_info')->find($adminId);
-    
-        if ($adminData) {
-            if ($adminData->role === 'admin') {
-                $updateData['admin_id'] = $adminData->id;
-                $updateData['admin_name'] = $adminData->admin_name;
-                $updateData['adminTime'] = now();
-            } else {
-                $updateData['supperAdmin_id'] = $adminData->id;
-                $updateData['supperAdmin_name'] = $adminData->admin_name;
-                $updateData['supperAdminTime'] = now();
-            }
-        }
-    
-        // Perform the update
-        $result = DB::table('user_info')
-            ->where('id', $id)
-            ->update($updateData);
-
-            // dd($result);
-    
-        if ($result) {
-            return redirect("/userInfo")->with('success', 'Profile updated successfully');
-        } else {
-            return redirect("/userInfo")->with('error', 'Profile update failed');
-        }
-    }
-    
-
-
-    // ---------------------------------------- End User Info Edit ----------------------------------------
-
-
-    // ---------------------------------------- Start Admin Edit ----------------------------------------
     public function editAdminProfile($id)
     {
         $data = null;
@@ -290,7 +156,6 @@ class AdminController extends Controller
             return redirect('adminDashboard');
         }
     }
-
 
     public function update_Admin_Profile(Request $request, $id)
     {
@@ -336,7 +201,6 @@ class AdminController extends Controller
             }
         }
     }
-    // ---------------------------------------- End Admin Edit ----------------------------------------
 
     public function makeSuperAdmin($id)
     {
@@ -374,6 +238,362 @@ class AdminController extends Controller
 
         return redirect('/adminInfo')->with('Success', 'User is now an Admin.');
     }
+
+    public function delete_admin($id)
+    {
+        $admin = DB::table('admin_info')->find($id);
+        if ($admin) {
+            DB::delete('delete from admin_info where id=?', [$id]);
+            return redirect('/adminInfo')->with('Success', 'ID Delete Successfully.');
+        } else {
+            return redirect('/adminInfo')->with('Fail', 'Delate Fail, Please try again');
+        }
+    }
+
+    // ---------------------------------------- End Admin Info Edit ----------------------------------------
+
+
+
+    // ---------------------------------------- Start Pending User Info Edit ----------------------------------------
+
+    public function pending_user_info(Request $request)
+    {
+
+        $perPage = $request->input('perPage', 10);
+        $search = $request->input('search');
+
+        $query = DB::table('pending')
+            ->select('*')
+            ->when($search, function ($query) use ($search) {
+                $query->where('id', 'LIKE', '%' . $search . '%')
+                    ->orWhere('owner_name', 'LIKE', '%' . $search . '%')
+                    ->orWhere('organization_name', 'LIKE', '%' . $search . '%')
+                    ->orWhere('owner_email', 'LIKE', '%' . $search . '%')
+                    ->orWhere('owner_number', 'LIKE', '%' . $search . '%')
+                    ->orWhere('owner_role', 'LIKE', '%' . $search . '%')
+                    ->orWhere('emp_id', 'LIKE', '%' . $search . '%')
+                    ->orWhere('business_type', 'LIKE', '%' . $search . '%')
+                    ->orWhere('owner_address', 'LIKE', '%' . $search . '%');
+            });
+
+        $userInfoNew = $query->paginate($perPage)->onEachSide(1)->withQueryString();
+
+        return view('dashboard/admin/pending', compact('userInfoNew'));
+    }
+
+    public function editPendingUserInfoProfile($id)
+    {
+        $data = null;
+        $userInfo = DB::table('pending')->find($id);
+        if ($userInfo) {
+            $editUserInfo = $userInfo;
+            // dd($editAdmin);
+            return view('dashboard.admin.edit.EditPendingUserInfoProfile', compact('editUserInfo'));
+        } else {
+            return redirect('userInfo');
+        }
+    }
+
+
+
+
+    public function update_PendingUserInfoProfile_Profile(Request $request, $id)
+    {
+        // Find the user_info record by ID
+        $update = DB::table('pending')
+            ->where('id', $id)
+            ->first();
+
+        // Check if the record exists
+        if (!$update) {
+            return redirect("/edit_pendingUserInfo_profile/$id")->with('error', 'Record not found');
+        }
+
+        $request->validate([
+            'owner_name' => 'required',
+            'organization_name' => 'required',
+            'owner_number' => 'required|max:11|unique:user_info,owner_number,' . $id,
+            'owner_address' => 'required',
+            'business_type' => 'required',
+            'owner_email' => 'required|email|unique:user_info,owner_email,' . $id,
+            'owner_image' => 'file|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        // Handle the owner image upload
+        if ($request->hasFile('owner_image')) {
+            $uploadedImage = $request->file('owner_image');
+            $imagePath = $uploadedImage->store('images/user_image');
+            $user_image = $imagePath; // Set to the new image path
+        } else {
+            $user_image = $update->owner_image; // Keep the existing image path
+        }
+
+        // Prepare data for update
+        $updateData = [
+            'owner_name' => $request->input('owner_name'),
+            'organization_name' => $request->input('organization_name'),
+            'owner_address' => $request->input('owner_address'),
+            'business_type' => $request->input('business_type'),
+            'owner_email' => $request->input('owner_email'),
+            'owner_number' => $request->input('owner_number'),
+            'owner_image' => $user_image,
+        ];
+
+
+        // Perform the update
+        $result = DB::table('pending')
+            ->where('id', $id)
+            ->update($updateData);
+
+
+
+        if ($result) {
+            return redirect("/pendingUserInfo")->with('success', 'Profile updated successfully');
+        } else {
+            return redirect("/pendingUserInfo")->with('error', 'Profile update failed');
+        }
+    }
+
+
+    public function confirm_PendingUserInfoProfile_Profile(Request $request, $id)
+    {
+        // Find the user_info record by ID
+        $update = DB::table('pending')
+            ->where('id', $id)
+            ->first();
+
+        // Check if the record exists
+        if (!$update) {
+            return redirect("/pendingUserInfo/$id")->with('error', 'Confirm not found');
+        }
+
+        $userInfo = DB::table('user_info')
+            ->where('id', $update->owner_id)
+            ->first();
+
+
+        $updateData = [
+            'owner_name' => $update->owner_name,
+            'organization_name' => $update->organization_name,
+            'owner_image' => $update->owner_image,
+            'owner_number' => $update->owner_number,
+            'owner_address' => $update->owner_address,
+            'business_type' => $update->business_type,
+            'owner_email' => $update->owner_email,
+            // 'password' => $update->password,
+            'owner_role' => $update->owner_role,
+            'emp_id' => $update->emp_id,
+            'emp_name' => $update->emp_name,
+            'admin_id' => $update->admin_id,
+            'admin_name' => $update->admin_name,
+            'adminTime' => $update->adminTime,
+            'pending' => '',
+        ];
+
+        $adminId = Session::get('id');
+        $adminData = DB::table('admin_info')->find($adminId);
+
+        if ($adminData) {
+            $updateData['supperAdmin_id'] = $adminData->id;
+            $updateData['supperAdmin_name'] = $adminData->admin_name;
+            $updateData['supperAdminTime'] = now();
+        }
+
+
+        $result = DB::table('user_info')
+            ->where('id', $userInfo->id)
+            ->update($updateData);
+
+
+
+
+        // if ($result) {
+
+        //     $updateUserData = [
+        //         'pending' => ''
+        //     ];
+
+        //     //  dd($updateUserData);
+
+        //     $updateUserInfo = DB::table('user_info')
+        //         ->where('id', $id)
+        //         ->update($updateUserData);
+        // }
+
+
+
+        if ($result) {
+            $deletePendingInfo = DB::table('pending')->where('id', $id)->delete();
+            if ($deletePendingInfo) {
+                return redirect("/pendingUserInfo")->with('success', 'Profile updated successfully');
+            }
+        }
+    }
+    // ---------------------------------------- End Pending User Info Edit ----------------------------------------
+
+
+
+    // ---------------------------------------- Start User Info Edit ----------------------------------------
+
+
+    public function user_info(Request $request)
+    {
+
+        $perPage = $request->input('perPage', 10);
+        $search = $request->input('search');
+
+        $query = DB::table('user_info')
+            ->select('*')
+            ->when($search, function ($query) use ($search) {
+                $query->where('id', 'LIKE', '%' . $search . '%')
+                    ->orWhere('owner_name', 'LIKE', '%' . $search . '%')
+                    ->orWhere('organization_name', 'LIKE', '%' . $search . '%')
+                    ->orWhere('owner_email', 'LIKE', '%' . $search . '%')
+                    ->orWhere('owner_number', 'LIKE', '%' . $search . '%')
+                    ->orWhere('owner_role', 'LIKE', '%' . $search . '%')
+                    ->orWhere('emp_id', 'LIKE', '%' . $search . '%')
+                    ->orWhere('business_type', 'LIKE', '%' . $search . '%')
+                    ->orWhere('owner_address', 'LIKE', '%' . $search . '%');
+            });
+
+        $userInfoNew = $query->paginate($perPage)->onEachSide(1)->withQueryString();
+
+        return view('dashboard/admin/userInfo', compact('userInfoNew'));
+    }
+
+    public function editUserInfoProfile($id)
+    {
+        $data = null;
+        $userInfo = DB::table('user_info')->find($id);
+        if ($userInfo) {
+            $editUserInfo = $userInfo;
+            // dd($editAdmin);
+            return view('dashboard.admin.edit.editUserInfoProfile', compact('editUserInfo'));
+        } else {
+            return redirect('userInfo');
+        }
+    }
+
+    public function update_UserInfoProfile_Profile(Request $request, $id)
+    {
+        // Find the user_info record by ID
+        $update = DB::table('user_info')
+            ->where('id', $id)
+            ->first();
+
+        // Check if the record exists
+        if (!$update) {
+            return redirect("/edit_userInfo_profile/$id")->with('error', 'Record not found');
+        }
+
+        $request->validate([
+            'owner_name' => 'required',
+            'organization_name' => 'required',
+            'owner_number' => 'required|max:11|unique:user_info,owner_number,' . $id,
+            'owner_address' => 'required',
+            'business_type' => 'required',
+            'owner_email' => 'required|email|unique:user_info,owner_email,' . $id,
+            'owner_image' => 'file|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        // Handle the owner image upload
+        if ($request->hasFile('owner_image')) {
+            $uploadedImage = $request->file('owner_image');
+            $imagePath = $uploadedImage->store('images/user_image');
+            $user_image = $imagePath; // Set to the new image path
+        } else {
+            $user_image = $update->owner_image; // Keep the existing image path
+        }
+
+        // Prepare data for update
+        $updateData = [
+            'owner_name' => $request->input('owner_name'),
+            'organization_name' => $request->input('organization_name'),
+            'owner_address' => $request->input('owner_address'),
+            'business_type' => $request->input('business_type'),
+            'owner_email' => $request->input('owner_email'),
+            'owner_number' => $request->input('owner_number'),
+            'owner_image' => $user_image,
+        ];
+
+        // Check and update admin/superadmin related data
+        $adminId = Session::get('id');
+        $adminData = DB::table('admin_info')->find($adminId);
+
+        if ($adminData) {
+            if ($adminData->role === 'admin') {
+                $updateData['admin_id'] = $adminData->id;
+                $updateData['admin_name'] = $adminData->admin_name;
+                $updateData['owner_id'] = $id;
+                $updateData['password'] = $update->password;
+                $updateData['emp_id'] = $update->emp_id;
+                $updateData['emp_name'] = $update->emp_name;
+                $updateData['adminTime'] = now();
+
+
+
+                $result = DB::table('pending')
+                    ->where('id', $id)
+                    ->insert($updateData);
+                if ($result) {
+
+                    $updateUserData = [
+                        'pending' => 'pending'
+                    ];
+
+                    //  dd($updateUserData);
+
+                    $updateUserInfo = DB::table('user_info')
+                        ->where('id', $id)
+                        ->update($updateUserData);
+                }
+
+                // dd($updateUserInfo);
+
+
+            } else {
+                $updateData['supperAdmin_id'] = $adminData->id;
+                $updateData['supperAdmin_name'] = $adminData->admin_name;
+                $updateData['supperAdminTime'] = now();
+                $result = DB::table('user_info')
+                    ->where('id', $id)
+                    ->update($updateData);
+            }
+        }
+
+        // Perform the update
+        // $result = DB::table('user_info')
+        //     ->where('id', $id)
+        //     ->update($updateData);
+
+
+
+        if ($result) {
+            return redirect("/userInfo")->with('success', 'Profile updated successfully');
+        } else {
+            return redirect("/userInfo")->with('error', 'Profile update failed');
+        }
+    }
+
+    public function delete_userInfo($id)
+    {
+        $user = DB::table('user_info')->find($id);
+
+        if ($user) {
+            $result = DB::table('user_info')->where('id', $id)->delete();
+            // dd($user);
+            return redirect('/userInfo')->with('Success', 'ID Delete Successfully.');
+        } else {
+            return redirect('/userInfo')->with('Fail', 'Delete Fail, Please try again');
+        }
+    }
+
+
+    // ---------------------------------------- End User Info Edit ----------------------------------------
+
+
+
+
 
     // Rafi ----------------------------------------
     // Mostafizur ----------------------------------------

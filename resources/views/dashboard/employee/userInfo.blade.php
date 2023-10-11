@@ -1,6 +1,6 @@
-@extends('dashboard.admin.adminApp')
+@extends('dashboard.employee.empApp')
 @section('title', 'Admin - Dashboard')
-@section('adminDashboard')
+@section('empDashboard')
 
 
 <div class="relative mt-10 overflow-x-auto shadow-md p-5 sm:rounded-lg">
@@ -43,13 +43,17 @@
                 <th scope="col" class="pr-3 py-3">Business Type </th>
                 <th scope="col" class="pr-3 py-3">Address </th>
                 <th scope="col" class="pr-3 py-3">Email </th>
-                
+
                 <th scope="col" class="pr-3 py-3">Employee Id </th>
                 <th scope="col" class="pr-3 py-3">Action </th>
             </tr>
         </thead>
+
         <tbody>
             @foreach($userInfoEmp as $userInfoEmp)
+
+
+
             <tr class="text-md bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                 <td class="pr-3 "> {{ $userInfoEmp->id }} </td>
                 <td class="pr-3 "> {{ $userInfoEmp->owner_name }} </td>
@@ -58,20 +62,23 @@
                 <td class="pr-3 "> {{ $userInfoEmp->business_type }} </td>
                 <td class="pr-3 "> {{ $userInfoEmp->owner_address }} </td>
                 <td class="pr-3 "> {{ $userInfoEmp->owner_email }} </td>
-                
+
                 <td class="pr-3 "> {{ $userInfoEmp->emp_id }} </td>
-                <td class="pr-3 "> 
-                    <a href="{{ url('edit_admin_profile', $userInfoEmp->id) }}"  class="btn btn-sm bg-blue-500 hover:bg-blue-700 text-white">Edit</a>  
-                    
+                <td class="pr-3 ">
+                    <a href="{{ url('edit_admin_profile', $userInfoEmp->id) }}" class="btn btn-sm bg-blue-500 hover:bg-blue-700 text-white">Edit</a>
+
                 </td>
                 <!-- <td class="pr-3 "> <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> </td> -->
-               
+
+
             </tr>
             @endforeach
-
-
         </tbody>
     </table>
+
+
+ 
+
 </div>
 
 <div class="mt-10">
