@@ -28,7 +28,7 @@
                             </a>
                         </li>
                         <!-- Landing -->
-                        
+
                         @if($adminData->role === 'superAdmin')
                         <li>
                             <a href="/adminInfo" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
@@ -36,8 +36,8 @@
                             </a>
                         </li>
                         @endif
-                      
-                    
+
+
                         <!-- Smart Home -->
                         <li>
                             <a href="/userInfo" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
@@ -50,36 +50,97 @@
                                 <span>User Information 2023</span>
                             </a>
                         </li>
-                    
+
                         <!-- Smart Home -->
                         <li>
                             <a href="/empInfo" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
                                 <span>Employee Information</span>
                             </a>
                         </li>
-                    
+
                         <!-- Smart Home -->
                         <li>
                             <a href="/adminDashboard" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
                                 <span>Package Item</span>
                             </a>
                         </li>
+
+
+
+
+
+                        <!-- <p>{{ count($pendingData) }}</p> -->
+
+
+
+
+
+                        <!-- @if($deleteData)
+                        deleteData
+                        @endif -->
+
+
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <h6 class="pl-6 mt-3 ml-2 text-md font-bold leading-tight uppercase opacity-60 dark:text-white">PERMISSION</h6>
+                <hr class="my-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent">
+            </li>
+            <li>
+                <div class="overflow-hidden transition-all duration-200 ease-in-out" style="max-height: 264px;">
+                    <ul class="pl-6 mt-2 list-none">
+                        <style>
+                            .notification {
+                                animation: pulse 1s infinite;
+                            }
+
+                            @keyframes pulse {
+                                0% {
+                                    transform: scale(1);
+                                }
+
+                                50% {
+                                    transform: scale(1.2);
+                                }
+
+                                100% {
+                                    transform: scale(1);
+                                }
+                            }
+                        </style>
+                        <!-- Landing -->
                         <!-- Smart Home -->
                         @if($adminData->role === 'superAdmin')
                         <li>
-                            <a href="/adminDashboard" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
-                                <span>Delete</span>
+                            <a href="/deleteUserInfo" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
+                                <div class="indicator">
+                                    <span class="indicator-item   badge badge-secondary {{ count($deleteData) > 0 ? 'notification' : '' }}">{{ count($deleteData) }}</span>
+                                    <button>Delete </button>
+                                </div>
                             </a>
                         </li>
+
                         <!-- Smart Home -->
                         <li>
                             <a href="/pendingUserInfo" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
-                                <span>Pending</span>
+
+                                <div type="button" class="relative inline-flex items-center px-5  text-sm font-medium text-center   rounded-lg ">
+
+
+                                    Pending
+                                    <div class="{{ count($pendingData) > 0 ? 'notification' : '' }} absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">  {{ count($pendingData) }}</div>
+                                </div>
                             </a>
                         </li>
+
+
+
+
+
+
                         @endif
-                    
-                     
+
                     </ul>
                 </div>
             </li>
@@ -98,31 +159,31 @@
                             </a>
                         </li>
                         @endif
-                       
-                  
+
+
                         <!-- Smart Home -->
                         <li>
                             <a href="/userRegister" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
                                 <span>Create User</span>
                             </a>
                         </li>
-                    
+
                         <!-- Smart Home -->
                         <li>
                             <a href="/empRegister" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
                                 <span>Create Employee</span>
                             </a>
                         </li>
-                      
-                    
+
+
                         <!-- Smart Home -->
-                    
+
                         <li>
                             <a href="/adminDashboard" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
                                 <span>Create Package</span>
                             </a>
                         </li>
-                       
+
                     </ul>
                 </div>
             </li>
@@ -151,7 +212,7 @@
                                 <span>Products</span>
                             </a>
                         </li>
-                    
+
                     </ul>
                 </div>
             </li>

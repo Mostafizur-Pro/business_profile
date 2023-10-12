@@ -28,7 +28,7 @@
 <div class="relative mt-10 overflow-x-auto shadow-md p-5 sm:rounded-lg">
     <div class="flex justify-between items-center">
         <div class="">
-            <h1 class="text-2xl font-semibold">User Information 2023</h1>
+            <h1 class="text-2xl font-semibold">Delete User Information 2023</h1>
         </div>
 
         <!-- search option add here -->
@@ -80,18 +80,14 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($userInfoNew as $userInfo)
-            @if($userInfo->pending === 'pending') <!-- Pending -->
-            <tr class="text-md bg-green-200 border-b dark:bg-gray-900 dark:border-gray-700">
-                @else <!-- Pending -->
+            @foreach($userInfoNew as $userInfo) 
+            @if($userInfo->pending === 'delete') <!-- delete -->
+          
             <tr class="text-md bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                @endif <!-- Pending -->
+               
+                <td class="pr-3 "> {{ $userInfo->id }} </td>          
 
-
-                @if($userInfo->pending !== 'delete') <!-- Delete -->
-                <td class="pr-3 "> {{ $userInfo->id }} </td>
-
-
+              
                 <td class="pr-3 ">
                     <div class="flex items-center gap-5">
                         <div class="avatar">
@@ -120,27 +116,27 @@
                 <td class="pr-3 ">
 
 
-                    @if($userInfo->pending === 'pending') <!-- Pending  -->
-                    <button class="btn btn-sm btn-secondary">Pending</button>
-                    @else <!-- Pending -->
-                    <a href="{{ url('edit_userInfo_profile', $userInfo->id) }}" class="btn btn-sm bg-blue-500 hover:bg-blue-700 text-white">Edit</a>
+                 
+                    <a href="{{ url('reverse_userInfo_profile', $userInfo->id) }}" class="btn btn-sm bg-blue-500 hover:bg-blue-700 text-white">Reverse</a>
+                    <!-- <form method="POST" action="{{ url('deleteUserInfoPermanent', $userInfo->id) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-sm bg-red-500 hover:bg-red-700 text-white">
 
-                    <button onclick="my_modal_1.showModal()" class="btn btn-sm bg-red-500 hover:bg-red-700 text-white">
-
-                        Delete
-                    </button>
-
-                    <!-- </form> -->
-                    @endif <!-- Pending -->
+                            Delete
+                        </button>
+                    </form>
+                 -->
+                 <button onclick="my_modal_1.showModal()" class="btn btn-sm bg-red-500 hover:bg-red-700 text-white">Delete                        </button>
 
                 </td>
-                @endif <!-- Delete -->
-
+                
             </tr>
-
-
+            @endif <!-- Delete -->
             @endforeach
-            <!-- Open the modal using ID.showModal() method -->
+
+
+              <!-- Open the modal using ID.showModal() method -->
             <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
             <dialog id="my_modal_1" class="modal">
                 <div class="modal-box">
@@ -148,7 +144,7 @@
                         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                     </form>
 
-                    <form method="POST" action="{{ url('deleteUserInfo', $userInfo->id) }}">
+                    <form method="POST" action="{{ url('deleteUserInfoPermanent', $userInfo->id) }}">
                         @csrf
                         @method('DELETE')
                         <h3 class="font-bold text-lg">Confirm Deletion</h3>
@@ -164,7 +160,6 @@
             </dialog>
 
 
-
         </tbody>
     </table>
 </div>
@@ -174,7 +169,6 @@
 
     {{ $userInfoNew->links('pagination::tailwind') }}
 </div>
-
 
 
 
@@ -198,19 +192,6 @@
         window.location.href = url.toString();
     });
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

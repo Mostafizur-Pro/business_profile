@@ -48,7 +48,7 @@ Route::get('/payment', [UserController::class, 'payment_method']);
 
 // admin route
 
-Route::get('/admin_dashboard', [AdminController::class, 'admin_dashboard']);
+// Route::get('/admin_dashboard', [AdminController::class, 'admin_dashboard']);
 // Route::get('/admin', [AdminController::class, 'admin_login']);
 // Route::get('/logout', [AdminController::class, 'logout']);
 Route::get('/employee_list', [AdminController::class, 'employee_list']);
@@ -112,7 +112,7 @@ Route::get('/edit_admin_profile/{id}', [AdminController::class, 'editAdminProfil
 Route::put('/updateAdminProfile/{id}', [AdminController::class, 'update_Admin_Profile'])->name('updateAdminProfile');
 
 Route::put('/updateUserInfoProfile/{id}', [AdminController::class, 'update_UserInfoProfile_Profile'])->name('updateUserInfoProfile');
-Route::delete('/deleteUserInfo/{id}', [AdminController::class, 'delete_userInfo'])->name('deleteUserInfo');
+
 Route::get('/adminInfo', [AdminController::class, 'admin_info'])->name('adminInfo')->middleware('superAdmin');
 Route::delete('/deleteAdmin/{id}', [AdminController::class, 'delete_admin'])->name('deleteAdmin');
 Route::get('/empInfo', [AdminController::class, 'emp_info'])->name('empInfo');
@@ -126,6 +126,11 @@ Route::get('/userInfo', [AdminController::class, 'user_info'])->name('userInfo')
 Route::get('/edit_userInfo_profile/{id}', [AdminController::class, 'editUserInfoProfile'])->name('userInfoEditProfile');
 Route::get('/edit_pendingUserInfo_profile/{id}', [AdminController::class, 'editUserInfoProfile'])->name('userInfoEditProfile');
 
+// Delete
+Route::delete('/deleteUserInfo/{id}', [AdminController::class, 'delete_userInfo'])->name('deleteUserInfo');
+Route::delete('/deleteUserInfoPermanent/{id}', [AdminController::class, 'delete_userInfo_per'])->name('deleteUserInfoPermanent');
+Route::get('/deleteUserInfo', [AdminController::class, 'delete_user_info'])->name('deleteUserInfo');
+Route::get('/reverse_userInfo_profile/{id}', [AdminController::class, 'reverseUserInfoProfile'])->name('reverseUserInfoProfile');
 
 // Pending
 Route::get('/pendingUserInfo', [AdminController::class, 'pending_user_info'])->name('pendingUserInfo');
@@ -136,6 +141,7 @@ Route::put('/updatePendingUserInfoProfile/{id}', [AdminController::class, 'updat
 // Admin Role
 Route::post('/makeSuperAdmin/{id}', [AdminController::class, 'makeSuperAdmin' ])->name('makeSuperAdmin');
 Route::post('/makeAdmin/{id}', [AdminController::class, 'makeAdmin' ])->name('makeAdmin');
+
 
 
 // Route::post('/confirm_pendingUserInfo_profile/{id}', function () {

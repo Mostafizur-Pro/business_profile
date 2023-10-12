@@ -294,9 +294,6 @@ class AdminController extends Controller
         }
     }
 
-
-
-
     public function update_PendingUserInfoProfile_Profile(Request $request, $id)
     {
         // Find the user_info record by ID
@@ -306,19 +303,10 @@ class AdminController extends Controller
 
         // Check if the record exists
         if (!$update) {
-            return redirect("/edit_pendingUserInfo_profile/$id")->with('error', 'Record not found');
+            return redirect("/edit_pendingUserInfo_profile/$id")->with('Fail', 'Record not found');
         }
 
-        $request->validate([
-            'owner_name' => 'required',
-            'organization_name' => 'required',
-            'owner_number' => 'required|max:11|unique:user_info,owner_number,' . $id,
-            'owner_address' => 'required',
-            'business_type' => 'required',
-            'owner_email' => 'required|email|unique:user_info,owner_email,' . $id,
-            'owner_image' => 'file|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
-
+ 
         // Handle the owner image upload
         if ($request->hasFile('owner_image')) {
             $uploadedImage = $request->file('owner_image');
@@ -339,7 +327,7 @@ class AdminController extends Controller
             'owner_image' => $user_image,
         ];
 
-
+        // dd($updateData);
         // Perform the update
         $result = DB::table('pending')
             ->where('id', $id)
@@ -577,17 +565,133 @@ class AdminController extends Controller
 
     public function delete_userInfo($id)
     {
+        // Find the user with the given ID
         $user = DB::table('user_info')->find($id);
 
         if ($user) {
-            $result = DB::table('user_info')->where('id', $id)->delete();
-            // dd($user);
-            return redirect('/userInfo')->with('Success', 'ID Delete Successfully.');
-        } else {
-            return redirect('/userInfo')->with('Fail', 'Delete Fail, Please try again');
+            $adminId = Session::get('id');
+            $adminData = DB::table('admin_info')->find($adminId);
+
+            if ($adminData->role === 'admin') {
+                // Prepare the data you want to update
+                $dataToUpdate = [
+                    'admin_id' => $adminData->id,
+                    'admin_name' => $adminData->admin_name,
+                    'adminTime' => now(),
+                    'pending' => 'delete', // You were overwriting the $user variable here
+                ];
+
+                // Update the user_info record with the new data
+                $result = DB::table('user_info')
+                    ->where('id', $id)
+                    ->update($dataToUpdate); // Use update instead of insert for updating data
+
+                // dd($result);
+                if ($result) {
+                    // The update was successful
+                    return redirect('/userInfo')->with('Success', 'ID Delete Successfully.');
+                } else {
+                    // The update failed
+                    return redirect('/userInfo')->with('Fail', 'Delete Fail, Please try again');
+                }
+            }
+            if($adminData->role === 'superAdmin'){
+                $deleted = DB::table('user_info')->where('id', $id)->delete();
+                if ($deleted) {
+                    // The update was successful
+                    return redirect('/userInfo')->with('Success', 'ID Delete Successfully.');
+                } else {
+                    // The update failed
+                    return redirect('/userInfo')->with('Fail', 'Delete Fail, Please try again');
+                }
+
+            }
+        }
+
+        // User not found or admin role doesn't match
+        return redirect('/userInfo')->with('Fail', 'Delete Fail, Please try again');
+    }
+
+    public function delete_user_info(Request $request)
+    {
+        // echo 'delete user';
+
+        $perPage = $request->input('perPage', 10);
+        $search = $request->input('search');
+
+        $query = DB::table('user_info')
+            ->select('*')
+            ->when($search, function ($query) use ($search) {
+                $query->where('id', 'LIKE', '%' . $search . '%')
+                    ->orWhere('owner_name', 'LIKE', '%' . $search . '%')
+                    ->orWhere('organization_name', 'LIKE', '%' . $search . '%')
+                    ->orWhere('owner_email', 'LIKE', '%' . $search . '%')
+                    ->orWhere('owner_number', 'LIKE', '%' . $search . '%')
+                    ->orWhere('owner_role', 'LIKE', '%' . $search . '%')
+                    ->orWhere('emp_id', 'LIKE', '%' . $search . '%')
+                    ->orWhere('business_type', 'LIKE', '%' . $search . '%')
+                    ->orWhere('owner_address', 'LIKE', '%' . $search . '%');
+            });
+
+        $userInfoNew = $query->paginate($perPage)->onEachSide(1)->withQueryString();
+
+        return view('dashboard/admin/delete', compact('userInfoNew'));
+    }
+
+    public function reverseUserInfoProfile($id)
+    {
+        // Find the user with the given ID
+        $user = DB::table('user_info')->find($id);
+
+        if ($user) {
+            $adminId = Session::get('id');
+            $adminData = DB::table('admin_info')->find($adminId);
+
+            if ($adminData->role === 'superAdmin') {
+                // Prepare the data you want to update
+                $dataToUpdate = [
+
+                    'pending' => '',
+                ];
+
+                // Update the user_info record with the new data
+                $result = DB::table('user_info')
+                    ->where('id', $id)
+                    ->update($dataToUpdate); // Use update instead of insert for updating data
+
+                // dd($result);
+                if ($result) {
+                    // The update was successful
+                    return redirect('/deleteUserInfo')->with('Success', 'Reverse Successfully.');
+                } else {
+                    // The update failed
+                    return redirect('/deleteUserInfo')->with('Fail', 'Reverse Fail, Please try again');
+                }
+            }
         }
     }
 
+    public function delete_userInfo_per($id)
+    {
+        // Find the user with the given ID
+        $user = DB::table('user_info')->find($id);
+
+        if ($user) {
+
+            $deleted = DB::table('user_info')->where('id', $id)->delete();
+
+            if ($deleted) {
+                // The update was successful
+                return redirect('/deleteUserInfo')->with('Success', 'ID Delete Successfully.');
+            } else {
+                // The update failed
+                return redirect('/deleteUserInfo')->with('Fail', 'Delete Fail, Please try again');
+            }
+        }
+
+        // User not found or admin role doesn't match
+        return redirect('/deleteUserInfo')->with('Fail', 'Delete Fail, Please try again');
+    }
 
     // ---------------------------------------- End User Info Edit ----------------------------------------
 

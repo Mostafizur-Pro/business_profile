@@ -51,6 +51,21 @@ class AppServiceProvider extends ServiceProvider
                 $userData = DB::table('user_info')->find($userId);
                 $view->with('userData', $userData);
             }
+            if(DB::table('pending')){
+                $pendingData = DB::table('pending')->get();
+                // dd($pendingData);
+              
+                $view->              
+                 with('pendingData', $pendingData);
+            }
+            if(DB::table('user_info')){
+                $deleteData = DB::table('user_info')->where('pending', 'delete')->get();
+                
+                // dd($deleteData);
+                
+                $view->              
+                 with('deleteData', $deleteData);
+            }
            
         });
     }

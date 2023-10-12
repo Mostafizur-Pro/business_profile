@@ -72,7 +72,7 @@
     </table>
 </div>
 
-<div class="mt-10">
+<div class="my-10">
 
 
     {{ $userInfoOld->links('pagination::tailwind') }}
