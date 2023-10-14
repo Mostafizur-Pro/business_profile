@@ -129,11 +129,11 @@ Route::get('/edit_pendingUserInfo_profile/{id}', [AdminController::class, 'editU
 // Delete
 Route::delete('/deleteUserInfo/{id}', [AdminController::class, 'delete_userInfo'])->name('deleteUserInfo');
 Route::delete('/deleteUserInfoPermanent/{id}', [AdminController::class, 'delete_userInfo_per'])->name('deleteUserInfoPermanent');
-Route::get('/deleteUserInfo', [AdminController::class, 'delete_user_info'])->name('deleteUserInfo');
+Route::get('/deleteUserInfo', [AdminController::class, 'delete_user_info'])->name('deleteUserInfo')->middleware('superAdmin');
 Route::get('/reverse_userInfo_profile/{id}', [AdminController::class, 'reverseUserInfoProfile'])->name('reverseUserInfoProfile');
 
 // Pending
-Route::get('/pendingUserInfo', [AdminController::class, 'pending_user_info'])->name('pendingUserInfo');
+Route::get('/pendingUserInfo', [AdminController::class, 'pending_user_info'])->name('pendingUserInfo')->middleware('superAdmin');
 Route::get('/edit_pendingUserInfo_profile/{id}', [AdminController::class, 'editPendingUserInfoProfile'])->name('pendingUserInfoEditProfile');
 Route::put('/confirm_pendingUserInfo_profile/{id}', [AdminController::class, 'confirm_PendingUserInfoProfile_Profile'])->name('confirmPendingUserInfoProfile');
 Route::put('/updatePendingUserInfoProfile/{id}', [AdminController::class, 'update_PendingUserInfoProfile_Profile'])->name('updatePendingUserInfoProfile');

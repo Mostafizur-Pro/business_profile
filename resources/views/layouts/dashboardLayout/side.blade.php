@@ -83,6 +83,8 @@
                     </ul>
                 </div>
             </li>
+
+            @if($adminData->role === 'superAdmin')
             <li>
                 <h6 class="pl-6 mt-3 ml-2 text-md font-bold leading-tight uppercase opacity-60 dark:text-white">PERMISSION</h6>
                 <hr class="my-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent">
@@ -109,41 +111,40 @@
                                 }
                             }
                         </style>
-                        <!-- Landing -->
-                        <!-- Smart Home -->
-                        @if($adminData->role === 'superAdmin')
+
+
                         <li>
                             <a href="/deleteUserInfo" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
-                                <div class="indicator">
-                                    <span class="indicator-item   badge badge-secondary {{ count($deleteData) > 0 ? 'notification' : '' }}">{{ count($deleteData) }}</span>
+                                <div type="button" class="relative inline-flex items-center px-5  text-sm font-medium text-center   rounded-lg ">
                                     <button>Delete </button>
+                                    @if(count($deleteData) > 0)
+                                    <div class="{{ count($deleteData) > 0 ? 'notification' : '' }} absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900"> {{ count($deleteData) }}</div>
+                                    @endif
                                 </div>
                             </a>
                         </li>
 
                         <!-- Smart Home -->
+
                         <li>
                             <a href="/pendingUserInfo" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
-
                                 <div type="button" class="relative inline-flex items-center px-5  text-sm font-medium text-center   rounded-lg ">
-
-
                                     Pending
-                                    <div class="{{ count($pendingData) > 0 ? 'notification' : '' }} absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900">  {{ count($pendingData) }}</div>
+                                    @if(count($pendingData) > 0)
+                                    <div class="{{ count($pendingData) > 0 ? 'notification' : '' }} absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900"> {{ count($pendingData) }}</div>
+                                    @endif
                                 </div>
                             </a>
                         </li>
 
-
-
-
-
-
-                        @endif
 
                     </ul>
                 </div>
             </li>
+            @endif
+
+
+
             <li>
                 <h6 class="pl-6 mt-3 ml-2 text-md font-bold leading-tight uppercase opacity-60 dark:text-white">CREATE</h6>
                 <hr class="my-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent">
