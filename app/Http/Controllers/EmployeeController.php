@@ -10,7 +10,7 @@ use Session;
 class EmployeeController extends Controller
 {
 
-    
+
     public function emp_register()
     {
         $empJson = file_get_contents(storage_path('employee_ids.json'));
@@ -24,13 +24,10 @@ class EmployeeController extends Controller
             $allempId[] = $empData->emp_id;
         }
 
-      
+
 
         return view('auth.emp_register', compact('nonMatchingData', 'allempId'));
     }
-
-
-
 
     public function register_emp(Request $request)
     {
@@ -66,17 +63,13 @@ class EmployeeController extends Controller
         ]);
 
 
-          return redirect('empLogin')->with('success', 'Registration successful! Please log in.');
+        return redirect('empLogin')->with('success', 'Registration successful! Please log in.');
     }
-
-
 
     public function emp_login()
     {
         return view('auth.emp_login');
     }
-
-
 
     public function login_emp(Request $request)
     {
@@ -90,15 +83,6 @@ class EmployeeController extends Controller
             ->where('password', $request->input('password'))
             ->first();
 
-
-
-            // if ($user_id) {
-            //     Session::put('empId', $result->empLogin);
-            //     // Session::put('admin_email', $request->admin_email);
-            //     return redirect('empLogin')->with('success', 'Registration successful! Please log in.');
-            // } else {
-            //     return redirect('empLogin')->with('Fail', 'Login fail! Please log in again.');
-            // }
         if ($result) {
             Session::put('empId', $result->id);
             Session::put('emp_email', $request->emp_email);
@@ -128,19 +112,6 @@ class EmployeeController extends Controller
         return redirect('empLogin');
     }
 
-
-
-    public function editEmpProfile($id)
-    {
-        $data = null;
-        $empUser = DB::table('employee_info')->find($id);
-        if ($empUser) {
-            $editEmp = $empUser;
-            return view('dashboard.employee.empEditProfile', compact('editEmp'));
-        } else {
-            return view('dashboard.employee.adminDashboard');
-        }
-    }
 
 
 
@@ -179,5 +150,4 @@ class EmployeeController extends Controller
 
         return view('dashboard/employee/userInfo', compact('userInfoEmp'));
     }
-
 }

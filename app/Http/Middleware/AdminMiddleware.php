@@ -29,6 +29,6 @@ class AdminMiddleware
         }
 
         
-        return redirect('/')->with('error', 'You do not have superAdmin privileges.');
+        return redirect('/')->with('Fail', 'You do not have superAdmin privileges.');
     }
 }

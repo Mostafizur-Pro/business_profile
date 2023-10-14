@@ -4,6 +4,12 @@
 
 
 
+
+
+@include('components.logger.logger')
+
+
+
 <div class="container mx-auto px-4 py-6">
     <div class="bg-white shadow-md rounded px-8 py-6">
         <div class="mb-4">
@@ -59,11 +65,33 @@
                     <!-- <td class="pr-3 "> <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> </td> -->
                     <td class="pr-5">
                         <a href="{{ url('edit_emp_profile', $empData->id) }}" class="btn btn-sm bg-blue-500 hover:bg-blue-700 text-white">Edit</a>
-                        <button class="btn btn-sm bg-red-500 hover:bg-red-700 text-white">Delete</button>
-                        <!-- <a class="btn btn-sm bg-green-500 hover:bg-green-700 text-white">Change Role</a> -->
+                        <button onclick="my_modal_1.showModal()" class="btn btn-sm bg-red-500 hover:bg-red-700 text-white"> Delete </button>
                     </td>
                 </tr>
                 @endforeach
+
+                <!-- Open the modal using ID.showModal() method -->
+                <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+                <dialog id="my_modal_1" class="modal">
+                    <div class="modal-box">
+                        <form method="dialog">
+                            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                        </form>
+
+                        <form method="POST" action="{{ url('deleteEmpInfo', $empData->id) }}">
+                            @csrf
+                            @method('DELETE')
+                            <h3 class="font-bold text-lg">Confirm Deletion</h3>
+                            <p class="py-4">Are you sure you want to delete this user's information?</p>
+                            <div class="modal-action">
+                                <form method="dialog">
+                                    <button class="btn">Yes, Delete</button>
+                                </form>
+                            </div>
+                        </form>
+                    </div>
+                </dialog>
+
 
 
             </tbody>

@@ -116,7 +116,6 @@ Route::put('/updateUserInfoProfile/{id}', [AdminController::class, 'update_UserI
 Route::get('/adminInfo', [AdminController::class, 'admin_info'])->name('adminInfo')->middleware('superAdmin');
 Route::delete('/deleteAdmin/{id}', [AdminController::class, 'delete_admin'])->name('deleteAdmin');
 Route::get('/empInfo', [AdminController::class, 'emp_info'])->name('empInfo');
-Route::get('/userInfoOld', [AdminController::class, 'user_info_old'])->name('userInfoOld');
 
 
 
@@ -126,7 +125,18 @@ Route::get('/userInfo', [AdminController::class, 'user_info'])->name('userInfo')
 Route::get('/edit_userInfo_profile/{id}', [AdminController::class, 'editUserInfoProfile'])->name('userInfoEditProfile');
 Route::get('/edit_pendingUserInfo_profile/{id}', [AdminController::class, 'editUserInfoProfile'])->name('userInfoEditProfile');
 
-// Delete
+// User Information Old
+Route::get('/userInfoOld', [AdminController::class, 'user_info_old'])->name('userInfoOld');
+Route::get('/edit_userInfoOld_profile/{id}', [AdminController::class, 'editUserInfoOldProfile'])->name('editUserInfoOldProfile');
+Route::put('/updateUserInfoOldProfile/{id}', [AdminController::class, 'update_UserInfoOld_Profile'])->name('updateUserInfoOldProfile');
+
+
+// Emp Information
+Route::put('/updateEmpInfoProfile/{id}', [AdminController::class, 'update_Emp_Profile'])->name('updateEmpInfoProfile');
+Route::get('/edit_emp_profile/{id}', [AdminController::class, 'editEmpProfile'])->name('empEditProfile');
+Route::delete('/deleteEmpInfo/{id}', [AdminController::class, 'delete_empInfo'])->name('deleteEmpInfo');
+
+// Delete Dashboard
 Route::delete('/deleteUserInfo/{id}', [AdminController::class, 'delete_userInfo'])->name('deleteUserInfo');
 Route::delete('/deleteUserInfoPermanent/{id}', [AdminController::class, 'delete_userInfo_per'])->name('deleteUserInfoPermanent');
 Route::get('/deleteUserInfo', [AdminController::class, 'delete_user_info'])->name('deleteUserInfo')->middleware('superAdmin');
@@ -180,7 +190,7 @@ Route::get('/empLogout', [EmployeeController::class, 'logout']);
 
 
 Route::get('/empDashboard', [EmployeeController::class, 'emp_dashboard'])->name('empDashboard');
-Route::get('/edit_emp_profile/{id}', [EmployeeController::class, 'editEmpProfile'])->name('empEditProfile');
+
 
 Route::get('/userInfo_emp', [EmployeeController::class, 'user_info'])->name('userInfo_emp');
 // Route::get('/empLogin', function () {

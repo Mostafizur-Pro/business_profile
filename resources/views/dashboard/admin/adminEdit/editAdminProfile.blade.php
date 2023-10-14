@@ -2,7 +2,7 @@
 @section('title', 'Admin - Dashboard')
 @section('adminDashboard')
 
-
+@include('components.logger.logger')
 
 <div class="container mx-auto px-4 py-6">
     <div class="bg-white shadow-md rounded px-8 py-6">

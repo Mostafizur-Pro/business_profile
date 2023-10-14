@@ -4,25 +4,8 @@
 
 
 
-<!-- Error Message -->
-@if(session('Success'))
-<div class="toast toast-top toast-center">
-    <div class="alert alert-success">
-        <span>{{ session('Success') }} </span>
-    </div>
-</div>
 
-@endif
-<!-- Error Message -->
-@if(session('Fail'))
-<div class="toast toast-top toast-center">
-    <div class="alert alert-error">
-        <span>{{ session('Fail') }} </span>
-    </div>
-</div>
-
-@endif
-<!-- Error Message -->
+@include('components.logger.logger')
 
 
 <div class="relative mt-10 overflow-x-auto shadow-md p-5 sm:rounded-lg">

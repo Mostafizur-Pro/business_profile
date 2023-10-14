@@ -3,15 +3,8 @@
 @section('adminDashboard')
 
 
-@if(session('Fail'))
-<div class="toast toast-top toast-center">
-    <div class="alert alert-error">
-        <span>{{ session('Fail') }} </span>
-    </div>
-</div>
 
-@endif
-
+@include('components.logger.logger')
 
 <div class="container mx-auto px-4 py-6">
     <div class="bg-white shadow-md rounded px-8 py-6">

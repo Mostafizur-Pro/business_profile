@@ -2,26 +2,9 @@
 @section('title', 'Admin - Dashboard')
 @section('adminDashboard')
 
+@include('components.logger.logger')
 
-<!-- Error Message -->
-@if(session('Success'))
-<div class="toast toast-top toast-center">
-    <div class="alert alert-success">
-        <span>{{ session('Success') }} </span>
-    </div>
-</div>
 
-@endif
-<!-- Error Message -->
-@if(session('Fail'))
-<div class="toast toast-top toast-center">
-    <div class="alert alert-error">
-        <span>{{ session('Fail') }} </span>
-    </div>
-</div>
-
-@endif
-<!-- Error Message -->
 
 <div class="container mx-auto px-4 py-6">
     <div class="bg-white shadow-md rounded px-8 py-6">

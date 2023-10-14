@@ -2,29 +2,7 @@
 @section('title', 'Admin - Dashboard')
 @section('adminDashboard')
 
-
-
-
-
-<!-- Error Message -->
-@if(session('Success'))
-<div class="toast toast-top toast-center">
-    <div class="alert alert-success">
-        <span>{{ session('Success') }} </span>
-    </div>
-</div>
-
-@endif
-<!-- Error Message -->
-@if(session('Fail'))
-<div class="toast toast-top toast-center">
-    <div class="alert alert-error">
-        <span>{{ session('Fail') }} </span>
-    </div>
-</div>
-
-@endif
-<!-- Error Message -->
+@include('components.logger.logger')
 
 
 <div class="container mx-auto px-4 py-6">
@@ -37,7 +15,7 @@
         </div>
         <hr class="my-5" />
 
-        <form action="{{ route('updatePendingUserInfoProfile', $editUserInfo->id) }}"  method="POST" enctype="multipart/form-data">
+        <form action="{{ route('updateUserInfoOldProfile', $editUserInfoOld->id) }}"  method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -46,38 +24,38 @@
                     <div class="mb-4">
                         <label for="name" class="block text-gray-700 font-bold mb-2">UserID:</label>
 
-                        <p class="text-gray-800">{{$editUserInfo->id}}</p>
+                        <p class="text-gray-800">{{$editUserInfoOld->id}}</p>
                     </div>
                     <div class="mb-4">
                         <label for="owner_name" class="block text-gray-700 font-bold mb-2">Owner Name:</label>
-                        <input type="text" id="owner_name" name="owner_name" value="{{$editUserInfo->owner_name}}" class="w-full max-w-xs border rounded py-2 px-3 text-gray-800">
+                        <input type="text" id="owner_name" name="owner_name" value="{{$editUserInfoOld->owner_name}}" class="w-full max-w-xs border rounded py-2 px-3 text-gray-800">
                         <!-- <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" /> -->
                     </div>
                     <div class="mb-4">
                         <label for="organization_name" class="block text-gray-700 font-bold mb-2">Organization Name:</label>
-                        <input type="text" id="organization_name" name="organization_name" value="{{$editUserInfo->organization_name}}" class="w-full border rounded py-2 px-3 text-gray-800">
+                        <input type="text" id="organization_name" name="organization_name" value="{{$editUserInfoOld->organization_name}}" class="w-full border rounded py-2 px-3 text-gray-800">
                     </div>
                     <div class="mb-4">
-                        <label for="owner_number" class="block text-gray-700 font-bold mb-2">Number:</label>
-                        <input type="text" id="owner_number" name="owner_number" value="{{$editUserInfo->owner_number}}" class="w-full border rounded py-2 px-3 text-gray-800">
+                        <label for="contact_number" class="block text-gray-700 font-bold mb-2">Number:</label>
+                        <input type="text" id="contact_number" name="contact_number" value="{{$editUserInfoOld->contact_number}}" class="w-full border rounded py-2 px-3 text-gray-800">
                     </div>
                     <div class="mb-4">
-                        <label for="owner_email" class="block text-gray-700 font-bold mb-2">Email:</label>
-                        <input type="text" id="owner_email" name="owner_email" value="{{$editUserInfo->owner_email}}" class="w-full border rounded py-2 px-3 text-gray-800">
+                        <label for="email" class="block text-gray-700 font-bold mb-2">Email:</label>
+                        <input type="text" id="email" name="email" value="{{$editUserInfoOld->email}}" class="w-full border rounded py-2 px-3 text-gray-800">
                     </div>
 
                     <div class="mb-4">
-                        <label for="owner_address" class="block text-gray-700 font-bold mb-2">Address:</label>
-                        <input type="text" id="owner_address" name="owner_address" value="{{$editUserInfo->owner_address}}" class="w-full border rounded py-2 px-3 text-gray-800">
+                        <label for="address" class="block text-gray-700 font-bold mb-2">Address:</label>
+                        <input type="text" id="address" name="address" value="{{$editUserInfoOld->address}}" class="w-full border rounded py-2 px-3 text-gray-800">
                     </div>
                     <div class="mb-4">
                         <label for="business_type" class="block text-gray-700 font-bold mb-2">Business Type:</label>
-                        <input type="text" id="business_type" name="business_type" value="{{$editUserInfo->business_type}}" class="w-full border rounded py-2 px-3 text-gray-800">
+                        <input type="text" id="business_type" name="business_type" value="{{$editUserInfoOld->business_type}}" class="w-full border rounded py-2 px-3 text-gray-800">
                     </div>
                 </div>
                 <div>
                     <label for="profile_image" class="block text-gray-700 font-bold mb-2">Profile Image:</label>
-                    <img class="w-32 mb-5 mx-auto" src="{{ asset($editUserInfo->owner_image)}}" alt="image" />
+                    
 
                     <input type="file" name="owner_image" id="owner_image">
                     <p class="text-gray-600 text-sm">Upload a new profile image (optional)</p>

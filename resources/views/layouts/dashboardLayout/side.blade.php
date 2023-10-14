@@ -69,26 +69,15 @@
 
 
 
-                        <!-- <p>{{ count($pendingData) }}</p> -->
-
-
-
-
-
-                        <!-- @if($deleteData)
-                        deleteData
-                        @endif -->
-
-
                     </ul>
                 </div>
             </li>
 
             @if($adminData->role === 'superAdmin')
             <li>
-                <h6 class="pl-6 mt-3 ml-2 text-md font-bold leading-tight uppercase opacity-60 dark:text-white">PERMISSION</h6>
-                <hr class="my-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent">
-            </li>
+    <h6 class="pl-6 mt-3 ml-2 text-md font-bold leading-tight uppercase opacity-60 dark:text-white">Alerts</h6>
+    <hr class="my-0 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent">
+</li>
             <li>
                 <div class="overflow-hidden transition-all duration-200 ease-in-out" style="max-height: 264px;">
                     <ul class="pl-6 mt-2 list-none">
@@ -115,7 +104,7 @@
 
                         <li>
                             <a href="/deleteUserInfo" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
-                                <div type="button" class="relative inline-flex items-center px-5  text-sm font-medium text-center   rounded-lg ">
+                                <div type="button" class="relative inline-flex items-center pr-5  text-sm font-medium text-center   rounded-lg ">
                                     <button>Delete </button>
                                     @if(count($deleteData) > 0)
                                     <div class="{{ count($deleteData) > 0 ? 'notification' : '' }} absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900"> {{ count($deleteData) }}</div>
@@ -128,7 +117,7 @@
 
                         <li>
                             <a href="/pendingUserInfo" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
-                                <div type="button" class="relative inline-flex items-center px-5  text-sm font-medium text-center   rounded-lg ">
+                                <div type="button" class="relative inline-flex items-center pr-5  text-sm font-medium text-center   rounded-lg ">
                                     Pending
                                     @if(count($pendingData) > 0)
                                     <div class="{{ count($pendingData) > 0 ? 'notification' : '' }} absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900"> {{ count($pendingData) }}</div>

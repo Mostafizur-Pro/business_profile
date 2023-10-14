@@ -21,18 +21,16 @@ class SuperAdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        
-
         if (Session::has('id')) {
             $userId = Session::get('id');
             $user = DB::table('admin_info')->find($userId);
-       
+
             if ($user && $user->role === 'superAdmin') {
-                return $next($request); 
+                return $next($request);
             }
+            return redirect('/adminDashboard')->with('error', 'You do not have superAdmin privileges.');
         }
 
-        
-        return redirect('/adminDashboard')->with('Fail', 'You do not have superAdmin privileges.');
+        return redirect('/admin')->with('error', 'You are not authorized to access the admin Register Page.');
     }
 }

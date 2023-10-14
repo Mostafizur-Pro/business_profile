@@ -3,6 +3,10 @@
 @section('adminDashboard')
 
 
+@include('components.logger.logger')
+
+
+
 <div class="relative mt-10 overflow-x-auto shadow-md p-5 sm:rounded-lg">
     <div class="flex justify-between items-center">
         <div class="">
@@ -59,8 +63,8 @@
                 <td class="pr-3 "> {{ $userInfo->email }} </td>
                 <td class="pr-3 "> {{ $userInfo->employee_id }} </td>
                 <td class="pr-3 "> 
-                    <a href="{{ url('edit_admin_profile', $userInfo->id) }}"  class="btn btn-sm bg-blue-500 hover:bg-blue-700 text-white">Edit</a>  
-                    <button class="btn btn-sm bg-red-500 hover:bg-red-700 text-white">Delete</button>
+                    <a href="{{ url('edit_userInfoOld_profile', $userInfo->id) }}"  class="btn btn-sm bg-blue-500 hover:bg-blue-700 text-white">Edit</a>  
+                    <!-- <button class="btn btn-sm bg-red-500 hover:bg-red-700 text-white">Delete</button> -->
                 </td>
                 <!-- <td class="pr-3 "> <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> </td> -->
                
