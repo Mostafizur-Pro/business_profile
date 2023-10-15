@@ -1,6 +1,6 @@
-@extends('dashboard.admin.adminApp')
+@extends('dashboard.employee.empApp')
 @section('title', 'Admin - Dashboard')
-@section('adminDashboard')
+@section('empDashboard')
 
 @include('components.logger.logger')
 
@@ -15,7 +15,7 @@
         </div>
         <hr class="my-5" />
 
-        <form action="{{ route('updateEmpInfoProfile', $editEmp->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('updateEmpProfile', $editEmp->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -41,7 +41,7 @@
                     <div class="mb-4">
                         <label for="emp_role" class="block text-gray-700 font-bold mb-2">Designation:</label>
                         <select id="emp_role" name="emp_role" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
-                            <option class="text-red-400" selected >{{ $editEmp->emp_role }}</option>
+                            <option class="text-red-400" selected>{{ $editEmp->emp_role }}</option>
                             <option value="Sales and Marketing Office">Sales and Marketing Office</option>
                             <option value="Marketing Officer">Marketing Officer</option>
                             <option value="Sales Officer">Sales Officer</option>
@@ -51,11 +51,14 @@
 
 
 
-
                     <div class="mb-4">
                         <label for="emp_number" class="block text-gray-700 font-bold mb-2">Number:</label>
-                        <input type="text" id="emp_number" name="emp_number" value="{{$editEmp->emp_number}}" class="w-full border rounded py-2 px-3 text-gray-800">
+                        <input type="tel" id="emp_number" name="emp_number" pattern="[0-9]*" value="{{ $editEmp->emp_number }}" class="w-full border rounded py-2 px-3 text-gray-800" maxlength="11">
+                        <span class="text-red-400">@error('emp_number') {{ $message }} @enderror</span>
                     </div>
+
+
+
                     <div class="mb-4">
                         <label for="emp_address" class="block text-gray-700 font-bold mb-2">Address:</label>
                         <input type="text" id="emp_address" name="emp_address" value="{{$editEmp->emp_address}}" class="w-full border rounded py-2 px-3 text-gray-800">

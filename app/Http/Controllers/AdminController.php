@@ -590,28 +590,25 @@ class AdminController extends Controller
 
     public function update_Emp_Profile(Request $request, $id)
     {
-        // Find the user_info record by ID
-        $update = DB::table('employee_info')
+                $update = DB::table('employee_info')
             ->where('id', $id)
             ->first();
 
-        // Check if the record exists
-        if (!$update) {
+                if (!$update) {
             return redirect("/edit_emp_profile/$id")->with('Fail', 'Record not found');
         }
 
+        // dd($update);
 
-        // Handle the owner image upload
-        if ($request->hasFile('emp_image')) {
+                if ($request->hasFile('emp_image')) {
             $uploadedImage = $request->file('emp_image');
-            $imagePath = $uploadedImage->store('images/emp_image');
-            $user_image = $imagePath; // Set to the new image path
+            $imagePath = $uploadedImage->move('images/emp_image');
+            $user_image = $imagePath; 
         } else {
-            $user_image = $update->emp_image; // Keep the existing image path
+            $user_image = $update->emp_image; 
         }
 
-        // Prepare data for update
-        $updateData = [
+                $updateData = [
             'emp_name' => $request->input('emp_name'),
             'emp_address' => $request->input('emp_address'),
             'emp_role' => $request->input('emp_role'),
@@ -620,6 +617,7 @@ class AdminController extends Controller
             'emp_image' => $user_image,
         ];
 
+        // dd($request);
 
         $result = DB::table('employee_info')
             ->where('id', $id)
@@ -629,8 +627,9 @@ class AdminController extends Controller
         if ($result) {
             return redirect("/empInfo")->with('Success', 'Profile updated Successfully');
         } else {
-            return redirect("/empInfo")->with('Fail', 'Profile update failed');
+            return redirect("/empInfo")->with('Fail', 'Failed to update profile. Please try again.');
         }
+        
     }
 
     public function delete_empInfo($id)

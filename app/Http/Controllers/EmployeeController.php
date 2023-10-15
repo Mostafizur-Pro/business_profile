@@ -113,7 +113,133 @@ class EmployeeController extends Controller
     }
 
 
+    public function editEmpProfile($id)
+    {
+        $data = null;
+        $empUser = DB::table('employee_info')->find($id);
+        $userId = Session::get('empId');
+        // dd($empUser);
+        if ($empUser && $empUser->id === $userId) {
+            $editEmp = $empUser;
+            return view('dashboard.employee.empEdit.editEmpProfile', compact('editEmp'));
+        } else {
+            return redirect('empDashboard')->with('Fail', 'Access denied. You do not have permission to edit this profile.');
+        }
+    }
 
+    public function update_Emp_Profile(Request $request, $id)
+    {
+        $update = DB::table('employee_info')
+            ->where('id', $id)
+            ->first();
+
+        if (!$update) {
+            return redirect("/edit_emp_profile/$id")->with('Fail', 'Record not found');
+        }
+        $request->validate([
+            'emp_number' => 'unique:employee_info,emp_number,' . $id,
+        ]);
+        // dd($update);
+
+        if ($request->hasFile('emp_image')) {
+            $uploadedImage = $request->file('emp_image');
+            $imagePath = $uploadedImage->move('images/emp_image');
+            $user_image = $imagePath;
+        } else {
+            $user_image = $update->emp_image;
+        }
+
+        $updateData = [
+            'emp_name' => $request->input('emp_name'),
+            'emp_address' => $request->input('emp_address'),
+            'emp_role' => $request->input('emp_role'),
+            'emp_email' => $update->emp_email,
+            'emp_number' => $request->input('emp_number'),
+            'emp_image' => $user_image,
+        ];
+
+        // dd($request);
+
+        $result = DB::table('employee_info')
+            ->where('id', $id)
+            ->update($updateData);
+
+
+        if ($result) {
+            return redirect("/empDashboard")->with('Success', 'Profile updated Successfully');
+        } else {
+            return redirect("/empDashboard")->with('Fail', 'Failed to update profile. Please try again.');
+        }
+    }
+
+    public function editUserInfoProfile($id)
+    {
+        $data = null;
+        $userInfo = DB::table('user_info')->find($id);
+        // dd($userInfo->emp_id);
+
+        $userId = Session::get('empId');
+        $empUser = DB::table('employee_info')->find($userId);
+
+     
+        // dd($empUser->emp_id);
+
+        if ($userInfo->emp_id !== $empUser->emp_id) {
+            return redirect('empDashboard')->with('Fail', 'Access denied. You do not have permission to edit this profile.');
+        }
+        if ($userInfo) {
+            $editUserInfo = $userInfo;
+            // dd($editAdmin);
+            return view('dashboard.employee.empEdit.editUserInfoProfile', compact('editUserInfo'));
+        } else {
+            return redirect('empDashboard');
+        }
+    }
+
+    public function update_user_Profile(Request $request, $id)
+    {
+        $update = DB::table('user_info')
+            ->where('id', $id)
+            ->first();
+
+        if (!$update) {
+            return redirect("/edit_user_profile/$id")->with('Fail', 'Record not found');
+        }
+
+        
+
+
+        if ($request->hasFile('owner_image')) {
+            $uploadedImage = $request->file('owner_image');
+            $imagePath = $uploadedImage->store('images/user_image');
+            $user_image = $imagePath;
+        } else {
+            $user_image = $update->owner_image;
+        }
+
+        $updateData = [
+            'owner_name' => $request->input('owner_name'),
+            'organization_name' => $request->input('organization_name'),
+            'owner_address' => $request->input('owner_address'),
+            'business_type' => $request->input('business_type'),
+            'owner_email' => $request->input('owner_email'),
+            'owner_number' => $request->input('owner_number'),
+            'owner_image' => $user_image,
+        ];
+
+        // dd($updateData);
+        // Perform the update
+        $result = DB::table('user_info')
+            ->where('id', $id)
+            ->update($updateData);
+
+
+        if ($result) {
+            return redirect("/userInfo_emp")->with('Success', 'Profile updated Successfully');
+        } else {
+            return redirect("/empDashboard")->with('Fail', 'Profile update failed');
+        }
+    }
 
     public function user_info(Request $request)
     {

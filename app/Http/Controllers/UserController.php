@@ -50,14 +50,17 @@ class UserController extends Controller
             'created_at' => now(),
             'updated_at' => now(),
         ];
-        
+
         // Check if $empData is available before adding 'emp_id' and 'emp_name'
         if (isset($empData)) {
             $userData['emp_id'] = $empData->emp_id;
             $userData['emp_name'] = $empData->emp_name;
         }
-        
+
         $user_id = DB::table('user_info')->insert($userData);
+        if ($empData) {
+            return redirect('userInfo_emp')->with('success', 'User Registration successful!');
+        }
         // dd($user_id);
         return redirect('userLogin')->with('success', 'Registration successful! Please log in.');
     }
@@ -118,5 +121,65 @@ class UserController extends Controller
     {
         Session::flush();
         return redirect('userLogin');
+    }
+
+
+
+    public function editUserProfile($id)
+    {
+        $data = null;
+        $userData = DB::table('user_info')->find($id);
+        if ($userData) {
+            $editAdmin = $userData;
+            return view('dashboard.user.userEdit.editUserProfile', compact('userData'));
+        } else {
+            return redirect('userDashboard');
+        }
+    }
+
+
+    public function update_user_Profile(Request $request, $id)
+    {
+
+        $userData = DB::table('user_info')
+            ->where('id', $id)
+            ->first();
+
+        if (!$userData) {
+            return redirect("/edituserprofile");
+        }
+        
+        $request->validate([
+            'owner_number' => 'unique:user_info,owner_number,' . $id,
+        ]);
+
+        if ($userData) {
+            if ($request->hasFile('owner_image')) {
+                $request->validate([
+                    'owner_image' => 'file|mimes:jpeg,png,jpg,gif|max:2048',
+                ]);
+                $owner_image = $request->file('owner_image')->move('images/owner_image');
+            } else {
+                $owner_image = $userData->owner_image;
+            }
+
+            $userData = DB::table('user_info')
+                ->where('id', $id)
+                ->update([
+                    'owner_name' => $request->input('owner_name'),
+                    'organization_name' => $request->input('organization_name'),
+                    'owner_number' => $request->input('owner_number'),
+                    'owner_image' => $owner_image,
+                    'owner_address' => $request->input('owner_address'),
+                    'business_type' => $request->input('business_type'),
+
+                ]);
+
+            if ($userData) {
+                return redirect("/userDashboard")->with('Success', 'Profile updated successfully');
+            } else {
+                return redirect("/userDashboard")->with('Fail', 'Profile update failed');
+            }
+        }
     }
 }

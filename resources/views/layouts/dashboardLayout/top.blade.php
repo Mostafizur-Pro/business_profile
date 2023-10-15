@@ -11,34 +11,34 @@
                     <a>DASHBOARDS</a>
                     <ul class="p-2">
                         <li>
-                            <a href="adminDashboard">
+                            <a href="/adminDashboard">
                                 <span>Profile</span>
                             </a>
                         </li>
                         @if($adminData->role === 'superAdmin')
                         <li>
-                            <a href="adminInfo">
+                            <a href="/adminInfo">
                                 <span>Admin Information</span>
                             </a>
                         </li>
                         @endif
                         <li>
-                            <a href="userInfo">
+                            <a href="/userInfo">
                                 <span>User Information 2024</span>
                             </a>
                         </li>
                         <li>
-                            <a href="userInfoOld">
+                            <a href="/userInfoOld">
                                 <span>User Information 2023</span>
                             </a>
                         </li>
                         <li>
-                            <a href="empInfo">
+                            <a href="/empInfo">
                                 <span>Employee Information</span>
                             </a>
                         </li>
                         <li>
-                            <a href="adminDashboard">
+                            <a href="/packageItem">
                                 <span>Package Item</span>
                             </a>
                         </li>
@@ -49,7 +49,7 @@
                     <a> ALERTS</a>
                     <ul class="p-2">
                         <li>
-                            <a href="deleteUserInfo">
+                            <a href="/deleteUserInfo">
                                 <div>Delete
                                     @if(count($deleteData) > 0)
                                     <div class="{{ count($deleteData) > 0 ? 'notification' : '' }} absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900"> {{ count($deleteData) }}</div>
@@ -58,7 +58,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="pendingUserInfo">
+                            <a href="/pendingUserInfo">
                                 <div>Pending
                                     @if(count($pendingData) > 0)
                                     <div class="{{ count($pendingData) > 0 ? 'notification' : '' }} absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -right-2 dark:border-gray-900"> {{ count($pendingData) }}</div>
@@ -112,8 +112,8 @@
                 </div>
                 <div class="dropdown dropdown-end">
                     <label tabindex="0" class="">
-                        <a class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
-                            <div type="button" class="relative inline-flex items-center px-5 text-sm font-medium text-center rounded-lg">
+                        <a class="text-sm relative py-2.7 pl-4 my-2 flex items-center  font-medium">
+                            <div type="button" class="relative inline-flex items-center px-3 text-sm font-medium text-center rounded-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24">
                                     <path d="M13.094 2.085l-1.013-.082a1.082 1.082 0 0 0-.161 0l-1.063.087C6.948 2.652 4 6.053 4 10v3.838l-.948 2.846A1 1 0 0 0 4 18h4.5c0 1.93 1.57 3.5 3.5 3.5s3.5-1.57 3.5-3.5H20a1 1 0 0 0 .889-1.495L20 13.838V10c0-3.94-2.942-7.34-6.906-7.915zM12 19.5c-.841 0-1.5-.659-1.5-1.5h3c0 .841-.659 1.5-1.5 1.5zM5.388 16l.561-1.684A1.03 1.03 0 0 0 6 14v-4c0-2.959 2.211-5.509 5.08-5.923l.921-.074.868.068C15.794 4.497 18 7.046 18 10v4c0 .107.018.214.052.316l.56 1.684H5.388z" fill="black" />
                                 </svg>

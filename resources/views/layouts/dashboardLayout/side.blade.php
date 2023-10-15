@@ -60,7 +60,7 @@
 
                         <!-- Smart Home -->
                         <li>
-                            <a href="/adminDashboard" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
+                            <a href="/packageItem" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
                                 <span>Package Item</span>
                             </a>
                         </li>
@@ -168,11 +168,11 @@
 
                         <!-- Smart Home -->
 
-                        <li>
+                        <!-- <li>
                             <a href="/adminDashboard" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
                                 <span>Create Package</span>
                             </a>
-                        </li>
+                        </li> -->
 
                     </ul>
                 </div>

@@ -19,30 +19,30 @@ use App\Http\Controllers\EmployeeController;
 */
 
 Route::get('/', [HomeController::class, 'home_page']);
-Route::get('/login', [HomeController::class, 'login_page']);
-Route::get('/registration', [HomeController::class, 'registration_page']);
-Route::get('/dashboard', [HomeController::class, 'user_dashboard']);
-Route::get('/package', [HomeController::class, 'package']);
-Route::get('/signup', [HomeController::class, 'signup']);
-Route::get('/empDashboard', [HomeController::class, 'employee_dashboard']);
-Route::get('/AccRegistration', [HomeController::class, 'employee_user_registration']);
-Route::get('/user_profile', [HomeController::class, 'user_profile']);
-Route::get('/user_card', [HomeController::class, 'user_card']);
-Route::get('/changePassword', [HomeController::class, 'change_password']);
-Route::get('/clients', [HomeController::class, 'client_list']);
-Route::get('/employee_edit_profile', [HomeController::class, 'employee_edit_profile']);
+// Route::get('/login', [HomeController::class, 'login_page']);
+// Route::get('/registration', [HomeController::class, 'registration_page']);
+// Route::get('/dashboard', [HomeController::class, 'user_dashboard']);
+// Route::get('/package', [HomeController::class, 'package']);
+// Route::get('/signup', [HomeController::class, 'signup']);
+// Route::get('/empDashboard', [HomeController::class, 'employee_dashboard']);
+// Route::get('/AccRegistration', [HomeController::class, 'employee_user_registration']);
+// Route::get('/user_profile', [HomeController::class, 'user_profile']);
+// Route::get('/user_card', [HomeController::class, 'user_card']);
+// Route::get('/changePassword', [HomeController::class, 'change_password']);
+// Route::get('/clients', [HomeController::class, 'client_list']);
+// Route::get('/employee_edit_profile', [HomeController::class, 'employee_edit_profile']);
 
 
 // Route::post('/user_register_form_action','Mybdjobscontroller@kazkormouserform');
-Route::post('/user_register_form_action', [HomeController::class, 'registration_form_action']);
-Route::post('/employee_register_form_action', [HomeController::class, 'employee_registration_form_action']);
+// Route::post('/user_register_form_action', [HomeController::class, 'registration_form_action']);
+// Route::post('/employee_register_form_action', [HomeController::class, 'employee_registration_form_action']);
 // Route::post('/login_from_action','Mybdjobscontroller@kazkormologinform');
-Route::post('/login_from_action', [HomeController::class, 'login_form_action']);
-Route::post('/password_form_action', [HomeController::class, 'password_form_action']);
+// Route::post('/login_from_action', [HomeController::class, 'login_form_action']);
+// Route::post('/password_form_action', [HomeController::class, 'password_form_action']);
 
 
 //Payment Interface
-Route::get('/payment', [UserController::class, 'payment_method']);
+// Route::get('/payment', [UserController::class, 'payment_method']);
 
 
 
@@ -51,19 +51,19 @@ Route::get('/payment', [UserController::class, 'payment_method']);
 // Route::get('/admin_dashboard', [AdminController::class, 'admin_dashboard']);
 // Route::get('/admin', [AdminController::class, 'admin_login']);
 // Route::get('/logout', [AdminController::class, 'logout']);
-Route::get('/employee_list', [AdminController::class, 'employee_list']);
-Route::get('/edit/{id}', [AdminController::class, 'edit']);
-Route::get('/delete/{id}', [AdminController::class, 'delete_profile']);
-Route::get('/packageList', [AdminController::class, 'package_list']);
-Route::get('/packageAdd', [AdminController::class, 'package_add']);
-Route::get('/pending_list', [AdminController::class, 'pending_list']);
-Route::get('/packagedelete/{id}', [AdminController::class, 'delete_package']);
+// Route::get('/employee_list', [AdminController::class, 'employee_list']);
+// Route::get('/edit/{id}', [AdminController::class, 'edit']);
+// Route::get('/delete/{id}', [AdminController::class, 'delete_profile']);
+// Route::get('/packageList', [AdminController::class, 'package_list']);
+// Route::get('/packageAdd', [AdminController::class, 'package_add']);
+// Route::get('/pending_list', [AdminController::class, 'pending_list']);
+// Route::get('/packagedelete/{id}', [AdminController::class, 'delete_package']);
 
 
 
 // Route::post('/admin_login', [AdminController::class, 'login_form_action']);
-Route::post('/update-data/{id}', [AdminController::class, 'update']);
-Route::post('/create_package', [AdminController::class, 'create_package']);
+// Route::post('/update-data/{id}', [AdminController::class, 'update']);
+// Route::post('/create_package', [AdminController::class, 'create_package']);
 
 
 
@@ -71,15 +71,15 @@ Route::post('/create_package', [AdminController::class, 'create_package']);
 
 
 //editor routes
-Route::get('/editor_dashboard', [EditorController::class, 'editor_dashboard']);
-Route::get('/editor_edit/{id}', [EditorController::class, 'edit']);
-Route::get('/editor_packageList', [EditorController::class, 'package_list']);
-Route::get('/editor_packageAdd', [EditorController::class, 'package_add']);
-Route::get('/editor_delete_package/{id}', [AdminController::class, 'editor_delete_package']);
+// Route::get('/editor_dashboard', [EditorController::class, 'editor_dashboard']);
+// Route::get('/editor_edit/{id}', [EditorController::class, 'edit']);
+// Route::get('/editor_packageList', [EditorController::class, 'package_list']);
+// Route::get('/editor_packageAdd', [EditorController::class, 'package_add']);
+// Route::get('/editor_delete_package/{id}', [AdminController::class, 'editor_delete_package']);
 
 
-Route::post('/editor_create_package', [EditorController::class, 'editor_create_package']);
-Route::post('/editor_update_request/{id}', [EditorController::class, 'update_request']);
+// Route::post('/editor_create_package', [EditorController::class, 'editor_create_package']);
+// Route::post('/editor_update_request/{id}', [EditorController::class, 'update_request']);
 
 
 
@@ -154,26 +154,6 @@ Route::post('/makeAdmin/{id}', [AdminController::class, 'makeAdmin' ])->name('ma
 
 
 
-// Route::post('/confirm_pendingUserInfo_profile/{id}', function () {
-//     // Handle the PUT request here
-//     echo 'Update admin';
-// })->name('confirm.pendingUserInfoProfile');
-
-// Route::post('/makeAdmin/{id}', function () {
-//     // return view('dashboard/admin/adminInfo');
-//     echo 'update admin';
-// });
-
-
-// Route::post('/registerAdmin', function () {
-//     // return view('admin/admin_register');
-//     echo "hoy nai";
-// });
-// Route::get('/adminRegister', function () {
-//     return view('admin/admin_register');
-//     // echo "hoy nai";
-// });
-
 
 // ---------- Employee Route ----------
 
@@ -191,6 +171,11 @@ Route::get('/empLogout', [EmployeeController::class, 'logout']);
 
 Route::get('/empDashboard', [EmployeeController::class, 'emp_dashboard'])->name('empDashboard');
 
+Route::get('/edit_empInfo_profile/{id}', [EmployeeController::class, 'editEmpProfile'])->name('editEmpInfoProfile');
+Route::put('/updateEmpProfile/{id}', [EmployeeController::class, 'update_Emp_Profile'])->name('updateEmpProfile');
+
+Route::get('/edit_user_profile/{id}', [EmployeeController::class, 'editUserInfoProfile'])->name('userInfoEditProfile');
+Route::put('/updateUserProfile/{id}', [EmployeeController::class, 'update_user_Profile'])->name('updateUserProfile');
 
 Route::get('/userInfo_emp', [EmployeeController::class, 'user_info'])->name('userInfo_emp');
 // Route::get('/empLogin', function () {
@@ -201,7 +186,7 @@ Route::get('/userInfo_emp', [EmployeeController::class, 'user_info'])->name('use
 
 
 
-// ---------- Employee Route ----------
+// ---------- User Route ----------
 
 // Login
 Route::get('/userLogin', [UserController::class, 'user_login'])->name('userLogin');
@@ -216,6 +201,15 @@ Route::get('/userLogout', [UserController::class, 'logout']);
 
 
 Route::get('/userDashboard', [UserController::class, 'user_dashboard'])->name('userDashboard');
+Route::get('/edit_userInfo_profile/{id}', [UserController::class, 'editUserProfile'])->name('editUserProfile');
+Route::put('/updateUserInfoProfile/{id}', [UserController::class, 'update_user_Profile'])->name('updateUserInfoProfile');
 // Route::get('/userRegister', function () {
 //     return view('auth/user_register');
 // });
+
+
+
+
+Route::get('/packageItem', function () {
+    return view('dashboard/admin/package');
+});
