@@ -94,6 +94,11 @@ Route::get('/', [HomeController::class, 'home_page']);
 // Mostafizur -------------------------------------------------------------------------------
 
 
+
+Route::get('/about', [HomeController::class, 'about_page']);
+
+
+
 // ---------- Admin Route ----------
 
 // Login
