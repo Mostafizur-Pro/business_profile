@@ -15,6 +15,8 @@
             </form>
         </div>
     </div>
+
+
     <div class="navbar_settings">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,3 +77,5 @@
             </div>
         </nav>
     </div>
+
+  

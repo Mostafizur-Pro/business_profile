@@ -20,7 +20,7 @@
 
     <div class="">
         <nav class="bg-white shadow-lg">
-            <div class=" mx-auto">
+            <div class="mx-auto">
                 <div class="flex items-center justify-between p-4">
                     <button class="lg:hidden text-gray-700 focus:outline-none" @click="open = !open">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -31,43 +31,36 @@
                         <a href="/" class="text-gray-700">Home</a>
                         <a href="/about" class="text-gray-700">About</a>
                         <a href="{{url('/package')}}" class="text-gray-700">Our Services</a>
-                        <a class="ml-2">
-                            <div class="relative inline-block dropdown dropdown-hover">
-                                <button class="dropdown-toggle">Products</button>
-                                <ul class="dropdown-content z-[1] menu text-xl shadow-md border border-gray-300">
-                                    <li><a href="#" class="block px-4 py-2 text-gray-700">Agro Products & Services</a></li>
-                                    <li><a href="#" class="block px-4 py-2 text-gray-700">Book, Stationery & Paper</a></li>
-                                    <li><a href="#" class="block px-4 py-2 text-gray-700">Business Houses & Services</a></li>
-                                    <li><a href="#" class="block px-4 py-2 text-gray-700">Construct Material, Hardware</a></li>
-                                    <li><a href="#" class="block px-4 py-2 text-gray-700">Chemical, Oil & Gas</a></li>
-                                    <li><a href="#" class="block px-4 py-2 text-gray-700">Electrical Equipment</a></li>
-                                    <li><a href="#" class="block px-4 py-2 text-gray-700">Education, Career, Culture</a></li>
-                                    <li><a href="#" class="block px-4 py-2 text-gray-700">Electronic & Automobile</a></li>
-                                    <li><a href="#" class="block px-4 py-2 text-gray-700">Food, Fashion & Greetings</a></li>
-                                    <li><a href="#" class="block px-4 py-2 text-gray-700">Furniture & Decoration</a></li>
-                                </ul>
-                            </div>
-                        </a>
 
-
-
-                        <a href="#" class="text-gray-700">FAQ</a>
-                        <div x-data="{ open: false }" @click.away="open = false">
-                            <a href="#" class="text-gray-700" @click="open = !open">Companies</a>
-                            <div x-show="open" class="absolute mt-2 space-y-2 py-2 bg-white border border-gray-300 rounded-lg">
-                                <a href="#" class=" px-4 py-2 text-gray-700">Apple</a>
-                                <a href="#" class=" px-4 py-2 text-gray-700">Asus</a>
-                                <a href="#" class=" px-4 py-2 text-gray-700">Bkash</a>
-                                <a href="#" class=" px-4 py-2 text-gray-700">Berger</a>
-                                <a href="#" class=" px-4 py-2 text-gray-700">Capstone</a>
-                                <a href="#" class=" px-4 py-2 text-gray-700">Dell</a>
-                                <a href="#" class=" px-4 py-2 text-gray-700">Moontoon</a>
+                        <!-- Products Dropdown -->
+                        <div class="relative inline-block group">
+                            <button class="text-gray-700 group-hover:text-gray-900">Products</button>
+                            <div class="hidden group-hover:block absolute space-y-2 bg-white border border-gray-300 rounded-lg">
+                                <a href="#" class="block px-4 py-2 text-gray-700">Agro Products & Services</a>
+                                <a href="#" class="block px-4 py-2 text-gray-700">Book, Stationery & Paper</a>
+                                <a href="#" class="block px-4 py-2 text-gray-700">Business Houses & Services</a>
+                                <!-- Add more product categories as needed -->
                             </div>
                         </div>
+
+
+                        <!-- Companies Dropdown -->
+                        <div class="relative inline-block group">
+                            <button class="text-gray-700 group-hover:text-gray-900">Companies</button>
+                            <ul class="hidden group-hover:block absolute  space-y-2  bg-white border border-gray-300 rounded-lg">
+                                <li><a href="#" class="block px-4 py-2 text-gray-700">Apple</a></li>
+                                <li><a href="#" class="block px-4 py-2 text-gray-700">Asus</a></li>
+                                <li><a href="#" class="block px-4 py-2 text-gray-700">Bkash</a></li>
+                                <!-- Add more company names as needed -->
+                            </ul>
+                        </div>
+
+                        <a href="#" class="text-gray-700">FAQ</a>
                         <a href="{{url('/clients')}}" class="text-gray-700">Our Clients</a>
                     </div>
                 </div>
             </div>
         </nav>
     </div>
+
 </div>

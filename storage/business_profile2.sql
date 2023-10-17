@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 14, 2023 at 02:54 PM
+-- Generation Time: Oct 17, 2023 at 06:38 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -74,7 +74,7 @@ CREATE TABLE `employee_info` (
 --
 
 INSERT INTO `employee_info` (`id`, `emp_id`, `emp_name`, `emp_image`, `emp_number`, `emp_address`, `emp_email`, `password`, `emp_role`, `supperAdmin_id`, `supperAdmin_name`, `created_at`, `updated_at`) VALUES
-(1, 'IITABBP08230011', 'rafi a', 'https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png', '12345678912', 'Mirpur 12', 'r@ph.com', '12345', 'Sales Officer', '2', 'Admin', '2023-10-11 05:35:32', '2023-10-11 05:35:32'),
+(1, 'IITABBP08230011', 'rafi ssa', 'https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png', '12345678911', 'Mirpur 12', 'r@ph.com', '12345', 'Sales Officer', '2', 'Admin', '2023-10-11 05:35:32', '2023-10-11 05:35:32'),
 (2, 'IITABBP08230012', 'mostafiz', 'https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png', '12345678987', 'Dhamrai', 'mos@Ph.com', '12345', 'Sales and Marketing Office', '2', 'Admin', '2023-10-11 05:35:57', '2023-10-11 05:35:57');
 
 -- --------------------------------------------------------
@@ -227,7 +227,11 @@ CREATE TABLE `user_info` (
 INSERT INTO `user_info` (`id`, `owner_name`, `organization_name`, `owner_image`, `owner_number`, `owner_address`, `business_type`, `owner_email`, `password`, `owner_role`, `emp_id`, `emp_name`, `admin_id`, `admin_name`, `adminTime`, `supperAdmin_id`, `supperAdmin_name`, `SupperAdminTime`, `pending`, `created_at`, `updated_at`) VALUES
 (1, 'Md noor islam Sardar a', 'M/S Allahar Dan Varaities cloth & shoe house', 'https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png', '01922485183', 'Opposite molla shopping complex Daulatpur Khulna', 'Garments Products', 'noor@gmail.com', '12345', 'normal', NULL, NULL, '2', 'Admin', '2023-10-14 05:12:08', '1', 'Supper Admin', '2023-10-14 07:56:20', 'pending', '2023-10-11 05:31:51', '2023-10-11 05:31:51'),
 (2, 'Mahmudul Islam (Manik)', 'Rahimart hi', 'https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png', '32165498712', 'Dhaka', 'Hospital', 'manik@gmail.com', '12345', 'normal', 'IITABBP08230012', 'mostafiz', '2', 'Admin', '2023-10-14 06:24:22', '1', 'Supper Admin  a', '2023-10-14 12:44:46', '', '2023-10-11 06:18:18', '2023-10-11 06:18:18'),
-(3, 'Noman Islam Noman', 'Noman Islam', 'https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png', '12345678925', 'Savar', 'medical', 'noman@gmail.com', '12345', 'normal', 'IITABBP08230011', 'rafi', '2', 'Admin', '2023-10-12 11:41:05', '1', 'Supper Admin  vai', '2023-10-14 05:11:00', '', '2023-10-11 06:44:25', '2023-10-11 06:44:25');
+(3, 'Noman Islam', 'Noman Islam', 'https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png', '12345678925', 'Savar', 'medical', 'noman@gmail.com', '12345', 'normal', 'IITABBP08230011', 'rafi', '2', 'Admin', '2023-10-12 11:41:05', '1', 'Supper Admin  vai', '2023-10-14 05:11:00', '', '2023-10-11 06:44:25', '2023-10-11 06:44:25'),
+(12, 'sohan', 'sohan', 'https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png', '12345687987', 'mohammadpur', 'computer shop', 'sohan@gmail.com', '12345', 'normal', 'IITABBP08230011', 'rafi ss', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-10-15 04:01:41', '2023-10-15 04:01:41'),
+(13, 'no', 'no', 'https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png', '12345698778', 'savar', 'it zone', 'no@gmail.com', '12345', 'normal', 'IITABBP08230011', 'rafi ss', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-10-15 04:04:39', '2023-10-15 04:04:39'),
+(14, 'a', 'a', 'https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png', '12345678945', 'a', 'a', 'a@ph.com', '12345', 'normal', 'IITABBP08230011', 'rafi ss', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-10-15 04:05:19', '2023-10-15 04:05:19'),
+(15, 'Sohan a', 'sohan', 'https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png', '12345678912', 's', 's', 's@gmail.com', '12345', 'normal', 'IITABBP08230011', 'rafi ss', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-10-15 04:06:09', '2023-10-15 04:06:09');
 
 -- --------------------------------------------------------
 
@@ -732,7 +736,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `user_info`
 --
 ALTER TABLE `user_info`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `user_login_information`

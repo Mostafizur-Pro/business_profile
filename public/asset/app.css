@@ -146,9 +146,9 @@ hr {
 	font-family: Raleway, sans-serif;
 }
 
-body {
+/* body {
 	background: linear-gradient(90deg, #C7C5F4, #776BCC);		
-}
+} */
 
 .container {
 	display: flex;
@@ -295,12 +295,12 @@ body {
 
 
 
-body {
+/* body {
     position: relative;
     overflow-x: hidden;
     background-color: #CFD8DC;
-}
-body,
+} */
+
 html { height: 100%;}
 .nav .open > a, 
 .nav .open > a:hover, 

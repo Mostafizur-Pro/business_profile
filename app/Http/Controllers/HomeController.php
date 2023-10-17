@@ -45,12 +45,12 @@ class HomeController extends Controller
     // {
     //     return view('UserPanel.user_profile');
     // }
-    // public function client_list()
-    // {
-    //     $data= DB::table('user_login_information')->get();
-    //     // return view('clientList');
-    //     return view('clientList',['data'=>$data]);
-    // }
+    public function client_list()
+    {
+        $data= DB::table('user_login_information')->get();
+        // return view('clientList');
+        return view('clientList',['data'=>$data]);
+    }
 
     // public function user_card()
     // {

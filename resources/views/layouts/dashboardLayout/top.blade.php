@@ -23,7 +23,7 @@
                         </li>
                         @endif
                         <li>
-                            <a href="/userInfo">
+                            <a href="/ad_userInfo">
                                 <span>User Information 2024</span>
                             </a>
                         </li>

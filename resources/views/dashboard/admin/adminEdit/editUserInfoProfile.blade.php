@@ -15,7 +15,7 @@
         </div>
         <hr class="my-5" />
 
-        <form action="{{ route('updateUserInfoProfile', $editUserInfo->id) }}"  method="POST" enctype="multipart/form-data">
+        <form action="{{ url('ad_updateUserInfo', $editUserInfo->id) }}"  method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 

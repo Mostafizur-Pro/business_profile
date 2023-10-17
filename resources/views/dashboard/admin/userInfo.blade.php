@@ -105,7 +105,7 @@
                     @if($userInfo->pending === 'pending') <!-- Pending  -->
                     <button class="btn btn-sm btn-secondary">Pending</button>
                     @else <!-- Pending -->
-                    <a href="{{ url('edit_userInfo_profile', $userInfo->id) }}" class="btn btn-sm bg-blue-500 hover:bg-blue-700 text-white">Edit</a>
+                    <a href="{{ url('ad_edit_userInfo_profile', $userInfo->id) }}" class="btn btn-sm bg-blue-500 hover:bg-blue-700 text-white">Edit</a>
 
                     <button onclick="my_modal_1.showModal()" class="btn btn-sm bg-red-500 hover:bg-red-700 text-white"> Delete </button>
 

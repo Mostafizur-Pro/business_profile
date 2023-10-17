@@ -29,7 +29,7 @@ Route::get('/', [HomeController::class, 'home_page']);
 // Route::get('/user_profile', [HomeController::class, 'user_profile']);
 // Route::get('/user_card', [HomeController::class, 'user_card']);
 // Route::get('/changePassword', [HomeController::class, 'change_password']);
-// Route::get('/clients', [HomeController::class, 'client_list']);
+Route::get('/clients', [HomeController::class, 'client_list']);
 // Route::get('/employee_edit_profile', [HomeController::class, 'employee_edit_profile']);
 
 
@@ -116,7 +116,7 @@ Route::get('/adminDashboard', [AdminController::class, 'admin_dashboard'])->name
 Route::get('/edit_admin_profile/{id}', [AdminController::class, 'editAdminProfile'])->name('adminEditProfile');
 Route::put('/updateAdminProfile/{id}', [AdminController::class, 'update_Admin_Profile'])->name('updateAdminProfile');
 
-Route::put('/updateUserInfoProfile/{id}', [AdminController::class, 'update_UserInfoProfile_Profile'])->name('updateUserInfoProfile');
+// Route::put('/updateUserInfoProfile/{id}', [AdminController::class, 'update_UserInfoProfile_Profile'])->name('updateUserInfoProfile');
 
 Route::get('/adminInfo', [AdminController::class, 'admin_info'])->name('adminInfo')->middleware('superAdmin');
 Route::delete('/deleteAdmin/{id}', [AdminController::class, 'delete_admin'])->name('deleteAdmin');
@@ -126,9 +126,10 @@ Route::get('/empInfo', [AdminController::class, 'emp_info'])->name('empInfo');
 
 
 // User Information
-Route::get('/userInfo', [AdminController::class, 'user_info'])->name('userInfo');
-Route::get('/edit_userInfo_profile/{id}', [AdminController::class, 'editUserInfoProfile'])->name('userInfoEditProfile');
-Route::get('/edit_pendingUserInfo_profile/{id}', [AdminController::class, 'editUserInfoProfile'])->name('userInfoEditProfile');
+Route::get('/ad_userInfo', [AdminController::class, 'user_info'])->name('userInfo');
+Route::get('/ad_edit_userInfo_profile/{id}', [AdminController::class, 'editUserInfoProfile'])->name('userInfoEditProfile');
+Route::put('/ad_updateUserInfo/{id}', [AdminController::class, 'update_UserInfo']);
+// Route::get('/edit_pendingUserInfo_profile/{id}', [AdminController::class, 'editUserInfoProfile'])->name('userInfoEditProfile');
 
 // User Information Old
 Route::get('/userInfoOld', [AdminController::class, 'user_info_old'])->name('userInfoOld');

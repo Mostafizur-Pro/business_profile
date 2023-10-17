@@ -40,7 +40,7 @@
 
                         <!-- Smart Home -->
                         <li>
-                            <a href="/userInfo" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
+                            <a href="/ad_userInfo" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
                                 <span>User Information 2024</span>
                             </a>
                         </li>

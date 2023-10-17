@@ -264,11 +264,11 @@ class AdminController extends Controller
             // dd($editAdmin);
             return view('dashboard.admin.adminEdit.editUserInfoProfile', compact('editUserInfo'));
         } else {
-            return redirect('userInfo');
+            return redirect('ad_userInfo');
         }
     }
 
-    public function update_UserInfoProfile_Profile(Request $request, $id)
+    public function update_UserInfo(Request $request, $id)
     {
         // Find the user_info record by ID
         $update = DB::table('user_info')
@@ -277,7 +277,7 @@ class AdminController extends Controller
 
         // Check if the record exists
         if (!$update) {
-            return redirect("/edit_userInfo_profile/$id")->with('Fail', 'Record not found');
+            return redirect("/ad_edit_userInfo_profile/$id")->with('Fail', 'Record not found');
         }
 
         $request->validate([
@@ -350,9 +350,9 @@ class AdminController extends Controller
 
 
         if ($result) {
-            return redirect("/userInfo")->with('Success', 'Profile updated Successfully');
+            return redirect("/ad_userInfo")->with('Success', 'Profile updated Successfully');
         } else {
-            return redirect("/userInfo")->with('Fail', 'Profile update failed');
+            return redirect("/ad_userInfo")->with('Fail', 'Profile update failed');
         }
     }
 
