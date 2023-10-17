@@ -100,6 +100,7 @@ Route::get('/about', [HomeController::class, 'about_page']);
 
 
 // ---------- Admin Route ----------
+// ---------- Rafi Route ----------
 
 // Login
 Route::get('/admin', [AdminController::class, 'admin_login'])->name('admin')->middleware('allReadyLogin');
