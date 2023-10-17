@@ -24,7 +24,7 @@
 
 </head>
 
-<body style="background-color: #e7decc;">
+<body >
 
 @include('layouts/navbar1')
 
