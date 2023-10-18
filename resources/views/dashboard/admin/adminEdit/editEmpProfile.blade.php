@@ -64,10 +64,10 @@
                 </div>
 
                 <div class="mb-4">
-                    <label for="profile_image" class="block text-gray-700 font-bold mb-2">Profile Image:</label>
+                    <label for="emp_image" class="block text-gray-700 font-bold mb-2">Profile Image:</label>
                     <img class="w-32 mb-5 mx-auto" src="{{ asset($editEmp->emp_image) }}" alt="image" />
 
-                    <input type="file" name="admin_image" id="admin_image">
+                    <input type="file" name="emp_image" id="emp_image">
                     <p class="text-gray-600 text-sm">Upload a new profile image (optional)</p>
                 </div>
             </div>

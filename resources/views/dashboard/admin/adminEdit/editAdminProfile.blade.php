@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="mb-4">
-                <label for="profile_image" class="block text-gray-700 font-bold mb-2">Profile Image:</label>
+                <label for="admin_image" class="block text-gray-700 font-bold mb-2">Profile Image:</label>
                 <img class="w-32 mb-5 mx-auto" src="{{ asset($adminData->role == 'superAdmin' ? $editAdmin->admin_image : $adminData->admin_image) }}" alt="image" />
 
                     <input type="file" name="admin_image" id="admin_image">

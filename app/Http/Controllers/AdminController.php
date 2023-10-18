@@ -167,11 +167,12 @@ class AdminController extends Controller
                     'admin_image' => $admin_image,
                 ]);
 
-            if ($result) {
-                return redirect("/adminDashboard")->with('Success', 'Profile updated Successfully');
-            } else {
-                return redirect("/adminDashboard")->with('Success', 'Profile updated Successfully');
-            }
+                if ($result) {
+                    return redirect("/adminDashboard")->with('success', 'Profile updated successfully');
+                } else {
+                    return redirect()->back()->with('fail', 'Profile update failed');
+                }
+                
         }
     }
 

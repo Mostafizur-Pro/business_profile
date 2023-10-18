@@ -71,19 +71,19 @@
                     <ul class="pl-6 mt-2 list-none">
                         <!-- Landing -->
                         <li>
-                            <a href="adminDashboard" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
+                            <a href="#" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
                                 <span>About</span>
                             </a>
                         </li>
                         <!-- Smart Home -->
                         <li>
-                            <a href="adminDashboard" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
+                            <a href="#" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
                                 <span>Our Service</span>
                             </a>
                         </li>
                         <!-- Smart Home -->
                         <li>
-                            <a href="adminDashboard" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
+                            <a href="#" class="text-sm relative py-2.7 pl-4 my-2 flex items-center px-4 font-medium">
                                 <span>Products</span>
                             </a>
                         </li>
