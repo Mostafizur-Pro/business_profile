@@ -51,7 +51,6 @@
 
 
 
-
                     <div class="mb-4">
                         <label for="emp_number" class="block text-gray-700 font-bold mb-2">Number:</label>
                         <input type="text" id="emp_number" name="emp_number" value="{{$editEmp->emp_number}}" class="w-full border rounded py-2 px-3 text-gray-800">

@@ -45,12 +45,30 @@ class HomeController extends Controller
     // {
     //     return view('UserPanel.user_profile');
     // }
-    public function client_list()
+    public function client_list(Request $request)
     {
-        $data= DB::table('user_login_information')->get();
-        // return view('clientList');
-        return view('clientList',['data'=>$data]);
+        $perPage = $request->input('perPage', 10);
+        $search = $request->input('search');
+
+     $query = DB::table('user_login_information')
+            ->select('*')
+            ->orderBy('owner_name', 'asc')
+            ->when($search, function ($query) use ($search) {
+                $query->where('employee_id', 'LIKE', '%' . $search . '%')
+                    ->orWhere('owner_name', 'LIKE', '%' . $search . '%')
+                    ->orWhere('email', 'LIKE', '%' . $search . '%')
+                    ->orWhere('organization_name', 'LIKE', '%' . $search . '%')
+                    ->orWhere('contact_number', 'LIKE', '%' . $search . '%')
+                    ->orWhere('address', 'LIKE', '%' . $search . '%');
+            });
+            $data = $query->paginate($perPage)->onEachSide(1)->withQueryString();
+
+
+
+        return view('clientList', ['data' => $data]);
     }
+
+
 
     // public function user_card()
     // {

@@ -54,6 +54,7 @@
                                 <!-- Add more company names as needed -->
                             </ul>
                         </div>
+                        
 
                         <a href="#" class="text-gray-700">FAQ</a>
                         <a href="{{url('/clients')}}" class="text-gray-700">Our Clients</a>
