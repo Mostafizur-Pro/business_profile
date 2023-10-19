@@ -49,11 +49,18 @@ class HomeController extends Controller
     {
         $perPage = $request->input('perPage', 10);
         $search = $request->input('search');
-
-     $query = DB::table('user_login_information')
+        $letter = $request->input('letter'); // Add 'letter' to the request parameters
+    
+        $query = DB::table('user_login_information')
             ->select('*')
-            ->orderBy('owner_name', 'asc')
-            ->when($search, function ($query) use ($search) {
+            ->orderBy('owner_name', 'asc');
+    
+        if ($letter) {
+            // Filter results by the selected letter
+            $query->where('owner_name', 'LIKE', $letter . '%');
+        } else {
+            // Perform text-based search if 'letter' is not specified
+            $query->when($search, function ($query) use ($search) {
                 $query->where('employee_id', 'LIKE', '%' . $search . '%')
                     ->orWhere('owner_name', 'LIKE', '%' . $search . '%')
                     ->orWhere('email', 'LIKE', '%' . $search . '%')
@@ -61,12 +68,14 @@ class HomeController extends Controller
                     ->orWhere('contact_number', 'LIKE', '%' . $search . '%')
                     ->orWhere('address', 'LIKE', '%' . $search . '%');
             });
-            $data = $query->paginate($perPage)->onEachSide(1)->withQueryString();
-
-
-
+        }
+    
+        $data = $query->paginate($perPage)->onEachSide(1)->withQueryString();
+    
         return view('clientList', ['data' => $data]);
     }
+    
+    
 
 
 

@@ -9,7 +9,7 @@
 
 <div class="container d-flex justify-content-between align-items-center">
     <div class="mr-3">
-        <!-- <h1 class="text-2xl font-weight-bold">User Information 2023</h1> -->
+    <h3>Item Filter</h3> <!-- <h1 class="text-2xl font-weight-bold">User Information 2023</h1> -->
     </div>
 
     <!-- Search Option -->
@@ -34,19 +34,17 @@
 </div>
 <hr class="container"/>
 <div class="container">
-    <h3>Item Filter</h3>
+    
     <div class="input-group mb-3">
-        
-        <div class="input-group-append">
-            <button class="btn btn-primary" onclick="filterItems('A')">A</button>
-            <button class="btn btn-primary" onclick="filterItems('B')">B</button>
-            <button class="btn btn-primary" onclick="filterItems('C')">C</button>
-            <!-- Add buttons for other letters (D, E, etc.) here -->
-            <button class="btn btn-primary" onclick="filterItems('Z')">Z</button>
-            <button class="btn btn-primary" onclick="showAllItems()">All</button>
-        </div>
+        <form method="GET">
+            @foreach (range('A', 'Z') as $letter)
+                <button type="submit" name="letter" value="{{ $letter }}" class="btn btn-primary">{{ $letter }}</button>
+            @endforeach
+            <button type="submit" name="letter" value="" class="btn btn-primary">All</button>
+        </form>
     </div>
 </div>
+
 
 
 
