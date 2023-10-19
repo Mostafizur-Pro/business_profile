@@ -29,7 +29,7 @@ Route::get('/', [HomeController::class, 'home_page']);
 // Route::get('/user_profile', [HomeController::class, 'user_profile']);
 // Route::get('/user_card', [HomeController::class, 'user_card']);
 // Route::get('/changePassword', [HomeController::class, 'change_password']);
-Route::get('/clients', [HomeController::class, 'client_list']);
+
 // Route::get('/employee_edit_profile', [HomeController::class, 'employee_edit_profile']);
 
 
@@ -96,6 +96,9 @@ Route::get('/clients', [HomeController::class, 'client_list']);
 
 
 Route::get('/about', [HomeController::class, 'about_page']);
+Route::get('/clients', [HomeController::class, 'client_list']);
+Route::get('/employeeList', [HomeController::class, 'employee_list']);
+Route::get('/newClientList', [HomeController::class, 'new_client_list']);
 
 
 

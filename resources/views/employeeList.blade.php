@@ -27,13 +27,13 @@
     @include('layouts/navbar1')
     @include('layouts/menubar')
     <!-- Cover Image -->
-    @section('coverTitle', 'Our Clients List')
+    @section('coverTitle', 'Our Employee List')
     @section('coverParagraph', 'Explore The Experiences and Feedback of Our Clients')
     @include('components/cover_image/cover')
     <!-- Cover Image -->
 
 
-    @include('components/ourClient/clientList')
+    @include('components/ourEmployee/employeeList')
 
 
 
