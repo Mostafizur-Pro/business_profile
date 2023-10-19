@@ -60,6 +60,6 @@
             </div>
         </div>
     </div>
-    <h6 class="text-center text-muted mb-0">&copy; Copyrights. All rights reserved. <a class="text-primary" href="https://businesseprofile.com/">businesseprofile.com/</a></h6>
+    
 </footer>
 
