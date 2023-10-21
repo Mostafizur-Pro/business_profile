@@ -59,18 +59,7 @@
                         <a class="dropdown-item" href="#">FAQ</a>
                     </div>
                 </li>
-                <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Pages
-                        </a>
-                        <div class="dropdown-menu mt-5" aria-labelledby="pagesDropdown">
-                            <a class="dropdown-item" href="{{url('/clients')}}">Our User</a>
-                            <a class="dropdown-item" href="{{url('/clients')}}">Our Client</a>
-                            <a class="dropdown-item" href="#">Our Employee</a>
-                            <a class="dropdown-item" href="#">Pricing</a>
-                            <a class="dropdown-item" href="#">FAQ</a>
-                        </div>
-                    </li> -->
+              
             </ul>
         </div>
     </nav>
