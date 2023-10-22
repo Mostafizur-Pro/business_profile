@@ -66,12 +66,12 @@
     float: right;
 }
 
-.login__submit:active,
+/* .login__submit:active,
 .login__submit:focus,
 .login__submit:hover {
 	border-color: #6A679E;
 	outline: none;
-}
+} */
 
 .button__icon {
 	font-size: 24px;

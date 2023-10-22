@@ -1,6 +1,7 @@
 <style>
     .dropdown-item {
-        z-index: 1000; /* Increase the z-index value as needed to ensure it's above other elements */
+        z-index: 1000;
+        /* Increase the z-index value as needed to ensure it's above other elements */
     }
 </style>
 
@@ -14,14 +15,21 @@
                 </a>
             </div>
         </div>
-        <div class="login-section">
-            <form action="{{url('/userLogin')}}" method="get" autocomplete="off">
-                <button class="button login__submit">
-                    <span class="button__text">Log In or Sign Up</span>
-                </button>
-            </form>
+        <div class="login-section mr-5">
+            <button class="button ">               
+                <div class="dropdown">
+                    <button class=" float-right mr-5 btn bg-white dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Login
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <a href="{{url('/userLogin')}}" class="dropdown-item" type="button">User Login</a>
+                        <a href="{{url('/empLogin')}}" class="dropdown-item" type="button">Employee Login</a>
+                        <!-- <a href="{{url('/admin')}}" class="dropdown-item" type="button">Admin</a> -->
+                    </div>
+                </div>
+            </button>
         </div>
     </div>
 
-   
+
 </div>
