@@ -21,6 +21,10 @@ class HomeController extends Controller
     {
         return view('about');
     }
+    public function price()
+    {
+        return view('price');
+    }
 
 
     // public function registration_page()

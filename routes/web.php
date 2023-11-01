@@ -99,6 +99,7 @@ Route::get('/about', [HomeController::class, 'about_page']);
 Route::get('/clients', [HomeController::class, 'client_list']);
 Route::get('/employeeList', [HomeController::class, 'employee_list']);
 Route::get('/newClientList', [HomeController::class, 'new_client_list']);
+Route::get('/price', [HomeController::class, 'price']);
 
 
 
