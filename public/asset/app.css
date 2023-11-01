@@ -152,6 +152,13 @@
 	min-height: 100vh;
 } */
 
+.bg-colorM{
+  background: linear-gradient(90deg, #5D54A4, #7C78B8);		
+}
+.bg-color1M{
+  background: linear-gradient(90deg, #2de261, #78b880);		
+}
+
 .screen {		
 	background: linear-gradient(90deg, #5D54A4, #7C78B8);		
 	position: relative;	

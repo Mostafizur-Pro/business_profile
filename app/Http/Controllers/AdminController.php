@@ -495,6 +495,7 @@ class AdminController extends Controller
     public function user_info_old(Request $request)
     {
         $perPage = $request->input('perPage', 10);
+   
         $search = $request->input('search');
 
         $query = DB::table('user_login_information')
@@ -509,6 +510,13 @@ class AdminController extends Controller
             });
 
         $userInfoOld = $query->paginate($perPage)->onEachSide(1)->withQueryString();
+
+        // if($userInfoOld){
+        //    Session::put('page', $userInfoOld->currentPage());
+        // }
+// $page=Session::has('page');
+        // dd($userInfoOld->currentPage());
+        // dd($page);
 
         return view('dashboard/admin/userInfoOld', compact('userInfoOld'));
     }
@@ -553,7 +561,7 @@ class AdminController extends Controller
         $result = DB::table('user_login_information')
             ->where('id', $id)
             ->update($updateData);
-
+dd($updateData);
 
         if ($result) {
             return redirect("/userInfoOld")->with('Success', 'Profile updated Successfully');

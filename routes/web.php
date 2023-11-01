@@ -99,6 +99,8 @@ Route::get('/about', [HomeController::class, 'about_page']);
 Route::get('/clients', [HomeController::class, 'client_list']);
 Route::get('/employeeList', [HomeController::class, 'employee_list']);
 Route::get('/newClientList', [HomeController::class, 'new_client_list']);
+Route::get('/price', [HomeController::class, 'price']);
+Route::get('/faq', [HomeController::class, 'faq']);
 
 
 
@@ -135,6 +137,9 @@ Route::get('/ad_edit_userInfo_profile/{id}', [AdminController::class, 'editUserI
 Route::put('/ad_updateUserInfo/{id}', [AdminController::class, 'update_UserInfo']);
 // Route::get('/edit_pendingUserInfo_profile/{id}', [AdminController::class, 'editUserInfoProfile'])->name('userInfoEditProfile');
 
+
+// Route::post('/ad_userInfo?perPage={id}&page={page}',  [AdminController::class, 'user_info']);
+
 // User Information Old
 Route::get('/userInfoOld', [AdminController::class, 'user_info_old'])->name('userInfoOld');
 Route::get('/edit_userInfoOld_profile/{id}', [AdminController::class, 'editUserInfoOldProfile'])->name('editUserInfoOldProfile');
@@ -161,6 +166,7 @@ Route::put('/updatePendingUserInfoProfile/{id}', [AdminController::class, 'updat
 // Admin Role
 Route::post('/makeSuperAdmin/{id}', [AdminController::class, 'makeSuperAdmin' ])->name('makeSuperAdmin');
 Route::post('/makeAdmin/{id}', [AdminController::class, 'makeAdmin' ])->name('makeAdmin');
+
 
 
 
@@ -223,3 +229,5 @@ Route::put('/updateUserInfoProfile/{id}', [UserController::class, 'update_user_P
 Route::get('/packageItem', function () {
     return view('dashboard/admin/package');
 });
+
+

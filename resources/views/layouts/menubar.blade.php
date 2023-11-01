@@ -55,8 +55,8 @@
                         <a class="dropdown-item" href="{{url('/newClientList')}}">Our New Client</a>
                         <a class="dropdown-item" href="{{url('/clients')}}">Our Client</a>
                         <a class="dropdown-item" href="{{url('/employeeList')}}">Our Employee</a>
-                        <a class="dropdown-item" href="#">Pricing</a>
-                        <a class="dropdown-item" href="#">FAQ</a>
+                        <a class="dropdown-item" href="{{url('/price')}}">Pricing</a>
+                        <a class="dropdown-item" href="{{url('/faq')}}">FAQ</a>
                     </div>
                 </li>
               
