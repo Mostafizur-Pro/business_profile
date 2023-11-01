@@ -33,7 +33,7 @@
 
 
 
-    @include('components/price/priceList')
+    @include('components/faq/faqList')
 
 
 
