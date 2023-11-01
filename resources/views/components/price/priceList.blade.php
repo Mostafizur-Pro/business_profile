@@ -12,7 +12,7 @@
                         <h4 class="my-0 font-weight-normal">Basic Plan</h4>
                     </div>
                     <div class="card-body">
-                        <h1 class="card-title pricing-card-title">$200 <small class="text-muted">/ month</small></h1>
+                        <h1 class="card-title pricing-card-title">৳200 <small class="text-muted">/ month</small></h1>
                         <ul class="list-unstyled">
                             <li>Basic features</li>
                         </ul>
@@ -36,7 +36,7 @@
                         <h4 class="my-0 font-weight-normal">Bronze Plan</h4>
                     </div>
                     <div class="card-body">
-                        <h1 class="card-title pricing-card-title">$400 <small class="text-muted">/ month</small></h1>
+                        <h1 class="card-title pricing-card-title">৳400 <small class="text-muted">/ month</small></h1>
                         <ul class="list-unstyled">
                             <li>Bronze features</li>
 
@@ -61,7 +61,7 @@
                         <h4 class="my-0 font-weight-normal">Silver Plan</h4>
                     </div>
                     <div class="card-body">
-                        <h1 class="card-title pricing-card-title">$600 <small class="text-muted">/ month</small></h1>
+                        <h1 class="card-title pricing-card-title">৳600 <small class="text-muted">/ month</small></h1>
                         <ul class="list-unstyled">
                             <li>Silver features</li>
 
@@ -86,7 +86,7 @@
                         <h4 class="my-0 font-weight-normal">Gold Plan</h4>
                     </div>
                     <div class="card-body">
-                        <h1 class="card-title pricing-card-title">$800 <small class="text-muted">/ month</small></h1>
+                        <h1 class="card-title pricing-card-title">৳800 <small class="text-muted">/ month</small></h1>
                         <ul class="list-unstyled">
                             <li>Gold features</li>
 
@@ -111,7 +111,7 @@
                         <h4 class="my-0 font-weight-normal">Platinum Plan</h4>
                     </div>
                     <div class="card-body">
-                        <h1 class="card-title pricing-card-title">$1000 <small class="text-muted">/ month</small></h1>
+                        <h1 class="card-title pricing-card-title">৳1000 <small class="text-muted">/ month</small></h1>
                         <ul class="list-unstyled">
                             <li>Platinum features</li>
 
