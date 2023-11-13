@@ -5,7 +5,7 @@
 
 <div>
 
-About Page
+Contact Page
 </div>
 
 @endsection
