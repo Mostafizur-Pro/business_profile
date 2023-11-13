@@ -5,7 +5,7 @@
 
 <div>
 
-About Page
+Service Page
 </div>
 
 @endsection

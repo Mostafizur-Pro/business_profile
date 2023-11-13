@@ -6,6 +6,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EditorController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +20,7 @@ use App\Http\Controllers\EmployeeController;
 |
 */
 
-Route::get('/', [HomeController::class, 'home_page']);
+
 // Route::get('/login', [HomeController::class, 'login_page']);
 // Route::get('/registration', [HomeController::class, 'registration_page']);
 // Route::get('/dashboard', [HomeController::class, 'user_dashboard']);
@@ -84,6 +86,13 @@ Route::get('/', [HomeController::class, 'home_page']);
 
 
 
+Route::get('/', [FrontendHomeController::class, 'home_page']);
+Route::get('/package', [FrontendHomeController::class, 'package_page']);
+Route::get('/service', [FrontendHomeController::class, 'service_page']);
+Route::get('/about', [FrontendHomeController::class, 'about_page']);
+Route::get('/contact', [FrontendHomeController::class, 'contact_page']);
+
+
 
 
 
@@ -95,12 +104,20 @@ Route::get('/', [HomeController::class, 'home_page']);
 
 
 
-Route::get('/about', [HomeController::class, 'about_page']);
-Route::get('/clients', [HomeController::class, 'client_list']);
-Route::get('/employeeList', [HomeController::class, 'employee_list']);
-Route::get('/newClientList', [HomeController::class, 'new_client_list']);
-Route::get('/price', [HomeController::class, 'price']);
-Route::get('/faq', [HomeController::class, 'faq']);
+// Route::get('/', [HomeController1::class, 'home_page']);
+
+// Route::get('/clients', [HomeController::class, 'client_list']);
+// Route::get('/employeeList', [HomeController::class, 'employee_list']);
+// Route::get('/newClientList', [HomeController::class, 'new_client_list']);
+// Route::get('/price', [HomeController::class, 'price']);
+// Route::get('/faq', [HomeController::class, 'faq']);
+
+
+
+
+
+
+
 
 
 

@@ -57,7 +57,7 @@
             <!-- Silver Plan -->
             <div class="col-md-4">
                 <div class="card mb-4 box-shadow">
-                    <div class="card-header bg-color1M text-white">
+                    <div class="card-header bg-colorM text-white">
                         <h4 class="my-0 font-weight-normal">Silver Plan</h4>
                     </div>
                     <div class="card-body">
@@ -74,7 +74,7 @@
                             <p>9 Standard Image</p>
                             <p>2 Standard Video</p>
                         </div>
-                        <button type="button" class="btn btn-lg btn-block bg-color1M btn-success">Select</button>
+                        <button type="button" class="btn btn-lg btn-block bg-colorM btn-success">Select</button>
                     </div>
                 </div>
             </div>

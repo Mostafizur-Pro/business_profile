@@ -5,7 +5,7 @@
 
 <div>
 
-About Page
+Package Page
 </div>
 
 @endsection
