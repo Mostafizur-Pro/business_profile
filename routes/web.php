@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EditorController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\frontend\CompaniesController;
 use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\frontend\MembersController;
 
@@ -98,6 +99,11 @@ Route::group(['prefix' => '/members', 'namespace' => 'members'], function () {
     Route::get('/our-clients', [MembersController::class, 'our_clients']);
     Route::get('/our-old-clients', [MembersController::class, 'our_old_clients']);
     Route::get('/our-employees', [MembersController::class, 'our_employees']); 
+});
+Route::group(['prefix' => '/companies', 'namespace' => 'companies'], function () {
+    Route::get('/country', [CompaniesController::class, 'country']);
+    Route::get('/product', [CompaniesController::class, 'product']);
+    
 });
 
 
