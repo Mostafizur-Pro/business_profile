@@ -4,10 +4,14 @@
 
 
 <div>
-@section('cover', 'Contact')     
-@include('components/cover')
 
-Contact Page
+    <!-- Cover Page -->
+    @section('cover', 'Contact')
+    @include('components/cover/cover')
+    <!-- Cover Page -->
+
+
+    Contact Page
 </div>
 
 @endsection

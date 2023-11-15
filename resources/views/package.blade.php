@@ -4,10 +4,14 @@
 
 
 <div>
-@section('cover', 'Package List')     
-@include('components/cover')
 
-@include('components/package/priceList')
+    <!-- Cover Page -->
+    @section('cover', 'Package Plan')
+    @include('components/cover/cover')
+    <!-- Cover Page -->
+
+    @include('components/package/packageList')
+
 </div>
 
 @endsection

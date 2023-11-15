@@ -4,13 +4,14 @@
 
 
 <div class="my-20">
-    <h1 class="text-5xl text-left font-extrabold my-10">Introduce Yourself to the World</h1>
-    <hr>
 
-    <div class="grid grid-cols-3 gap-10 my-5">
+    <h1 class="text-4xl text-center font-bold my-10">Video Section</h1>
+
+    <div class="grid grid-cols-3 gap-10">
         <div class="col-span-2 relative">
             <div class="video-overlay"></div>
-            <video class="w-full h-full rounded-lg" controls autoPlay muted>
+            <video class="w-full h-full rounded-lg" controls autoplay muted>
+
                 <source src="{{ asset('assets/video/kajkormo.mp4') }}" type="video/mp4" />
             </video>
         </div>
@@ -34,33 +35,35 @@
                 </div>
                 <div class=" swiper-slide">
                     <video className="h-full w-full rounded-lg" controls autoPlay muted>
-                    <source src="{{ asset('assets/video/kajkormo.mp4') }}" type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
 
-                </div>
-                <div class=" swiper-slide">
-                    <video className="h-full w-full rounded-lg" controls autoPlay muted>
-                    <source src="{{ asset('assets/video/kajkormo.mp4') }}" type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class=" swiper-slide">
-                    <video className="h-full w-full rounded-lg" controls autoPlay muted>
                         <source src="{{ asset('assets/video/kajkormo1.mp4') }}" type="video/mp4" />
+
+                        Your browser does not support the video tag.
+                    </video>
+
+                </div>
+                <div class=" swiper-slide">
+                    <video className="h-full w-full rounded-lg" controls autoPlay muted>
+
+                        <source src="{{ asset('assets/video/glambar.mp4') }}" type="video/mp4" />
+
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class=" swiper-slide">
+                    <video className="h-full w-full rounded-lg" controls autoPlay muted>
+
+                        <source src="{{ asset('assets/video/kajkormo.mp4') }}" type="video/mp4" />
+
                         Your browser does not support the video tag.
                     </video>
                 </div>
 
                 <div class=" swiper-slide">
                     <video className="h-full w-full rounded-lg" controls autoPlay muted>
-                    <source src="{{ asset('assets/video/kajkormo.mp4') }}" type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class=" swiper-slide">
-                    <video className="h-full w-full rounded-lg" controls autoPlay muted>
-                    <source src="{{ asset('assets/video/kajkormo.mp4') }}" type="video/mp4" />
+
+                        <source src="{{ asset('assets/video/kajkormo1.mp4') }}" type="video/mp4" />
+
                         Your browser does not support the video tag.
                     </video>
                 </div>

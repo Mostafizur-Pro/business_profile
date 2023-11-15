@@ -7,7 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\EditorController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
-
+use App\Http\Controllers\frontend\MembersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -94,24 +94,11 @@ Route::get('/contact', [FrontendHomeController::class, 'contact_page']);
 
 
 
-
-
-
-
-// Mostafizur -------------------------------------------------------------------------------
-// Mostafizur -------------------------------------------------------------------------------
-// Mostafizur -------------------------------------------------------------------------------
-
-
-
-// Route::get('/', [HomeController1::class, 'home_page']);
-
-// Route::get('/clients', [HomeController::class, 'client_list']);
-// Route::get('/employeeList', [HomeController::class, 'employee_list']);
-// Route::get('/newClientList', [HomeController::class, 'new_client_list']);
-// Route::get('/price', [HomeController::class, 'price']);
-// Route::get('/faq', [HomeController::class, 'faq']);
-
+Route::group(['prefix' => '/members', 'namespace' => 'members'], function () {
+    Route::get('/our-clients', [MembersController::class, 'our_clients']);
+    Route::get('/our-old-clients', [MembersController::class, 'our_old_clients']);
+    Route::get('/our-employees', [MembersController::class, 'our_employees']); 
+});
 
 
 
