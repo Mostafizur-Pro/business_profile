@@ -4,8 +4,10 @@
 
 
 <div>
+@section('cover', 'Package List')     
+@include('components/cover')
 
-Package Page
+@include('components/package/priceList')
 </div>
 
 @endsection

@@ -4,6 +4,8 @@
 
 
 <div>
+@section('cover', 'About Us')     
+@include('components/cover')
 
 About Page
 </div>

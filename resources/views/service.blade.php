@@ -3,9 +3,14 @@
 
 
 
-<div>
 
-Service Page
+<div>
+    @section('cover', 'Service')
+    @include('components/cover')
+
+    Service Page
+
+
 </div>
 
 @endsection

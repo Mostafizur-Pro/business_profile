@@ -4,6 +4,8 @@
 
 
 <div>
+@section('cover', 'Contact')     
+@include('components/cover')
 
 Contact Page
 </div>
