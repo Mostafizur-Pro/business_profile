@@ -5,7 +5,7 @@
 
 <div>
 
-Package Page
+@include('components/package/packageList')
 </div>
 
 @endsection

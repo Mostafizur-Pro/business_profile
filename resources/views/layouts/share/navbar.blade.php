@@ -1,5 +1,4 @@
 <style>
- 
     .header-links li span {
         position: relative;
         z-index: 0;
@@ -106,8 +105,8 @@
                         </svg>
                     </label>
                     <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-white rounded-box w-52 mt-4">
-                        <li><a>Country</a></li>
-                        <li><a>Product</a></li>
+                        <li><a href="{{url('/companies/country')}}">Country</a></li>
+                        <li><a href="{{url('/companies/product')}}">Product</a></li>
                     </ul>
                 </div>
             </li>
@@ -120,8 +119,9 @@
                         </svg>
                     </label>
                     <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-white rounded-box w-52 mt-4">
-                        <li><a>Our Clients</a></li>
-                        <li><a>Our Employees</a></li>
+                        <li><a href="{{url('/members/our-clients')}}">Our Clients</a></li>
+                        <li><a href="{{url('/members/our-old-clients')}}">Our Old Clients</a></li>
+                        <li><a href="{{url('/members/our-employees')}}">Our Employees</a></li>
                     </ul>
                 </div>
             </li>
