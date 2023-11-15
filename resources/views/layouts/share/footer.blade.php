@@ -1,4 +1,4 @@
-<footer class="footer mt-10 text-base-content">
+<footer class="footer mt-10 mx-5 text-base-content">
   <aside>
     <a href="" class="w-40  flex-shrink-0 flex items-center justify-start ">
       <img alt="logo" src="/assets/logo/logo.png" />

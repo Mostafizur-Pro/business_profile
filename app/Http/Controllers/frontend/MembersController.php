@@ -7,15 +7,18 @@ use Illuminate\Http\Request;
 
 class MembersController extends Controller
 {
-    public function our_clients(){
-        echo 'our  clients';
+    public function our_clients()
+    {
+        return view('layouts/members/ourClients');
     }
 
-    public function our_old_clients(){
-        echo 'our old clients';
+    public function our_old_clients()
+    {
+        return view('layouts/members/ourOldClients');
     }
 
-    public function our_employees(){
-        echo 'our oemployees';
+    public function our_employees()
+    {
+        return view('layouts/members/ourEmployee');
     }
 }

@@ -2,7 +2,7 @@
 	<div class="container mx-auto flex flex-col md:flex-row items-center ">
 		<div class="flex flex-col w-full lg:w-1/3 justify-center items-start py-8">
 
-			<h2 class="text-3xl md:text-5xl leading-relaxed md:leading-snug mb-2">@yield('cover', 'Default Title') </h2>
+			<h2 class="text-3xl md:text-5xl leading-relaxed md:leading-snug mb-2">@yield('coverText', 'Default Title') </h2>
 			<div class="my-4 text-lg text-white flex items-center gap-3">
 				<a class="flex gap-3 items-center" href="/">
 					<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
@@ -16,7 +16,9 @@
 
 					Home</a>
 				<a class="text-xl " href="#slide4">❯</a>
-				<p class="text-[#fcae04] font-bold"> @yield('cover', 'Default Title')</p>
+				<p>@yield('coverMenu', 'Default Title')</p>
+				<a class="text-xl " href="#slide4">❯</a>
+				<p class="text-[#fcae04] font-bold"> @yield('coverText', 'Default Title')</p>
 			</div>
 		</div>
 
