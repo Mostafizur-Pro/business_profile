@@ -10,8 +10,12 @@
     @include('components/cover/cover')
     <!-- Cover Page -->
 
+    @include('components/about/banner')
+    @include('components/about/ourTeam')
+    @include('components/about/logo')
+    @include('components/about/gallery')
 
-    About Page
+    
 </div>
 
 @endsection
