@@ -10,8 +10,11 @@
     @include('components/cover/cover')
     <!-- Cover Page -->
 
+    @include('components/contact/contactPage')
+    @include('components/contact/maps')
 
-    Contact Page
+
+
 </div>
 
 @endsection

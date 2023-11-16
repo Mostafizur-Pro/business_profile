@@ -35,28 +35,6 @@ class HomeController extends Controller
     }
 
 
-    // public function registration_page()
-    // {
-    //     return view('registration');
-    // }
-
-    // public function login_page()
-    // {
-    //     return view('login');
-    // }
-    // public function package()
-    // {
-    //     $package=DB::table('package_list')->get();
-    //     return view('UserPanel.package')->with(compact('package'));
-    // }
-    // public function signup()
-    // {
-    //     return view('employeeRegistration');
-    // }
-    // public function user_profile()
-    // {
-    //     return view('UserPanel.user_profile');
-    // }
     public function client_list(Request $request)
     {
         $perPage = $request->input('perPage', 10);
