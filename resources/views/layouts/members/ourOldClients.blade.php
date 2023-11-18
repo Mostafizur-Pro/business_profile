@@ -1,5 +1,6 @@
 @extends('layouts.app.app')
 @section('content')
+@section('title', 'Clients List')
 
 
 
