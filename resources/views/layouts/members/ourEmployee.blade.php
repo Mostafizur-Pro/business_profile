@@ -1,6 +1,6 @@
 @extends('layouts.app.app')
 @section('content')
-
+@section('title', 'Employees List')
 
 
 <div>

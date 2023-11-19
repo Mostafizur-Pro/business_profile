@@ -34,8 +34,6 @@
             </label>
             <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                 <li><a>Item 1</a></li>
-
-
                 <li>
                     <a>Parent</a>
                     <ul class="p-2">
@@ -52,8 +50,6 @@
                 <img class="w-48" src="/assets/logo/logo.png" alt="Business Profile">
             </a>
         </div>
-
-
     </div>
     <div class="navbar-end">
         <div class=" flex  items-center px-4 lg:px-6 xl:px-8">
@@ -94,9 +90,14 @@
                     <span>Package</span>
                 </a>
             </li>
-
-
             <li class="p-3 xl:p-6">
+                <a href="{{url('/package')}}">
+                    <button class="bg-black hover:bg-gray-700 text-white font-bold px-4 xl:px-6 py-2 xl:py-3 rounded">Room</button>
+                </a>
+            </li>
+
+
+            <!-- <li class="p-3 xl:p-6">
                 <div class="dropdown dropdown-start">
                     <label tabindex="0" class="flex items-center">
                         <span>Companies</span>
@@ -109,7 +110,7 @@
                         <li><a href="{{url('/companies/product')}}">Product</a></li>
                     </ul>
                 </div>
-            </li>
+            </li> -->
             <li class="p-3 xl:p-6">
                 <div class="dropdown dropdown-start">
                     <label tabindex="0" class="flex items-center">
@@ -122,6 +123,12 @@
                         <li><a href="{{url('/members/our-clients')}}">Our Clients</a></li>
                         <li><a href="{{url('/members/our-old-clients')}}">Our Old Clients</a></li>
                         <li><a href="{{url('/members/our-employees')}}">Our Employees</a></li>
+
+                        <li><a href="{{url('/members/our-clients')}}">Our Best Clients</a></li>
+                        <li><a href="{{url('/members/our-employees')}}">Our Best Employees</a></li>
+
+                        <li><a href="{{url('/companies/country')}}">Country</a></li>
+                        <li><a href="{{url('/companies/product')}}">Product</a></li>
                     </ul>
                 </div>
             </li>

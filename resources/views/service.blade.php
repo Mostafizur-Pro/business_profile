@@ -1,5 +1,6 @@
 @extends('layouts.app.app')
 @section('content')
+@section('title', 'Service')
 
 
 
@@ -12,6 +13,10 @@
     <!-- Cover Page -->
 
     Service Page
+
+
+
+    
 
 </div>
 
