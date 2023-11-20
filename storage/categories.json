@@ -1,0 +1,43 @@
+[
+    {
+        "category": "Vehicles",
+        "subcategories": [
+            {"name":"Cars & Trucks", "link":"vehicles/cars"},
+            {"name":"Motorbikes & Bicycles", "link":"vehicles/motorbikes"},
+            {"name":"Accessories", "link":"vehicles/accessories"},
+            {"name":"Rentals", "link":"vehicles/rentals"},
+            {"name":"Auto Service", "link":"vehicles/service"}
+               ]
+    },
+    {
+        "category": "Electronics",
+        "subcategories": [
+            {"name":"Mobiles & Tablets", "link":"electronics/mobiles"},
+            {"name":"Laptops & Desktop", "link":"electronics/laptops"},
+            {"name":"Accessories", "link":"electronics/accessories"},
+            {"name":"Audio & Sound Systems", "link":"electronics/audio"},
+            {"name":"Home Electronics", "link":"electronics/home"},
+            {"name":"TV & Video", "link":"electronics/tv"},
+            {"name":"Fridges & ACs", "link":"electronics/fridges"}
+        
+     
+        ]
+    },
+    
+    {
+        "category": "Fashion & Beauty",
+        "subcategories": [
+            {"name":"Mobiles & Tablets", "link":"fashion/mobiles"},
+            {"name":"Laptops & Desktop", "link":"fashion/laptops"},
+            {"name":"Accessories", "link":"fashion/accessories"},
+            {"name":"Audio & Sound Systems", "link":"fashion/audio"},
+            {"name":"Home Electronics", "link":"fashion/home"},
+            {"name":"TV & Video", "link":"fashion/tv"},
+            {"name":"Fridges & ACs", "link":"fashion/fridges"}
+        
+     
+        ]
+    }
+    
+]
+

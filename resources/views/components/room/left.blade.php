@@ -32,6 +32,61 @@
             <!-- <li><a>Item 1</a></li> -->
             <li>
                 <details open>
+                    <summary class="text-sm ">Category</summary>
+                    <div class="px-4 my-10 text-lg">
+                        <h1 class=" text-stone-500 my-1">All Category</h1>
+                        <ul class="text-lg">
+
+                            @foreach($categoriesList as $category)
+                            <li>
+                                <details close>
+                                    <summary>{{ $category['category'] }}</summary>
+                                    <ul class="text-blue-500">
+
+                                        @foreach($category['subcategories'] as $subcategory)
+                                        <p class="py-1"><a href="{{url($subcategory['link'])}}">{{ $subcategory['name'] }}</a></p>
+                                        @endforeach
+                                    </ul>
+                                </details>
+                            </li>
+                            @endforeach
+
+
+                            
+
+
+ <!-- <h1>Fashion & Beauty</h1>
+ <h1>Jewelry</h1>
+ <h1>Food & Beverage</h1>
+ <h1>Property</h1>
+ <h1>Pets & Animals</h1>
+ <h1>Sports</h1>
+ <h1>Business & Industry</h1>
+ <h1>Education</h1>
+ <h1>Agriculture</h1>
+ <h1>Service</h1>
+ <h1>Health & Medicine</h1>
+ <h1>Hotel & Restaurant</h1>
+ <h1>News & Media</h1>
+ <h1>Community & Organization</h1> -->
+
+
+
+
+
+                          
+                          
+                        </ul>
+                    </div>
+                </details>
+            </li>
+        </div>
+
+        <div class="hidden border-b border-dashed lg:block dark:border-neutral-700/70 border-neutral-200"></div>
+        <div class="menu text-lg">
+            <!-- <li><a>Item 1</a></li> -->
+            <li>
+                <details open>
                     <summary class="text-sm ">Location</summary>
                     <div class="px-4 my-10 text-lg">
                         <h1 class=" text-stone-500 my-1">All Bangladesh</h1>
@@ -44,15 +99,11 @@
                             <h1>Mymensingh Division</h1>
                             <h1>Sylhet Division</h1>
                         </div>
-
                     </div>
-                  
-
-
                 </details>
             </li>
-          
         </div>
+
         <div class="hidden border-b border-dashed lg:block dark:border-neutral-700/70 border-neutral-200"></div>
 
         <div class="relative pl-3 my-5 overflow-y-scroll">
