@@ -1,0 +1,339 @@
+[
+    {
+        "category": "Dhaka Division",
+        "subcategories": [
+            {
+                "name": "Dhaka",
+                "link": "dhaka-division/dhaka",
+                "area": [
+                    {
+                        "name": "Mirpur",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Uttara",
+                        "link": "dhaka-division/dhaka/uttara"
+                    },
+                    {
+                        "name": "Savar",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Mohammadpur",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Jatrabari",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Gulshan",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Dhanmondi",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Basundhara",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Badda",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Baridhara",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Khaligaon",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Elephant Road",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Rampura",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Keraniganj",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Tongi",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Banani",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Malibag",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Basabo",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Tejgaon",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Lalbag",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Demra",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Kamrangirchar",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Motijheel",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Khilkhet",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Banglamotor",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Purbachal",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Mogbazar",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Sutrapur",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Banasree",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Farmgate",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Mohakhali",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Wari",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Paltan",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Cantonment",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Bangshal",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "New Market",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Shyamoli",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Aftab Nagar",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Hazaribagh",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Ramna",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Chaukbazar",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Bashundhara City",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "ECB Chattar",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Dhamrai",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Shantinagar",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Kafrul",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Mawa Highway",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Kotwali",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Basila",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Nawabganj",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Dohar",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Mirpur",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    }
+                ]
+            },
+            {
+                "name": "Gazipur",
+                "link": "dhaka-division/gazipur"               
+            },
+            {
+                "name": "Narayanganj",
+                "link": "dhaka-division/narayanganj"               
+            },
+            {
+                "name": "Tangail",
+                "link": "dhaka-division/tangail"               
+            },
+            {
+                "name": "Narsingdi",
+                "link": "dhaka-division/narsingdi"               
+            },
+            {
+                "name": "Faridpur",
+                "link": "dhaka-division/faridpur"               
+            },
+            {
+                "name": "Gopalgonj",
+                "link": "dhaka-division/gopalgonj"               
+            },
+            {
+                "name": "Madaripur",
+                "link": "dhaka-division/madaripur"               
+            },
+            {
+                "name": "Rajbari",
+                "link": "dhaka-division/rajbari"               
+            },
+            {
+                "name": "Manikganj",
+                "link": "dhaka-division/manikganj"               
+            },
+            {
+                "name": "Munshiganj",
+                "link": "dhaka-division/munshiganj"               
+            },
+            {
+                "name": "Shariatpur",
+                "link": "dhaka-division/shariatpur"               
+            },
+            {
+                "name": "Kishoreganj",
+                "link": "dhaka-division/kishoreganj"               
+            }
+        ]
+    },
+    {
+        "category": "Electronics",
+        "subcategories": [
+            {
+                "name": "Mobiles & Tablets",
+                "link": "electronics/mobiles"
+            },
+            {
+                "name": "Laptops & Desktop",
+                "link": "electronics/laptops"
+            },
+            {
+                "name": "Accessories",
+                "link": "electronics/accessories"
+            },
+            {
+                "name": "Audio & Sound Systems",
+                "link": "electronics/audio"
+            },
+            {
+                "name": "Home Electronics",
+                "link": "electronics/home"
+            },
+            {
+                "name": "TV & Video",
+                "link": "electronics/tv"
+            },
+            {
+                "name": "Fridges & ACs",
+                "link": "electronics/fridges"
+            }
+        ]
+    },
+    {
+        "category": "Fashion & Beauty",
+        "subcategories": [
+            {
+                "name": "Mobiles & Tablets",
+                "link": "fashion/mobiles"
+            },
+            {
+                "name": "Laptops & Desktop",
+                "link": "fashion/laptops"
+            },
+            {
+                "name": "Accessories",
+                "link": "fashion/accessories"
+            },
+            {
+                "name": "Audio & Sound Systems",
+                "link": "fashion/audio"
+            },
+            {
+                "name": "Home Electronics",
+                "link": "fashion/home"
+            },
+            {
+                "name": "TV & Video",
+                "link": "fashion/tv"
+            },
+            {
+                "name": "Fridges & ACs",
+                "link": "fashion/fridges"
+            }
+        ]
+    }
+]

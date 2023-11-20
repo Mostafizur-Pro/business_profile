@@ -28,12 +28,30 @@
 
         <div class="hidden border-b border-dashed lg:block dark:border-neutral-700/70 border-neutral-200"></div>
 
+
+
+        <form class="mx-5 my-10">
+            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+            <div class="relative">
+                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                </div>
+                <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required>
+                <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+            </div>
+        </form>
+
+
+        <!-- <div class="hidden border-b border-dashed lg:block dark:border-neutral-700/70 border-neutral-200"></div> -->
+
         <div class="menu text-lg">
             <!-- <li><a>Item 1</a></li> -->
             <li>
                 <details open>
                     <summary class="text-sm ">Category</summary>
-                    <div class="px-4 my-10 text-lg">
+                    <div class="px-4 my-5 text-lg">
                         <h1 class=" text-stone-500 my-1">All Category</h1>
                         <ul class="text-lg">
 
@@ -50,32 +68,6 @@
                                 </details>
                             </li>
                             @endforeach
-
-
-                            
-
-
- <!-- <h1>Fashion & Beauty</h1>
- <h1>Jewelry</h1>
- <h1>Food & Beverage</h1>
- <h1>Property</h1>
- <h1>Pets & Animals</h1>
- <h1>Sports</h1>
- <h1>Business & Industry</h1>
- <h1>Education</h1>
- <h1>Agriculture</h1>
- <h1>Service</h1>
- <h1>Health & Medicine</h1>
- <h1>Hotel & Restaurant</h1>
- <h1>News & Media</h1>
- <h1>Community & Organization</h1> -->
-
-
-
-
-
-                          
-                          
                         </ul>
                     </div>
                 </details>
@@ -106,68 +98,22 @@
 
         <div class="hidden border-b border-dashed lg:block dark:border-neutral-700/70 border-neutral-200"></div>
 
-        <div class="relative pl-3 my-5 overflow-y-scroll">
-            <div class="flex flex-col w-full font-medium">
 
-                <!-- menu item -->
-                <div>
-                    <span class="select-none flex items-center px-4 py-[.775rem] cursor-pointer my-[.4rem] rounded-[.95rem]">
-                        <a href="javascript:;" class="flex items-center flex-grow text-[1.15rem] dark:text-neutral-400/75 text-stone-500 hover:text-dark">Sales</a>
-                    </span>
-                </div>
-
-
-                <!-- menu item -->
-                <div>
-                    <span class="select-none flex items-center px-4 py-[.775rem] cursor-pointer my-[.4rem] rounded-[.95rem]">
-                        <a href="javascript:;" class="flex items-center flex-grow text-[1.15rem] dark:text-neutral-400/75 text-stone-500 hover:text-dark">Profile</a>
-                    </span>
-                </div>
-
-                <!-- menu item -->
-                <div>
-                    <span class="select-none flex items-center px-4 py-[.775rem] cursor-pointer my-[.4rem] rounded-[.95rem]">
-                        <a href="javascript:;" class="flex items-center flex-grow text-[1.15rem] dark:text-neutral-400/75 text-stone-500 hover:text-dark">Settings</a>
-                    </span>
-                </div>
-
-                <!-- menu item -->
-                <div class="block pt-5 pb-[.15rem]">
-                    <div class="px-4 py-[.65rem]">
-                        <span class="font-semibold text-[0.95rem] uppercase dark:text-neutral-500/80 text-secondary-dark">Applications</span>
-                    </div>
-                </div>
-
-                <!-- menu item -->
-                <div>
-                    <span class="select-none flex items-center px-4 py-[.775rem] cursor-pointer my-[.4rem] rounded-[.95rem]">
-                        <a href="javascript:;" class="flex items-center flex-grow text-[1.15rem] dark:text-neutral-400/75 text-stone-500 hover:text-dark">Users</a>
-                    </span>
-                </div>
-
-
-                <!-- menu item -->
-                <div>
-                    <span class="select-none flex items-center px-4 py-[.775rem] cursor-pointer my-[.4rem] rounded-[.95rem]">
-                        <a href="javascript:;" class="flex items-center flex-grow text-[1.15rem] dark:text-neutral-400/75 text-stone-500 hover:text-dark">Orders</a>
-                    </span>
-                </div>
-
-                <!-- menu item -->
-                <div>
-                    <span class="select-none flex items-center px-4 py-[.775rem] cursor-pointer my-[.4rem] rounded-[.95rem]">
-                        <a href="javascript:;" class="flex items-center flex-grow text-[1.15rem] dark:text-neutral-400/75 text-stone-500 hover:text-dark">Track Order</a>
-                    </span>
-                </div>
-
-                <!-- menu item -->
-                <div>
-                    <span class="select-none flex items-center px-4 py-[.775rem] cursor-pointer my-[.4rem] rounded-[.95rem]">
-                        <a href="javascript:;" class="flex items-center flex-grow text-[1.15rem] dark:text-neutral-400/75 text-stone-500 hover:text-dark">Products</a>
-                    </span>
-                </div>
-
-            </div>
-        </div>
     </aside>
 </div>
+
+
+                            <!-- <h1>Fashion & Beauty</h1>
+ <h1>Jewelry</h1>
+ <h1>Food & Beverage</h1>
+ <h1>Property</h1>
+ <h1>Pets & Animals</h1>
+ <h1>Sports</h1>
+ <h1>Business & Industry</h1>
+ <h1>Education</h1>
+ <h1>Agriculture</h1>
+ <h1>Service</h1>
+ <h1>Health & Medicine</h1>
+ <h1>Hotel & Restaurant</h1>
+ <h1>News & Media</h1>
+ <h1>Community & Organization</h1> -->
