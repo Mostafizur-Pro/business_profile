@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EditorController;
 use App\Http\Controllers\EmployeeController;
@@ -92,6 +94,11 @@ Route::get('/package', [FrontendHomeController::class, 'package_page']);
 Route::get('/service', [FrontendHomeController::class, 'service_page']);
 Route::get('/about', [FrontendHomeController::class, 'about_page']);
 Route::get('/contact', [FrontendHomeController::class, 'contact_page']);
+Route::get('/room', [FrontendHomeController::class, 'room_page']);
+
+Route::get('/login', [LoginController::class, 'login_page']);
+Route::post('/login', [LoginController::class, 'login']);
+Route::get('/register', [RegisterController::class, 'register_page']);
 
 
 
@@ -100,6 +107,7 @@ Route::group(['prefix' => '/members', 'namespace' => 'members'], function () {
     Route::get('/our-old-clients', [MembersController::class, 'our_old_clients']);
     Route::get('/our-employees', [MembersController::class, 'our_employees']); 
 });
+
 Route::group(['prefix' => '/companies', 'namespace' => 'companies'], function () {
     Route::get('/country', [CompaniesController::class, 'country']);
     Route::get('/product', [CompaniesController::class, 'product']);
@@ -215,11 +223,11 @@ Route::get('/userInfo_emp', [EmployeeController::class, 'user_info'])->name('use
 // ---------- User Route ----------
 
 // Login
-Route::get('/userLogin', [UserController::class, 'user_login'])->name('userLogin');
-Route::post('/userLogin', [UserController::class, 'login_user']);
+// Route::get('/userLogin', [UserController::class, 'user_login'])->name('userLogin');
+// Route::post('/userLogin', [UserController::class, 'login_user']);
 
 // Register
-Route::get('/userRegister', [UserController::class, 'user_register'])->name('userRegister');
+// Route::get('/userRegister', [UserController::class, 'user_register'])->name('userRegister');
 Route::post('/registerUser', [UserController::class, 'register_user'])->name('registerUser');
 
 // Logout
@@ -229,9 +237,7 @@ Route::get('/userLogout', [UserController::class, 'logout']);
 Route::get('/userDashboard', [UserController::class, 'user_dashboard'])->name('userDashboard');
 Route::get('/edit_userInfo_profile/{id}', [UserController::class, 'editUserProfile'])->name('editUserProfile');
 Route::put('/updateUserInfoProfile/{id}', [UserController::class, 'update_user_Profile'])->name('updateUserInfoProfile');
-// Route::get('/userRegister', function () {
-//     return view('auth/user_register');
-// });
+
 
 
 

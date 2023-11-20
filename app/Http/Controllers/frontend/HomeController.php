@@ -30,4 +30,8 @@ class HomeController extends Controller
     {
         return view('contact');
     }
+    public function room_page()
+    {
+        return view('room/room');
+    }
 }
