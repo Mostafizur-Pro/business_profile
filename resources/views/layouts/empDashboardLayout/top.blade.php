@@ -95,7 +95,7 @@
                         </li>
                     </ul>
                 </li>
-                <li><a>LOGOUT</a></li>
+                <li><a href="{{url('/empLogout')}}">LOGOUT</a></li>
             </ul>
         </div>
         <a href="/" class=" normal-case text-xl">

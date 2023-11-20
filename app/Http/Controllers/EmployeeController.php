@@ -109,7 +109,7 @@ class EmployeeController extends Controller
     public function logout()
     {
         Session::flush();
-        return redirect('empLogin');
+        return redirect('login');
     }
 
 
@@ -181,7 +181,7 @@ class EmployeeController extends Controller
         $userId = Session::get('empId');
         $empUser = DB::table('employee_info')->find($userId);
 
-     
+
         // dd($empUser->emp_id);
 
         if ($userInfo->emp_id !== $empUser->emp_id) {
@@ -206,7 +206,7 @@ class EmployeeController extends Controller
             return redirect("/edit_user_profile/$id")->with('Fail', 'Record not found');
         }
 
-        
+
 
 
         if ($request->hasFile('owner_image')) {
