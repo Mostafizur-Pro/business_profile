@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,9 @@
 <body>
 
 
-<div class="grid grid-cols-3 lg:grid-cols-4 gap-10">
+@include('layouts/share/roomNavbar')
+
+<div class="grid grid-cols-3 lg:grid-cols-4 gap-10 mt-10">
     <div class="col-span-1 lg:col-span-1">
         @include('components/room/left')
     </div>

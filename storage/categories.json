@@ -2,182 +2,415 @@
     {
         "category": "Vehicles",
         "subcategories": [
-            {"name":"Cars & Trucks", "link":"vehicles/cars"},
-            {"name":"Motorbikes & Bicycles", "link":"vehicles/motorbikes"},
-            {"name":"Accessories", "link":"vehicles/accessories"},
-            {"name":"Rentals", "link":"vehicles/rentals"},
-            {"name":"Auto Service", "link":"vehicles/service"}
-               ]
+            {
+                "name": "Cars & Trucks",
+                "link": "vehicles/cars"
+            },
+            {
+                "name": "Motorbikes & Bicycles",
+                "link": "vehicles/motorbikes"
+            },
+            {
+                "name": "Accessories",
+                "link": "vehicles/accessories"
+            },
+            {
+                "name": "Rentals",
+                "link": "vehicles/rentals"
+            },
+            {
+                "name": "Auto Service",
+                "link": "vehicles/service"
+            }
+        ]
     },
     {
         "category": "Electronics",
         "subcategories": [
-            {"name":"Mobiles & Tablets", "link":"electronics/mobiles"},
-            {"name":"Laptops & Desktop", "link":"electronics/laptops"},
-            {"name":"Accessories", "link":"electronics/accessories"},
-            {"name":"Audio & Sound Systems", "link":"electronics/audio"},
-            {"name":"Home Electronics", "link":"electronics/home"},
-            {"name":"TV & Video", "link":"electronics/tv"},
-            {"name":"Fridges & ACs", "link":"electronics/fridges"}
-        
-     
+            {
+                "name": "Mobiles & Tablets",
+                "link": "electronics/mobiles"
+            },
+            {
+                "name": "Laptops & Desktop",
+                "link": "electronics/laptops"
+            },
+            {
+                "name": "Accessories",
+                "link": "electronics/accessories"
+            },
+            {
+                "name": "Audio & Sound Systems",
+                "link": "electronics/audio"
+            },
+            {
+                "name": "Home Electronics",
+                "link": "electronics/home"
+            },
+            {
+                "name": "TV & Video",
+                "link": "electronics/tv"
+            },
+            {
+                "name": "Fridges & ACs",
+                "link": "electronics/fridges"
+            }
         ]
     },
-    
     {
         "category": " Mens & ",
         "subcategories": [
-            {"name":"Shirt & T-shirt", "link":"fashion-Beauty/shirt"},
-            {"name":"Pant & Joggers", "link":"fashion-Beauty/Pant"},
-            {"name":"Jacket & coat", "link":"fashion-Beauty/jacket"},
-            {"name":"Baby Cloth", "link":"fashion-Beauty/Cloth"},
-            {"name":"Footware", "link":"fashion-Beauty/footware"},
-            {"name":"Watch & Accessories", "link":"fashion-Beauty/accesories"}
-        
-     
+            {
+                "name": "Shirt & T-shirt",
+                "link": "fashion-Beauty/shirt"
+            },
+            {
+                "name": "Pant & Joggers",
+                "link": "fashion-Beauty/Pant"
+            },
+            {
+                "name": "Jacket & coat",
+                "link": "fashion-Beauty/jacket"
+            },
+            {
+                "name": "Baby Cloth",
+                "link": "fashion-Beauty/Cloth"
+            },
+            {
+                "name": "Footware",
+                "link": "fashion-Beauty/footware"
+            },
+            {
+                "name": "Watch & Accessories",
+                "link": "fashion-Beauty/accesories"
+            }
         ]
     },
     {
         "category": "women & Beauty",
         "subcategories": [
-            {"name":"Taditional Cloth", "link":"women-Beauty/cloth"},
-            {"name":"Beauty & Parsonal care", "link":"women-Beauty/parsonal-care"},
-            {"name":"Jwellery & Watch", "link":"women-Beauty/Jwellary"},
-            {"name":"Baby Girl's Fashion", "link":"women-Beauty/baby-care"},
-            {"name":"Footware", "link":"women-Beauty/footware"},
-            {"name":"Sari", "link":"fashion-Beauty/saree"}
-        
-     
+            {
+                "name": "Taditional Cloth",
+                "link": "women-Beauty/cloth"
+            },
+            {
+                "name": "Beauty & Parsonal care",
+                "link": "women-Beauty/parsonal-care"
+            },
+            {
+                "name": "Jwellery & Watch",
+                "link": "women-Beauty/Jwellary"
+            },
+            {
+                "name": "Baby Girl's Fashion",
+                "link": "women-Beauty/baby-care"
+            },
+            {
+                "name": "Footware",
+                "link": "women-Beauty/footware"
+            },
+            {
+                "name": "Sari",
+                "link": "fashion-Beauty/saree"
+            }
         ]
     },
-
     {
         "category": "Food & Beverage",
         "subcategories": [
-            {"name":"Taditional Food", "link":"food-bevarage/food"},
-            {"name":"Fruits & Vegitable", "link":"food-beverage/fruits-Vagitable"},
-            {"name":"Meat & Fish", "link":"food-beverage/Meat-fish"},
-            {"name":"Sweets & Dessert", "link":"food-beverage/sweets-dessert"},
-            {"name":"Drinks", "link":"food-beverage/drinks_item"}
-        
-     
+            {
+                "name": "Taditional Food",
+                "link": "food-bevarage/food"
+            },
+            {
+                "name": "Fruits & Vegitable",
+                "link": "food-beverage/fruits-Vagitable"
+            },
+            {
+                "name": "Meat & Fish",
+                "link": "food-beverage/Meat-fish"
+            },
+            {
+                "name": "Sweets & Dessert",
+                "link": "food-beverage/sweets-dessert"
+            },
+            {
+                "name": "Drinks",
+                "link": "food-beverage/drinks_item"
+            }
         ]
     },
-    
-    
     {
         "category": "Pets & Animals",
         "subcategories": [
-            {"name":"Pets", "link":"pets-animal/mobilephone"},
-            {"name":"Farm Animals", "link":"pets-animal/farm-animals"},
-            {"name":"Animals Food", "link":"pets-animal/animals-food"},
-            {"name":"Animals Accessories", "link":"pets-animal/animal-accessoris"}
+            {
+                "name": "Pets",
+                "link": "pets-animal/mobilephone"
+            },
+            {
+                "name": "Farm Animals",
+                "link": "pets-animal/farm-animals"
+            },
+            {
+                "name": "Animals Food",
+                "link": "pets-animal/animals-food"
+            },
+            {
+                "name": "Animals Accessories",
+                "link": "pets-animal/animal-accessoris"
+            }
         ]
     },
     {
         "category": "Home Decor",
         "subcategories": [
-            {"name":"Kitchen Decor", "link":"home-decor/kitchen-Decor"},
-            {"name":"Living Room Decor", "link":"home-decor/livingroom-Decor"},
-            {"name":"Dining room Decor", "link":"home-decor/diningroom-Decor"},
-            {"name":"Bedroom Decor", "link":"home-decor/bedroom-Decor"},
-            {"name":"Garden Decor", "link":"home-decor/gardern-Decor"}
-            ]
-
+            {
+                "name": "Kitchen Decor",
+                "link": "home-decor/kitchen-Decor"
             },
             {
-                "category": "Business & industry",
-                "subcategories": [
-                    {"name":"Machine & tools", "link":"business-industry/machine-tools"},
-                    {"name":"Office Supplies", "link":"business-industry/office-supplies"},
-            {"name":"Madical Equipment ","link":"business-industry/madical-equipment"}
-                ]
-
+                "name": "Living Room Decor",
+                "link": "home-decor/livingroom-Decor"
             },
             {
-                "category": "Education",
-                "subcategories": [
-                    {"name":"Books", "link":"education/books"},
-                    {"name":"School Supplies", "link":"education/school-supplies"},
-                    {"name":"Courses", "link":"education/courses"},
-                    {"name":"Online Courses ", "link":"education/online-course"}
-                    ]
-
+                "name": "Dining room Decor",
+                "link": "home-decor/diningroom-Decor"
             },
-
-             {
-                "category": "Health & Beauty",
-                "subcategories": [
-                    {"name":"Skin Care", "link":"health-beauty/skin-care"},
-                    {"name":"Hair care", "link":"health-beauty/hair-care"},
-                    {"name":"Makeup", "link":"health-beauty/makeup"},
-                    {"name":"Perfumes", "link":"health-beauty/perfume"},
-                    {"name":"Beauty Tools", "link":"health-beauty/beauty-tool"},
-                    {"name":"Natural Products", "link":"health-beauty/natural-products"},
-                    {"name":"Personal Care", "link":"health-beauty/personal-care"},
-                    {"name":"Vitamins and supplements", "link":"health-beauty/vitamin-and-supplements"},
-                    {"name":"Yoga & Fitness", "link":"health-beauty/yoga-fitness"}
-                ]
+            {
+                "name": "Bedroom Decor",
+                "link": "home-decor/bedroom-Decor"
             },
-
-                {
-                    "category": "Hotel & Resturent",
-                    "subcategories": [
-                        {"name":"Restaurant", "link":"hotel-resturant/restaurant"},
-                        {"name":"Bar", "link":"hotel-resturant/bar"},
-                        {"name":"Cafe", "link":"hotel-resturant/cafe"},
-                        {"name":"Parking", "link":"hotel-resturant/parking"},
-                        {"name":"Room Service", "link":"hotel-resturant/room-service"},
-                        {"name":"Laundary", "link":"hotel-resturant/laundary"},
-                        {"name":"Tourist Information Center", "link":"hotel-resturant/tourist-information-center"}
-                    ]
-                },
-
-                {
-                    "category":"Sports",
-                    "subcategories":[
-                        {"name":"Basketball", "link":"sport/basketball"},
-                        {"name":"Cricket", "link":"sport/cricket"},
-                        {"name":"Football", "link":"sport/football"},
-                        {"name":"Golf", "link":"sport/golf"},
-                        {"name":"Tennis", "link":"sport/tennis"},
-                        {"name":"Volley Ball", "link":"sport/volley-ball"}
-                    ]
-
-                },
-
-                {
-                    "category":"service",
-                    "subcategories":[
-                        {"name":"Tourist Information Center", "link":"service/tourist-information-center"},
-                        {"name":"Travel Agency", "link":"service/travel-agency"},
-                        {"name":"Transportation Services", "link":"service/transportation-services"},
-                        {"name":"Car Rental", "link":"service/car-rental"},
-                        {"name":"Bike Rentals", "link":"service/bike-rentals"},
-                        {"name":"Bus Ticket", "link":"service/bus-tickets"},
-                        {"name":"Flight Bookings", "link":"service/flight-bookings"},
-                        {"name":"Event Organization", "link":"service/event-organizations"},
-                        {"name":"Membership", "link":"service/membership"},
-                        {"name":"Taxi Services", "link":"service/taxi-services"},
-                        {"name":"Visa Services", "link":"service/visa-services"},
-                        {"name":"Airport Transfer", "link":"service/airport-transfer"},
-                        {"name":"Tours & Sightseeing", "link":"service/tours-sightseeing"}
-                    ]
-
-                },
-
-                {
-                    "category":"News & Meadia",
-                    "subcategories":[
-                        {"name":"Newspaper", "link":"news-media/newspapers"},
-                        {"name":"Magazine", "link":"news-media/magazines"},
-                        {"name":"Radio Station", "link":"news-media/radio-station"},
-                        {"name":"TV Channel", "link":"news-media/tv-channel"},
-                        {"name":"Online News Portal", "link":"news-media/online-news-portal"},
-                        {"name":"Press Release", "link":"news-media/press-release"}
-                    ]
-                }
-        
-
+            {
+                "name": "Garden Decor",
+                "link": "home-decor/gardern-Decor"
+            }
+        ]
+    },
+    {
+        "category": "Business & industry",
+        "subcategories": [
+            {
+                "name": "Machine & tools",
+                "link": "business-industry/machine-tools"
+            },
+            {
+                "name": "Office Supplies",
+                "link": "business-industry/office-supplies"
+            },
+            {
+                "name": "Madical Equipment ",
+                "link": "business-industry/madical-equipment"
+            }
+        ]
+    },
+    {
+        "category": "Education",
+        "subcategories": [
+            {
+                "name": "Books",
+                "link": "education/books"
+            },
+            {
+                "name": "School Supplies",
+                "link": "education/school-supplies"
+            },
+            {
+                "name": "Courses",
+                "link": "education/courses"
+            },
+            {
+                "name": "Online Courses ",
+                "link": "education/online-course"
+            }
+        ]
+    },
+    {
+        "category": "Health & Beauty",
+        "subcategories": [
+            {
+                "name": "Skin Care",
+                "link": "health-beauty/skin-care"
+            },
+            {
+                "name": "Hair care",
+                "link": "health-beauty/hair-care"
+            },
+            {
+                "name": "Makeup",
+                "link": "health-beauty/makeup"
+            },
+            {
+                "name": "Perfumes",
+                "link": "health-beauty/perfume"
+            },
+            {
+                "name": "Beauty Tools",
+                "link": "health-beauty/beauty-tool"
+            },
+            {
+                "name": "Natural Products",
+                "link": "health-beauty/natural-products"
+            },
+            {
+                "name": "Personal Care",
+                "link": "health-beauty/personal-care"
+            },
+            {
+                "name": "Vitamins and supplements",
+                "link": "health-beauty/vitamin-and-supplements"
+            },
+            {
+                "name": "Yoga & Fitness",
+                "link": "health-beauty/yoga-fitness"
+            }
+        ]
+    },
+    {
+        "category": "Hotel & Resturent",
+        "subcategories": [
+            {
+                "name": "Restaurant",
+                "link": "hotel-resturant/restaurant"
+            },
+            {
+                "name": "Bar",
+                "link": "hotel-resturant/bar"
+            },
+            {
+                "name": "Cafe",
+                "link": "hotel-resturant/cafe"
+            },
+            {
+                "name": "Parking",
+                "link": "hotel-resturant/parking"
+            },
+            {
+                "name": "Room Service",
+                "link": "hotel-resturant/room-service"
+            },
+            {
+                "name": "Laundary",
+                "link": "hotel-resturant/laundary"
+            },
+            {
+                "name": "Tourist Information Center",
+                "link": "hotel-resturant/tourist-information-center"
+            }
+        ]
+    },
+    {
+        "category": "Sports",
+        "subcategories": [
+            {
+                "name": "Basketball",
+                "link": "sport/basketball"
+            },
+            {
+                "name": "Cricket",
+                "link": "sport/cricket"
+            },
+            {
+                "name": "Football",
+                "link": "sport/football"
+            },
+            {
+                "name": "Golf",
+                "link": "sport/golf"
+            },
+            {
+                "name": "Tennis",
+                "link": "sport/tennis"
+            },
+            {
+                "name": "Volley Ball",
+                "link": "sport/volley-ball"
+            }
+        ]
+    },
+    {
+        "category": "service",
+        "subcategories": [
+            {
+                "name": "Tourist Information Center",
+                "link": "service/tourist-information-center"
+            },
+            {
+                "name": "Travel Agency",
+                "link": "service/travel-agency"
+            },
+            {
+                "name": "Transportation Services",
+                "link": "service/transportation-services"
+            },
+            {
+                "name": "Car Rental",
+                "link": "service/car-rental"
+            },
+            {
+                "name": "Bike Rentals",
+                "link": "service/bike-rentals"
+            },
+            {
+                "name": "Bus Ticket",
+                "link": "service/bus-tickets"
+            },
+            {
+                "name": "Flight Bookings",
+                "link": "service/flight-bookings"
+            },
+            {
+                "name": "Event Organization",
+                "link": "service/event-organizations"
+            },
+            {
+                "name": "Membership",
+                "link": "service/membership"
+            },
+            {
+                "name": "Taxi Services",
+                "link": "service/taxi-services"
+            },
+            {
+                "name": "Visa Services",
+                "link": "service/visa-services"
+            },
+            {
+                "name": "Airport Transfer",
+                "link": "service/airport-transfer"
+            },
+            {
+                "name": "Tours & Sightseeing",
+                "link": "service/tours-sightseeing"
+            }
+        ]
+    },
+    {
+        "category": "News & Meadia",
+        "subcategories": [
+            {
+                "name": "Newspaper",
+                "link": "news-media/newspapers"
+            },
+            {
+                "name": "Magazine",
+                "link": "news-media/magazines"
+            },
+            {
+                "name": "Radio Station",
+                "link": "news-media/radio-station"
+            },
+            {
+                "name": "TV Channel",
+                "link": "news-media/tv-channel"
+            },
+            {
+                "name": "Online News Portal",
+                "link": "news-media/online-news-portal"
+            },
+            {
+                "name": "Press Release",
+                "link": "news-media/press-release"
+            }
+        ]
+    }
 ]
-
