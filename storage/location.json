@@ -1,7 +1,7 @@
 [
     {
-        "category": "Dhaka Division",
-        "subcategories": [
+        "location": "Dhaka Division",
+        "place": [
             {
                 "name": "Dhaka",
                 "link": "dhaka-division/dhaka",
@@ -222,76 +222,109 @@
             },
             {
                 "name": "Gazipur",
-                "link": "dhaka-division/gazipur"               
+                "link": "dhaka-division/gazipur"
             },
             {
                 "name": "Narayanganj",
-                "link": "dhaka-division/narayanganj"               
+                "link": "dhaka-division/narayanganj"
             },
             {
                 "name": "Tangail",
-                "link": "dhaka-division/tangail"               
+                "link": "dhaka-division/tangail"
             },
             {
                 "name": "Narsingdi",
-                "link": "dhaka-division/narsingdi"               
+                "link": "dhaka-division/narsingdi"
             },
             {
                 "name": "Faridpur",
-                "link": "dhaka-division/faridpur"               
+                "link": "dhaka-division/faridpur"
             },
             {
                 "name": "Gopalgonj",
-                "link": "dhaka-division/gopalgonj"               
+                "link": "dhaka-division/gopalgonj"
             },
             {
                 "name": "Madaripur",
-                "link": "dhaka-division/madaripur"               
+                "link": "dhaka-division/madaripur"
             },
             {
                 "name": "Rajbari",
-                "link": "dhaka-division/rajbari"               
+                "link": "dhaka-division/rajbari"
             },
             {
                 "name": "Manikganj",
-                "link": "dhaka-division/manikganj"               
+                "link": "dhaka-division/manikganj"
             },
             {
                 "name": "Munshiganj",
-                "link": "dhaka-division/munshiganj"               
+                "link": "dhaka-division/munshiganj"
             },
             {
                 "name": "Shariatpur",
-                "link": "dhaka-division/shariatpur"               
+                "link": "dhaka-division/shariatpur"
             },
             {
                 "name": "Kishoreganj",
-                "link": "dhaka-division/kishoreganj"               
+                "link": "dhaka-division/kishoreganj"
             }
         ]
     },
     {
-        "category": "Electronics",
-        "subcategories": [
+        "location": "Chattogram Division",
+        "place": [
             {
-                "name": "Mobiles & Tablets",
-                "link": "electronics/mobiles"
+                "name": "Cumilla",
+                "link": "chattogram-division/cumilla"
             },
             {
-                "name": "Laptops & Desktop",
-                "link": "electronics/laptops"
+                "name": "Brahmanbaria",
+                "link": "chattogram-division/Brahmanbaria"
             },
             {
-                "name": "Accessories",
-                "link": "electronics/accessories"
+                "name": "Noyakhali",
+                "link": "chattogram-division/Noyakhali"
             },
             {
-                "name": "Audio & Sound Systems",
-                "link": "electronics/audio"
+                "name": "Feni",
+                "link": "chattogram-division/Feni"
             },
             {
-                "name": "Home Electronics",
-                "link": "electronics/home"
+                "name": "chadpur",
+                "link": "chattogram-division/chadpur"
+            },
+            {
+                "name": "chadpur",
+                "link": "chattogram-division/chadpur"
+            },
+            {
+                "name": "chadpur",
+                "link": "chattogram-division/chadpur"
+            }
+        ]
+    },
+    {
+        "location": "Rajshahi Division",
+        "place": [
+            {
+                "name": "Cumilla",
+                "link": "chattogram-division/cumilla"
+            },
+            {
+                "name": "Brahmanbaria",
+                "link": "chattogram-division/Brahmanbaria"
+            },
+            {
+                "name": "Brahmanbaria",
+                "link": "chattogram-division/Brahmanbaria"
+            },
+            {
+                "name": "Brahmanbaria",
+                "link": "chattogram-division/Brahmanbaria"
+            },
+            {
+                "name": "Brahmanbaria",
+                "link": "chattogram-division/Brahmanbaria"
             },
             {
                 "name": "TV & Video",
@@ -304,35 +337,134 @@
         ]
     },
     {
-        "category": "Fashion & Beauty",
-        "subcategories": [
+        "location": "Khulna Division",
+        "place": [
             {
-                "name": "Mobiles & Tablets",
-                "link": "fashion/mobiles"
+                "name": "Cumilla",
+                "link": "chattogram-division/cumilla"
             },
             {
-                "name": "Laptops & Desktop",
-                "link": "fashion/laptops"
+                "name": "Brahmanbaria",
+                "link": "chattogram-division/Brahmanbaria"
             },
             {
-                "name": "Accessories",
-                "link": "fashion/accessories"
+                "name": "Brahmanbaria",
+                "link": "chattogram-division/Brahmanbaria"
             },
             {
-                "name": "Audio & Sound Systems",
-                "link": "fashion/audio"
+                "name": "Brahmanbaria",
+                "link": "chattogram-division/Brahmanbaria"
             },
             {
-                "name": "Home Electronics",
-                "link": "fashion/home"
+                "name": "Brahmanbaria",
+                "link": "chattogram-division/Brahmanbaria"
             },
             {
                 "name": "TV & Video",
-                "link": "fashion/tv"
+                "link": "electronics/tv"
             },
             {
                 "name": "Fridges & ACs",
-                "link": "fashion/fridges"
+                "link": "electronics/fridges"
+            }
+        ]
+    },
+    {
+        "location": "Rangpur Division",
+        "place": [
+            {
+                "name": "Cumilla",
+                "link": "chattogram-division/cumilla"
+            },
+            {
+                "name": "Brahmanbaria",
+                "link": "chattogram-division/Brahmanbaria"
+            },
+            {
+                "name": "Brahmanbaria",
+                "link": "chattogram-division/Brahmanbaria"
+            },
+            {
+                "name": "Brahmanbaria",
+                "link": "chattogram-division/Brahmanbaria"
+            },
+            {
+                "name": "Brahmanbaria",
+                "link": "chattogram-division/Brahmanbaria"
+            },
+            {
+                "name": "TV & Video",
+                "link": "electronics/tv"
+            },
+            {
+                "name": "Fridges & ACs",
+                "link": "electronics/fridges"
+            }
+        ]
+    },
+    {
+        "location": "Mymensingh Division",
+        "place": [
+            {
+                "name": "Cumilla",
+                "link": "chattogram-division/cumilla"
+            },
+            {
+                "name": "Brahmanbaria",
+                "link": "chattogram-division/Brahmanbaria"
+            },
+            {
+                "name": "Brahmanbaria",
+                "link": "chattogram-division/Brahmanbaria"
+            },
+            {
+                "name": "Brahmanbaria",
+                "link": "chattogram-division/Brahmanbaria"
+            },
+            {
+                "name": "Brahmanbaria",
+                "link": "chattogram-division/Brahmanbaria"
+            },
+            {
+                "name": "TV & Video",
+                "link": "electronics/tv"
+            },
+            {
+                "name": "Fridges & ACs",
+                "link": "electronics/fridges"
+            }
+        ]
+    },
+    {
+        "location": "Sylhet Division",
+        "place": [
+            {
+                "name": "Cumilla",
+                "link": "chattogram-division/cumilla"
+            },
+            {
+                "name": "Brahmanbaria",
+                "link": "chattogram-division/Brahmanbaria"
+            },
+            {
+                "name": "Brahmanbaria",
+                "link": "chattogram-division/Brahmanbaria"
+            },
+            {
+                "name": "Brahmanbaria",
+                "link": "chattogram-division/Brahmanbaria"
+            },
+            {
+                "name": "Brahmanbaria",
+                "link": "chattogram-division/Brahmanbaria"
+            },
+            {
+                "name": "TV & Video",
+                "link": "electronics/tv"
+            },
+            {
+                "name": "Fridges & ACs",
+                "link": "electronics/fridges"
             }
         ]
     }

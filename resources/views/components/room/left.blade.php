@@ -46,29 +46,30 @@
 
         <!-- <div class="hidden border-b border-dashed lg:block dark:border-neutral-700/70 border-neutral-200"></div> -->
 
+
+
         <div class="menu text-lg">
             <!-- <li><a>Item 1</a></li> -->
             <li>
-                <details open>
+                <details close>
                     <summary class="text-sm ">Category</summary>
                     <div class="px-4 my-5 text-lg">
                         <h1 class=" text-stone-500 my-1">All Category</h1>
-                        <ul class="text-lg">
+                        @foreach($categoriesList as $category)
+                        <div class="collapse collapse-plus">
+                            <input type="radio" name="my-accordion-3" />
+                            <div class="collapse-title m-0 text-lg font-bold ">
+                                {{ $category['category'] }}
+                            </div>
+                            <div class="collapse-content text-blue-500">
+                                @foreach($category['subcategories'] as $subcategory)
+                                <p class="py-1"><a href="{{url($subcategory['link'])}}">{{ $subcategory['name'] }}</a></p>
+                                @endforeach
+                            </div>
+                        </div>
+                        @endforeach
 
-                            @foreach($categoriesList as $category)
-                            <li>
-                                <details close>
-                                    <summary>{{ $category['category'] }}</summary>
-                                    <ul class="text-blue-500">
 
-                                        @foreach($category['subcategories'] as $subcategory)
-                                        <p class="py-1"><a href="{{url($subcategory['link'])}}">{{ $subcategory['name'] }}</a></p>
-                                        @endforeach
-                                    </ul>
-                                </details>
-                            </li>
-                            @endforeach
-                        </ul>
                     </div>
                 </details>
             </li>
@@ -82,28 +83,32 @@
                     <summary class="text-sm ">Location</summary>
                     <div class="px-4 my-10 text-lg">
                         <h1 class=" text-stone-500 my-1">All Bangladesh</h1>
-                        <div class="text-blue-500 text-lg">
-                            <h1>Dhaka Division</h1>
-                            <h1>Khulna Division</h1>
-                            <h1>Rajshahi Division</h1>
-                            <h1>Chattogram Division</h1>
-                            <h1>Rangpur Division</h1>
-                            <h1>Mymensingh Division</h1>
-                            <h1>Sylhet Division</h1>
+                        @foreach($locationsList as $location)
+                        <div class="collapse collapse-plus">
+                            <input type="radio" name="my-accordion-3" />
+                            <div class="collapse-title m-0 text-lg font-bold ">
+                                {{ $location['location'] }}
+                            </div>
+                            <div class="collapse-content text-blue-500">
+                                @foreach($location['place'] as $place)
+                                <p class="py-1"><a href="{{url($place['link'])}}">{{ $place['name'] }}</a></p>
+                                @endforeach
+                            </div>
                         </div>
+                        @endforeach
+
                     </div>
                 </details>
             </li>
         </div>
 
-        <div class="hidden border-b border-dashed lg:block dark:border-neutral-700/70 border-neutral-200"></div>
 
 
     </aside>
 </div>
 
 
-                            <!-- <h1>Fashion & Beauty</h1>
+<!-- <h1>Fashion & Beauty</h1>
  <h1>Jewelry</h1>
  <h1>Food & Beverage</h1>
  <h1>Property</h1>
@@ -117,3 +122,14 @@
  <h1>Hotel & Restaurant</h1>
  <h1>News & Media</h1>
  <h1>Community & Organization</h1> -->
+
+
+<!-- <div class="text-blue-500 text-lg">
+                            <h1>Dhaka Division</h1>
+                            <h1>Khulna Division</h1>
+                            <h1>Rajshahi Division</h1>
+                            <h1>Chattogram Division</h1>
+                            <h1>Rangpur Division</h1>
+                            <h1>Mymensingh Division</h1>
+                            <h1>Sylhet Division</h1>
+                        </div> -->
