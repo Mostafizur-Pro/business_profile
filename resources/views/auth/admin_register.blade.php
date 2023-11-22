@@ -18,7 +18,7 @@
             <div class="header-option">
                 <div class="logo-back">
                     <a href="{{ url('/') }}">
-                        <img class="company-logo w-44 h-auto" src="/images/business profile.png" alt="Business Profile">
+                        <img class="company-logo w-44 h-auto" src="/assets/logo/logo.png" alt="Business Profile">
                     </a>
                 </div>
             </div>

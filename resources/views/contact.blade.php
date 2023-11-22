@@ -11,6 +11,7 @@
     @include('components/cover/cover')
     <!-- Cover Page -->
 
+    @include('components/contact/contact')
     @include('components/contact/contactPage')
     @include('components/contact/maps')
 

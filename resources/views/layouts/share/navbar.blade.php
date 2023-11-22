@@ -33,15 +33,58 @@
                 </svg>
             </label>
             <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                <li><a>Item 1</a></li>
+                <li class="p-3 xl:p-6">
+                    <a href="{{url('/room')}}">
+                        <button class="bg-black hover:bg-gray-700 text-white font-bold px-4 xl:px-6 py-2 xl:py-3 rounded">Room</button>
+                    </a>
+                </li>
+                <li class=" {{request()->routeIs('home') ? ' text-red-400' : ''}}">
+                    <a href="{{url('/')}}">
+                        <span>Home</span>
+                    </a>
+                </li>
+
+                <li class=" {{request()->routeIs('service') ? ' text-red-400' : ''}}">
+                    <a href="{{url('/service')}}">
+                        <span> Services</span>
+                    </a>
+                </li>
+
+                <li class=" {{request()->routeIs('package') ? ' text-red-400' : ''}}">
+                    <a href="{{url('/package')}}">
+                        <span>Package</span>
+                    </a>
+                </li>
+
+
+
                 <li>
-                    <a>Parent</a>
+                    <a>Members</a>
                     <ul class="p-2">
-                        <li><a>Submenu 1</a></li>
-                        <li><a>Submenu 2</a></li>
+                        <li><a href="{{url('/companies/country')}}">Country</a></li>
+                        <li><a href="{{url('/companies/product')}}">Product</a></li>
+
+                        <li><a href="{{url('/members/our-clients')}}">Our Clients</a></li>
+                        <li><a href="{{url('/members/our-best-clients')}}">Our Best Clients</a></li>
+
+                        <li><a href="{{url('/members/our-employees')}}">Our Employees</a></li>
+                        <li><a href="{{url('/members/our-best-employees')}}">Our Best Employees</a></li>
+                        <li><a href="{{url('/members/our-old-clients')}}">Our Old Clients</a></li>
                     </ul>
                 </li>
-                <li><a>Item 3</a></li>
+
+                <li class=" {{request()->routeIs('about') ? ' text-red-400' : ''}}">
+                    <a href="{{url('/about')}}">
+                        <span>About</span>
+                    </a>
+                </li>
+
+                <li class=" {{request()->routeIs('contact') ? ' text-red-400' : ''}}">
+                    <a href="{{url('/contact')}}">
+                        <span>Contacts</span>
+                    </a>
+                </li>
+
             </ul>
         </div>
         <!-- <a class="btn btn-ghost text-xl">daisyUI</a> -->
@@ -75,17 +118,23 @@
 
     <nav class="header-links contents font-semibold text-base lg:text-lg">
         <ul class="flex items-center ml-4 xl:ml-4 mr-auto">
-            <li class="p-3 xl:p-6 active">
+
+            <!-- <li>
+            <a class="{{request()->routeIs('about') ? 'text-red-600 font-bold':'hover:text-red-600 hover:font-semibold'}}" href="/about">About</a>
+        </li> -->
+            <li class=" {{request()->routeIs('home') ? 'p-3 xl:p-6 active' : 'p-3 xl:p-6'}}">
                 <a href="{{url('/')}}">
                     <span>Home</span>
                 </a>
             </li>
-            <li class="p-3 xl:p-6">
+
+            <li class=" {{request()->routeIs('service') ?'p-3 xl:p-6 active' : 'p-3 xl:p-6'}}">
                 <a href="{{url('/service')}}">
-                    <span>Services</span>
+                    <span> Services</span>
                 </a>
             </li>
-            <li class="p-3 xl:p-6">
+
+            <li class=" {{request()->routeIs('package') ?'p-3 xl:p-6 active' : 'p-3 xl:p-6'}}">
                 <a href="{{url('/package')}}">
                     <span>Package</span>
                 </a>
@@ -122,12 +171,13 @@
                     </ul>
                 </div>
             </li>
-            <li class="p-3 xl:p-6">
+            <li class=" {{request()->routeIs('about') ?'p-3 xl:p-6 active' : 'p-3 xl:p-6'}}">
                 <a href="{{url('/about')}}">
                     <span>About</span>
                 </a>
             </li>
-            <li class="p-3 xl:p-6">
+
+            <li class=" {{request()->routeIs('contact') ?'p-3 xl:p-6 active' : 'p-3 xl:p-6'}}">
                 <a href="{{url('/contact')}}">
                     <span>Contacts</span>
                 </a>
@@ -177,7 +227,7 @@
         </a>
         <button class="text-[#fcae04] font-bold px-4 xl:px-6 py-2 xl:py-3 rounded">
             <a href="/login">Login</a>
-            
+
         </button>
 
     </div>
