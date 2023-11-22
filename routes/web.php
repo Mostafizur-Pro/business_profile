@@ -3,8 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\backend\AdminDashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EditorController;
 use App\Http\Controllers\EmployeeController;
@@ -90,11 +92,11 @@ use App\Http\Controllers\room\RoomController;
 
 
 
-Route::get('/', [FrontendHomeController::class, 'home_page']);
-Route::get('/package', [FrontendHomeController::class, 'package_page']);
-Route::get('/service', [FrontendHomeController::class, 'service_page']);
-Route::get('/about', [FrontendHomeController::class, 'about_page']);
-Route::get('/contact', [FrontendHomeController::class, 'contact_page']);
+Route::get('/', [FrontendHomeController::class, 'home_page'])->name('home');
+Route::get('/service', [FrontendHomeController::class, 'service_page'])->name('service');
+Route::get('/package', [FrontendHomeController::class, 'package_page'])->name('package');
+Route::get('/about', [FrontendHomeController::class, 'about_page'])->name('about');
+Route::get('/contact', [FrontendHomeController::class, 'contact_page'])->name('contact');
 
 
 Route::get('/room', [RoomController::class, 'room_page']);
@@ -102,6 +104,10 @@ Route::get('/room', [RoomController::class, 'room_page']);
 Route::get('/login', [LoginController::class, 'login_page']);
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/register', [RegisterController::class, 'register_page']);
+
+
+
+Route::get('/admin', [AdminLoginController::class, 'admin_login'])->name('admin')->middleware('allReadyLogin');
 
 
 
@@ -120,26 +126,26 @@ Route::group(['prefix' => '/companies', 'namespace' => 'companies'], function ()
 
 
 
-
-
-
-
-
 // ---------- Admin Route ----------
 // ---------- Rafi Route ----------
 
 // Login
-Route::get('/admin', [AdminController::class, 'admin_login'])->name('admin')->middleware('allReadyLogin');
-Route::post('/admin_login', [AdminController::class, 'login_admin']);
+
+// Route::get('/admin', [AdminController::class, 'admin_login'])->name('admin');
+Route::post('/admin_login', [AdminLoginController::class, 'login_admin']);
 
 // Register
-Route::get('/adminRegister', [AdminController::class, 'admin_register'])->name('adminRegister')->middleware('superAdmin');
-Route::post('/registerAdmin', [AdminController::class, 'register_admin'])->name('registerAdmin')->middleware('superAdmin');
+Route::get('/adminRegister', [AdminLoginController::class, 'admin_register'])->name('adminRegister')->middleware('superAdmin');
+Route::post('/registerAdmin', [AdminLoginController::class, 'register_admin'])->name('registerAdmin')->middleware('superAdmin');
 
 // Logout
-Route::get('/logout', [AdminController::class, 'logout']);
+Route::get('/logout', [AdminLoginController::class, 'logout']);
+Route::get('/adminDashboard', [AdminDashboardController::class, 'admin_dashboard'])->name('adminDashboard');
 
-Route::get('/adminDashboard', [AdminController::class, 'admin_dashboard'])->name('adminDashboard');
+
+
+
+
 Route::get('/edit_admin_profile/{id}', [AdminController::class, 'editAdminProfile'])->name('adminEditProfile');
 Route::put('/updateAdminProfile/{id}', [AdminController::class, 'update_Admin_Profile'])->name('updateAdminProfile');
 
