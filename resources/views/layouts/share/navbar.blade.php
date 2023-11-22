@@ -91,8 +91,6 @@
                 </a>
             </li>
 
-
-
             <li class="p-3 xl:p-6">
                 <a href="{{url('/room')}}">
                     <button class="bg-black hover:bg-gray-700 text-white font-bold px-4 xl:px-6 py-2 xl:py-3 rounded">Room</button>
@@ -100,29 +98,6 @@
             </li>
 
 
-            <!-- <button type="button" class="text-white bg-gradient-to-r from-[#282560] 
-            via-gray-400 to-[#282560] hover:bg-gradient-to-br 
-            focus:ring-4 focus:outline-none focus:ring-[#fcae04] dark:focus:ring-[#fcae04] shadow-lg 
-            shadow-[#fcae04] dark:shadow-lg dark:shadow-[#fcae04] font-medium rounded-lg 
-            text-sm px-5 py-2.5 text-center me-2 mb-2 ">
-                 Room
-            </button> -->
-
-
-            <!-- <li class="p-3 xl:p-6">
-                <div class="dropdown dropdown-start">
-                    <label tabindex="0" class="flex items-center">
-                        <span>Companies</span>
-                        <svg class="h-3 opacity-30 ml-2" aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-chevron-down fa-w-14 fa-7x">
-                            <path fill="currentColor" d="M441.9 167.3l-19.8-19.8c-4.7-4.7-12.3-4.7-17 0L224 328.2 42.9 147.5c-4.7-4.7-12.3-4.7-17 0L6.1 167.3c-4.7 4.7-4.7 12.3 0 17l209.4 209.4c4.7 4.7 12.3 4.7 17 0l209.4-209.4c4.7-4.7 4.7-12.3 0-17z"></path>
-                        </svg>
-                    </label>
-                    <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-white rounded-box w-52 mt-4">
-                        <li><a href="{{url('/companies/country')}}">Country</a></li>
-                        <li><a href="{{url('/companies/product')}}">Product</a></li>
-                    </ul>
-                </div>
-            </li> -->
             <li class="p-3 xl:p-6">
                 <div class="dropdown dropdown-start">
                     <label tabindex="0" class="flex items-center">
@@ -132,15 +107,18 @@
                         </svg>
                     </label>
                     <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-white rounded-box w-52 mt-4">
-                        <li><a href="{{url('/members/our-clients')}}">Our Clients</a></li>
-                        <li><a href="{{url('/members/our-old-clients')}}">Our Old Clients</a></li>
-                        <li><a href="{{url('/members/our-employees')}}">Our Employees</a></li>
-
-                        <li><a href="{{url('/members/our-clients')}}">Our Best Clients</a></li>
-                        <li><a href="{{url('/members/our-employees')}}">Our Best Employees</a></li>
-
                         <li><a href="{{url('/companies/country')}}">Country</a></li>
                         <li><a href="{{url('/companies/product')}}">Product</a></li>
+
+                        <li><a href="{{url('/members/our-clients')}}">Our Clients</a></li>
+                        <li><a href="{{url('/members/our-best-clients')}}">Our Best Clients</a></li>
+
+                        <li><a href="{{url('/members/our-employees')}}">Our Employees</a></li>
+                        <li><a href="{{url('/members/our-best-employees')}}">Our Best Employees</a></li>
+                        <li><a href="{{url('/members/our-old-clients')}}">Our Old Clients</a></li>
+
+
+
                     </ul>
                 </div>
             </li>
@@ -199,7 +177,7 @@
         </a>
         <button class="text-[#fcae04] font-bold px-4 xl:px-6 py-2 xl:py-3 rounded">
             <a href="/login">Login</a>
-            <!-- <a href="">Register</a> -->
+            
         </button>
 
     </div>
