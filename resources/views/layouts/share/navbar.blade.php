@@ -35,9 +35,16 @@
             <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                 <li class="p-3 xl:p-6">
                     <a href="{{url('/room')}}">
-                        <button class="bg-black hover:bg-gray-700 text-white font-bold px-4 xl:px-6 py-2 xl:py-3 rounded">Room</button>
+                        <div class="w-[60px] mt-6 transition duration-300 ease-in-out hover:scale-110 object-cover">
+                            <img src="/assets/logo/b-room1.png" alt="">
+                        </div>
                     </a>
                 </li>
+                <!-- <li class="p-3 xl:p-6">
+                    <a href="{{url('/room')}}">
+                        <button class="bg-black hover:bg-gray-700 text-white font-bold px-4 xl:px-6 py-2 xl:py-3 rounded">Room</button>
+                    </a>
+                </li> -->
                 <li class=" {{request()->routeIs('home') ? ' text-red-400' : ''}}">
                     <a href="{{url('/')}}">
                         <span>Home</span>
@@ -101,7 +108,12 @@
                     <path fill="currentColor" d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z"></path>
                 </svg>
             </a>
-            <button class="bg-black hover:bg-gray-700 text-white font-bold px-4 xl:px-6 py-2 xl:py-3 rounded">Login</button>
+            <!-- <button class="bg-black hover:bg-gray-700 text-white font-bold px-4 xl:px-6 py-2 xl:py-3 rounded">Login</button> -->
+            <div class="flex items-center px-4 lg:px-6 xl:px-8">
+                <button class="text-[#fcae04] font-bold px-4 xl:px-6 py-2 xl:py-3 rounded">
+                    <a href="/login">Login</a>
+                </button>
+            </div>
         </div>
 
     </div>
@@ -142,9 +154,16 @@
 
             <li class="p-3 xl:p-6">
                 <a href="{{url('/room')}}">
-                    <button class="bg-black hover:bg-gray-700 text-white font-bold px-4 xl:px-6 py-2 xl:py-3 rounded">Room</button>
+                    <div class="w-[110px] mt-6 transition duration-300 ease-in-out hover:scale-110 object-cover">
+                        <img src="/assets/logo/b-room1.png" alt="">
+                    </div>
                 </a>
             </li>
+            <!-- <li class="p-3 xl:p-6">
+                <a href="{{url('/room')}}">
+                    <button class="bg-black hover:bg-gray-700 text-white font-bold px-4 xl:px-6 py-2 xl:py-3 rounded">Room</button>
+                </a>
+            </li> -->
 
 
             <li class="p-3 xl:p-6">
@@ -186,7 +205,7 @@
         </ul>
     </nav>
 
-    <nav class="hidden xl:contents">
+    <nav class="hidden 2xl:contents">
         <ul class="flex items-center mr-4 lg:mr-6 xl:mr-8">
             <li class="p-1">
                 <a href="" class="inline-block rounded-full border p-2 hover:shadow-lg hover:border-opacity-0 duration-200 hover:-translate-y-0.5">
@@ -196,10 +215,11 @@
                 </a>
             </li>
             <li class="p-1">
-                <a href="" class="inline-block rounded-full border p-2 hover:shadow-lg hover:border-opacity-0 duration-200 hover:-translate-y-0.5">
-                    <svg class="h-4" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-facebook-f fa-w-10 fa-7x">
-                        <path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+                <a target="_blank" href="https://www.facebook.com/bprofilebd" class="inline-block rounded-full border p-2 hover:shadow-lg hover:border-opacity-0 duration-200 hover:-translate-y-0.5">
+                    <svg class="h-4" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                        <path fill="#3b5998" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
                     </svg>
+
                 </a>
             </li>
             <li class="p-1">
