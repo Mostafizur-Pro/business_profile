@@ -94,7 +94,7 @@
             </ul>
         </div>
         <a href="/" class="normal-case text-xl">
-            <img src="images/logo/logo.png" class="w-44 sm:block md:hidden" alt="main_logo">
+            <img src="/assets/logo/logo.png" class="w-44 sm:block md:hidden" alt="main_logo">
         </a>
     </div>
     <div class="navbar-center hidden lg:flex"></div>

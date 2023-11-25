@@ -10,6 +10,7 @@
 @include('components/home/video')
 
 @include('components/home/image')
+@include('components/home/review')
 
 </div>
 

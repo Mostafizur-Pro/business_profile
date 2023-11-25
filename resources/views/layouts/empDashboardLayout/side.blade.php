@@ -3,7 +3,7 @@
     <div class="h-20 relative">
         <i class="absolute top-0 right-0 p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 dark:text-white xl:hidden" aria-hidden="true" sidenav-close-btn=""></i>
         <a href="/" class="block p-6 text-sm whitespace-nowrap text-slate-700 dark:text-white">
-            <img src="/images/logo/logo.png" class="inline-block h-full max-w-full transition-all duration-200 ease-in-out max-h-12 dark:hidden" alt="main_logo">
+            <img src="/assets/logo/logo.png" class="inline-block h-full max-w-full transition-all duration-200 ease-in-out max-h-12 dark:hidden" alt="main_logo">
         </a>
     </div>
     <!-- Separator line -->
