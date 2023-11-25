@@ -20,6 +20,7 @@ class LoginController extends Controller
             'text' => 'required|string',
             'password' => 'required|string',
         ]);
+        
         if ($request) {
             $result = DB::table('employee_info')
                 ->where(function ($query) use ($request) {

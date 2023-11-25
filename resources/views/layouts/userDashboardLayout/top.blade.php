@@ -70,26 +70,26 @@
                 <li>
                     <a>PAGES</a>
                     <ul class="p-2">
-                    <li>
-                            <a href="adminDashboard" >
+                        <li>
+                            <a href="adminDashboard">
                                 <span>About</span>
                             </a>
                         </li>
                         <!-- Smart Home -->
                         <li>
-                            <a href="adminDashboard" >
+                            <a href="adminDashboard">
                                 <span>Our Service</span>
                             </a>
                         </li>
                         <!-- Smart Home -->
                         <li>
-                            <a href="adminDashboard" >
+                            <a href="adminDashboard">
                                 <span>Products</span>
                             </a>
                         </li>
                         <!-- Smart Home -->
                         <li>
-                            <a href="adminDashboard" >
+                            <a href="adminDashboard">
                                 <span>Companies</span>
                             </a>
                         </li>
@@ -99,7 +99,7 @@
             </ul>
         </div>
         <a href="/" class=" normal-case text-xl">
-            <img src="images/logo/logo.png" class="w-44 sm:block md:hidden" alt="main_logo">
+            <img src="/assets/logo/logo.png" class="w-44 sm:block md:hidden" alt="main_logo">
         </a>
     </div>
     <div class="navbar-center hidden lg:flex">
@@ -108,7 +108,7 @@
     <div class="navbar-end hidden sm:block">
         <div class=" flex justify-between ">
             <!-- <a class="block  p-6 text-sm whitespace-nowrap text-slate-700 dark:text-white">
-                <img src="images/logo/logo.png" class="sm:block md:hidden h-full max-w-full transition-all duration-200 ease-in-out max-h-8 dark:hidden" alt="main_logo">
+                <img src="/assets/logo/logo.png" class="sm:block md:hidden h-full max-w-full transition-all duration-200 ease-in-out max-h-8 dark:hidden" alt="main_logo">
             </a> -->
             <div class="flex items-center gap-5">
                 <div class="flex items-center gap-2">
@@ -118,9 +118,7 @@
                     <div>
                         <p class="font-semibold">{{$userData->owner_name}}</p>
                         <p class="capitalize text-sm">{{$userData->owner_role}}</p>
-
                     </div>
-
                 </div>
                 <button>
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24">
