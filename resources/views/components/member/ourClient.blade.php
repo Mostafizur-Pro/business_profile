@@ -1,27 +1,29 @@
-<div class="container mx-auto flex justify-between items-center">
-    <div class="mr-3">
+<div class="container mx-auto flex flex-col md:flex-row justify-between items-center py-4 px-2 md:px-0">
+    <div class="md:mr-3 mb-3 md:mb-0">
         <h3 class="text-2xl font-bold">Item Filter</h3>
     </div>
 
     <!-- Search Option -->
-    <form action="{{ url('clients') }}" method="GET" class="flex items-center ml-4">
+    <form action="{{ url('/members/our-clients') }}" method="GET" class="flex flex-col md:flex-row items-center ml-4">
         <label for="searchField" class="mr-2 font-bold">Search:</label>
-        <input type="text" id="searchField" name="search" value="{{ request()->input('search') }}" class="input input-bordered input-primary w-64">
-        <button type="submit" class="btn btn-primary ml-2">Search</button>
+        <input type="text" id="searchField" name="search" value="{{ request()->input('search') }}" class="input input-bordered input-primary mb-2 md:mb-0 md:mr-2 w-full md:w-64">
+        <button type="submit" class="btn btn-primary w-full md:w-auto">Search</button>
     </form>
 
-    <div class="flex items-center space-x-4">
+    <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
         <div class="flex items-center font-bold">
             <label for="perPage" class="mr-2">Display:</label>
             <input type="text" id="perPage" name="perPage" value="{{ request()->input('perPage', 10) }}" class="input input-bordered input-primary w-20">
             <span class="ml-2">results</span>
         </div>
-        <div class="flex items-center font-bold">
+        <div class="flex items-center font-bold mt-2 md:mt-0">
             <label for="page" class="mr-2">Page:</label>
             <input type="text" id="page" name="pageNumber" value="{{ request()->input('pageNumber', $data->currentPage()) }}" class="input input-bordered input-primary w-20">
         </div>
     </div>
 </div>
+
+
 
 <hr class="container mx-auto my-4" />
 

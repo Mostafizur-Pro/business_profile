@@ -16,7 +16,9 @@
     </h2>
     <div>
 
-        <div> Side </div>
+        <div> 
+            <!-- Side  -->
+        </div>
         <div>
 
             <!-- Container for demo purpose -->

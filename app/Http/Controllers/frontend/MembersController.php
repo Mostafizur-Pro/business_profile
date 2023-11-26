@@ -13,26 +13,29 @@ class MembersController extends Controller
         $perPage = $request->input('perPage', 10);
 
         $search = $request->input('search');
+
         $letter = $request->input('letter'); // Add 'letter' to the request parameters
 
         $query = DB::table('user_info')
             ->select('*')
             ->orderBy('owner_name', 'asc');
+        //   dd($query);
 
         if ($letter) {
             // Filter results by the selected letter
             $query->where('owner_name', 'LIKE', $letter . '%');
         } else {
             // Perform text-based search if 'letter' is not specified
-            $query->when($search, function ($query) use ($search) {
-                $query->where('employee_id', 'LIKE', '%' . $search . '%')
-                    ->orWhere('owner_name', 'LIKE', '%' . $search . '%')
-                    ->orWhere('email', 'LIKE', '%' . $search . '%')
+            $hi = $query->when($search, function ($query) use ($search) {
+                $query->where('owner_name', 'LIKE', '%' . $search . '%')
+                    ->orWhere('owner_email', 'LIKE', '%' . $search . '%')
                     ->orWhere('organization_name', 'LIKE', '%' . $search . '%')
-                    ->orWhere('contact_number', 'LIKE', '%' . $search . '%')
-                    ->orWhere('address', 'LIKE', '%' . $search . '%');
+                    ->orWhere('owner_number', 'LIKE', '%' . $search . '%')
+                    ->orWhere('owner_address', 'LIKE', '%' . $search . '%');
             });
+            // dd($hi);
         }
+
 
         $data = $query->paginate($perPage)->onEachSide(1)->withQueryString();
         // dd($data);
@@ -106,6 +109,5 @@ class MembersController extends Controller
 
         // return view('clientList', ['data' => $data]);
         return view('layouts/members/ourEmployee', ['data' => $data]);
-        
     }
 }
