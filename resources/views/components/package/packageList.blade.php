@@ -1,5 +1,5 @@
 <!-- ====== Pricing Section Start -->
-<section class="relative z-10 overflow-hidden bg-white dark:bg-dark pt-20 pb-12 lg:pt-[80px] lg:pb-[70px]">
+<section class=" z-10 overflow-hidden bg-white dark:bg-dark pt-20 pb-12 lg:pt-[80px] lg:pb-[70px]">
    <div class="container mx-auto">
       <div class="-mx-4 flex flex-wrap">
          <div class="w-full px-4">
