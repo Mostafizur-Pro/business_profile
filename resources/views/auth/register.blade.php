@@ -23,9 +23,14 @@
                 </div>
             </div>
             <div>
-                <a href="{{ url('/login') }}" class="btn btn-primary hover:bg-primary-700">
+
+
+            <button class="bg-[#282560]  w-full rounded px-6 pb-2 pt-2.5 text-md font-medium leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]" type="button" data-te-ripple-init data-te-ripple-color="light">
+                    <a href="/login">Login</a>
+                </button>
+                <!-- <a href="{{ url('/login') }}" class="btn btn-primary hover:bg-primary-700">
                     <span>Login</span>
-                </a>
+                </a> -->
             </div>
         </div>
     </header>
@@ -76,8 +81,8 @@
                     <span class="text-red-400">@error('password') {{ $message }} @enderror</span>
                 </div>
 
-                <button type="submit" class="w-full bg-blue-500 text-white rounded-md py-2 hover:bg-blue-600 transition duration-300">Submit</button>
-                <p class="mt-5">Already have an account! <a class="text-blue-500 font-bold" href="{{url('/login')}}">Please Login</a></p>
+                <button type="submit" class="bg-[#282560]  w-full rounded px-6 pb-2 pt-2.5 text-md font-medium leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]" type="button" data-te-ripple-init data-te-ripple-color="light">Submit</button>
+                <p class="mt-5">Already have an account! <a class="text-[#fcae04] font-bold" href="{{url('/login')}}">Please Login</a></p>
             </form>
         </section>
         <div class="hidden lg:block">
