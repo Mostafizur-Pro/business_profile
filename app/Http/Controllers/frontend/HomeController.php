@@ -17,10 +17,7 @@ class HomeController extends Controller
     {
         return view('service');
     }
-    public function package_page()
-    {
-        return view('package');
-    }
+  
 
     public function about_page()
     {

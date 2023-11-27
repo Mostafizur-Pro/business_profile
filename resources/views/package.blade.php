@@ -12,6 +12,7 @@
     <!-- Cover Page -->
 
     @include('components/package/packageList')
+    
 
 </div>
 
