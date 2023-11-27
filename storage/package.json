@@ -1,0 +1,57 @@
+[
+    {
+        "title": "Basic",
+        "price": "200",
+        "details": [
+            "24/7 Customer Support",
+            "Powerful User Dashboard",
+            "Basic Analytics",
+            "3 Standard Images",
+            "0 Standard Videos"
+        ]
+    },
+    {
+        "title": "Bronze",
+        "price": "400",
+        "details": [
+            "24/7 Customer Support",
+            "Powerful User Dashboard",
+            "Basic Analytics",
+            "6 Standard Images",
+            "1 Standard Video"
+        ]
+    },
+    {
+        "title": "Silver",
+        "price": "600",
+        "details": [
+            "24/7 Customer Support",
+            "Powerful User Dashboard",
+            "Basic Analytics",
+            "9 Standard Images",
+            "2 Standard Videos"
+        ]
+    },
+    {
+        "title": "Gold",
+        "price": "800",
+        "details": [
+            "24/7 Customer Support",
+            "Powerful User Dashboard",
+            "Basic Analytics",
+            "12 Standard Images",
+            "3 Standard Videos"
+        ]
+    },
+    {
+        "title": "Platinum",
+        "price": "1000",
+        "details": [
+            "24/7 Customer Support",
+            "Powerful User Dashboard",
+            "Basic Analytics",
+            "15 Standard Images",
+            "4 Standard Videos"
+        ]
+    }
+]

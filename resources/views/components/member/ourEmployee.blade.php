@@ -4,7 +4,7 @@
     </div>
 
     <!-- Search Option -->
-    <form action="{{ url('clients') }}" method="GET" class="flex items-center ml-4">
+    <form action="{{ url('/members/our-employees') }}" method="GET" class="flex items-center ml-4">
         <label for="searchField" class="mr-2 font-bold">Search:</label>
         <input type="text" id="searchField" name="search" value="{{ request()->input('search') }}" class="input input-bordered input-primary w-64">
         <button type="submit" class="btn btn-primary ml-2">Search</button>

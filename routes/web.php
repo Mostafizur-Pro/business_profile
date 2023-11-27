@@ -13,6 +13,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\frontend\CompaniesController;
 use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
 use App\Http\Controllers\frontend\MembersController;
+use App\Http\Controllers\frontend\PackageController;
 use App\Http\Controllers\room\RoomController;
 
 /*
@@ -94,7 +95,7 @@ use App\Http\Controllers\room\RoomController;
 
 Route::get('/', [FrontendHomeController::class, 'home_page'])->name('home');
 Route::get('/service', [FrontendHomeController::class, 'service_page'])->name('service');
-Route::get('/package', [FrontendHomeController::class, 'package_page'])->name('package');
+Route::get('/package', [PackageController::class, 'package_page'])->name('package');
 Route::get('/about', [FrontendHomeController::class, 'about_page'])->name('about');
 Route::get('/contact', [FrontendHomeController::class, 'contact_page'])->name('contact');
 
