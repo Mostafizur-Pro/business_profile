@@ -7,95 +7,206 @@
 @include('components.logger.logger')
 
 
+<div>
+    <div class="mt-2">
+        <!-- State cards -->
+        <div class="grid grid-cols-1 gap-8 p-4 lg:grid-cols-2 xl:grid-cols-4">
+            <!-- Value card -->
+            <!-- <div class="flex items-center justify-between p-4 bg-white rounded-md dark:bg-darker">
+                <div>
+                    <h6 class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light">
+                        Value
+                    </h6>
+                    <span class="text-xl font-semibold">$30,000</span>
+                    <span class="inline-block px-2 py-px ml-2 text-xs text-green-500 bg-green-100 rounded-md">
+                        +4.4%
+                    </span>
+                </div>
+                <div>
+                    <span>
+                        <svg class="w-12 h-12 text-gray-300 dark:text-primary-dark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </span>
+                </div>
+            </div> -->
 
-<!-- component -->
-<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
-<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+            <!-- Admin card -->
+            <div class="flex items-center justify-between p-4 bg-white rounded-md dark:bg-darker">
+                <div>
+                    <h6 class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light">
+                        Admin
+                    </h6>
+                    <span class="text-xl font-semibold">3</span>
+                    <!-- <span class="inline-block px-2 py-px ml-2 text-xs text-green-500 bg-green-100 rounded-md">
+                        +2.6%
+                    </span> -->
+                </div>
+                <div>
+                    <span>
+                        <svg class="w-12 h-12 text-gray-300 dark:text-primary-dark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <!-- Users card -->
+            <div class="flex items-center justify-between p-4 bg-white rounded-md dark:bg-darker">
+                <div>
+                    <h6 class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light">
+                        Users
+                    </h6>
+                    <span class="text-xl font-semibold">50</span>
+                    <!-- <span class="inline-block px-2 py-px ml-2 text-xs text-green-500 bg-green-100 rounded-md">
+                        +2.6%
+                    </span> -->
+                </div>
+                <div>
+                    <span>
+                        <svg class="w-12 h-12 text-gray-300 dark:text-primary-dark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <!-- Users Old card -->
+            <div class="flex items-center justify-between p-4 bg-white rounded-md dark:bg-darker">
+                <div>
+                    <h6 class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light">
+                        Old Users
+                    </h6>
+                    <span class="text-xl font-semibold">500</span>
+                    <!-- <span class="inline-block px-2 py-px ml-2 text-xs text-green-500 bg-green-100 rounded-md">
+                        +2.6%
+                    </span> -->
+                </div>
+                <div>
+                    <span>
+                        <svg class="w-12 h-12 text-gray-300 dark:text-primary-dark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
 
-<main class="profile-page">
-    <section class="relative block h-500-px">
-        <div class="absolute top-0 w-full h-full bg-center bg-cover" style="
-            background-image: url('https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2710&amp;q=80');
-          ">
-            <span id="blackOverlay" class="w-full h-full absolute opacity-50 bg-black"></span>
-        </div>
-        <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px" style="transform: translateZ(0px)">
-            <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
-                <polygon class="text-blueGray-200 fill-current" points="2560 0 2560 100 0 100"></polygon>
-            </svg>
-        </div>
-    </section>
-    <section class="relative py-16 bg-blueGray-200">
-        <div class="container mx-auto px-4">
-            <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
-                <div class="px-6">
-                    <div class="flex flex-wrap justify-center">
-                        <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
-                            <div class="relative">
-                                <img alt="..." src="{{ $data->admin_image }}" class="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px">
-                            </div>
-                        </div>
-                        <div class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
-                            <div class="py-6 px-3 mt-32 sm:mt-0">
-                                <button class="bg-pink-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150" type="button">
-                                    <a href="{{ url('edit_admin_profile', $data->id) }}">
-                                        Edit
-                                    </a>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="w-full lg:w-4/12 px-4 lg:order-1">
-                            <!-- <div class="flex justify-center py-4 lg:pt-4 pt-8">
-                <div class="mr-4 p-3 text-center">
-                  <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">22</span><span class="text-sm text-blueGray-400">Friends</span>
+            <!-- Orders card -->
+            <div class="flex items-center justify-between p-4 bg-white rounded-md dark:bg-darker">
+                <div>
+                    <h6 class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light">
+                        Orders
+                    </h6>
+                    <span class="text-xl font-semibold">45,021</span>
+                    <span class="inline-block px-2 py-px ml-2 text-xs text-green-500 bg-green-100 rounded-md">
+                        +3.1%
+                    </span>
                 </div>
-                <div class="mr-4 p-3 text-center">
-                  <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">10</span><span class="text-sm text-blueGray-400">Photos</span>
+                <div>
+                    <span>
+                        <svg class="w-12 h-12 text-gray-300 dark:text-primary-dark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                    </span>
                 </div>
-                <div class="lg:mr-4 p-3 text-center">
-                  <span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">89</span><span class="text-sm text-blueGray-400">Comments</span>
+            </div>
+
+            <!-- Tickets card -->
+            <div class="flex items-center justify-between p-4 bg-white rounded-md dark:bg-darker">
+                <div>
+                    <h6 class="text-xs font-medium leading-none tracking-wider text-gray-500 uppercase dark:text-primary-light">
+                        Tickets
+                    </h6>
+                    <span class="text-xl font-semibold">20,516</span>
+                    <span class="inline-block px-2 py-px ml-2 text-xs text-green-500 bg-green-100 rounded-md">
+                        +3.1%
+                    </span>
                 </div>
-              </div> -->
-                        </div>
-                    </div>
-                    <div class="text-center mt-12">
-                        <h3 class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">
-                            {{ $data->admin_name }}
-                        </h3>
-                        <div class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase">
-                            <!-- <i class="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i> -->
-                            <i class="fas fa-user-tag mr-2 text-lg text-blueGray-400"></i>
-                            {{ $data->role }}
-                        </div>
-                        <div class="mb-2 text-blueGray-600 mt-10">
-                            <i class="fas fa-envelope mr-2 text-lg text-blueGray-400"></i>
-                            {{ $data->admin_email }}
-                        </div>
-                        <div class="mb-2 text-blueGray-600">
-                            <i class="fas fa-mobile-alt mr-2 text-lg text-blueGray-400"></i>
-                            {{ $data->number }}
-                        </div>
-                    </div>
-                    <div class="mt-10 py-10 border-t border-blueGray-200 text-center">
-                        <div class="flex flex-wrap justify-center">
-                            <div class="w-full lg:w-9/12 px-4">
-                                <p class="mb-4 text-lg leading-relaxed text-blueGray-700">
-                                    An artist of considerable range, Jenna the name taken by
-                                    Melbourne-raised, Brooklyn-based Nick Murphy writes,
-                                    performs and records all of his own music, giving it a
-                                    warm, intimate feel with a solid groove structure. An
-                                    artist of considerable range.
-                                </p>
-                                <a href="#pablo" class="font-normal text-pink-500">Show more</a>
-                            </div>
-                        </div>
-                    </div>
+                <div>
+                    <span>
+                        <svg class="w-12 h-12 text-gray-300 dark:text-primary-dark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
+                        </svg>
+                    </span>
                 </div>
             </div>
         </div>
-      
-    </section>
-</main>
 
+        <!-- Charts -->
+        <div class="grid grid-cols-1 p-4 space-y-8 lg:gap-8 lg:space-y-0 lg:grid-cols-3">
+            <!-- Bar chart card -->
+            <div class="col-span-2 bg-white rounded-md dark:bg-darker" x-data="{ isOn: false }">
+                <!-- Card header -->
+                <div class="flex items-center justify-between p-4 border-b dark:border-primary">
+                    <h4 class="text-lg font-semibold text-gray-500 dark:text-light">Bar Chart</h4>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-sm text-gray-500 dark:text-light">Last year</span>
+                        <button class="relative focus:outline-none" x-cloak @click="isOn = !isOn; $parent.updateBarChart(isOn)">
+                            <div class="w-12 h-6 transition rounded-full outline-none bg-primary-100 dark:bg-primary-darker"></div>
+                            <div class="absolute top-0 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-200 ease-in-out transform scale-110 rounded-full shadow-sm" :class="{ 'translate-x-0  bg-white dark:bg-primary-100': !isOn, 'translate-x-6 bg-primary-light dark:bg-primary': isOn }"></div>
+                        </button>
+                    </div>
+                </div>
+                <!-- Chart -->
+                <div class="relative p-4 h-72">
+                    <canvas id="barChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Doughnut chart card -->
+            <div class="bg-white rounded-md dark:bg-darker" x-data="{ isOn: false }">
+                <!-- Card header -->
+                <div class="flex items-center justify-between p-4 border-b dark:border-primary">
+                    <h4 class="text-lg font-semibold text-gray-500 dark:text-light">Doughnut Chart</h4>
+                    <div class="flex items-center">
+                        <button class="relative focus:outline-none" x-cloak @click="isOn = !isOn; $parent.updateDoughnutChart(isOn)">
+                            <div class="w-12 h-6 transition rounded-full outline-none bg-primary-100 dark:bg-primary-darker"></div>
+                            <div class="absolute top-0 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-200 ease-in-out transform scale-110 rounded-full shadow-sm" :class="{ 'translate-x-0  bg-white dark:bg-primary-100': !isOn, 'translate-x-6 bg-primary-light dark:bg-primary': isOn }"></div>
+                        </button>
+                    </div>
+                </div>
+                <!-- Chart -->
+                <div class="relative p-4 h-72">
+                    <canvas id="doughnutChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Two grid columns -->
+        <div class="grid grid-cols-1 p-4 space-y-8 lg:gap-8 lg:space-y-0 lg:grid-cols-3">
+            <!-- Active users chart -->
+            <div class="col-span-1 bg-white rounded-md dark:bg-darker">
+                <!-- Card header -->
+                <div class="p-4 border-b dark:border-primary">
+                    <h4 class="text-lg font-semibold text-gray-500 dark:text-light">Active users right now</h4>
+                </div>
+                <p class="p-4">
+                    <span class="text-2xl font-medium text-gray-500 dark:text-light" id="usersCount">0</span>
+                    <span class="text-sm font-medium text-gray-500 dark:text-primary">Users</span>
+                </p>
+                <!-- Chart -->
+                <div class="relative p-4">
+                    <canvas id="activeUsersChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Line chart card -->
+            <div class="col-span-2 bg-white rounded-md dark:bg-darker" x-data="{ isOn: false }">
+                <!-- Card header -->
+                <div class="flex items-center justify-between p-4 border-b dark:border-primary">
+                    <h4 class="text-lg font-semibold text-gray-500 dark:text-light">Line Chart</h4>
+                    <div class="flex items-center">
+                        <button class="relative focus:outline-none" x-cloak @click="isOn = !isOn; $parent.updateLineChart()">
+                            <div class="w-12 h-6 transition rounded-full outline-none bg-primary-100 dark:bg-primary-darker"></div>
+                            <div class="absolute top-0 left-0 inline-flex items-center justify-center w-6 h-6 transition-all duration-200 ease-in-out transform scale-110 rounded-full shadow-sm" :class="{ 'translate-x-0  bg-white dark:bg-primary-100': !isOn, 'translate-x-6 bg-primary-light dark:bg-primary': isOn }"></div>
+                        </button>
+                    </div>
+                </div>
+                <!-- Chart -->
+                <div class="relative p-4 h-72">
+                    <canvas id="lineChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 @endsection

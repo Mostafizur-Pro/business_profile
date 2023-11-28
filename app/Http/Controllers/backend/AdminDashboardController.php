@@ -25,4 +25,21 @@ class AdminDashboardController extends Controller
         return redirect('/admin')
             ->with('Fail', 'You are not authorized to access the admin dashboard.');
     }
+
+    public function admin_profile()
+    {
+        if (Session::has('id')) {
+            $userId = Session::get('id');
+            $data = DB::table('admin_info')->find($userId);
+            $allData = DB::table('admin_info')->get();
+
+            if ($data) {
+                return view('dashboard.admin.adminProfile', compact('data', 'allData'));
+            }
+        }
+
+        // If the user is not logged in or no valid data is found, redirect with a flash message.
+        return redirect('/admin')
+            ->with('Fail', 'You are not authorized to access the admin dashboard.');
+    }
 }
