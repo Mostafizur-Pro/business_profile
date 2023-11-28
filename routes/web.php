@@ -142,6 +142,7 @@ Route::post('/registerAdmin', [AdminLoginController::class, 'register_admin'])->
 // Logout
 Route::get('/logout', [AdminLoginController::class, 'logout']);
 Route::get('/adminDashboard', [AdminDashboardController::class, 'admin_dashboard'])->name('adminDashboard');
+Route::get('/adminProfile', [AdminDashboardController::class, 'admin_profile'])->name('adminProfile');
 
 
 
