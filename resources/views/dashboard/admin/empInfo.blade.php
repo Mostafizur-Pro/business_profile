@@ -1,6 +1,6 @@
 @extends('dashboard.admin.adminApp')
 @section('title', 'Admin - Dashboard')
-@section('adminDashboard')
+@section('admin/dashboard')
 
 
 
@@ -64,7 +64,7 @@
 
                     <!-- <td class="pr-3 "> <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> </td> -->
                     <td class="pr-5">
-                        <a href="{{ url('edit_emp_profile', $empData->id) }}" class="btn btn-sm bg-blue-500 hover:bg-blue-700 text-white">Edit</a>
+                        <a href="{{ url('admin/edit_emp_profile', $empData->id) }}" class="btn btn-sm bg-blue-500 hover:bg-blue-700 text-white">Edit</a>
                         <button onclick="my_modal_1.showModal()" class="btn btn-sm bg-red-500 hover:bg-red-700 text-white"> Delete </button>
                     </td>
                 </tr>

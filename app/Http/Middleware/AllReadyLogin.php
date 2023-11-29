@@ -19,7 +19,7 @@ class AllReadyLogin
         // dd(url('admin')==$request->url());
         if(Session()->has('id') && (url('admin')==$request->url() )){
             // return back();
-            return redirect('/adminDashboard');
+            return redirect('/admin/dashboard');
             // echo 'hello';
         }
         return $next($request);

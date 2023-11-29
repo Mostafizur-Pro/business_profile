@@ -28,7 +28,7 @@ class SuperAdminMiddleware
             if ($user && $user->role === 'superAdmin') {
                 return $next($request);
             }
-            return redirect('/adminDashboard')->with('error', 'You do not have superAdmin privileges.');
+            return redirect('/admin/dashboard')->with('error', 'You do not have superAdmin privileges.');
         }
 
         return redirect('/admin')->with('error', 'You are not authorized to access the admin Register Page.');

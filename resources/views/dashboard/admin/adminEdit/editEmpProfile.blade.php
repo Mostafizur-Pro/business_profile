@@ -1,6 +1,6 @@
 @extends('dashboard.admin.adminApp')
 @section('title', 'Admin - Dashboard')
-@section('adminDashboard')
+@section('admin/dashboard')
 
 @include('components.logger.logger')
 

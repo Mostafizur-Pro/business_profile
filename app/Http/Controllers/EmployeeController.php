@@ -134,7 +134,7 @@ class EmployeeController extends Controller
             ->first();
 
         if (!$update) {
-            return redirect("/edit_emp_profile/$id")->with('Fail', 'Record not found');
+            return redirect("/admin/edit_emp_profile/$id")->with('Fail', 'Record not found');
         }
         $request->validate([
             'emp_number' => 'unique:employee_info,emp_number,' . $id,
