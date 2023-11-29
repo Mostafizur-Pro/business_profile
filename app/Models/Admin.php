@@ -27,4 +27,5 @@ class Admin extends Model
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    protected $table = 'admin_info';
 }

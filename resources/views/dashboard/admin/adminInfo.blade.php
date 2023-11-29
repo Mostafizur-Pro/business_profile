@@ -1,6 +1,6 @@
 @extends('dashboard.admin.adminApp')
 @section('title', 'Admin - Dashboard')
-@section('adminDashboard')
+@section('admin/dashboard')
 
 @include('components.logger.logger')
 
@@ -59,7 +59,7 @@
                     <td>
 
 
-                        <a href="{{ url('edit_admin_profile', $admin->id) }}" class="btn btn-sm bg-blue-500 hover:bg-blue-700 text-white">Edit</a>
+                        <a href="{{ url('admin/edit_profile', $admin->id) }}" class="btn btn-sm bg-blue-500 hover:bg-blue-700 text-white">Edit</a>
                         <!-- <a href="{{ url('deleteAdmin', $admin->id) }}" class="btn btn-sm bg-red-500 hover:bg-red-700 text-white">Delete</a> -->
                         <form method="POST" action="{{ url('deleteAdmin', $admin->id) }}">
                             @csrf

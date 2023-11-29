@@ -23,7 +23,7 @@
 
         <div class="sm:col-span-4 md:col-span-3">
             @include('layouts.dashboardLayout.top')
-            @yield('adminDashboard')
+            @yield('admin/dashboard')
         </div>
 
     </div>

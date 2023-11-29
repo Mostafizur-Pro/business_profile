@@ -11,34 +11,34 @@
                     <a>DASHBOARDS</a>
                     <ul class="p-2">
                         <li>
-                            <a href="/adminDashboard">
+                            <a href="/admin/dashboard">
                                 <span>Profile</span>
                             </a>
                         </li>
                         @if($adminData->role === 'superAdmin')
                         <li>
-                            <a href="/adminInfo">
+                            <a href="/admin/adminInfo">
                                 <span>Admin Information</span>
                             </a>
                         </li>
                         @endif
                         <li>
-                            <a href="/ad_userInfo">
+                            <a href="/admin/userInfo">
                                 <span>User Information 2024</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/userInfoOld">
+                            <a href="/admin/userInfoOld">
                                 <span>User Information 2023</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/empInfo">
+                            <a href="/admin/empInfo">
                                 <span>Employee Information</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/packageItem">
+                            <a href="/admin/packageItem">
                                 <span>Package Item</span>
                             </a>
                         </li>
@@ -72,17 +72,17 @@
                     <a>PAGES</a>
                     <ul class="p-2">
                         <li>
-                            <a href="adminDashboard">
+                            <a href="admin/dashboard">
                                 <span>About</span>
                             </a>
                         </li>
                         <li>
-                            <a href="adminDashboard">
+                            <a href="admin/dashboard">
                                 <span>Our Service</span>
                             </a>
                         </li>
                         <li>
-                            <a href="adminDashboard">
+                            <a href="admin/dashboard">
                                 <span>Products</span>
                             </a>
                         </li>

@@ -57,35 +57,13 @@ class AdminLoginController extends Controller
             // Password matches, set the user in session
             Session::put('id', $user->id);
             Session::put('admin_email', $user->admin_email);
-            return redirect('/adminDashboard')->with('success', 'Login Success!');
+            return redirect('/admin/dashboard')->with('success', 'Login Success!');
         } else {
             // If login fails, return with a fail message
             return redirect('/admin')->with('fail', 'Invalid login credentials!');
         }
     }
     
-
-    // public function login_admin(Request $request)
-    // {
-    //     $validatedData = $request->validate([
-    //         'admin_email' => 'required|email',
-    //         'password' => 'required',
-    //     ]);
-
-    //     $result = DB::table('admin_info')
-    //         ->where('admin_email', $request->input('admin_email'))
-    //         ->where('password', Hash::make($request->input('password')))
-    //         ->first();
-
-    //     if ($result) {
-    //         Session::put('id', $result->id);
-    //         Session::put('admin_email', $result->admin_email); // Use $result->admin_email
-    //         return redirect('/adminDashboard')->with('Success', 'Login Success!');
-    //     } else {
-    //         // If login fails, you should return with Fails
-    //         return redirect('/admin')->with('Fail', 'Invalid login credentials!');
-    //     }
-    // }
 
 
 

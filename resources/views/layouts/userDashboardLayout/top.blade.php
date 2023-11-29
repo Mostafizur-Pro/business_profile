@@ -14,54 +14,54 @@
                     <a>DASHBOARDS</a>
                     <ul class="p-2">
                         <li>
-                            <a href="adminDashboard">
+                            <a href="admin/dashboard">
                                 <span>Profile</span>
                             </a>
                         </li>
                         <!-- Smart Home -->
                         <li>
-                            <a href="adminDashboard">
+                            <a href="admin/dashboard">
                                 <span>User Information</span>
                             </a>
                         </li>
                         <!-- Smart Home -->
                         <li>
-                            <a href="adminDashboard">
+                            <a href="admin/dashboard">
                                 <span>Create User</span>
                             </a>
                         </li>
                         <!-- Smart Home -->
                         <li>
-                            <a href="adminDashboard">
+                            <a href="admin/dashboard">
                                 <span>Employee Information</span>
                             </a>
                         </li>
                         <!-- Smart Home -->
                         <li>
-                            <a href="adminDashboard">
+                            <a href="admin/dashboard">
                                 <span>Create Employee</span>
                             </a>
                         </li>
                         <!-- Smart Home -->
                         <li>
-                            <a href="adminDashboard">
+                            <a href="admin/dashboard">
                                 <span>Package Item</span>
                             </a>
                         </li>
                         <!-- Smart Home -->
                         <li>
-                            <a href="adminDashboard">
+                            <a href="admin/dashboard">
                                 <span>Create New Package</span>
                             </a>
                         </li>
                         <li>
-                            <a href="adminDashboard">
+                            <a href="admin/dashboard">
                                 <span>Delete</span>
                             </a>
                         </li>
                         <!-- Smart Home -->
                         <li>
-                            <a href="adminDashboard">
+                            <a href="admin/dashboard">
                                 <span>Pending</span>
                             </a>
                         </li>
@@ -71,25 +71,25 @@
                     <a>PAGES</a>
                     <ul class="p-2">
                         <li>
-                            <a href="adminDashboard">
+                            <a href="admin/dashboard">
                                 <span>About</span>
                             </a>
                         </li>
                         <!-- Smart Home -->
                         <li>
-                            <a href="adminDashboard">
+                            <a href="admin/dashboard">
                                 <span>Our Service</span>
                             </a>
                         </li>
                         <!-- Smart Home -->
                         <li>
-                            <a href="adminDashboard">
+                            <a href="admin/dashboard">
                                 <span>Products</span>
                             </a>
                         </li>
                         <!-- Smart Home -->
                         <li>
-                            <a href="adminDashboard">
+                            <a href="admin/dashboard">
                                 <span>Companies</span>
                             </a>
                         </li>

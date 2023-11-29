@@ -1,6 +1,6 @@
 @extends('dashboard.admin.adminApp')
 @section('title', 'Admin - Dashboard')
-@section('adminDashboard')
+@section('admin/dashboard')
 
 
 @include('components.logger.logger')
@@ -63,7 +63,7 @@
                 <td class="pr-3 "> {{ $userInfo->email }} </td>
                 <td class="pr-3 "> {{ $userInfo->employee_id }} </td>
                 <td class="pr-3 "> 
-                    <a href="{{ url('edit_userInfoOld_profile', $userInfo->id) }}"  class="btn btn-sm bg-blue-500 hover:bg-blue-700 text-white">Edit</a>  
+                    <a href="{{ url('admin/edit_userInfoOld_profile', $userInfo->id) }}"  class="btn btn-sm bg-blue-500 hover:bg-blue-700 text-white">Edit</a>  
                     <!-- <button class="btn btn-sm bg-red-500 hover:bg-red-700 text-white">Delete</button> -->
                 </td>
                 <!-- <td class="pr-3 "> <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> </td> -->

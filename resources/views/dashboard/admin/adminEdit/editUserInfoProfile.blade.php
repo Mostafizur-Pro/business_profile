@@ -1,6 +1,6 @@
 @extends('dashboard.admin.adminApp')
 @section('title', 'Admin - Dashboard')
-@section('adminDashboard')
+@section('admin/dashboard')
 
 
 @include('components.logger.logger')
@@ -15,7 +15,7 @@
         </div>
         <hr class="my-5" />
 
-        <form action="{{ url('ad_updateUserInfo', $editUserInfo->id) }}"  method="POST" enctype="multipart/form-data">
+        <form action="{{ url('admin/updateUserInfo', $editUserInfo->id) }}"  method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 

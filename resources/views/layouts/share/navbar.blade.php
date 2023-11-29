@@ -135,12 +135,12 @@
                 </label>
                 <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                     <li>
-                        <a href="/adminDashboard" class="justify-between">
+                        <a href="/admin/dashboard" class="justify-between">
                             Profile
                             <span class="badge">New</span>
                         </a>
                     </li>
-                    <li><a href="{{ url('edit_admin_profile', $adminData->id) }}">Settings</a></li>
+                    <li><a href="{{ url('admin/edit_profile', $adminData->id) }}">Settings</a></li>
                     <li><a href="{{url('/logout')}}">Logout</a></li>
                 </ul>
             </div>
@@ -390,12 +390,12 @@
                 </label>
                 <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                     <li>
-                        <a href="/adminDashboard" class="justify-between">
+                        <a href="/admin/dashboard" class="justify-between">
                             Profile
                             <span class="badge">New</span>
                         </a>
                     </li>
-                    <li><a href="{{ url('edit_admin_profile', $adminData->id) }}">Settings</a></li>
+                    <li><a href="{{ url('admin/edit_profile', $adminData->id) }}">Settings</a></li>
                     <li><a href="{{url('/logout')}}">Logout</a></li>
                 </ul>
             </div>

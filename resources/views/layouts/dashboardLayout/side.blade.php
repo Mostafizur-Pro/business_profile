@@ -46,7 +46,7 @@
                 <div class="overflow-hidden transition-all duration-200 ease-in-out">
                     <ul class="menu pl-6 mt-2 list-none">
                         <li>
-                            <a href="/adminDashboard" class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
+                            <a href="/admin/dashboard" class="flex items-center p-2 text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700">
                                 <svg class="w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
                                     <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
@@ -67,10 +67,10 @@
                                 </summary>
                                 <ul>
                                     <li>
-                                        <a href="/adminProfile" class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Profile</a>
+                                        <a href="/admin/profile" class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Profile</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('edit_admin_profile', $adminData->id) }}" class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Settings</a>
+                                        <a href="{{ url('admin/edit_profile', $adminData->id) }}" class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Settings</a>
                                     </li>
                                 </ul>
                             </details>
@@ -86,17 +86,17 @@
                                 <ul>
                                     @if($adminData->role === 'superAdmin')
                                     <li>
-                                        <a href="/adminInfo" class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Admin Information</a>
+                                        <a href="/admin/adminInfo" class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Admin Information</a>
                                     </li>
                                     @endif
                                     <li>
-                                        <a href="/ad_userInfo" class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Our Clients</a>
+                                        <a href="/admin/userInfo" class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Our Clients</a>
                                     </li>
                                     <li>
-                                        <a href="/userInfoOld" class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Our Old Clients</a>
+                                        <a href="/admin/userInfoOld" class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Our Old Clients</a>
                                     </li>
                                     <li>
-                                        <a href="/empInfo" class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Our Employee</a>
+                                        <a href="/admin/empInfo" class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Our Employee</a>
                                     </li>
                                 </ul>
                             </details>
@@ -161,7 +161,7 @@
                                 </summary>
                                 <ul>
                                     <li>
-                                        <a href="/packageItem" class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Package List</a>
+                                        <a href="/admin/packageItem" class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Package List</a>
                                     </li>
                                     <li>
                                         <a class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Add Package</a>
