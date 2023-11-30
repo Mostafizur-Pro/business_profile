@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\backend\AdminDashboardController;
 use App\Http\Controllers\backend\AdminEmployeeController;
 use App\Http\Controllers\backend\AdminOldUserInfo;
+use App\Http\Controllers\backend\AdminPackageController;
 use App\Http\Controllers\backend\AdminUserInfo;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EmployeeController;
@@ -147,6 +148,10 @@ Route::get('/userLogout', [UserController::class, 'logout']);
 Route::get('/userDashboard', [UserController::class, 'user_dashboard'])->name('userDashboard');
 Route::get('/edit_userInfo_profile/{id}', [UserController::class, 'editUserProfile'])->name('editUserProfile');
 Route::put('/updateUserInfoProfile/{id}', [UserController::class, 'update_user_Profile'])->name('updateUserInfoProfile');
+
+
+Route::get('/pack', [AdminPackageController::class, 'add_package']);
+Route::post('/savePack', [AdminPackageController::class, 'store_package'])->name('savePack');
 
 
 
