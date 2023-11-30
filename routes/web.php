@@ -150,7 +150,7 @@ Route::get('/edit_userInfo_profile/{id}', [UserController::class, 'editUserProfi
 Route::put('/updateUserInfoProfile/{id}', [UserController::class, 'update_user_Profile'])->name('updateUserInfoProfile');
 
 
-Route::get('/pack', [AdminPackageController::class, 'add_package']);
+
 Route::post('/savePack', [AdminPackageController::class, 'store_package'])->name('savePack');
 
 

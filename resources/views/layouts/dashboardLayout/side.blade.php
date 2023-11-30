@@ -164,7 +164,7 @@
                                         <a href="/admin/packageItem" class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Package List</a>
                                     </li>
                                     <li>
-                                        <a class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Add Package</a>
+                                        <a href="/admin/add_Package" class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Add Package</a>
                                     </li>
                                 </ul>
                             </details>
