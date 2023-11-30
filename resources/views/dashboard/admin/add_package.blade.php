@@ -31,16 +31,16 @@
                     </div>
                     <div class="mb-4">
                         <label for="title" class="block text-gray-700 font-bold mb-2">Title:</label>
-                        <input type="text" id="title" name="title" value="300" class="w-full max-w-xs border rounded py-2 px-3 text-gray-800">
+                        <input type="text" id="title" name="title" value="" placeholder="Enter Package Title" class="w-full max-w-xs border rounded py-2 px-3 text-gray-800">
                         <!-- <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" /> -->
                     </div>
                     <div class="mb-4">
                         <label for="price" class="block text-gray-700 font-bold mb-2">Price:</label>
-                        <input type="text" id="price" name="price" value="" class="w-full border rounded py-2 px-3 text-gray-800">
+                        <input type="text" id="price" name="price" value="" placeholder="Enter package Price" class="w-full border rounded py-2 px-3 text-gray-800">
                     </div>
                     <div class="mb-4">
                         <label for="details" class="block text-gray-700 font-bold mb-2">Details:</label>
-                        <input type="text" id="details" name="details" value="fddf" class="w-full border rounded py-2 px-3 text-gray-800">
+                        <input type="text" id="details" name="details" value="" placeholder="Enter Package Details" class="w-full border rounded py-2 px-3 text-gray-800">
                     </div>
                     <div class="mt-4">
                         <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Add</button>

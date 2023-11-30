@@ -33,7 +33,7 @@
                   </span>
                </h2>
                <p class="mb-8 border-b border-stroke dark:border-dark-3 pb-8 text-base text-body-color dark:text-dark-6">
-                  <!-- Perfect for using in a personal website or a client project. -->
+               {{$package['description']}}
                </p>
 
 
