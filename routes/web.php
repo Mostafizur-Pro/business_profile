@@ -2,15 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\AdminEmpRegisterController;
 use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\backend\AdminDashboardController;
-use App\Http\Controllers\backend\AdminEmployeeController;
-use App\Http\Controllers\backend\AdminOldUserInfo;
 use App\Http\Controllers\backend\AdminPackageController;
 use App\Http\Controllers\backend\AdminUserInfo;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\backend\employee\EmployeeDashboardController;
+use App\Http\Controllers\backend\user\UserDashboardController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\frontend\CompaniesController;
 use App\Http\Controllers\frontend\HomeController as FrontendHomeController;
@@ -29,13 +28,27 @@ Route::get('/contact', [FrontendHomeController::class, 'contact_page'])->name('c
 
 Route::get('/room', [RoomController::class, 'room_page']);
 
+
+// User & Employee Login
 Route::get('/login', [LoginController::class, 'login_page']);
 Route::post('/login', [LoginController::class, 'login']);
+
+
+// User Registration
 Route::get('/register', [RegisterController::class, 'register_page']);
+Route::post('/registerUser', [RegisterController::class, 'register_user'])->name('registerUser');
 
-
-
+// Admin Login & Registration
 Route::get('/admin', [AdminLoginController::class, 'admin_login'])->name('admin')->middleware('allReadyLogin');
+Route::post('/admin_login', [AdminLoginController::class, 'login_admin']);
+Route::get('/adminRegister', [AdminLoginController::class, 'admin_register'])->name('adminRegister')->middleware('superAdmin');
+Route::post('/registerAdmin', [AdminLoginController::class, 'register_admin'])->name('registerAdmin')->middleware('superAdmin');
+
+// Employee Register
+Route::get('/empRegister', [AdminEmpRegisterController::class, 'emp_register'])->name('empRegister')->middleware('admin');
+Route::post('/registerEmp', [AdminEmpRegisterController::class, 'register_emp'])->name('registerEmp');
+
+
 
 
 
@@ -53,23 +66,38 @@ Route::group(['prefix' => '/companies', 'namespace' => 'companies'], function ()
 
 
 
+Route::group(['prefix' => '/employee', 'namespace' => 'employee'], function () {
+    Route::get('/dashboard', [EmployeeDashboardController::class, 'emp_dashboard'])->name('empDashboard');
+    Route::get('/edit_empInfo_profile/{id}', [EmployeeController::class, 'editEmpProfile'])->name('editEmpInfoProfile');
+    Route::put('/updateEmpProfile/{id}', [EmployeeController::class, 'update_Emp_Profile'])->name('updateEmpProfile');
+    Route::get('/edit_user_profile/{id}', [EmployeeController::class, 'editUserInfoProfile'])->name('userInfoEditProfile');
+    Route::put('/updateUserProfile/{id}', [EmployeeController::class, 'update_user_Profile'])->name('updateUserProfile');
+    Route::get('/userInfo_emp', [EmployeeController::class, 'user_info'])->name('userInfo_emp');
+    Route::get('/packageItem', [EmployeeDashboardController::class, 'package_List'])->name('packageList');
+});
 
-require_once __DIR__.'/admin.php';
 
 
-Route::post('/admin_login', [AdminLoginController::class, 'login_admin']);
+Route::group(['prefix' => '/user', 'namespace' => 'user'], function () {
+    Route::get('/dashboard', [UserDashboardController::class, 'user_dashboard'])->name('userDashboard');
+    Route::get('/edit_userInfo_profile/{id}', [UserDashboardController::class, 'editUserProfile'])->name('editUserProfile');
+    Route::put('/updateUserInfoProfile/{id}', [UserDashboardController::class, 'update_user_Profile'])->name('updateUserInfoProfile');
+    Route::get('/userLogout', [UserDashboardController::class, 'logout']);
+    Route::get('/packageItem', [UserDashboardController::class, 'package_List']);
+});
 
-// Register
-Route::get('/adminRegister', [AdminLoginController::class, 'admin_register'])->name('adminRegister')->middleware('superAdmin');
-Route::post('/registerAdmin', [AdminLoginController::class, 'register_admin'])->name('registerAdmin')->middleware('superAdmin');
+
+// Logout
+Route::get('/empLogout', [EmployeeController::class, 'logout']);
+
+
+
+require_once __DIR__ . '/admin.php';
+
+
 
 // Logout
 Route::get('/logout', [AdminLoginController::class, 'logout']);
-
-
-
-
-
 
 
 
@@ -79,9 +107,8 @@ Route::delete('/deleteAdmin/{id}', [AdminController::class, 'delete_admin'])->na
 
 
 
-
 // Delete Dashboard
-Route::delete('/deleteUserInfo/{id}', [AdminController::class, 'delete_userInfo'])->name('deleteUserInfo');
+Route::delete('/deleteUserInfo/{id}', [AdminUserInfo::class, 'delete_userInfo'])->name('deleteUserInfo');
 Route::delete('/deleteUserInfoPermanent/{id}', [AdminController::class, 'delete_userInfo_per'])->name('deleteUserInfoPermanent');
 Route::get('/deleteUserInfo', [AdminController::class, 'delete_user_info'])->name('deleteUserInfo')->middleware('superAdmin');
 Route::get('/reverse_userInfo_profile/{id}', [AdminController::class, 'reverseUserInfoProfile'])->name('reverseUserInfoProfile');
@@ -98,62 +125,4 @@ Route::post('/makeAdmin/{id}', [AdminController::class, 'makeAdmin'])->name('mak
 
 
 
-
-
-// ---------- Employee Route ----------
-
-// Login
-Route::get('/empLogin', [EmployeeController::class, 'emp_login'])->name('empLogin');
-Route::post('/empLogin', [EmployeeController::class, 'login_emp']);
-
-// Register
-Route::get('/empRegister', [EmployeeController::class, 'emp_register'])->name('empRegister')->middleware('admin');
-Route::post('/registerEmp', [EmployeeController::class, 'register_emp'])->name('registerEmp');
-
-// Logout
-Route::get('/empLogout', [EmployeeController::class, 'logout']);
-
-
-Route::get('/empDashboard', [EmployeeController::class, 'emp_dashboard'])->name('empDashboard');
-
-Route::get('/edit_empInfo_profile/{id}', [EmployeeController::class, 'editEmpProfile'])->name('editEmpInfoProfile');
-Route::put('/updateEmpProfile/{id}', [EmployeeController::class, 'update_Emp_Profile'])->name('updateEmpProfile');
-
-Route::get('/edit_user_profile/{id}', [EmployeeController::class, 'editUserInfoProfile'])->name('userInfoEditProfile');
-Route::put('/updateUserProfile/{id}', [EmployeeController::class, 'update_user_Profile'])->name('updateUserProfile');
-
-Route::get('/userInfo_emp', [EmployeeController::class, 'user_info'])->name('userInfo_emp');
-// Route::get('/empLogin', function () {
-//     return view('auth/emp_login');
-// });
-
-
-
-
-
-// ---------- User Route ----------
-
-// Login
-// Route::get('/userLogin', [UserController::class, 'user_login'])->name('userLogin');
-// Route::post('/userLogin', [UserController::class, 'login_user']);
-
-// Register
-// Route::get('/userRegister', [UserController::class, 'user_register'])->name('userRegister');
-Route::post('/registerUser', [UserController::class, 'register_user'])->name('registerUser');
-
-// Logout
-Route::get('/userLogout', [UserController::class, 'logout']);
-
-
-Route::get('/userDashboard', [UserController::class, 'user_dashboard'])->name('userDashboard');
-Route::get('/edit_userInfo_profile/{id}', [UserController::class, 'editUserProfile'])->name('editUserProfile');
-Route::put('/updateUserInfoProfile/{id}', [UserController::class, 'update_user_Profile'])->name('updateUserInfoProfile');
-
-
-
 Route::post('/savePack', [AdminPackageController::class, 'store_package'])->name('savePack');
-
-
-
-
-

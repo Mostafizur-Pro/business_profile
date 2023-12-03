@@ -17,6 +17,7 @@ class EmployeeInfo extends Model
         'emp_number',
         'emp_address',
         'emp_email',
+        'emp_nid',
         'password',
         'emp_role',
         'supperAdmin_id',

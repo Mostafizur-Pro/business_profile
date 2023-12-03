@@ -125,7 +125,7 @@ class AdminUserInfo extends Controller
 
     public function delete_userInfo($id)
     {
-        $user = User::table('user_info')->find($id);
+        $user = User::find($id);
 
         if ($user) {
             $adminId = Session::get('id');
@@ -136,12 +136,11 @@ class AdminUserInfo extends Controller
                     'admin_id' => $adminData->id,
                     'admin_name' => $adminData->admin_name,
                     'adminTime' => now(),
-                    'pending' => 'delete', // You were overwriting the $user variable here
+                    'pending' => 'delete', 
                 ];
 
-                // Update the user_info record with the new data
-                $result = User::where('id', $id)
-                    ->update($dataToUpdate); // Use update instead of insert for updating data
+                $result = User::where('id', $id)->update($dataToUpdate);
+
 
                 // dd($result);
                 if ($result) {
@@ -156,10 +155,10 @@ class AdminUserInfo extends Controller
                 $deleted = User::where('id', $id)->delete();
                 if ($deleted) {
                     // The update was Successful
-                    return redirect('/userInfo')->with('Success', 'ID Delete Successfully.');
+                    return redirect('/admin/userInfo')->with('Success', 'ID Delete Successfully.');
                 } else {
                     // The update failed
-                    return redirect('/userInfo')->with('Fail', 'Delete Fail, Please try again');
+                    return redirect('/admin/userInfo')->with('Fail', 'Delete Fail, Please try again');
                 }
             }
         }

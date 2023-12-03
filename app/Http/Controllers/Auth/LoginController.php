@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\EmployeeInfo;
+use App\Models\User;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use DB;
@@ -22,8 +24,7 @@ class LoginController extends Controller
         ]);
         
         if ($request) {
-            $result = DB::table('employee_info')
-                ->where(function ($query) use ($request) {
+            $result = EmployeeInfo::where(function ($query) use ($request) {
                     $query->where('emp_email', $request->input('text'))
                         ->orWhere('emp_number', $request->input('text'));
                 })
@@ -33,10 +34,9 @@ class LoginController extends Controller
             if ($result) {
                 Session::put('empId', $result->id);
                 Session::put('emp_email', $request->emp_email);
-                return Redirect::to('/empDashboard');
+                return Redirect::to('/employee/dashboard');
             } else {
-                $result = DB::table('user_info')
-                    ->where(function ($query) use ($request) {
+                $result = User::where(function ($query) use ($request) {
                         $query->where('owner_email', $request->input('text'))
                             ->orWhere('owner_number', $request->input('text'));
                     })

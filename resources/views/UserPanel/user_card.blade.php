@@ -46,7 +46,7 @@
        <div class="sidebar-header">
        <div class="sidebar-brand">
        {{$empinfo->emp_name}}</div></div>
-       <li><a href="{{url('/empDashboard')}}">Dashboard</a></li>
+       <li><a href="{{url('/employee/dashboard')}}">Dashboard</a></li>
        <li><a href="{{url('/user_card')}}">Profile</a></li>
        <li><a href="{{url('/AccRegistration')}}">Register</a></li>
        <li><a href="{{url('/')}}">Log Out</a></li>

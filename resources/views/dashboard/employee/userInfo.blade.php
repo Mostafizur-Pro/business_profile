@@ -1,5 +1,5 @@
 @extends('dashboard.employee.empApp')
-@section('title', 'Admin - Dashboard')
+@section('title', 'Employee - Dashboard')
 @section('empDashboard')
 
 @include('components.logger.logger')

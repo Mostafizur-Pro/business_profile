@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 use DB;
 use Illuminate\Support\Facades\Hash;
@@ -25,7 +26,7 @@ class AdminLoginController extends Controller
             'password' => 'required|string|min:4',
             'role' => 'required|in:admin,superAdmin',
         ]);
-        $user_id = DB::table('admin_info')->insert([
+        $user_id = Admin::table('admin_info')->insert([
             'admin_name' => $request->input('admin_name'),
             'number' => $request->input('number'),
             'admin_email' => $request->input('admin_email'),
@@ -49,7 +50,7 @@ class AdminLoginController extends Controller
             'password' => 'required',
         ]);
     
-        $user = DB::table('admin_info')
+        $user = Admin::table('admin_info')
                     ->where('admin_email', $credentials['admin_email'])
                     ->first();
     

@@ -34,15 +34,6 @@
         <ul class="flex flex-col space-y-2 mt-4 pl-0 list-none">
             <!-- Dashboard -->
             <li>
-                <!-- <div class="text-sm leading-default py-2.7 px-4 flex items-center rounded-lg bg-blue-500/30 font-semibold text-slate-700 transition-all dark:text-white dark:opacity-80 dark:antialiased dark:transition-all dark:duration-200 dark:content-['\f107']" aria-expanded="true">
-                    <div class="w-8 h-8 flex items-center justify-center rounded-lg bg-center fill-current p-2.5 text-center text-black">
-
-                    </div>
-                    <span class="ml-2 transition-opacity opacity-100">Dashboards</span>
-                </div> -->
-
-
-
                 <div class="overflow-hidden transition-all duration-200 ease-in-out">
                     <ul class="menu pl-6 mt-2 list-none">
                         <li>
@@ -54,8 +45,6 @@
                                 <span class="ml-3" sidebar-toggle-item>Dashboard</span>
                             </a>
                         </li>
-
-
 
                         <li>
                             <details close>
@@ -185,7 +174,7 @@
                                     </li>
                                     @endif
                                     <li>
-                                        <a href="/userRegister" class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Add User</a>
+                                        <a href="/register" class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Add User</a>
                                     </li>
                                     <li>
                                         <a href="/empRegister" class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Add Employee</a>
@@ -197,13 +186,6 @@
                     </ul>
                 </div>
             </li>
-
-
-
-
-
-
-
         </ul>
     </div>
 </aside>

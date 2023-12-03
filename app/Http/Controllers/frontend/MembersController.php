@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,8 +17,7 @@ class MembersController extends Controller
 
         $letter = $request->input('letter'); // Add 'letter' to the request parameters
 
-        $query = DB::table('user_info')
-            ->select('*')
+        $query = User::select('*')
             ->orderBy('owner_name', 'asc');
         //   dd($query);
 
