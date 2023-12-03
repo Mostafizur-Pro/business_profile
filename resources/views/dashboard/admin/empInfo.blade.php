@@ -24,6 +24,7 @@
                     <th scope="col" class="pr-3 py-3">Name </th>
                     <th scope="col" class="pr-3 py-3">Number </th>
                     <th scope="col" class="pr-3 py-3">Email </th>
+                    <th scope="col" class="pr-3 py-3">NID </th>
                     <!-- <th scope="col" class="pr-3 py-3">Role </th> -->
                     <th scope="col" class="pr-3 py-3">Address </th>
                     <th scope="col" class="pr-3 py-3">Admin ID </th>
@@ -56,6 +57,7 @@
                     </td>
                     <td class="pr-3 "> {{ $empData->emp_number }} </td>
                     <td class="pr-3 "> {{ $empData->emp_email }} </td>
+                    <td class="pr-3 "> {{ $empData->emp_nid }} </td>
 
                     <td class="pr-3 "> {{ $empData->emp_address }} </td>
                     <td class="pr-3 "> {{ $empData->supperAdmin_id }} </td>

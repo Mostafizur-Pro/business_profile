@@ -208,47 +208,7 @@
             </div>
         </div>
     </header>
-    <!-- <section class="flex justify-center items-center min-h-screen">
-        <form class="bg-white p-8 rounded-lg shadow-md w-96" action="{{ url('registerAdmin') }}" method="post">
-            @csrf
-
-            <h3 class="text-3xl font-semibold mb-4">Admin Register </h3>
-
-            <div class="mb-4">
-                <input type="text" name="admin_name" required placeholder="Enter your name" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" maxlength="50">
-                <span class="text-red-400 ">@error('admin_name') {{$message}} @endError</span>
-            </div>
-
-            
-            <div class="mb-4">
-                <input type="text" name="number" required placeholder="Enter your number" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" maxlength="11">
-                <span class="text-red-400 ">@error('number') {{$message}} @endError</span>
-            </div>
-
-            <div class="mb-4">
-                <select name="role" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
-                    <option selected disabled>Select Your Role</option>
-                    <option value="admin">Admin</option>
-                    <option value="superAdmin">Super Admin</option>
-                </select>
-            </div>
-
-            <div class="mb-4">
-                <input type="email" name="admin_email" required placeholder="Enter your email" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" maxlength="50">
-                <span class="text-red-400 ">@error('admin_email') {{$message}} @endError</span>
-            </div>
-
-            <div class="mb-4">
-                <input type="password" name="password" required placeholder="Enter your password" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" maxlength="50">
-                <span class="text-red-400 ">@error('password') {{$message}} @endError</span>
-            </div>
-
-            <button type="submit" class="w-full bg-blue-500 text-white rounded-md py-2 hover:bg-blue-600 transition duration-300">Submit</button>
-            <p class="mt-5">Already have an account ! <a class="text-blue-500 font-bold " href="{{url('/admin')}}">Please Login</a></p>
-        </form>
-
-
-    </section> -->
+    
 
 
     <section class="flex justify-center items-center min-h-screen">

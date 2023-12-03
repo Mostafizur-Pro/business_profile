@@ -19,6 +19,7 @@ class CreateEmployeeInfoTable extends Migration
             $table->string('emp_name');
             $table->string('emp_image')->default('https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png');
             $table->string('emp_number', 11)->unique();
+            $table->string('emp_nid')->unique();
             $table->string('emp_address');
             $table->string('emp_email')->unique();
             $table->string('password');

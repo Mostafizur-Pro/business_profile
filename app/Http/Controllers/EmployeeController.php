@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
+use App\Models\EmployeeInfo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use DB;
@@ -9,102 +11,9 @@ use Session;
 
 class EmployeeController extends Controller
 {
+ 
 
-
-    public function emp_register()
-    {
-        $empJson = file_get_contents(storage_path('employee_ids.json'));
-        $nonMatchingData = json_decode($empJson, true);
-
-        // dd($nonMatchingData);
-
-        $allEmpData = DB::table('employee_info')->get();
-        $allempId = [];
-        foreach ($allEmpData as $empData) {
-            $allempId[] = $empData->emp_id;
-        }
-
-
-
-        return view('auth.emp_register', compact('nonMatchingData', 'allempId'));
-    }
-
-    public function register_emp(Request $request)
-    {
-        $request->validate([
-            'emp_name' => 'required|string|max:50',
-            'emp_number' => 'required|string|max:11|unique:employee_info',
-            'emp_role' => 'required|in:Sales and Marketing Office,Marketing Officer,Sales Officer',
-            'emp_id' => 'required|string',
-            'emp_address' => 'required|string',
-            'emp_email' => 'required|string|email|unique:employee_info',
-            'password' => 'required|string|min:4',
-        ]);
-
-        $userId = Session::get('id');
-        $adminData = DB::table('admin_info')->find($userId);
-
-
-        $user_id = DB::table('employee_info')->insert([
-            'emp_name' => $request->input('emp_name'),
-            'emp_number' => $request->input('emp_number'),
-            'emp_role' => $request->input('emp_role'),
-            'emp_id' => $request->input('emp_id'),
-            'emp_address' => $request->input('emp_address'),
-            'emp_email' => $request->input('emp_email'),
-            'password' => $request->input('password'),
-
-            'supperAdmin_id' => $adminData->id,
-            'supperAdmin_name' => $adminData->admin_name,
-
-
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-
-
-        return redirect('empLogin')->with('success', 'Registration successful! Please log in.');
-    }
-
-    public function emp_login()
-    {
-        return view('auth.emp_login');
-    }
-
-    public function login_emp(Request $request)
-    {
-        $request->validate([
-            'emp_email' => 'required|string|email',
-            'password' => 'required|string',
-        ]);
-
-        $result = DB::table('employee_info')
-            ->where('emp_email', $request->input('emp_email'))
-            ->where('password', $request->input('password'))
-            ->first();
-
-        if ($result) {
-            Session::put('empId', $result->id);
-            Session::put('emp_email', $request->emp_email);
-            return Redirect::to('/empDashboard');
-            // echo 'success';
-        } else {
-            return redirect('empLogin')->with('Fail', 'Login fail! Please log in again.');
-        }
-    }
-
-
-    public function emp_dashboard()
-    {
-        $data = null;
-        if (Session::has('empId')) {
-            $userId = Session::get('empId');
-            $empData = DB::table('employee_info')->find($userId);
-            // dd($empData);
-            $allEmpData = DB::table('employee_info')->get();
-        }
-        return view('dashboard.employee.empDashboard', compact('empData', 'allEmpData'));
-    }
+ 
 
     public function logout()
     {
@@ -123,7 +32,7 @@ class EmployeeController extends Controller
             $editEmp = $empUser;
             return view('dashboard.employee.empEdit.editEmpProfile', compact('editEmp'));
         } else {
-            return redirect('empDashboard')->with('Fail', 'Access denied. You do not have permission to edit this profile.');
+            return redirect('/employee/dashboard')->with('Fail', 'Access denied. You do not have permission to edit this profile.');
         }
     }
 
@@ -166,9 +75,9 @@ class EmployeeController extends Controller
 
 
         if ($result) {
-            return redirect("/empDashboard")->with('Success', 'Profile updated Successfully');
+            return redirect("/employee/dashboard")->with('Success', 'Profile updated Successfully');
         } else {
-            return redirect("/empDashboard")->with('Fail', 'Failed to update profile. Please try again.');
+            return redirect("/employee/dashboard")->with('Fail', 'Failed to update profile. Please try again.');
         }
     }
 
@@ -185,14 +94,14 @@ class EmployeeController extends Controller
         // dd($empUser->emp_id);
 
         if ($userInfo->emp_id !== $empUser->emp_id) {
-            return redirect('empDashboard')->with('Fail', 'Access denied. You do not have permission to edit this profile.');
+            return redirect('/employee/dashboard')->with('Fail', 'Access denied. You do not have permission to edit this profile.');
         }
         if ($userInfo) {
             $editUserInfo = $userInfo;
             // dd($editAdmin);
             return view('dashboard.employee.empEdit.editUserInfoProfile', compact('editUserInfo'));
         } else {
-            return redirect('empDashboard');
+            return redirect('/employee/dashboard');
         }
     }
 
@@ -237,7 +146,7 @@ class EmployeeController extends Controller
         if ($result) {
             return redirect("/userInfo_emp")->with('Success', 'Profile updated Successfully');
         } else {
-            return redirect("/empDashboard")->with('Fail', 'Profile update failed');
+            return redirect("/employee/dashboard")->with('Fail', 'Profile update failed');
         }
     }
 

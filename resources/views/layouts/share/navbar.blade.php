@@ -161,7 +161,7 @@
                 </label>
                 <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                     <li>
-                        <a href="/empDashboard" class="justify-between">
+                        <a href="/employee/dashboard" class="justify-between">
                             Profile
                             <span class="badge">New</span>
                         </a>
@@ -186,12 +186,12 @@
                 </label>
                 <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                     <li>
-                        <a href="/userDashboard" class="justify-between">
+                        <a href="/user/dashboard" class="justify-between">
                             Profile
                             <span class="badge">New</span>
                         </a>
                     </li>
-                    <li><a href="{{ url('edit_userInfo_profile', $userData->id) }}">Settings</a></li>
+                    <li><a href="{{ url('user/edit_userInfo_profile', $userData->id) }}">Settings</a></li>
                     <li><a href="{{url('/userLogout')}}">Logout</a></li>
                 </ul>
             </div>
@@ -414,7 +414,7 @@
                 </label>
                 <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                     <li>
-                        <a href="/empDashboard" class="justify-between">
+                        <a href="/employee/dashboard" class="justify-between">
                             Profile
                             <span class="badge">New</span>
                         </a>
@@ -438,12 +438,12 @@
                 </label>
                 <ul tabindex="0" class="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                     <li>
-                        <a href="/userDashboard" class="justify-between">
+                        <a href="/user/dashboard" class="justify-between">
                             Profile
                             <span class="badge">New</span>
                         </a>
                     </li>
-                    <li><a href="{{ url('edit_userInfo_profile', $userData->id) }}">Settings</a></li>
+                    <li><a href="{{ url('user/edit_userInfo_profile', $userData->id) }}">Settings</a></li>
                     <li><a href="{{url('/userLogout')}}">Logout</a></li>
                 </ul>
             </div>
