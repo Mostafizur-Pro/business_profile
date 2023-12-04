@@ -275,31 +275,101 @@
         "place": [
             {
                 "name": "Cumilla",
-                "link": "chattogram-division/cumilla"
+                "link": "chattogram-division/cumilla",
+                "area": [
+                    {
+                        "name": "Mirpur",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Uttara",
+                        "link": "dhaka-division/dhaka/uttara"
+                    }
+                ]
             },
             {
                 "name": "Brahmanbaria",
-                "link": "chattogram-division/Brahmanbaria"
+                "link": "chattogram-division/Brahmanbaria",
+                "area": [
+                    {
+                        "name": "Mirpur",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Uttara",
+                        "link": "dhaka-division/dhaka/uttara"
+                    }
+                ]
             },
             {
                 "name": "Noyakhali",
-                "link": "chattogram-division/Noyakhali"
+                "link": "chattogram-division/Noyakhali",
+                "area": [
+                    {
+                        "name": "Mirpur",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Uttara",
+                        "link": "dhaka-division/dhaka/uttara"
+                    }
+                ]
             },
             {
                 "name": "Feni",
-                "link": "chattogram-division/Feni"
+                "link": "chattogram-division/Feni",
+                "area": [
+                    {
+                        "name": "Mirpur",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Uttara",
+                        "link": "dhaka-division/dhaka/uttara"
+                    }
+                ]
             },
             {
                 "name": "chadpur",
-                "link": "chattogram-division/chadpur"
+                "link": "chattogram-division/chadpur",
+                "area": [
+                    {
+                        "name": "Mirpur",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Uttara",
+                        "link": "dhaka-division/dhaka/uttara"
+                    }
+                ]
             },
             {
                 "name": "chadpur",
-                "link": "chattogram-division/chadpur"
+                "link": "chattogram-division/chadpur",
+                "area": [
+                    {
+                        "name": "Mirpur",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Uttara",
+                        "link": "dhaka-division/dhaka/uttara"
+                    }
+                ]
             },
             {
                 "name": "chadpur",
-                "link": "chattogram-division/chadpur"
+                "link": "chattogram-division/chadpur",
+                "area": [
+                    {
+                        "name": "Mirpur",
+                        "link": "dhaka-division/dhaka/mirpur"
+                    },
+                    {
+                        "name": "Uttara",
+                        "link": "dhaka-division/dhaka/uttara"
+                    }
+                ]
             }
         ]
     },

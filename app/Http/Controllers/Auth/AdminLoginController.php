@@ -50,8 +50,7 @@ class AdminLoginController extends Controller
             'password' => 'required',
         ]);
     
-        $user = Admin::table('admin_info')
-                    ->where('admin_email', $credentials['admin_email'])
+        $user = Admin::where('admin_email', $credentials['admin_email'])
                     ->first();
     
         if ($user && Hash::check($credentials['password'], $user->password)) {

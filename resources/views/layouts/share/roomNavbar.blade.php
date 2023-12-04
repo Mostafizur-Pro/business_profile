@@ -1,6 +1,11 @@
 <div class="fixed top-0 z-50 w-full  -translate-x-1/2 bg-[#282560] border-t border-gray-200 left-1/2 dark:bg-gray-700 dark:border-gray-600">
 
-    <div class="grid h-full max-w-lg grid-cols-5 mx-auto">
+    <div class="grid h-full max-w-lg grid-cols-6 mx-auto">
+
+
+        <button data-tooltip-target="tooltip-home" type="button" class="inline-flex flex-col items-center justify-center p-4 group">
+            <img class="w-5" src="/assets/room/logo.png" alt="">
+        </button>
         <button data-tooltip-target="tooltip-home" type="button" class="inline-flex flex-col items-center justify-center p-4 hover:bg-gray-50 dark:hover:bg-gray-800 group">
             <a href="/room">
                 <svg class="w-5 h-5 mb-1 text-gray-200 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">

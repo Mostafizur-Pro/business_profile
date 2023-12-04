@@ -26,11 +26,11 @@ Route::get('/about', [FrontendHomeController::class, 'about_page'])->name('about
 Route::get('/contact', [FrontendHomeController::class, 'contact_page'])->name('contact');
 
 
-Route::get('/room', [RoomController::class, 'room_page']);
+Route::get('/room', [RoomController::class, 'room_page'])->middleware('loginRoom');
 
 
 // User & Employee Login
-Route::get('/login', [LoginController::class, 'login_page']);
+Route::get('/login', [LoginController::class, 'login_page'])->middleware('login');
 Route::post('/login', [LoginController::class, 'login']);
 
 
