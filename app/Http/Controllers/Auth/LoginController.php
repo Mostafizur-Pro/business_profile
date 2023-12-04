@@ -47,7 +47,7 @@ class LoginController extends Controller
                 if ($result) {
                     Session::put('userId', $result->id);
                     Session::put('user_email', $request->user_email);
-                    return Redirect::to('/userDashboard');
+                    return Redirect::to('/user/userDashboard');
                 }
                 else {
                     return redirect('login')->with('Fail', 'Login fail! Please log in again.');
