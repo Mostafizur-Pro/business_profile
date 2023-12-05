@@ -15,11 +15,13 @@ class AdminPackageController extends Controller
     public function package_List()
     {
 
-        $packagesJson = file_get_contents(storage_path('package.json'));
-        $packagesList = json_decode($packagesJson, true);
+        // $packagesJson = file_get_contents(storage_path('package.json'));
+        // $packagesList = json_decode($packagesJson, true);
+
+        $packagesList = Package::get();
 
         // dd($packagesList);
-            //   return view('package', compact('packagesList'));
+        //   return view('package', compact('packagesList'));
         return view('dashboard.admin.package', compact('packagesList'));
     }
 
@@ -30,22 +32,15 @@ class AdminPackageController extends Controller
 
     public function store_package(Request $request)
     {
-        $this->validate($request, [
-            'title' => ['required', 'string'],
-            'price' => ['required', 'numeric'],
-            'details' => ['required', 'string']
-        ]);
 
 
-        $data = array();
-        $data['title'] = $request->title;
-        $data['price'] = $request->price;
-        $data['details'] = $request->details;
-
-
-        DB::table('package')->insert($data);
-        session()->flash("message", "Package Added Successfully");
-
+        $admin = new Package();
+        $admin->title = $request->input('title');
+        $admin->price = $request->input('price');
+        $admin->details = json_encode($request->input('details'));      
+        $admin->description = $request->input('description');    
+        
+        $admin->save();
 
         return redirect('/admin/packageItem');
     }

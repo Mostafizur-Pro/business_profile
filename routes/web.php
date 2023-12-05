@@ -30,7 +30,8 @@ Route::get('/room', [RoomController::class, 'room_page'])->middleware('loginRoom
 
 
 // User & Employee Login
-Route::get('/login', [LoginController::class, 'login_page'])->middleware('login');
+// Route::get('/login', [LoginController::class, 'login_page'])->middleware('login');
+Route::get('/login', [LoginController::class, 'login_page']);
 Route::post('/login', [LoginController::class, 'login']);
 
 

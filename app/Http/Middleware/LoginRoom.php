@@ -46,7 +46,7 @@ class LoginRoom
             }
     
     
-            return redirect('/login')->with('Fail', 'Unauthorized access');
+            return redirect('/login')->with('Fail', 'Unauthorized access, Please login first');
         }
     }
 }

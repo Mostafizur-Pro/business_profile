@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend\user;
 
 use App\Http\Controllers\Controller;
+use App\Models\Package;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Session;
@@ -90,8 +91,7 @@ class UserDashboardController extends Controller
     public function package_List()
     {
 
-        $packagesJson = file_get_contents(storage_path('package.json'));
-        $packagesList = json_decode($packagesJson, true);
+        $packagesList = Package::get();
 
         // dd($packagesList);
             //   return view('package', compact('packagesList'));

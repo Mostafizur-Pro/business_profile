@@ -1,3 +1,7 @@
+
+
+
+
 <div class="card border my-10 bg-base-100 shadow-xl">
     <div class="flex items-center justify-between px-8 py-5">
         <div class="flex items-center mr-5">

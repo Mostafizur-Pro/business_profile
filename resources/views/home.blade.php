@@ -2,6 +2,7 @@
 @section('content')
 
 @section('title', 'Home')
+
 @include('components.logger.logger')
 
 

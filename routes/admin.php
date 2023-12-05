@@ -45,7 +45,7 @@ use Illuminate\Support\Facades\Route;
 
         // Route::get('/pack', [AdminPackageController::class, 'add_package']);
         Route::get('/add_Package', [AdminPackageController::class, 'add_package']);
-        Route::post('/save_Package', [AdminPackageController::class, 'save_pack'])->name('savePack');
+        Route::post('/savePack', [AdminPackageController::class, 'store_package'])->name('savePack');
         
         
 

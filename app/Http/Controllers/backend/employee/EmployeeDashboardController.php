@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend\employee;
 
 use App\Http\Controllers\Controller;
 use App\Models\EmployeeInfo;
+use App\Models\Package;
 use Session;
 
 class EmployeeDashboardController extends Controller
@@ -26,11 +27,9 @@ class EmployeeDashboardController extends Controller
     public function package_List()
     {
 
-        $packagesJson = file_get_contents(storage_path('package.json'));
-        $packagesList = json_decode($packagesJson, true);
+        $packagesList = Package::get();
 
-        // dd($packagesList);
-            //   return view('package', compact('packagesList'));
+       
         return view('dashboard.employee.package', compact('packagesList'));
     }
 }

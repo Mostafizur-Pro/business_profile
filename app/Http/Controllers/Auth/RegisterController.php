@@ -30,7 +30,7 @@ class RegisterController extends Controller
 
         $userId = Session::get('empId');
         // dd($userId);
-        $empData = EmployeeInfo::table('employee_info')->find($userId);
+        $empData = EmployeeInfo::find($userId);
 
 
         $userData = [
@@ -51,7 +51,7 @@ class RegisterController extends Controller
             $userData['emp_name'] = $empData->emp_name;
         }
 
-        $user_id = User::table('user_info')->insert($userData);
+        $user_id = User::insert($userData);
         if ($empData) {
             return redirect('userInfo_emp')->with('success', 'User Registration successful!');
         }

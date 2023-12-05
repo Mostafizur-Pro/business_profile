@@ -18,41 +18,45 @@
          </div>
       </div>
       <div class="-mx-4 flex flex-wrap justify-center">
-         <!-- Basic -->
+         
          @foreach($packagesList as $package)
          <div class="w-full px-4 md:w-1/2 lg:w-1/3">
             <div class="relative z-10 mb-10 overflow-hidden rounded-[10px] border-2 border-stroke dark:border-dark-3 bg-white dark:bg-dark-2 py-10 px-8 shadow-pricing sm:p-12 lg:py-10 lg:px-6 xl:p-[50px]">
                <span class="mb-3 block text-4xl  font-bold text-primary">
-                  <!-- Basic -->
-                  {{$package['title']}}
+                  
+                  {{$package->title}}
+
                </span>
                <h2 class="mb-5 text-[42px] font-bold text-dark dark:text-white">
-                  <span> ৳{{$package['price']}}</span>
+                  <span> ৳{{$package->price}}</span>
                   <span class="text-base font-medium text-body-color dark:text-dark-6">
                      / month
                   </span>
                </h2>
                <p class="mb-8 border-b border-stroke dark:border-dark-3 pb-8 text-base text-body-color dark:text-dark-6">
-               {{$package['description']}}
+                  {{$package->description}}
                </p>
 
 
                <div class="p-6">
                   <ol class="list-inside">
-                     @foreach($package['details'] as $details)
+
+
+                     @foreach(json_decode($package->details) as $detail)
                      <li class="mb-4 flex">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="mr-3 h-5 w-5 text-primary dark:text-primary-400">
                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
-                        {{ $details }}
+                        {{$detail}}
                      </li>
 
                      @endforeach
 
 
+
                   </ol>
                </div>
-               @if($package['price'] === '600')
+               @if($package->price === '600')
                <a href="javascript:void(0)" class="block w-full rounded-md border border-primary bg-primary p-3 text-center text-base font-medium text-white transition hover:bg-opacity-90">
                   Choose
                </a>
