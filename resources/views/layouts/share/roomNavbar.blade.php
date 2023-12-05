@@ -4,7 +4,9 @@
 
 
         <button data-tooltip-target="tooltip-home" type="button" class="inline-flex flex-col items-center justify-center p-4 group">
-            <img class="w-5" src="/assets/room/logo.png" alt="">
+            <a href="{{url('/')}}">
+                <img class="w-5" src="/assets/room/logo.png" alt="">
+            </a>
         </button>
         <button data-tooltip-target="tooltip-home" type="button" class="inline-flex flex-col items-center justify-center p-4 hover:bg-gray-50 dark:hover:bg-gray-800 group">
             <a href="/room">
@@ -20,16 +22,16 @@
                 <svg class="w-5 h-5 mb-1 text-gray-200 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 20">
                     <path d="M13 20a1 1 0 0 1-.64-.231L7 15.3l-5.36 4.469A1 1 0 0 1 0 19V2a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v17a1 1 0 0 1-1 1Z" />
                 </svg>
+                <span class="sr-only">Bookmark</span>
             </a>
-            <span class="sr-only">Bookmark</span>
         </button>
-        <button data-tooltip-target="tooltip-post" type="button" class="inline-flex flex-col items-center justify-center p-4 hover:bg-gray-50 dark:hover:bg-gray-800 group">
-            <a href="">
-                <svg class="w-5 h-5 mb-1 text-gray-200 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
-                </svg>
-            </a>
+        <button onclick="my_modal_3.showModal()" data-tooltip-target="tooltip-post" type="button" class="inline-flex flex-col items-center justify-center p-4 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+
+            <svg class="w-5 h-5 mb-1 text-gray-200 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
+            </svg>
             <span class="sr-only">New post</span>
+
         </button>
         <button data-tooltip-target="tooltip-search" type="button" class="inline-flex flex-col items-center justify-center p-4 hover:bg-gray-50 dark:hover:bg-gray-800 group">
             <a href="">
@@ -47,5 +49,33 @@
             </a>
             <span class="sr-only">Settings</span>
         </button>
+
+        <!-- Modal toggle -->
+        <!-- You can open the modal using ID.showModal() method -->
+        <!-- <button class="btn" onclick="my_modal_3.showModal()">open modal</button> -->
+        <dialog id="my_modal_3" class="modal">
+            <div class="modal-box">
+                <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+                <h3 class="font-bold text-center text-lg">Create Post</h3>
+                <form action="your_php_script.php" method="post">
+                    <div>
+                        
+                        <textarea id="post" name="post" rows="4" cols="50" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></textarea>
+                    </div>
+                    <div class="mt-4">
+                        <button type="submit" class="inline-flex items-center px-4 py-2 bg-blue-500 border border-transparent rounded-md font-semibold text-white uppercase tracking-widest hover:bg-blue-600 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-200 active:bg-blue-700 transition ease-in-out duration-150">
+                            Post to Facebook
+                        </button>
+                    </div>
+                </form>
+                
+            </div>
+        </dialog>
+
+        <!-- Main modal -->
+
+
     </div>
 </div>

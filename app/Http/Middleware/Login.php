@@ -20,12 +20,16 @@ class Login
      */
     public function handle(Request $request, Closure $next)
     {
+
+
         if (Session::has('id')) {
             $userId = Session::get('id');
             $user = Admin::find($userId);
             if ($user) {
                 return redirect('/admin/dashboard');
             }
+        } else {
+            return redirect('/login')->with('Fail', 'Unauthorized access');
         }
 
         if (Session::has('empId')) {
@@ -34,6 +38,8 @@ class Login
             if ($user) {
                 return redirect('/employee/dashboard');
             }
+        } else {
+            return redirect('/login')->with('Fail', 'Unauthorized access');
         }
 
         if (Session::has('userId')) {
@@ -42,6 +48,8 @@ class Login
             if ($user) {
                 return redirect('/user/dashboard');
             }
+        } else {
+            return redirect('/login')->with('Fail', 'Unauthorized access');
         }
 
 
