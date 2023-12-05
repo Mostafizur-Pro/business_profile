@@ -58,10 +58,72 @@
                 <form method="dialog">
                     <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                 </form>
-                <h3 class="font-bold text-center text-lg">Create Post</h3>
+                <h3 class="font-bold text-center text-xl">Create Post</h3>
+
+                <div>
+                    @if($adminData || $empData || $userData)
+
+                    @if($adminData)
+                    <div class="flex items-center justify-between px-8 py-5">
+                        <div class="flex items-center mr-5">
+
+                            <div class="mr-5">
+                                <div class="inline-block relative shrink-0 cursor-pointer rounded-[.95rem]">
+                                    <img class="w-10 shrink-0 inline-block rounded-[.95rem]" src="{{ $adminData->admin_image }}" alt="avatar image">
+                                </div>
+                            </div>
+                            <div class="mr-2 ">
+                                <a href="javascript:void(0)" class="dark:hover:text-primary hover:text-primary transition-colors duration-200 ease-in-out text-[1rem] font-medium dark:text-neutral-400/90 text-secondary-inverse">{{ $adminData->admin_name }}</a>
+                                <span class="text-secondary-dark dark:text-stone-500 font-medium block text-[0.85rem]">{{ $adminData->role }}</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    @elseif($empData)
+                    <div class="flex items-center justify-between px-8 py-5">
+                        <div class="flex items-center mr-5">
+
+                            <div class="mr-5">
+                                <div class="inline-block relative shrink-0 cursor-pointer rounded-[.95rem]">
+                                    <img class="w-10 shrink-0 inline-block rounded-[.95rem]" src="{{ $empData->emp_image }}" alt="avatar image">
+                                </div>
+                            </div>
+                            <div class="mr-2 ">
+                                <a href="javascript:void(0)" class="dark:hover:text-primary hover:text-primary transition-colors duration-200 ease-in-out text-[1rem] font-medium dark:text-neutral-400/90 text-secondary-inverse">{{ $empData->emp_name }}</a>
+                                <span class="text-secondary-dark dark:text-stone-500 font-medium block text-[0.85rem]">{{ $empData->emp_role }}</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    @elseif($userData)
+                    <div class="flex items-center justify-between px-8 py-5">
+                        <div class="flex items-center mr-5">
+
+                            <div class="mr-5">
+                                <div class="inline-block relative shrink-0 cursor-pointer rounded-[.95rem]">
+                                    <img class="w-10 shrink-0 inline-block rounded-[.95rem]" src="{{ $userData->owner_image }}" alt="avatar image">
+                                </div>
+                            </div>
+                            <div class="mr-2 ">
+                                <a href="javascript:void(0)" class="dark:hover:text-primary hover:text-primary transition-colors duration-200 ease-in-out text-[1rem] font-medium dark:text-neutral-400/90 text-secondary-inverse">{{ $userData->owner_name }}</a>
+                                <span class="text-secondary-dark dark:text-stone-500 font-medium block text-[0.85rem]">{{ $userData->owner_role }}</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    @endif
+
+
+                    @else
+
+                    @endif
+                </div>
+
+
+
                 <form action="your_php_script.php" method="post">
                     <div>
-                        
+
                         <textarea id="post" name="post" rows="4" cols="50" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></textarea>
                     </div>
                     <div class="mt-4">
@@ -70,7 +132,7 @@
                         </button>
                     </div>
                 </form>
-                
+
             </div>
         </dialog>
 

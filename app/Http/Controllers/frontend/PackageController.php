@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Package;
 use Illuminate\Http\Request;
 use DB;
 
@@ -10,13 +11,9 @@ class PackageController extends Controller
 {
     public function package_page()
     {
-        $packagesJson = file_get_contents(storage_path('package.json'));
-        $packagesList = json_decode($packagesJson, true);
-
-        // $data = DB::table('packages')->get();
-        // dd($data);
-
-        // DB::table('package')->insert($data);
+     
+        
+        $packagesList = Package::get();
 
         return view('package', compact('packagesList'));
     }
