@@ -77,7 +77,7 @@
                                 <span class="text-secondary-dark dark:text-stone-500 font-medium block text-[0.85rem]">{{ $adminData->role }}</span>
                             </div>
                         </div>
-                        
+
                     </div>
                     @elseif($empData)
                     <div class="flex items-center justify-between px-8 py-5">
@@ -93,7 +93,7 @@
                                 <span class="text-secondary-dark dark:text-stone-500 font-medium block text-[0.85rem]">{{ $empData->emp_role }}</span>
                             </div>
                         </div>
-                        
+
                     </div>
                     @elseif($userData)
                     <div class="flex items-center justify-between px-8 py-5">
@@ -109,7 +109,7 @@
                                 <span class="text-secondary-dark dark:text-stone-500 font-medium block text-[0.85rem]">{{ $userData->owner_role }}</span>
                             </div>
                         </div>
-                        
+
                     </div>
                     @endif
 
@@ -121,14 +121,35 @@
 
 
 
-                <form action="your_php_script.php" method="post">
+                <form action="" method="post">
                     <div>
+                        <textarea id="post" name="post" rows="4" cols="50" class="mt-1 p-3 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="What's on your mind"></textarea>
+                        <div id="postImage" class="flex justify-between border border-2 py-3 rounded-lg px-3 " onclick="toggleVisibility('postImage', 'postImage1')">
+                            <p class="text-lg font-semibold">Add Photos</p>
 
-                        <textarea id="post" name="post" rows="4" cols="50" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></textarea>
+                            <img src="https://static.xx.fbcdn.net/rsrc.php/v3/y7/r/Ivw7nhRtXyo.png?_nc_eui2=AeF_XhTxvKhzjhuQM1YfIBFqPL4YoeGsw5I8vhih4azDkr0T0kiKdCOyzBnABJRGxPPExNxAE5qG8tUscWhxrYDJ" alt="">
+                        </div>
+
+                        <div id="postImage1" class="flex items-center justify-center w-full hidden">
+                            <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                                <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                    <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                                    </svg>
+                                    <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                                </div>
+                                <input id="dropzone-file" type="file" class="hidden" onchange="previewImage(event)" />
+                            </label>
+                        </div>
+                      
+
+                        <img id="selected-image" class="hidden" src="#" alt="Selected Image" />
+              
                     </div>
                     <div class="mt-4">
                         <button type="submit" class="inline-flex items-center px-4 py-2 bg-blue-500 border border-transparent rounded-md font-semibold text-white uppercase tracking-widest hover:bg-blue-600 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-200 active:bg-blue-700 transition ease-in-out duration-150">
-                            Post to Facebook
+                            Post
                         </button>
                     </div>
                 </form>
@@ -141,3 +162,52 @@
 
     </div>
 </div>
+
+
+<script>
+    function toggleVisibility(hideId, showId) {
+        const hideElement = document.getElementById(hideId);
+        const showElement = document.getElementById(showId);
+
+        if (hideElement && showElement) {
+            hideElement.style.display = 'none';
+            showElement.style.display = 'block';
+        }
+    }
+
+    // function newUpload(data) {
+    //     const selectedImage = document.getElementById('selected-image');
+    //     const dropzoneFile = document.getElementById('postImage1');
+    //     const dropzoneFile1 = document.getElementById('dropzone-file');
+
+    //     console.log(selectedImage, dropzoneFile)
+
+    //     selectedImage.style.display = 'none';
+    //     dropzoneFile.style.display = 'block';
+    //     dropzoneFile1.style.display = 'block';
+
+    // }
+
+
+    function previewImage(event) {
+        const selectedImage = document.getElementById('selected-image');
+        const dropzoneFile = document.getElementById('dropzone-file');
+
+        const hideElement = document.getElementById('postImage1');
+
+
+
+        if (event.target.files && event.target.files[0]) {
+            hideElement.style.display = 'none';
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                selectedImage.src = e.target.result;
+                selectedImage.classList.remove('hidden');
+                dropzoneFile.classList.add('hidden');
+            };
+
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    }
+</script>
