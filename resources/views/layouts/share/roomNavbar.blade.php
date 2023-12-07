@@ -103,7 +103,7 @@
                                 <div class="inline-block relative shrink-0 cursor-pointer rounded-[.95rem]">
                                     <img class="w-10 shrink-0 inline-block rounded-[.95rem]" src="{{ $userData->owner_image }}" alt="avatar image">
                                 </div>
-                            </div>
+                            </div>  
                             <div class="mr-2 ">
                                 <a href="javascript:void(0)" class="dark:hover:text-primary hover:text-primary transition-colors duration-200 ease-in-out text-[1rem] font-medium dark:text-neutral-400/90 text-secondary-inverse">{{ $userData->owner_name }}</a>
                                 <span class="text-secondary-dark dark:text-stone-500 font-medium block text-[0.85rem]">{{ $userData->owner_role }}</span>
@@ -121,7 +121,9 @@
 
 
 
-                <form action="" method="post">
+                <form action="{{ url('hallRoomPost') }}" method="POST" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                    
                     <div>
                         <textarea id="post" name="post" rows="4" cols="50" class="mt-1 p-3 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="What's on your mind"></textarea>
                         <div id="postImage" class="flex justify-between border border-2 py-3 rounded-lg px-3 " onclick="toggleVisibility('postImage', 'postImage1')">
@@ -139,7 +141,7 @@
                                     <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
                                     <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
                                 </div>
-                                <input id="dropzone-file" type="file" class="hidden" onchange="previewImage(event)" />
+                                <input id="dropzone-file" type="file" name="image" class="hidden" onchange="previewImage(event)" />
                             </label>
                         </div>
                       

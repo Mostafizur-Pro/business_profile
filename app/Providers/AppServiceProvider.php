@@ -70,6 +70,6 @@ class AppServiceProvider extends ServiceProvider
             $view->with('adminData', $adminData)
                 ->with('empData', $empData)
                 ->with('userData', $userData);
-        });
+        });  
     }
 }
