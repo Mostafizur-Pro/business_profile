@@ -17,11 +17,13 @@ class RoomController extends Controller
 
         $locationsJson = file_get_contents(storage_path('location.json'));
         $locationsList = json_decode($locationsJson, true);
-        // dd($categoriesList);
 
+        // dd($locationsList);
 
-        // return view('room/room', ['categoriesList' => $categoriesList]);
         return view('room/room', compact('categoriesList', 'locationsList'));
     }
+
+
+
 
 }

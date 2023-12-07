@@ -4,269 +4,95 @@
         "place": [
             {
                 "name": "Dhaka",
-                "link": "dhaka-division/dhaka",
                 "area": [
-                    {
-                        "name": "Mirpur",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Uttara",
-                        "link": "dhaka-division/dhaka/uttara"
-                    },
-                    {
-                        "name": "Savar",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Mohammadpur",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Jatrabari",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Gulshan",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Dhanmondi",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Basundhara",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Badda",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Baridhara",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Khaligaon",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Elephant Road",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Rampura",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Keraniganj",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Tongi",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Banani",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Malibag",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Basabo",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Tejgaon",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Lalbag",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Demra",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Kamrangirchar",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Motijheel",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Khilkhet",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Banglamotor",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Purbachal",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Mogbazar",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Sutrapur",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Banasree",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Farmgate",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Mohakhali",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Wari",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Paltan",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Cantonment",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Bangshal",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "New Market",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Shyamoli",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Aftab Nagar",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Hazaribagh",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Ramna",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Chaukbazar",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Bashundhara City",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "ECB Chattar",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Dhamrai",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Shantinagar",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Kafrul",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Mawa Highway",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Kotwali",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Basila",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Nawabganj",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Dohar",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Mirpur",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    }
+                    "Mirpur",
+                    "Uttara",
+                    "Savar",
+                    "Mohammadpur",
+                    "Jatrabari",
+                    "Gulshan",
+                    "Dhanmondi",
+                    "Basundhara",
+                    "Badda",
+                    "Baridhara",
+                    "Khaligaon",
+                    "Elephant Road",
+                    "Rampura",
+                    "Keraniganj",
+                    "Tongi",
+                    "Banani",
+                    "Malibag",
+                    "Basabo",
+                    "Tejgaon",
+                    "Lalbag",
+                    "Demra",
+                    "Kamrangirchar",
+                    "Motijheel",
+                    "Khilkhet",
+                    "Banglamotor",
+                    "Purbachal",
+                    "Mogbazar",
+                    "Sutrapur",
+                    "Banasree",
+                    "Farmgate",
+                    "Mohakhali",
+                    "Wari",
+                    "Paltan",
+                    "Cantonment",
+                    "Bangshal",
+                    "New Market",
+                    "Shyamoli",
+                    "Aftab Nagar",
+                    "Hazaribagh",
+                    "Ramna",
+                    "Chaukbazar",
+                    "Bashundhara City",
+                    "ECB Chattar",
+                    "Dhamrai",
+                    "Shantinagar",
+                    "Kafrul",
+                    "Mawa Highway",
+                    "Kotwali",
+                    "Basila",
+                    "Nawabganj",
+                    "Dohar"
                 ]
             },
             {
-                "name": "Gazipur",
-                "link": "dhaka-division/gazipur"
+                "name": "Gazipur"
             },
             {
-                "name": "Narayanganj",
-                "link": "dhaka-division/narayanganj"
+                "name": "Narayanganj"
             },
             {
-                "name": "Tangail",
-                "link": "dhaka-division/tangail"
+                "name": "Tangail"
             },
             {
-                "name": "Narsingdi",
-                "link": "dhaka-division/narsingdi"
+                "name": "Narsingdi"
             },
             {
-                "name": "Faridpur",
-                "link": "dhaka-division/faridpur"
+                "name": "Faridpur"
             },
             {
-                "name": "Gopalgonj",
-                "link": "dhaka-division/gopalgonj"
+                "name": "Gopalgonj"
             },
             {
-                "name": "Madaripur",
-                "link": "dhaka-division/madaripur"
+                "name": "Madaripur"
             },
             {
-                "name": "Rajbari",
-                "link": "dhaka-division/rajbari"
+                "name": "Rajbari"
             },
             {
-                "name": "Manikganj",
-                "link": "dhaka-division/manikganj"
+                "name": "Manikganj"
             },
             {
-                "name": "Munshiganj",
-                "link": "dhaka-division/munshiganj"
+                "name": "Munshiganj"
             },
             {
-                "name": "Shariatpur",
-                "link": "dhaka-division/shariatpur"
+                "name": "Shariatpur"
             },
             {
-                "name": "Kishoreganj",
-                "link": "dhaka-division/kishoreganj"
+                "name": "Kishoreganj"
             }
         ]
     },
@@ -274,102 +100,66 @@
         "location": "Chattogram Division",
         "place": [
             {
-                "name": "Cumilla",
-                "link": "chattogram-division/cumilla",
+                "name": "Chittagong",
                 "area": [
-                    {
-                        "name": "Mirpur",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Uttara",
-                        "link": "dhaka-division/dhaka/uttara"
-                    }
+                    "Karnafuli",
+                    "Kotwali",
+                    "Khulshi",
+                    "Chandgaon",
+                    "Double Mooring",
+                    "Panchlaish",
+                    "Pahartali",
+                    "Bandar",
+                    "Bakalia",
+                    "Bayejid Bustami",
+                    "Halishahar",
+                    "Anowara",
+                    "Chandanaish",
+                    "Patiya",
+                    "Fatikchhari",
+                    "Banshkhali",
+                    "Boalkhali",
+                    "Mirsharai",
+                    "Rouzan",
+                    "Rangunia",
+                    "Lohagara",
+                    "Sandwip",
+                    "Satkania",
+                    "Sitakunda",
+
+                    "Hathazari"
+                    
                 ]
             },
             {
-                "name": "Brahmanbaria",
-                "link": "chattogram-division/Brahmanbaria",
-                "area": [
-                    {
-                        "name": "Mirpur",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Uttara",
-                        "link": "dhaka-division/dhaka/uttara"
-                    }
-                ]
+                "name": "Cox's Bazar"
             },
             {
-                "name": "Noyakhali",
-                "link": "chattogram-division/Noyakhali",
-                "area": [
-                    {
-                        "name": "Mirpur",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Uttara",
-                        "link": "dhaka-division/dhaka/uttara"
-                    }
-                ]
+                "name": "Rangamati"
             },
             {
-                "name": "Feni",
-                "link": "chattogram-division/Feni",
-                "area": [
-                    {
-                        "name": "Mirpur",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Uttara",
-                        "link": "dhaka-division/dhaka/uttara"
-                    }
-                ]
+                "name": "Bandarban"
             },
             {
-                "name": "chadpur",
-                "link": "chattogram-division/chadpur",
-                "area": [
-                    {
-                        "name": "Mirpur",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Uttara",
-                        "link": "dhaka-division/dhaka/uttara"
-                    }
-                ]
+                "name": "Khagrachhari"
             },
             {
-                "name": "chadpur",
-                "link": "chattogram-division/chadpur",
-                "area": [
-                    {
-                        "name": "Mirpur",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Uttara",
-                        "link": "dhaka-division/dhaka/uttara"
-                    }
-                ]
+                "name": "Feni"
             },
             {
-                "name": "chadpur",
-                "link": "chattogram-division/chadpur",
-                "area": [
-                    {
-                        "name": "Mirpur",
-                        "link": "dhaka-division/dhaka/mirpur"
-                    },
-                    {
-                        "name": "Uttara",
-                        "link": "dhaka-division/dhaka/uttara"
-                    }
-                ]
+                "name": "Lakshmipur"
+            },
+            {
+                "name": "Cumilla"
+            },
+            {
+                "name": "Noakhali"
+            },
+            {
+                "name": "Brahmanbaria"
+            },
+            {
+                "name": "Chandpur"
             }
         ]
     },
@@ -377,32 +167,28 @@
         "location": "Rajshahi Division",
         "place": [
             {
-                "name": "Cumilla",
-                "link": "chattogram-division/cumilla"
+                "name": "Rajshahi"
             },
             {
-                "name": "Brahmanbaria",
-                "link": "chattogram-division/Brahmanbaria"
+                "name": "Bogra"
             },
             {
-                "name": "Brahmanbaria",
-                "link": "chattogram-division/Brahmanbaria"
+                "name": "Panba"
             },
             {
-                "name": "Brahmanbaria",
-                "link": "chattogram-division/Brahmanbaria"
+                "name": "Sirajganj"
             },
             {
-                "name": "Brahmanbaria",
-                "link": "chattogram-division/Brahmanbaria"
+                "name": "Noagaon"
             },
             {
-                "name": "TV & Video",
-                "link": "electronics/tv"
+                "name": "Chapainawabganj"
             },
             {
-                "name": "Fridges & ACs",
-                "link": "electronics/fridges"
+                "name": "Joypurhat"
+            },
+            {
+                "name": "Natore"
             }
         ]
     },
@@ -410,32 +196,31 @@
         "location": "Khulna Division",
         "place": [
             {
-                "name": "Cumilla",
-                "link": "chattogram-division/cumilla"
+                "name": "Khulna"
             },
             {
-                "name": "Brahmanbaria",
-                "link": "chattogram-division/Brahmanbaria"
+                "name": "Bagerhat"
             },
             {
-                "name": "Brahmanbaria",
-                "link": "chattogram-division/Brahmanbaria"
+                "name": "Chuadanga"
             },
             {
-                "name": "Brahmanbaria",
-                "link": "chattogram-division/Brahmanbaria"
+                "name": "Jessore"
             },
             {
-                "name": "Brahmanbaria",
-                "link": "chattogram-division/Brahmanbaria"
+                "name": "Khustia"
             },
             {
-                "name": "TV & Video",
-                "link": "electronics/tv"
+                "name": "Magura"
             },
             {
-                "name": "Fridges & ACs",
-                "link": "electronics/fridges"
+                "name": "Meherpur"
+            },
+            {
+                "name": "Narail"
+            },
+            {
+                "name": "Satkhira"
             }
         ]
     },
@@ -443,32 +228,28 @@
         "location": "Rangpur Division",
         "place": [
             {
-                "name": "Cumilla",
-                "link": "chattogram-division/cumilla"
+                "name": "Rangpur"
             },
             {
-                "name": "Brahmanbaria",
-                "link": "chattogram-division/Brahmanbaria"
+                "name": "Dinajpur"
             },
             {
-                "name": "Brahmanbaria",
-                "link": "chattogram-division/Brahmanbaria"
+                "name": "Kurigram"
             },
             {
-                "name": "Brahmanbaria",
-                "link": "chattogram-division/Brahmanbaria"
+                "name": "Gaibandha"
             },
             {
-                "name": "Brahmanbaria",
-                "link": "chattogram-division/Brahmanbaria"
+                "name": "Lalmonirhat"
             },
             {
-                "name": "TV & Video",
-                "link": "electronics/tv"
+                "name": "Nilphamari"
             },
             {
-                "name": "Fridges & ACs",
-                "link": "electronics/fridges"
+                "name": "Thakurgaon"
+            },
+            {
+                "name": "Panchagarh"
             }
         ]
     },
@@ -476,66 +257,36 @@
         "location": "Mymensingh Division",
         "place": [
             {
-                "name": "Cumilla",
-                "link": "chattogram-division/cumilla"
+                "name": "Mymensingh"
             },
             {
-                "name": "Brahmanbaria",
-                "link": "chattogram-division/Brahmanbaria"
+                "name": "Jamalpur"
             },
             {
-                "name": "Brahmanbaria",
-                "link": "chattogram-division/Brahmanbaria"
+                "name": "Netrokona"
             },
             {
-                "name": "Brahmanbaria",
-                "link": "chattogram-division/Brahmanbaria"
-            },
-            {
-                "name": "Brahmanbaria",
-                "link": "chattogram-division/Brahmanbaria"
-            },
-            {
-                "name": "TV & Video",
-                "link": "electronics/tv"
-            },
-            {
-                "name": "Fridges & ACs",
-                "link": "electronics/fridges"
+                "name": "Sherpur"
             }
+          
         ]
     },
     {
         "location": "Sylhet Division",
         "place": [
             {
-                "name": "Cumilla",
-                "link": "chattogram-division/cumilla"
+                "name": "Sylhet"
             },
             {
-                "name": "Brahmanbaria",
-                "link": "chattogram-division/Brahmanbaria"
+                "name": "Habiganj"
             },
             {
-                "name": "Brahmanbaria",
-                "link": "chattogram-division/Brahmanbaria"
+                "name": "Moulvibazar"
             },
             {
-                "name": "Brahmanbaria",
-                "link": "chattogram-division/Brahmanbaria"
-            },
-            {
-                "name": "Brahmanbaria",
-                "link": "chattogram-division/Brahmanbaria"
-            },
-            {
-                "name": "TV & Video",
-                "link": "electronics/tv"
-            },
-            {
-                "name": "Fridges & ACs",
-                "link": "electronics/fridges"
+                "name": "Sunamganj"
             }
+            
         ]
     }
 ]

@@ -151,7 +151,48 @@
                             </div>
                             <div class="collapse-content text-blue-500">
                                 @foreach($location['place'] as $place)
-                                <p class="py-1"><a href="{{url($place['link'])}}">{{ $place['name'] }}</a></p>
+
+                                <!--  -->
+                                <ul>
+                                    @if(isset($place['area']))
+                                    <li>
+                                        <details close>
+                                            <summary>
+                                            <p class="font-semibold">{{ $place['name'] }}</p>        
+                                        </summary>
+                                            <ul>
+                                                @foreach($place['area'] as $area)
+                                                <li><a class="text-black">{{ $area }}</a></li>
+
+                                                @endforeach
+
+
+                                            </ul>
+                                        </details>
+                                    </li>
+
+                                    @else
+                                    <li>
+                                        <button class="font-semibold">{{ $place['name'] }}</button>
+                                    </li>
+
+                                    @endif
+
+
+                                </ul>
+
+                                <!--  -->
+
+
+                                <!--  -->
+
+
+
+
+
+
+
+
                                 @endforeach
                             </div>
                         </div>

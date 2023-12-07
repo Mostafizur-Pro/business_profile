@@ -169,7 +169,7 @@
             <div class="dropdown dropdown-end">
                 <label tabindex="0" class="flex items-center  gap-3">
 
-                    <div class="w-10 rounded-full">
+                    <div >
                         <img class="w-10 rounded-full" src="{{ $userData->owner_image }}" />
                     </div>
                     <div>
