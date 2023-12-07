@@ -64,7 +64,7 @@ class UserDashboardController extends Controller
                 $request->validate([
                     'owner_image' => 'file|mimes:jpeg,png,jpg,gif|max:2048',
                 ]);
-                $owner_image = $request->file('owner_image')->move('images/owner_image');
+                $owner_image = $request->file('owner_image')->move('images/user/profile');
             } else {
                 $owner_image = $userData->owner_image;
             }
