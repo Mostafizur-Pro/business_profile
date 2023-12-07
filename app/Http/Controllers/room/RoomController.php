@@ -7,10 +7,11 @@ use Illuminate\Http\Request;
 use Illuminate\Http\post;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\user_post;
+use Session;
 
 class RoomController extends Controller
 {
-    
+
 
     public function room_page()
     {
@@ -27,45 +28,25 @@ class RoomController extends Controller
     }
 
 
-<<<<<<< HEAD
-   public function hallRoomPost(Request $request)
 
- {
-//     $rafi=array();
-// $rafi['post']=$request->post;
-// $rafi['image']=$request->image;
-// $rafi['created_at']=now();
-//   $rafi['updated_at']=now();
-// // dd($ifra);
-  
+    public function hallRoomPost(Request $request)
 
-// $contact=DB::table('user_post')->insertGetId($rafi);
+    {
+        $post = array();
+        $post['post'] = $request->post;
+        $post['user_id'] = Session::get('userId');
+        $post['role'] = 'pending';
 
+        if ($request->hasFile('image')) {
 
+            $imagePath = $request->file('image')->move('images/post', uniqid() . '.' . $request->file('image')->extension());
+            // The second parameter of storeAs is the file name; here, I used uniqid() to generate a unique filename
+            $post['image'] = 'images/post/' . basename($imagePath);
+        }
 
+        $post['created_at'] = now();
+        $post['updated_at'] = now();
 
-$rafi = array();
-$rafi['post'] = $request->post;
-
-if ($request->hasFile('image')) {
-    $imagePath = $request->file('image')->storeAs('public/post', uniqid().'.'.$request->file('image')->extension());
-    // The second parameter of storeAs is the file name; here, I used uniqid() to generate a unique filename
-    $rafi['image'] = 'storage/post/' . basename($imagePath);
-=======
-
-
->>>>>>> c05091a0554b3b6f1535aa7f9364f6bb7f116a45
+        $contact = DB::table('user_post')->insertGetId($post);
+    }
 }
-
-$rafi['created_at'] = now();
-$rafi['updated_at'] = now();
-
-$contact = DB::table('user_post')->insertGetId($rafi);
-
-
-}
-
-
-
-   }
-
