@@ -27,8 +27,7 @@ class RoomController extends Controller
     }
 
 
-<<<<<<< HEAD
-   public function hallRoomPost(Request $request)
+ public function hallRoomPost(Request $request)
 
  {
 //     $rafi=array();
@@ -51,10 +50,7 @@ if ($request->hasFile('image')) {
     $imagePath = $request->file('image')->storeAs('public/post', uniqid().'.'.$request->file('image')->extension());
     // The second parameter of storeAs is the file name; here, I used uniqid() to generate a unique filename
     $rafi['image'] = 'storage/post/' . basename($imagePath);
-=======
 
-
->>>>>>> c05091a0554b3b6f1535aa7f9364f6bb7f116a45
 }
 
 $rafi['created_at'] = now();
