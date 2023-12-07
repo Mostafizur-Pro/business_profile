@@ -16,12 +16,6 @@
         <hr class="my-5" />
         <div class="flex justify-between gap-10">
             <div>
-                <!-- <div class="mb-4">
-                    <label for="name" class="block text-gray-700 font-bold mb-2">ID:</label>
-                    <p class="text-gray-800">{{ $userData->id }}</p>
-                </div> -->
-
-                
                 <div class="mb-4">
                     <label for="name" class="block text-gray-700 font-bold mb-2">Name:</label>
                     <p class="text-gray-800">{{ $userData->owner_name }}</p>
@@ -36,8 +30,6 @@
                     <label for="name" class="block text-gray-700 font-bold mb-2">Business type:</label>
                     <p class="text-gray-800">{{ $userData->business_type }}</p>
                 </div>
-
-
 
                 <div class="mb-4">
                     <label for="email" class="block text-gray-700 font-bold mb-2">Email:</label>
@@ -62,9 +54,10 @@
             </div>
             <div>
                 <img class="w-44" src="{{ $userData->owner_image }}" alt="User Photo" />
+                <img class="w-10 rounded-full" src="{{ $userData->owner_image }}" />
             </div>
         </div>
-      
+
     </div>
 </div>
 
