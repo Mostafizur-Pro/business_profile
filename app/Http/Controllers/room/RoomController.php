@@ -12,20 +12,35 @@ use Session;
 class RoomController extends Controller
 {
 
-
     public function room_page()
     {
-
+       
         $categoriesJson = file_get_contents(storage_path('categories.json'));
         $categoriesList = json_decode($categoriesJson, true);
 
         $locationsJson = file_get_contents(storage_path('location.json'));
         $locationsList = json_decode($locationsJson, true);
 
-        // dd($locationsList);
 
-        return view('room/room', compact('categoriesList', 'locationsList'));
+        $division = DB::table('division')->get();
+        $area = DB::table('area')->get();
+
+
+        return view('room/room', compact('categoriesList', 'locationsList', 'division'));
     }
+
+
+    // public function room_division($division)
+    // {
+    //     if ($division) { // Ensure it's an AJAX request
+    //         dd($division); // Check the data received
+    //     }
+
+      
+        
+    // }
+
+
 
 
 

@@ -27,6 +27,11 @@ Route::get('/contact', [FrontendHomeController::class, 'contact_page'])->name('c
 
 
 Route::get('/room', [RoomController::class, 'room_page'])->middleware('loginRoom');
+// Route::get('/room/{division}', [RoomController::class, 'room_division']);
+
+// Route::post('/room-division', [RoomController::class, 'room_division']);
+
+
 Route::get('/hallRoomPost', [RoomController::class, 'hallRoomPost']);
 Route::post('/hallRoomPost', [RoomController::class, 'hallRoomPost']);
 

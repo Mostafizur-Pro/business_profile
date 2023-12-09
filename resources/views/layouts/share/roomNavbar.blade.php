@@ -103,7 +103,7 @@
                                 <div class="inline-block relative shrink-0 cursor-pointer rounded-[.95rem]">
                                     <img class="w-10 shrink-0 inline-block rounded-[.95rem]" src="{{ $userData->owner_image }}" alt="avatar image">
                                 </div>
-                            </div>  
+                            </div>
                             <div class="mr-2 ">
                                 <a href="javascript:void(0)" class="dark:hover:text-primary hover:text-primary transition-colors duration-200 ease-in-out text-[1rem] font-medium dark:text-neutral-400/90 text-secondary-inverse">{{ $userData->owner_name }}</a>
                                 <span class="text-secondary-dark dark:text-stone-500 font-medium block text-[0.85rem]">{{ $userData->owner_role }}</span>
@@ -123,13 +123,50 @@
 
                 <form action="{{ url('hallRoomPost') }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
-                    
+
                     <div>
                         <textarea id="post" name="post" rows="4" cols="50" class="mt-1 p-3 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="What's on your mind"></textarea>
                         <div id="postImage" class="flex justify-between border border-2 py-3 rounded-lg px-3 " onclick="toggleVisibility('postImage', 'postImage1')">
                             <p class="text-lg font-semibold">Add Photos</p>
-
                             <img src="https://static.xx.fbcdn.net/rsrc.php/v3/y7/r/Ivw7nhRtXyo.png?_nc_eui2=AeF_XhTxvKhzjhuQM1YfIBFqPL4YoeGsw5I8vhih4azDkr0T0kiKdCOyzBnABJRGxPPExNxAE5qG8tUscWhxrYDJ" alt="">
+                        </div>
+                        <div class="my-5">
+                            <div class="mb-4">
+                                <select name="division" id="division" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                                    <option selected disabled>Division</option>
+                                    @foreach($division as $div)
+                                    <option value="{{ $div->division }}">{{ $div->division }}</option>
+                                    @endforeach
+                                </select>
+
+                                <!-- <span class="text-red-400">@error('emp_role') {{ $message }} @enderror</span> -->
+                            </div>
+                            <div class="mb-4">
+                                <select name="district" id="district" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                                    <option selected disabled>District</option>
+                                    @foreach($division as $div)
+                                    @if($div->division === 'Dhaka Division')
+                                    @foreach(json_decode($div->districts) as $district)
+                                    <option value="{{ $district }}">{{ $district }}</option>
+                                    @endforeach
+                                    @endif
+                                    @endforeach
+                                </select>
+
+
+
+
+                                <!-- <span class="text-red-400">@error('emp_role') {{ $message }} @enderror</span> -->
+                            </div>
+                            <div class="mb-4">
+                                <select name="emp_role" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                                    <option selected disabled>Area</option>
+                                    <option value="Sales and Marketing Office">Sales and Marketing Office</option>
+                                    <option value="Marketing Officer">Marketing Officer</option>
+                                    <option value="Sales Officer">Sales Officer</option>
+                                </select>
+                                <span class="text-red-400">@error('emp_role') {{ $message }} @enderror</span>
+                            </div>
                         </div>
 
                         <div id="postImage1" class="flex items-center justify-center w-full hidden">
@@ -144,10 +181,10 @@
                                 <input id="dropzone-file" type="file" name="image" class="hidden" onchange="previewImage(event)" />
                             </label>
                         </div>
-                      
+
 
                         <img id="selected-image" class="hidden" src="#" alt="Selected Image" />
-              
+
                     </div>
                     <div class="mt-4">
                         <button type="submit" class="inline-flex items-center px-4 py-2 bg-blue-500 border border-transparent rounded-md font-semibold text-white uppercase tracking-widest hover:bg-blue-600 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-200 active:bg-blue-700 transition ease-in-out duration-150">
@@ -164,6 +201,8 @@
 
     </div>
 </div>
+
+
 
 
 <script>
