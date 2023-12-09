@@ -23,10 +23,12 @@ class RoomController extends Controller
 
 
         $division = DB::table('division')->get();
-        $area = DB::table('area')->get();
+        $areas = DB::table('area')->get();
+
+        // dd($area);
 
 
-        return view('room/room', compact('categoriesList', 'locationsList', 'division'));
+        return view('room/room', compact('categoriesList', 'locationsList', 'division', 'areas'));
     }
 
 
