@@ -16,6 +16,9 @@ class CreateUserPostTable extends Migration
         Schema::create('user_post', function (Blueprint $table) {
             $table->id();
             $table->string('post');
+            $table->string('division');
+            $table->string('district');
+            $table->string('area');
             $table->string('image')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('user_info')->onDelete('cascade');

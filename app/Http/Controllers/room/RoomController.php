@@ -12,28 +12,39 @@ use Session;
 class RoomController extends Controller
 {
 
-
     public function room_page()
     {
-
+       
         $categoriesJson = file_get_contents(storage_path('categories.json'));
         $categoriesList = json_decode($categoriesJson, true);
 
         $locationsJson = file_get_contents(storage_path('location.json'));
         $locationsList = json_decode($locationsJson, true);
 
-        // dd($locationsList);
 
-        return view('room/room', compact('categoriesList', 'locationsList'));
+        $division = DB::table('division')->get();
+        $areas = DB::table('area')->get();
+        $posts = DB::table('user_post')->get();
+
+        // dd($post);
+
+
+        return view('room/room', compact('categoriesList', 'locationsList', 'division', 'areas', 'posts'));
     }
 
 
 
     public function hallRoomPost(Request $request)
-
     {
+        // dd($request);
+
         $post = array();
         $post['post'] = $request->post;
+        $post['division'] = $request->division;
+        $post['district'] = $request->district;
+        if ($request->has('area')) {
+            $post['area'] = $request->area;
+        }
         $post['user_id'] = Session::get('userId');
         $post['role'] = 'pending';
 
@@ -48,5 +59,8 @@ class RoomController extends Controller
         $post['updated_at'] = now();
 
         $contact = DB::table('user_post')->insertGetId($post);
+        if($contact){
+            return redirect('/room');
+        }
     }
 }
