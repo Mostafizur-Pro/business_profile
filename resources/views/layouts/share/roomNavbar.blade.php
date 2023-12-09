@@ -1,8 +1,5 @@
 <div class="fixed top-0 z-50 w-full  -translate-x-1/2 bg-[#282560] border-t border-gray-200 left-1/2 dark:bg-gray-700 dark:border-gray-600">
-
     <div class="grid h-full max-w-lg grid-cols-6 mx-auto">
-
-
         <button data-tooltip-target="tooltip-home" type="button" class="inline-flex flex-col items-center justify-center p-4 group">
             <a href="{{url('/')}}">
                 <img class="w-5" src="/assets/room/logo.png" alt="">
@@ -125,14 +122,14 @@
                     {{ csrf_field() }}
 
                     <div>
-                        <textarea id="post" name="post" rows="4" cols="50" class="mt-1 p-3 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="What's on your mind"></textarea>
+                        <textarea id="post" name="post" rows="4" cols="50" class="mt-1 p-3 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="What's on your mind" required></textarea>
                         <div id="postImage" class="flex justify-between border border-2 py-3 rounded-lg px-3 " onclick="toggleVisibility('postImage', 'postImage1')">
                             <p class="text-lg font-semibold">Add Photos</p>
                             <img src="https://static.xx.fbcdn.net/rsrc.php/v3/y7/r/Ivw7nhRtXyo.png?_nc_eui2=AeF_XhTxvKhzjhuQM1YfIBFqPL4YoeGsw5I8vhih4azDkr0T0kiKdCOyzBnABJRGxPPExNxAE5qG8tUscWhxrYDJ" alt="">
                         </div>
                         <div class="my-5">
                             <div class="mb-4">
-                                <select name="division" id="division" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                                <select required name="division" id="division" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                                     <option selected disabled>Division</option>
                                     @foreach($division as $div)
                                     <option value="{{ $div->division }}">{{ $div->division }}</option>
@@ -142,7 +139,7 @@
                                 <!-- <span class="text-red-400">@error('emp_role') {{ $message }} @enderror</span> -->
                             </div>
                             <div class="mb-4">
-                                <select name="district" id="district" class="hidden w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                                <select required name="district" id="district" class="hidden w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                                     <option selected disabled>District</option>
                                     <!-- @foreach($division as $div)
                                     @if($div->division === 'Dhaka Division')
@@ -181,7 +178,7 @@
                                     <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
                                     <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
                                 </div>
-                                <input id="dropzone-file" type="file" name="image" class="hidden" onchange="previewImage(event)" />
+                                <input id="dropzone-file" type="file" name="image" class="hidden" onchange="previewImage(event)" required/>
                             </label>
                         </div>
                         <img id="selected-image" class="hidden" src="#" alt="Selected Image" />

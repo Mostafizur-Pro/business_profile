@@ -24,33 +24,27 @@ class RoomController extends Controller
 
         $division = DB::table('division')->get();
         $areas = DB::table('area')->get();
+        $posts = DB::table('user_post')->get();
 
-        // dd($area);
+        // dd($post);
 
 
-        return view('room/room', compact('categoriesList', 'locationsList', 'division', 'areas'));
+        return view('room/room', compact('categoriesList', 'locationsList', 'division', 'areas', 'posts'));
     }
-
-
-    // public function room_division($division)
-    // {
-    //     if ($division) { // Ensure it's an AJAX request
-    //         dd($division); // Check the data received
-    //     }
-
-      
-        
-    // }
-
-
 
 
 
     public function hallRoomPost(Request $request)
-
     {
+        // dd($request);
+
         $post = array();
         $post['post'] = $request->post;
+        $post['division'] = $request->division;
+        $post['district'] = $request->district;
+        if ($request->has('area')) {
+            $post['area'] = $request->area;
+        }
         $post['user_id'] = Session::get('userId');
         $post['role'] = 'pending';
 
@@ -65,5 +59,8 @@ class RoomController extends Controller
         $post['updated_at'] = now();
 
         $contact = DB::table('user_post')->insertGetId($post);
+        if($contact){
+            return redirect('/room');
+        }
     }
 }
