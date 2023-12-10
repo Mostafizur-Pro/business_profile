@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\room;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\post;
 use Illuminate\Support\Facades\DB;
@@ -14,7 +15,7 @@ class RoomController extends Controller
 
     public function room_page()
     {
-       
+
         $categoriesJson = file_get_contents(storage_path('categories.json'));
         $categoriesList = json_decode($categoriesJson, true);
 
@@ -24,12 +25,29 @@ class RoomController extends Controller
 
         $division = DB::table('division')->get();
         $areas = DB::table('area')->get();
-        $posts = DB::table('user_post')->get();
 
-        // dd($post);
+        $posts = DB::table('user_post')
+        ->orderBy('created_at', 'desc')
+        ->get();
+    
+    // Collect user IDs from posts
+    $userIds = $posts->pluck('user_id')->unique();
+    
+    // Fetch user details for the collected user IDs
+    $users = [];
+    foreach ($userIds as $userId) {
+        $user = User::find($userId);
+        if ($user) {
+            $users[$userId] = $user;
+        }
+    }
 
 
-        return view('room/room', compact('categoriesList', 'locationsList', 'division', 'areas', 'posts'));
+
+        // dd($users);
+
+
+        return view('room/room', compact('categoriesList', 'locationsList', 'division', 'areas', 'posts', 'users'));
     }
 
 
@@ -59,7 +77,7 @@ class RoomController extends Controller
         $post['updated_at'] = now();
 
         $contact = DB::table('user_post')->insertGetId($post);
-        if($contact){
+        if ($contact) {
             return redirect('/room');
         }
     }

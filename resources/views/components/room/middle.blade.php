@@ -1,22 +1,28 @@
-
-
 @foreach($posts as $post)
 
 
 
 <div class="card border my-10 bg-base-100 shadow-xl">
     <div class="flex items-center justify-between px-8 py-5">
+        @foreach($users as $user)
+        @if($user->id === $post->user_id)
         <div class="flex items-center mr-5">
             <div class="mr-5">
                 <div class="inline-block relative shrink-0 cursor-pointer rounded-[.95rem]">
-                    <img class="w-[40px] h-[40px] shrink-0 inline-block rounded-[.95rem]" src="https://friendkit.cssninja.io/assets/img/avatars/dan.jpg" alt="avatar image">
+                    <img class="w-[40px] h-[40px] shrink-0 inline-block rounded-[.95rem]" src="{{$user->owner_image}}" alt="avatar image">
                 </div>
             </div>
             <div class="mr-2 ">
-                <a href="javascript:void(0)" class="dark:hover:text-primary hover:text-primary transition-colors duration-200 ease-in-out text-[1.075rem] font-medium dark:text-neutral-400/90 text-secondary-inverse">Dan Walker</a>
-                <span class="text-stone-400 dark:text-stone-500 font-medium block text-[0.85rem]">July 26 2023, 01:03pm</span>
+                <a href="javascript:void(0)" class="dark:hover:text-primary hover:text-primary transition-colors duration-200 ease-in-out text-[1.075rem] font-medium dark:text-neutral-400/90 text-secondary-inverse">{{$user->owner_name}}</a>
+                <span class="text-stone-400 dark:text-stone-500 font-medium block text-[0.85rem]">Posted on {{ \Carbon\Carbon::parse($post->created_at)->isoFormat('MMM, Do YYYY h:mm A') }}
+                    , {{$post->district}} @if($post->area), {{$post->area}} @endif
+                    <!-- July 26 2023, 01:03pm -->
+                </span>
             </div>
         </div>
+        @endif
+
+        @endforeach
         <div class="inline-flex relative items-center group justify-end text-base font-medium leading-normal text-center align-middle cursor-pointer rounded-[.95rem] transition-colors duration-150 ease-in-out text-dark bg-transparent shadow-none border-0" href="javascript:void(0)">
             <div class="dropdown dropdown-end">
                 <label tabindex="0">
@@ -106,7 +112,20 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current hover:text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
-                    <p class="font-semibold text-lg">10</p>
+
+                    <!-- <p class="font-semibold text-lg">{{$post->like}}</p> -->
+                    @if($post->like)
+                    @foreach(json_decode($post->like) as $like)
+                    <p class="font-semibold text-lg">{{$like}}</p>
+                    @endforeach
+                    @else
+                    <p></p>
+                    @endif
+
+
+
+
+
                 </span>
             </div>
         </div>
