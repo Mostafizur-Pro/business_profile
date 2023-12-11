@@ -23,6 +23,7 @@
         @endif
 
         @endforeach
+
         <div class="inline-flex relative items-center group justify-end text-base font-medium leading-normal text-center align-middle cursor-pointer rounded-[.95rem] transition-colors duration-150 ease-in-out text-dark bg-transparent shadow-none border-0" href="javascript:void(0)">
             <div class="dropdown dropdown-end">
                 <label tabindex="0">
@@ -80,6 +81,17 @@
                             </span>
                         </a>
                     </li>
+                    <li><a>
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                    <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z" />
+                                </svg>
+                            </span>
+                            <span>
+                                <span class="fond-bold">Report</span>
+                            </span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -106,34 +118,113 @@
                 <span class="text-stone-400 dark:text-stone-500 font-medium block text-[0.85rem]">and 23 more liked this</span>
             </div>
         </div>
+
+
+        <!-- <p class="font-semibold text-lg">{{$post->like}}</p> -->
+        @if($post->like)
+        @php
+        $decodedLikes = json_decode($post->like);
+        $totalLikes = count($decodedLikes);
+        @endphp
+
+
+        <!--  -->
+       
+            @if($userData)
+
+
+            @php
+            $decodedLikes = json_decode($post->like);
+            $userLiked = false;
+            @endphp
+
+            @foreach($decodedLikes as $like)
+
+
+            @if($userData->id === intval($like))
+
+            @php
+            $userLiked = true;
+            @endphp
+
+            @endif
+
+            @endforeach
+
+            @if($userLiked)
+            <div class="flex items-center -mt-32 px-16">
+                <div class="cursor-pointer">
+                    <span class="flex h-min w-min space-x-1 items-center rounded-full hover:text-gray-200 text-rose-600 hover:bg-gray-700 bg-rose-50 py-1 px-2 text-xs font-medium">
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current hover:text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+
+                        <p class="font-semibold text-lg">{{ $totalLikes }}</p>
+
+                    </span>
+                </div>
+            </div>
+            @else
+            <div class="flex items-center -mt-32 px-16">
+                <div class="cursor-pointer">
+                    <span class="flex h-min w-min space-x-1 items-center rounded-full text-gray-200 hover:text-rose-600 bg-gray-700 hover:bg-rose-50 py-1 px-2 text-xs font-medium">
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current hover:text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+
+                        <p class="font-semibold text-lg">{{ $totalLikes }}</p>
+
+                    </span>
+                </div>
+            </div>
+            @endif
+
+            @endif
+
+      
+        <!--  -->
+
+
+        @else
         <div class="flex items-center -mt-32 px-16">
             <div class="cursor-pointer">
                 <span class="flex h-min w-min space-x-1 items-center rounded-full text-gray-200 hover:text-rose-600 bg-gray-700 hover:bg-rose-50 py-1 px-2 text-xs font-medium">
+
+
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current hover:text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                     </svg>
 
-                    <!-- <p class="font-semibold text-lg">{{$post->like}}</p> -->
-                    @if($post->like)
-                    @foreach(json_decode($post->like) as $like)
-                    <p class="font-semibold text-lg">{{$like}}</p>
-                    @endforeach
-                    @else
-                    <p></p>
-                    @endif
-
-
-
-
+                    <p class="font-semibold text-lg"></p>
 
                 </span>
             </div>
         </div>
+        @endif
+
+
+
+
+
+
+
+
+
+
+
     </div>
 </div>
 
 
+
+
 @endforeach
+
+
 
 <!-- <div class="card border my-10 bg-base-100 shadow-xl">
     <div class="flex items-center justify-between px-8 py-5">
