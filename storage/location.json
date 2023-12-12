@@ -4,61 +4,8 @@
         "place": [
             {
                 "name": "Dhaka",
-                "area": [
-                    "Mirpur",
-                    "Uttara",
-                    "Savar",
-                    "Mohammadpur",
-                    "Jatrabari",
-                    "Gulshan",
-                    "Dhanmondi",
-                    "Basundhara",
-                    "Badda",
-                    "Baridhara",
-                    "Khaligaon",
-                    "Elephant Road",
-                    "Rampura",
-                    "Keraniganj",
-                    "Tongi",
-                    "Banani",
-                    "Malibag",
-                    "Basabo",
-                    "Tejgaon",
-                    "Lalbag",
-                    "Demra",
-                    "Kamrangirchar",
-                    "Motijheel",
-                    "Khilkhet",
-                    "Banglamotor",
-                    "Purbachal",
-                    "Mogbazar",
-                    "Sutrapur",
-                    "Banasree",
-                    "Farmgate",
-                    "Mohakhali",
-                    "Wari",
-                    "Paltan",
-                    "Cantonment",
-                    "Bangshal",
-                    "New Market",
-                    "Shyamoli",
-                    "Aftab Nagar",
-                    "Hazaribagh",
-                    "Ramna",
-                    "Chaukbazar",
-                    "Bashundhara City",
-                    "ECB Chattar",
-                    "Dhamrai",
-                    "Shantinagar",
-                    "Kafrul",
-                    "Mawa Highway",
-                    "Kotwali",
-                    "Basila",
-                    "Nawabganj",
-                    "Dohar"
-                ]
-            },
-            {
+                "area": ["Mirpur","Uttara","Savar","Mohammadpur","Jatrabari","Gulshan","Dhanmondi","Basundhara","Badda","Baridhara","Khaligaon","Elephant Road","Rampura","Keraniganj","Tongi","Banani","Malibag","Basabo","Tejgaon","Lalbag","Demra","Kamrangirchar","Motijheel","Khilkhet","Banglamotor","Purbachal","Mogbazar","Sutrapur","Banasree","Farmgate","Mohakhali","Wari","Paltan","Cantonment","Bangshal","New Market","Shyamoli","Aftab Nagar","Hazaribagh","Ramna","Chaukbazar","Bashundhara City","ECB Chattar","Dhamrai","Shantinagar","Kafrul","Mawa Highway","Kotwali","Basila","Nawabganj","Dohar"]
+            },            {
                 "name": "Gazipur"
             },
             {
@@ -101,35 +48,7 @@
         "place": [
             {
                 "name": "Chittagong",
-                "area": [
-                    "Karnafuli",
-                    "Kotwali",
-                    "Khulshi",
-                    "Chandgaon",
-                    "Double Mooring",
-                    "Panchlaish",
-                    "Pahartali",
-                    "Bandar",
-                    "Bakalia",
-                    "Bayejid Bustami",
-                    "Halishahar",
-                    "Anowara",
-                    "Chandanaish",
-                    "Patiya",
-                    "Fatikchhari",
-                    "Banshkhali",
-                    "Boalkhali",
-                    "Mirsharai",
-                    "Rouzan",
-                    "Rangunia",
-                    "Lohagara",
-                    "Sandwip",
-                    "Satkania",
-                    "Sitakunda",
-
-                    "Hathazari"
-                    
-                ]
+                "area": ["Karnafuli","Kotwali","Khulshi","Chandgaon","Double Mooring","Panchlaish","Pahartali","Bandar","Bakalia","Bayejid Bustami","Halishahar","Anowara","Chandanaish","Patiya","Fatikchhari","Banshkhali","Boalkhali","Mirsharai","Rouzan","Rangunia","Lohagara","Sandwip","Satkania","Sitakunda","Hathazari"]
             },
             {
                 "name": "Cox's Bazar"
@@ -268,7 +187,6 @@
             {
                 "name": "Sherpur"
             }
-          
         ]
     },
     {
@@ -286,7 +204,13 @@
             {
                 "name": "Sunamganj"
             }
-            
         ]
     }
 ]
+
+
+
+
+
+
+
