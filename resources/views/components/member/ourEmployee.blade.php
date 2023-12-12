@@ -63,6 +63,9 @@
                         <p class="mb-4 text-neutral-500 dark:text-neutral-300">{{$item->emp_number}}</p>
 
                     </div>
+                    <div>
+                    @include('layouts/modal/member/modelEmployee')
+                    </div>
                 </div>
             </div>
             @endforeach
