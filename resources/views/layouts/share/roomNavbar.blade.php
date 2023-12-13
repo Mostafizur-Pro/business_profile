@@ -56,34 +56,3 @@
 </div>
 
 
-<script>   
-
-    function toggleVisibility(hideId, showId) {
-        const hideElement = document.getElementById(hideId);
-        const showElement = document.getElementById(showId);
-
-        if (hideElement && showElement) {
-            hideElement.style.display = 'none';
-            showElement.style.display = 'block';
-        }
-    }
-
-    function previewImage(event) {
-        const selectedImage = document.getElementById('selected-image');
-        const dropzoneFile = document.getElementById('dropzone-file');
-        const hideElement = document.getElementById('postImage1');
-
-        if (event.target.files && event.target.files[0]) {
-            hideElement.style.display = 'none';
-            const reader = new FileReader();
-
-            reader.onload = function(e) {
-                selectedImage.src = e.target.result;
-                selectedImage.classList.remove('hidden');
-                dropzoneFile.classList.add('hidden');
-            };
-
-            reader.readAsDataURL(event.target.files[0]);
-        }
-    }
-</script>

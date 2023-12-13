@@ -27,20 +27,20 @@ class RoomController extends Controller
         $areas = DB::table('area')->get();
 
         $posts = DB::table('user_post')
-        ->orderBy('created_at', 'desc')
-        ->get();
-    
-    // Collect user IDs from posts
-    $userIds = $posts->pluck('user_id')->unique();
-    
-    // Fetch user details for the collected user IDs
-    $users = [];
-    foreach ($userIds as $userId) {
-        $user = User::find($userId);
-        if ($user) {
-            $users[$userId] = $user;
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        // Collect user IDs from posts
+        $userIds = $posts->pluck('user_id')->unique();
+
+        // Fetch user details for the collected user IDs
+        $users = [];
+        foreach ($userIds as $userId) {
+            $user = User::find($userId);
+            if ($user) {
+                $users[$userId] = $user;
+            }
         }
-    }
 
 
 
@@ -79,6 +79,32 @@ class RoomController extends Controller
         $contact = DB::table('user_post')->insertGetId($post);
         if ($contact) {
             return redirect('/room');
+        }
+    }
+
+    public function update_hallRoomPost(Request $request, $id)
+    {
+        // dd($request);
+        $updateData = [
+            'post' => $request->input('post'),
+            'division' => $request->input('division'),
+            'district' => $request->input('district'),
+            'area' => $request->input('area'),
+            'role' => 'pending',
+
+        ];
+
+        // dd($updateData);
+        // Perform the update
+        $result = DB::table('user_post')
+            ->where('id', $id)
+            ->update($updateData);
+
+        // dd($result);
+        if ($result) {
+            return redirect("/room")->with('Success', 'Profile updated Successfully');
+        } else {
+            return redirect("/room")->with('Fail', 'Profile update failed');
         }
     }
 }
