@@ -90,8 +90,8 @@ class RoomController extends Controller
             'division' => $request->input('division'),
             'district' => $request->input('district'),
             'area' => $request->input('area'),
-            'role' => 'pending',          
-            
+            'role' => 'pending',
+
         ];
 
         // dd($updateData);
@@ -100,6 +100,11 @@ class RoomController extends Controller
             ->where('id', $id)
             ->update($updateData);
 
-            dd($result);
+        // dd($result);
+        if ($result) {
+            return redirect("/room")->with('Success', 'Profile updated Successfully');
+        } else {
+            return redirect("/room")->with('Fail', 'Profile update failed');
+        }
     }
 }

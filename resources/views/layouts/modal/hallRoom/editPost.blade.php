@@ -15,7 +15,7 @@
                     <div class="mr-2 ">
                         <a href="javascript:void(0)" class="dark:hover:text-primary hover:text-primary transition-colors duration-200 ease-in-out text-[1.075rem] font-medium dark:text-neutral-400/90 text-secondary-inverse">{{$user->owner_name}}</a>
                         <span class="text-stone-400 dark:text-stone-500 font-medium block text-[0.85rem]">Posted on {{ \Carbon\Carbon::parse($post->created_at)->isoFormat('MMM, Do YYYY h:mm A') }}
-                            , {{$post->district}} @if($post->area), {{$post->area}} @endif
+                            , @if($post->area) {{$post->area}}, @endif {{$post->district}}, {{$post->division}}.
                         </span>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                     <div class="my-5">
                         <div class="mb-4">
                             <select  name="division" id="editDivision" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
-                                <option selected disabled>Division</option>
+                                <option class="text-green-400" value="{{ $post->division }}" >@if($post->area) {{$post->area}}, @endif {{$post->district}}, {{$post->division}}.</option>
                                 @foreach($division as $div)
                                 <option value="{{ $div->division }}">{{ $div->division }}</option>
                                 @endforeach
@@ -62,12 +62,18 @@
                         </div>
                         <div class="mb-4">
                             <select  name="district" id="editDistrict" class="hidden w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
-                                <option selected disabled>District</option>
+                                
+                                <option class="text-green-400" value="{{ $post->district }}" >{{$post->district}}</option>
                             </select>
                         </div>
                         <div class="mb-4">
                             <select name="area" id="editArea" class="hidden w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                                @if($post->area)
+
+                                <option class="text-green-400" value="{{ $post->area }}" >{{$post->area}}</option>
+                                @else
                                 <option selected disabled>Local Area</option>
+                                @endif
                             </select>
                         </div>
                     </div>
