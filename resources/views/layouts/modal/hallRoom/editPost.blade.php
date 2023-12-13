@@ -3,7 +3,7 @@
     <div class="modal" role="dialog">
         <div class="modal-box">
             <div>
-                <h3 class="font-bold text-lg text-center">Edit Post</h3>
+                <h3 class="font-bold text-lg text-center">Edit Post {{$post->id}}</h3>
                 @foreach($users as $user)
                 @if($user->id === $post->user_id)
                 <div class="flex items-center mr-5">
@@ -16,7 +16,6 @@
                         <a href="javascript:void(0)" class="dark:hover:text-primary hover:text-primary transition-colors duration-200 ease-in-out text-[1.075rem] font-medium dark:text-neutral-400/90 text-secondary-inverse">{{$user->owner_name}}</a>
                         <span class="text-stone-400 dark:text-stone-500 font-medium block text-[0.85rem]">Posted on {{ \Carbon\Carbon::parse($post->created_at)->isoFormat('MMM, Do YYYY h:mm A') }}
                             , {{$post->district}} @if($post->area), {{$post->area}} @endif
-                            <!-- July 26 2023, 01:03pm -->
                         </span>
                     </div>
                 </div>
@@ -25,80 +24,58 @@
                 @endforeach
             </div>
 
-            <form method="POST" enctype="multipart/form-data">
-                {{ csrf_field() }}
+
+
+            <form action="{{ url('updateHallRoomPost', $post->id) }}" method="POST" enctype="multipart/form-data" >
+                @csrf
+                @method('PUT')
 
                 <div>
-                    <!-- <textarea id="post" name="post" rows="4" cols="50" value="{{$post->post}}" class="mt-1 p-3 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" ></textarea> -->
                     <textarea id="post" name="post" rows="4" cols="50" class="mt-1 p-3 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">{{ $post->post }}</textarea>
+                    <div id="editPostImage" onclick="toggleVisibility('editPostImage', 'editPostImage1')">
+                        <img class="w-[50%] mx-auto" src="{{$post->image}}" alt="Selected Image" />
+                    </div>
+                    <div>
+                        <div id="editPostImage1" class="flex items-center justify-center w-full hidden">
+                            <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                                <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                    <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                                    </svg>
+                                    <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                                </div>
+                                <input id="editDropzoneFile" type="file" name="image" class="hidden" onchange="previewImage(event)"  />
+                            </label>
+                        </div>
+                        <img id="editSelectedImage" class="hidden" src="#" alt="Selected Image" />
+                    </div>
 
-                    <img id="postImage" class="" src="{{$post->image}}" alt="Selected Image" />
-
-                    <!-- <div id="postImage" class="flex justify-between border border-2 py-3 rounded-lg px-3 " onclick="toggleVisibility('postImage', 'postImage1')">
-                        <p class="text-lg font-semibold">Add Photos</p>
-                        <img src="https://static.xx.fbcdn.net/rsrc.php/v3/y7/r/Ivw7nhRtXyo.png?_nc_eui2=AeF_XhTxvKhzjhuQM1YfIBFqPL4YoeGsw5I8vhih4azDkr0T0kiKdCOyzBnABJRGxPPExNxAE5qG8tUscWhxrYDJ" alt="">
-                    </div> -->
                     <div class="my-5">
                         <div class="mb-4">
-                            <select required name="division" id="division" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                            <select  name="division" id="editDivision" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                                 <option selected disabled>Division</option>
                                 @foreach($division as $div)
                                 <option value="{{ $div->division }}">{{ $div->division }}</option>
                                 @endforeach
                             </select>
-
-                            <!-- <span class="text-red-400">@error('emp_role') {{ $message }} @enderror</span> -->
                         </div>
                         <div class="mb-4">
-                            <select required name="district" id="district" class="hidden w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                            <select  name="district" id="editDistrict" class="hidden w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                                 <option selected disabled>District</option>
-                                <!-- @foreach($division as $div)
-                                    @if($div->division === 'Dhaka Division')
-                                    @foreach(json_decode($div->districts) as $district)
-                                    <option value="{{ $district }}">{{ $district }}</option>
-                                    @endforeach
-                                    @endif
-                                    @endforeach -->
                             </select>
-
-
-
-                            <!-- <span class="text-red-400">@error('emp_role') {{ $message }} @enderror</span> -->
                         </div>
                         <div class="mb-4">
-                            <select name="area" id="area" class="hidden w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                            <select name="area" id="editArea" class="hidden w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                                 <option selected disabled>Local Area</option>
-                                <!-- @foreach($areas as $area)
-                                    @if($area->districts === 'Dhaka')
-                                    @foreach(json_decode($area->area) as $location)
-                                    <option value="{{ $district }}">{{ $location }}</option>
-                                    @endforeach
-                                    @endif
-                                    @endforeach -->
                             </select>
-
-                            <!-- <span class="text-red-400">@error('emp_role') {{ $message }} @enderror</span> -->
                         </div>
                     </div>
-                    <div id="postImage1" class="flex items-center justify-center w-full hidden">
-                        <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                            <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
-                                </svg>
-                                <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-                                <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
-                            </div>
-                            <input id="dropzone-file" type="file" name="image" class="hidden" onchange="previewImage(event)" required />
-                        </label>
-                    </div>
-                    <img id="selected-image" class="hidden" src="#" alt="Selected Image" />
+
 
                 </div>
                 <div class="mt-4">
-                    <button type="submit" class="inline-flex items-center px-4 py-2 bg-blue-500 border border-transparent rounded-md font-semibold text-white uppercase tracking-widest hover:bg-blue-600 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-200 active:bg-blue-700 transition ease-in-out duration-150">
-                        Post
-                    </button>
+                    <button type="submit" class="update-btn">Update</button>
                 </div>
             </form>
             <div class="modal-action">
@@ -111,10 +88,43 @@
 
 
 <script>
-    document.getElementById('division').addEventListener('change', function() {
+    function toggleVisibility(hideId, showId) {
+        const hideElement = document.getElementById(hideId);
+        const showElement = document.getElementById(showId);
+
+        console.log(hideElement, showElement)
+
+        if (hideElement && showElement) {
+            hideElement.style.display = 'none';
+            showElement.style.display = 'block';
+        }
+    }
+
+    function previewImage(event) {
+        const selectedImage = document.getElementById('editSelectedImage');
+        const dropzoneFile = document.getElementById('editDropzoneFile');
+        const hideElement = document.getElementById('editPostImage1');
+
+        if (event.target.files && event.target.files[0]) {
+            hideElement.style.display = 'none';
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                selectedImage.src = e.target.result;
+                selectedImage.classList.remove('hidden');
+                dropzoneFile.classList.add('hidden');
+            };
+
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    }
+
+
+
+    document.getElementById('editDivision').addEventListener('change', function() {
         var selectedDivision = this.value;
-        var districtSelect = document.getElementById('district');
-        var areaSelect = document.getElementById('area');
+        var districtSelect = document.getElementById('editDistrict');
+        var areaSelect = document.getElementById('editArea');
         if (selectedDivision) {
             districtSelect.style.display = 'block';
             areaSelect.style.display = 'none';
@@ -142,9 +152,9 @@
         });
     });
 
-    document.getElementById('district').addEventListener('change', function() {
+    document.getElementById('editDistrict').addEventListener('change', function() {
         var selectedDistrict = this.value;
-        var areaSelect = document.getElementById('area');
+        var areaSelect = document.getElementById('editArea');
         if (selectedDistrict) {
             areaSelect.style.display = 'block';
         }

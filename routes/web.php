@@ -34,6 +34,7 @@ Route::get('/room', [RoomController::class, 'room_page'])->middleware('loginRoom
 
 Route::get('/hallRoomPost', [RoomController::class, 'hallRoomPost']);
 Route::post('/hallRoomPost', [RoomController::class, 'hallRoomPost']);
+Route::put('/updateHallRoomPost/{id}', [RoomController::class, 'update_hallRoomPost']);
 
 
 // User & Employee Login
