@@ -6,9 +6,10 @@
             <img src="/assets/profile/profile.png" alt="Image" class="object-cover object-center w-full h-full" />
           </div>
           <div class="flex flex-col items-center justify-center">
-            <div class="font-bold text-indigo-500 md:text-lg">John Doe</div>
+            <div class="font-bold text-indigo-500 md:text-lg">Kazi Kutub Uddin Soikot
+</div>
             <p class="mb-3 text-sm text-gray-500 md:text-base md:mb-4">
-              Founder / CEO
+              Chief Executive Engineer
             </p>
 
             <div class="flex">
@@ -38,9 +39,9 @@
             <img src="/assets/profile/profile.png" alt="Image" class="object-cover object-center w-full h-full" />
           </div>
           <div class="flex flex-col items-center justify-center">
-            <div class="font-bold text-indigo-500 md:text-lg">John Doe</div>
+            <div class="font-bold text-indigo-500 md:text-lg">H.M.N.C Rana</div>
             <p class="mb-3 text-sm text-gray-500 md:text-base md:mb-4">
-              Web Developer
+              Director (B.D)
             </p>
 
             <div class="flex">
@@ -70,9 +71,9 @@
             <img src="/assets/profile/profile.png" alt="Image" class="object-cover object-center w-full h-full" />
           </div>
           <div class="flex flex-col items-center justify-center">
-            <div class="font-bold text-indigo-500 md:text-lg">Scarlet</div>
+            <div class="font-bold text-indigo-500 md:text-lg">Md. Forhad Hossain</div>
             <p class="mb-3 text-sm text-gray-500 md:text-base md:mb-4">
-              Devops Engineer
+              Admin & Logistic
             </p>
 
             <div class="flex">
