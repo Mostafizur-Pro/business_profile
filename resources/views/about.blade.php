@@ -13,6 +13,7 @@
     <!-- Cover Page -->
 
     @include('components/about/banner')
+    @include('components/about/ourMission')
     @include('components/about/ourTeam')
     @include('components/about/logo')
     @include('components/about/gallery')

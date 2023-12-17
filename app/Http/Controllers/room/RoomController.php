@@ -25,6 +25,7 @@ class RoomController extends Controller
 
         $division = DB::table('division')->get();
         $areas = DB::table('area')->get();
+        $categories = DB::table('categories_list')->get();
 
         $posts = DB::table('user_post')
             ->orderBy('created_at', 'desc')
@@ -44,10 +45,10 @@ class RoomController extends Controller
 
 
 
-        // dd($users);
+        // dd($categories);
 
 
-        return view('room/room', compact('categoriesList', 'locationsList', 'division', 'areas', 'posts', 'users'));
+        return view('room/room', compact('categoriesList', 'locationsList', 'division', 'areas', 'posts', 'users', 'categories'));
     }
 
 
