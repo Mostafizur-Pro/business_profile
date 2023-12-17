@@ -4,7 +4,7 @@
             <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
         </form>
         <h3 class="font-bold text-center text-xl">Create Post</h3>
-
+        <!-- Profile Start -->
         <div>
             @if($adminData || $empData || $userData)
 
@@ -63,7 +63,7 @@
 
             @endif
         </div>
-
+        <!-- Profile End -->
 
 
         <form action="{{ url('hallRoomPost') }}" method="POST" enctype="multipart/form-data">
@@ -75,6 +75,7 @@
                     <p class="text-lg font-semibold">Add Photos</p>
                     <img src="https://static.xx.fbcdn.net/rsrc.php/v3/y7/r/Ivw7nhRtXyo.png?_nc_eui2=AeF_XhTxvKhzjhuQM1YfIBFqPL4YoeGsw5I8vhih4azDkr0T0kiKdCOyzBnABJRGxPPExNxAE5qG8tUscWhxrYDJ" alt="">
                 </div>
+                <!-- Location Start -->
                 <div class="my-5">
                     <div class="mb-4">
                         <select required name="division" id="division" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
@@ -117,6 +118,7 @@
                         <!-- <span class="text-red-400">@error('emp_role') {{ $message }} @enderror</span> -->
                     </div>
                 </div>
+                <!-- Location End -->
                 <div id="postImage1" class="flex items-center justify-center w-full hidden">
                     <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                         <div class="flex flex-col items-center justify-center pt-5 pb-6">
