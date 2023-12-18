@@ -6,9 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Http\post;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Http\user_post;
 use Session;
 
 class RoomController extends Controller
@@ -44,9 +42,10 @@ class RoomController extends Controller
 
         return view('room/room', compact('division', 'areas', 'posts', 'users', 'categories'));
     }
+    
 
 
-
+    // Post
     public function hallRoomPost(Request $request)
     {
         // dd($request);
@@ -80,6 +79,7 @@ class RoomController extends Controller
         }
     }
 
+    // update
     public function update_hallRoomPost(Request $request, $id)
     {
         // dd($request);
