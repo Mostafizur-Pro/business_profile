@@ -78,6 +78,7 @@
                 <!-- Location Start -->
                 <div class="my-5">
                     <div class="mb-4">
+                        <p class="text-italic">Location</p>
                         <select required name="division" id="division" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                             <option selected disabled>Division</option>
                             @foreach($division as $div)
@@ -119,6 +120,34 @@
                     </div>
                 </div>
                 <!-- Location End -->
+
+
+                <!-- Category Start -->
+                <div class="my-5">
+                    <div class="mb-4">
+                        <p>Category</p>
+                        <select required name="category" id="category" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                            <option selected disabled>category</option>
+                            @foreach($categories as $category)
+                            <option value="{{ $category->category }}">{{ $category->category }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <select required name="subcategories" id="subcategory" class="hidden w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                            <option selected disabled>Subcategory</option>
+                            <!-- @foreach($categories as $category)
+                            @if($category->category === 'Education')
+                            @foreach(json_decode($category->subcategories) as $subcategory)
+                            <option value="{{ $subcategory }}">{{ $subcategory }}</option>
+                            @endforeach
+                            @endif
+                            @endforeach -->
+                        </select>
+                    </div>
+                </div>
+                <!-- Category End -->
+
                 <div id="postImage1" class="flex items-center justify-center w-full hidden">
                     <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                         <div class="flex flex-col items-center justify-center pt-5 pb-6">
@@ -173,6 +202,45 @@
             reader.readAsDataURL(event.target.files[0]);
         }
     }
+
+
+    document.getElementById('category').addEventListener('change', function() {
+        var selectedCategory = this.value;
+        var categorySelect = document.getElementById('subcategory');
+
+        if (selectedCategory) {
+            categorySelect.style.display = 'block';
+        }
+
+        categorySelect.innerHTML = ''; // Clear previous options
+
+        var defaultOption = document.createElement('option');
+        defaultOption.value = "";
+        defaultOption.text = "Select Your Category";
+        defaultOption.selected = true;
+        defaultOption.disabled = true;
+        categorySelect.appendChild(defaultOption);
+
+        var categories = @json($categories); // Assuming $categories contains category data
+
+        // console.log('Selected Category:', selectedCategory);
+        // console.log('All Categories:', categories);
+
+        categories.forEach(category => {
+            if (category.category === selectedCategory) {
+                var subcategories = JSON.parse(category.subcategories);
+                // console.log('Subcategories:', subcategories);
+
+                subcategories.forEach(function(subcategory) {
+                    var option = document.createElement('option');
+                    option.value = subcategory;
+                    option.text = subcategory;
+                    categorySelect.appendChild(option);
+                });
+            }
+        });
+    });
+
     document.getElementById('division').addEventListener('change', function() {
         var selectedDivision = this.value;
         var districtSelect = document.getElementById('district');

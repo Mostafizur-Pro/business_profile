@@ -15,7 +15,7 @@
             <div class="mr-2 ">
                 <a href="javascript:void(0)" class="dark:hover:text-primary hover:text-primary transition-colors duration-200 ease-in-out text-[1.075rem] font-medium dark:text-neutral-400/90 text-secondary-inverse">{{$user->owner_name}}</a>
                 <span class="text-stone-400 dark:text-stone-500 font-medium block text-[0.85rem]">Posted on {{ \Carbon\Carbon::parse($post->created_at)->isoFormat('MMM, Do YYYY h:mm A') }}
-                    ,  @if($post->area) {{$post->area}}, @endif {{$post->district}}, {{$post->division}}.
+                    ,  @if($post->area) {{$post->area}}, @endif {{$post->district}}, {{$post->category}}.
                     <!-- July 26 2023, 01:03pm -->
                 </span>
             </div>
@@ -106,7 +106,7 @@
         <p>{{$post->post}}</p>
     </div>
 
-    <figure class="mb-5"><img class="w-[80%] rounded-2xl" src="{{$post->image}}" alt="Shoes" /></figure>
+    <figure class="mb-5"><img class="w-96 rounded-2xl" src="{{$post->image}}" alt="Shoes" /></figure>
 
     <div class="flex items-center justify-between px-8 py-5">
         <div class="flex items-center mr-5">

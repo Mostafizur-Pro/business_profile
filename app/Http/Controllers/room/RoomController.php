@@ -4,10 +4,9 @@ namespace App\Http\Controllers\room;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Http\post;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Http\user_post;
 use Session;
 
 class RoomController extends Controller
@@ -15,13 +14,6 @@ class RoomController extends Controller
 
     public function room_page()
     {
-
-        $categoriesJson = file_get_contents(storage_path('categories.json'));
-        $categoriesList = json_decode($categoriesJson, true);
-
-        $locationsJson = file_get_contents(storage_path('location.json'));
-        $locationsList = json_decode($locationsJson, true);
-
 
         $division = DB::table('division')->get();
         $areas = DB::table('area')->get();
@@ -48,17 +40,20 @@ class RoomController extends Controller
         // dd($categories);
 
 
-        return view('room/room', compact('categoriesList', 'locationsList', 'division', 'areas', 'posts', 'users', 'categories'));
+        return view('room/room', compact('division', 'areas', 'posts', 'users', 'categories'));
     }
+    
 
 
-
+    // Post
     public function hallRoomPost(Request $request)
     {
         // dd($request);
 
         $post = array();
         $post['post'] = $request->post;
+        $post['category'] = $request->category;
+        $post['subcategories'] = $request->subcategories;
         $post['division'] = $request->division;
         $post['district'] = $request->district;
         if ($request->has('area')) {
@@ -74,20 +69,24 @@ class RoomController extends Controller
             $post['image'] = 'images/post/' . basename($imagePath);
         }
 
-        $post['created_at'] = now();
+        $post['created_at'] = Carbon::now()->setTimezone('Asia/Dhaka');
         $post['updated_at'] = now();
 
         $contact = DB::table('user_post')->insertGetId($post);
+
         if ($contact) {
             return redirect('/room');
         }
     }
 
+    // update
     public function update_hallRoomPost(Request $request, $id)
     {
         // dd($request);
         $updateData = [
             'post' => $request->input('post'),
+            'category' => $request->input('category'),
+            'subcategories' => $request->input('subcategories'),
             'division' => $request->input('division'),
             'district' => $request->input('district'),
             'area' => $request->input('area'),
