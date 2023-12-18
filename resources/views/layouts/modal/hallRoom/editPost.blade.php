@@ -15,7 +15,7 @@
                     <div class="mr-2 ">
                         <a href="javascript:void(0)" class="dark:hover:text-primary hover:text-primary transition-colors duration-200 ease-in-out text-[1.075rem] font-medium dark:text-neutral-400/90 text-secondary-inverse">{{$user->owner_name}}</a>
                         <span class="text-stone-400 dark:text-stone-500 font-medium block text-[0.85rem]">Posted on {{ \Carbon\Carbon::parse($post->created_at)->isoFormat('MMM, Do YYYY h:mm A') }}
-                            , @if($post->area) {{$post->area}}, @endif {{$post->district}}, {{$post->division}}.
+                            , @if($post->area) {{$post->area}}, @endif {{$post->district}}, {{$post->category}}.
                         </span>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
 
 
 
-            <form action="{{ url('updateHallRoomPost', $post->id) }}" method="POST" enctype="multipart/form-data" >
+            <form action="{{ url('updateHallRoomPost', $post->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
@@ -45,7 +45,7 @@
                                     <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
                                     <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
                                 </div>
-                                <input id="editDropzoneFile" type="file" name="image" class="hidden" onchange="previewImage(event)"  />
+                                <input id="editDropzoneFile" type="file" name="image" class="hidden" onchange="previewImage(event)" />
                             </label>
                         </div>
                         <img id="editSelectedImage" class="hidden" src="#" alt="Selected Image" />
@@ -53,24 +53,25 @@
 
                     <div class="my-5">
                         <div class="mb-4">
-                            <select  name="division" id="editDivision" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
-                                <option class="text-green-400" value="{{ $post->division }}" >@if($post->area) {{$post->area}}, @endif {{$post->district}}, {{$post->division}}.</option>
+                            <p class="text-italic">Location</p>
+                            <select name="division" id="editDivision" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                                <option class="text-red-400" value="{{ $post->division }}">@if($post->area) {{$post->area}}, @endif {{$post->district}}, {{$post->division}}.</option>
                                 @foreach($division as $div)
                                 <option value="{{ $div->division }}">{{ $div->division }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="mb-4">
-                            <select  name="district" id="editDistrict" class="hidden w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
-                                
-                                <option class="text-green-400" value="{{ $post->district }}" >{{$post->district}}</option>
+                            <select name="district" id="editDistrict" class="hidden w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+
+                                <option class="text-green-400" value="{{ $post->district }}">{{$post->district}}</option>
                             </select>
                         </div>
                         <div class="mb-4">
                             <select name="area" id="editArea" class="hidden w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                                 @if($post->area)
 
-                                <option class="text-green-400" value="{{ $post->area }}" >{{$post->area}}</option>
+                                <option class="text-green-400" value="{{ $post->area }}">{{$post->area}}</option>
                                 @else
                                 <option selected disabled>Local Area</option>
                                 @endif
@@ -78,14 +79,33 @@
                         </div>
                     </div>
 
+                    <!-- Category Start -->
+                    <div class="my-5">
+                        <div class="mb-4">
+                            <p>Category</p>
+                            <select required name="category" id="editCategory" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                                <option class="text-red-400" >{{$post->category}}, {{$post->subcategories}}</option>
+                                @foreach($categories as $category)
+                                <option value="{{ $category->category }}">{{ $category->category }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <select required name="subcategories" id="editSubcategory" class="hidden w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                                <option>Subcategory</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Category End -->
+
 
                 </div>
                 <div class="mt-4">
-                    <button type="submit" class="update-btn">Update</button>
+                    <button type="submit" class="bg-[#282560] text-white font-bold py-2 px-4 rounded cursor-pointer update-btn">Update</button>
                 </div>
             </form>
             <div class="modal-action">
-                <label for="my_modal_6{{$post->id}}" class="btn">Close!</label>
+                <label for="my_modal_6{{$post->id}}" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded cursor-pointer">Close!</label>
             </div>
         </div>
     </div>
@@ -125,7 +145,42 @@
         }
     }
 
+    document.getElementById('editCategory').addEventListener('change', function() {
+        var selectedCategory = this.value;
+        var categorySelect = document.getElementById('editSubcategory');
 
+        if (selectedCategory) {
+            categorySelect.style.display = 'block';
+        }
+
+        categorySelect.innerHTML = ''; // Clear previous options
+
+        var defaultOption = document.createElement('option');
+        defaultOption.value = "";
+        defaultOption.text = "Select Your Category";
+        defaultOption.selected = true;
+        defaultOption.disabled = true;
+        categorySelect.appendChild(defaultOption);
+
+        var categories = @json($categories); // Assuming $categories contains category data
+
+        // console.log('Selected Category:', selectedCategory);
+        // console.log('All Categories:', categories);
+
+        categories.forEach(category => {
+            if (category.category === selectedCategory) {
+                var subcategories = JSON.parse(category.subcategories);
+                // console.log('Subcategories:', subcategories);
+
+                subcategories.forEach(function(subcategory) {
+                    var option = document.createElement('option');
+                    option.value = subcategory;
+                    option.text = subcategory;
+                    categorySelect.appendChild(option);
+                });
+            }
+        });
+    });
 
     document.getElementById('editDivision').addEventListener('change', function() {
         var selectedDivision = this.value;

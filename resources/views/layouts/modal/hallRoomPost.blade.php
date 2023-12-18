@@ -78,7 +78,7 @@
                 <!-- Location Start -->
                 <div class="my-5">
                     <div class="mb-4">
-                        <p>Location</p>
+                        <p class="text-italic">Location</p>
                         <select required name="division" id="division" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                             <option selected disabled>Division</option>
                             @foreach($division as $div)
@@ -134,7 +134,7 @@
                         </select>
                     </div>
                     <div class="mb-4">
-                        <select required name="subcategory" id="subcategory" class="hidden w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                        <select required name="subcategories" id="subcategory" class="hidden w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                             <option selected disabled>Subcategory</option>
                             <!-- @foreach($categories as $category)
                             @if($category->category === 'Education')
@@ -206,38 +206,39 @@
 
     document.getElementById('category').addEventListener('change', function() {
         var selectedCategory = this.value;
-        var districtSelect = document.getElementById('subcategory');
+        var categorySelect = document.getElementById('subcategory');
 
         if (selectedCategory) {
-            districtSelect.style.display = 'block';
-
+            categorySelect.style.display = 'block';
         }
-        districtSelect.innerHTML = ''; // Clear previous options
+
+        categorySelect.innerHTML = ''; // Clear previous options
 
         var defaultOption = document.createElement('option');
         defaultOption.value = "";
         defaultOption.text = "Select Your Category";
         defaultOption.selected = true;
         defaultOption.disabled = true;
-        districtSelect.appendChild(defaultOption);
+        categorySelect.appendChild(defaultOption);
 
-        var categories = @json($categories); // Assuming $division contains division data
-        categories.map(category => {
-            var categories = (category.category);
-            // console.log('cat',category.category )
+        var categories = @json($categories); // Assuming $categories contains category data
+
+        // console.log('Selected Category:', selectedCategory);
+        // console.log('All Categories:', categories);
+
+        categories.forEach(category => {
             if (category.category === selectedCategory) {
-                var categories = (category.category);
+                var subcategories = JSON.parse(category.subcategories);
+                // console.log('Subcategories:', subcategories);
 
-
-                var option = document.createElement('option');
-                option.value = district;
-                option.text = district;
-                districtSelect.appendChild(option);
-
+                subcategories.forEach(function(subcategory) {
+                    var option = document.createElement('option');
+                    option.value = subcategory;
+                    option.text = subcategory;
+                    categorySelect.appendChild(option);
+                });
             }
-
-        })
-
+        });
     });
 
     document.getElementById('division').addEventListener('change', function() {
