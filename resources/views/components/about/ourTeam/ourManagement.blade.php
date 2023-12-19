@@ -2,8 +2,8 @@
   <h2 class="mb-4 text-2xl font-bold text-center text-gray-800 lg:text-3xl md:mb-6 my-10"> Our Management Team </h2>
   <div class="grid gap-4 md:grid-cols-3">
     <div class="p-4 shadow">
-      <div class="h-48 mb-2 overflow-hidden rounded-lg shadow-lg md:h-80">
-        <img src="/assets/profile/profile.png" alt="Image" class="object-cover object-center w-full h-full" />
+      <div class=" mb-2 overflow-hidden rounded-lg shadow-lg ">
+        <img src="/assets/about/ourTeam/management/K.K.Uddin Soikot.png" alt="Image" class="object-cover object-center w-full h-full" />
       </div>
       <div class="flex flex-col items-center justify-center">
         <div class="font-bold text-indigo-500 md:text-lg">Kazi Kutub Uddin Soikot
@@ -35,8 +35,8 @@
     </div>
 
     <div class="p-4 shadow">
-      <div class="h-48 mb-2 overflow-hidden rounded-lg shadow-lg md:h-80">
-        <img src="/assets/profile/profile.png" alt="Image" class="object-cover object-center w-full h-full" />
+      <div class=" mb-2 overflow-hidden rounded-lg shadow-lg ">
+        <img src="/assets/about/ourTeam/management/H.M.N.C Rana.png" alt="Image" class="object-cover object-center w-full h-full" />
       </div>
       <div class="flex flex-col items-center justify-center">
         <div class="font-bold text-indigo-500 md:text-lg">H.M.N.C Rana</div>
@@ -67,8 +67,8 @@
     </div>
 
     <div class="p-4 shadow">
-      <div class="h-48 mb-2 overflow-hidden rounded-lg shadow-lg md:h-80">
-        <img src="/assets/profile/profile.png" alt="Image" class="object-cover object-center w-full h-full" />
+      <div class=" mb-2 overflow-hidden rounded-lg shadow-lg ">
+        <img src="/assets/about/ourTeam/management/Md.Forhad.png" alt="Image" class="object-cover object-center w-full h-full" />
       </div>
       <div class="flex flex-col items-center justify-center">
         <div class="font-bold text-indigo-500 md:text-lg">Md. Forhad Hossain</div>
