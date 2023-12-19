@@ -18,18 +18,28 @@ class RoomController extends Controller
         $areas = DB::table('area')->get();
         $categories = DB::table('categories_list')->get();
 
-        $search = $request->input('search'); // Assuming you're sending the selected area from the frontend
+        $search = $request->input('search');
+        $location = $request->input('location');
+        $subcategories = $request->input('subcategory');
 
         $posts = DB::table('user_post')
             ->orderBy('created_at', 'desc');
 
-        if ($search) {
+        if ($subcategories) {
+            $posts->where('subcategories', 'LIKE', $subcategories . '%');
+        } elseif ($location) {
+            $posts->where('area', 'LIKE', $location . '%');
+        } else {
             $posts->where(function ($query) use ($search) {
                 $query->where('post', 'LIKE', '%' . $search . '%')
+                    ->orWhere('category', 'LIKE', '%' . $search . '%')
+                    ->orWhere('subcategories', 'LIKE', '%' . $search . '%')
                     ->orWhere('division', 'LIKE', '%' . $search . '%')
+                    ->orWhere('district', 'LIKE', '%' . $search . '%')
                     ->orWhere('area', 'LIKE', '%' . $search . '%');
             });
         }
+       
 
         $posts = $posts->get();
 

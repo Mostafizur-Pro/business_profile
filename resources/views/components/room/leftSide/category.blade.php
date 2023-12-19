@@ -1,6 +1,3 @@
-
-
-
 <div class="menu text-lg">
     <li>
         <details close>
@@ -14,9 +11,11 @@
                         {{ $category->category }}
                     </div>
                     <div class="collapse-content text-blue-500">
-                      
+
                         @foreach(json_decode($category->subcategories) as $subcategory)
-                        <p class="py-1"><a >{{ $subcategory }}</a></p>
+                        <form method="GET">
+                            <p class="py-1"><button type="submit" name="subcategory" value="{{ $subcategory }}">{{ $subcategory }}</button></p>
+                        </form>
                         <!-- <option value="{{ $subcategory }}">{{ $subcategory }}</option> -->
                         @endforeach
                     </div>
