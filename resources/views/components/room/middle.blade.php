@@ -23,7 +23,7 @@
             <div class="mr-2 ">
                 <a href="javascript:void(0)" class="dark:hover:text-primary hover:text-primary transition-colors duration-200 ease-in-out text-[1.075rem] font-medium dark:text-neutral-400/90 text-secondary-inverse">{{$user->owner_name}}</a>
                 <span class="text-stone-400 dark:text-stone-500 font-medium block text-[0.85rem]">Posted on {{ \Carbon\Carbon::parse($post->created_at)->isoFormat('MMM, Do YYYY h:mm A') }}
-                    ,  @if($post->area) {{$post->area}}, @endif {{$post->district}}, {{$post->category}}.
+                    ,  @if($post->area) {{$post->area}}, @endif {{$post->district}}, {{$post->category}}, {{$post->subcategories}}.
                     <!-- July 26 2023, 01:03pm -->
                 </span>
             </div>
