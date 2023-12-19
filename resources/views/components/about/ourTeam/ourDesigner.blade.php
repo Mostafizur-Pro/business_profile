@@ -3,8 +3,8 @@
       <div class="grid gap-4 md:grid-cols-3">
         <!-- Mostafizur -->
         <div class="p-4 shadow">
-          <div class="h-48 mb-2 overflow-hidden rounded-lg shadow-lg md:h-80">
-            <img src="/assets/profile/profile.png" alt="Image" class="object-cover object-center w-full h-full" />
+          <div class=" mb-2 overflow-hidden rounded-lg shadow-lg ">
+            <img src="/assets/about/ourTeam/programmer/Mostafizur Rahman.png" alt="Image" class="object-cover object-center w-full h-full" />
           </div>
           <div class="flex flex-col items-center justify-center">
             <div class="font-bold text-indigo-500 md:text-lg">Mostafizur Rahman</div>
@@ -35,8 +35,8 @@
         </div>
         <!-- Rafin -->
         <div class="p-4 shadow">
-          <div class="h-48 mb-2 overflow-hidden rounded-lg shadow-lg md:h-80">
-            <img src="/assets/profile/profile.png" alt="Image" class="object-cover object-center w-full h-full" />
+          <div class=" mb-2 overflow-hidden rounded-lg shadow-lg ">
+            <img src="/assets/about/ourTeam/programmer/Rafin.png" alt="Image" class="object-cover object-center w-full h-full" />
           </div>
           <div class="flex flex-col items-center justify-center">
             <div class="font-bold text-indigo-500 md:text-lg">Rafin Hossain</div>
@@ -67,8 +67,8 @@
         </div>
         <!-- Rafi -->
         <div class="p-4 shadow">
-          <div class="h-48 mb-2 overflow-hidden rounded-lg shadow-lg md:h-80">
-            <img src="/assets/profile/profile.png" alt="Image" class="object-cover object-center w-full h-full" />
+          <div class=" mb-2 overflow-hidden rounded-lg shadow-lg ">
+            <img src="/assets/about/ourTeam/programmer/Rafi.png" alt="Image" class="object-cover object-center w-full h-full" />
           </div>
 
           <div class="flex flex-col items-center justify-center">
@@ -100,7 +100,7 @@
         </div>
         <!-- Asma -->
         <div class="p-4 shadow">
-          <div class="h-48 mb-2 overflow-hidden rounded-lg shadow-lg md:h-80">
+          <div class=" mb-2 overflow-hidden rounded-lg shadow-lg ">
             <img src="/assets/profile/profile.png" alt="Image" class="object-cover object-center w-full h-full" />
           </div>
 

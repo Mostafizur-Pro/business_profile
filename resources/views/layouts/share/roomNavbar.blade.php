@@ -22,6 +22,29 @@
                 <span class="sr-only">Bookmark</span>
             </a>
         </button>
+
+
+        @if($adminData || $empData || $userData)
+
+        @if($adminData)
+        <button onclick="my_modal_2.showModal()" data-tooltip-target="tooltip-post" type="button" class="inline-flex flex-col items-center justify-center p-4 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+
+            <svg class="w-5 h-5 mb-1 text-gray-200 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
+            </svg>
+            <span class="sr-only">New post</span>
+
+        </button>
+        @elseif($empData)
+        <button onclick="my_modal_2.showModal()" data-tooltip-target="tooltip-post" type="button" class="inline-flex flex-col items-center justify-center p-4 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+
+            <svg class="w-5 h-5 mb-1 text-gray-200 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
+            </svg>
+            <span class="sr-only">New post</span>
+
+        </button>
+        @elseif($userData)
         <button onclick="my_modal_3.showModal()" data-tooltip-target="tooltip-post" type="button" class="inline-flex flex-col items-center justify-center p-4 hover:bg-gray-50 dark:hover:bg-gray-800 group">
 
             <svg class="w-5 h-5 mb-1 text-gray-200 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
@@ -30,6 +53,33 @@
             <span class="sr-only">New post</span>
 
         </button>
+        @endif
+
+        @else
+
+        @endif
+
+        <dialog id="my_modal_2" class="modal">
+            <div class="modal-box">
+                <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+                <p>Access Denied: Only registered users have the privilege to create posts. Your current account does not possess the necessary authorization to perform this action. Please sign in or create an account to gain access and utilize this feature. Thank you for your understanding.</p>
+
+            </div>
+        </dialog>
+
+
+        <!-- <button onclick="my_modal_3.showModal()" data-tooltip-target="tooltip-post" type="button" class="inline-flex flex-col items-center justify-center p-4 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+
+            <svg class="w-5 h-5 mb-1 text-gray-200 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
+            </svg>
+            <span class="sr-only">New post</span>
+
+        </button> -->
+
+
         <button data-tooltip-target="tooltip-search" type="button" class="inline-flex flex-col items-center justify-center p-4 hover:bg-gray-50 dark:hover:bg-gray-800 group">
             <a href="">
                 <svg class="w-5 h-5 mb-1 text-gray-200 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
@@ -50,9 +100,7 @@
         <!-- Modal toggle -->
         <!-- You can open the modal using ID.showModal() method -->
         <!-- <button class="btn" onclick="my_modal_3.showModal()">open modal</button> -->
-   @include('layouts/modal/hallRoomPost')
+        @include('layouts/modal/hallRoomPost')
         <!-- Main modal -->
     </div>
 </div>
-
-
