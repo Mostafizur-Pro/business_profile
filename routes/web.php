@@ -32,7 +32,7 @@ Route::get('/room', [RoomController::class, 'room_page'])->middleware('loginRoom
 // Route::post('/room-division', [RoomController::class, 'room_division']);
 
 
-Route::get('/hallRoomPost', [RoomController::class, 'hallRoomPost']);
+Route::get('/hallRoomPost', [RoomController::class, 'hallRoomPost'])->name('room');
 Route::post('/hallRoomPost', [RoomController::class, 'hallRoomPost']);
 Route::put('/updateHallRoomPost/{id}', [RoomController::class, 'update_hallRoomPost']);
 

@@ -23,7 +23,7 @@
                                         @if($area->districts === $district )
                                         @foreach(json_decode($area->area) as $location)
 
-                                        <li><a class="text-black">{{ $location }}</a></li>
+                                        <li><a class="text-black" >{{ $location }}</a></li>
                                         @endforeach
                                         @endif
                                         @endforeach

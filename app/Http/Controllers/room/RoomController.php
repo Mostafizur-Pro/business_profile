@@ -12,21 +12,29 @@ use Session;
 class RoomController extends Controller
 {
 
-    public function room_page()
+    public function room_page(Request $request)
     {
-
         $division = DB::table('division')->get();
         $areas = DB::table('area')->get();
         $categories = DB::table('categories_list')->get();
 
-        $posts = DB::table('user_post')
-            ->orderBy('created_at', 'desc')
-            ->get();
+        $search = $request->input('search'); // Assuming you're sending the selected area from the frontend
 
-        // Collect user IDs from posts
+        $posts = DB::table('user_post')
+            ->orderBy('created_at', 'desc');
+
+        if ($search) {
+            $posts->where(function ($query) use ($search) {
+                $query->where('post', 'LIKE', '%' . $search . '%')
+                    ->orWhere('division', 'LIKE', '%' . $search . '%')
+                    ->orWhere('area', 'LIKE', '%' . $search . '%');
+            });
+        }
+
+        $posts = $posts->get();
+
         $userIds = $posts->pluck('user_id')->unique();
 
-        // Fetch user details for the collected user IDs
         $users = [];
         foreach ($userIds as $userId) {
             $user = User::find($userId);
@@ -35,14 +43,34 @@ class RoomController extends Controller
             }
         }
 
-
-
-        // dd($categories);
-
-
         return view('room/room', compact('division', 'areas', 'posts', 'users', 'categories'));
     }
-    
+    // public function room_page(Request $request)
+    // {      
+    //     $division = DB::table('division')->get();
+    //     $areas = DB::table('area')->get();
+    //     $categories = DB::table('categories_list')->get();
+
+    //     $selectedArea = $request->input('searchField'); // Assuming you're sending the selected area from the frontend
+
+    //     $posts = DB::table('user_post')
+
+    //         ->orderBy('created_at', 'desc')
+    //         ->get();
+
+    //     $userIds = $posts->pluck('user_id')->unique();
+
+    //     $users = [];
+    //     foreach ($userIds as $userId) {
+    //         $user = User::find($userId);
+    //         if ($user) {
+    //             $users[$userId] = $user;
+    //         }
+    //     }
+
+    //     return view('room/room', compact('division', 'areas', 'posts', 'users', 'categories'));
+    // }
+
 
 
     // Post
