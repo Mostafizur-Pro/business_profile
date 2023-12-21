@@ -70,11 +70,30 @@
             {{ csrf_field() }}
 
             <div>
-                <textarea id="post" name="post" rows="4" cols="50" class="mt-1 p-3 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="What's on your mind" required></textarea>
+
+                <input id="title" name="title" rows="4" cols="50" type="text" class="mt-1 my-5 p-3 border border-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="Your Title">
+
+                <textarea id="post" name="post" rows="4" cols="50" class="mt-1 my-5 p-3 border border-2 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" placeholder="What's on your mind" required></textarea>
+
+
                 <div id="postImage" class="flex justify-between border border-2 py-3 rounded-lg px-3 " onclick="toggleVisibility('postImage', 'postImage1')">
                     <p class="text-lg font-semibold">Add Photos</p>
                     <img src="https://static.xx.fbcdn.net/rsrc.php/v3/y7/r/Ivw7nhRtXyo.png?_nc_eui2=AeF_XhTxvKhzjhuQM1YfIBFqPL4YoeGsw5I8vhih4azDkr0T0kiKdCOyzBnABJRGxPPExNxAE5qG8tUscWhxrYDJ" alt="">
                 </div>
+
+                <div id="postImage1" class="flex items-center justify-center w-full hidden">
+                    <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                            <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                            </svg>
+                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                        </div>
+                        <input id="dropzone-file" type="file" name="image" class="hidden" onchange="previewImage(event)" required />
+                    </label>
+                </div>
+                <img id="selected-image" class="hidden" src="#" alt="Selected Image" />
                 <!-- Location Start -->
                 <div class="my-5">
                     <div class="mb-4">
@@ -88,6 +107,7 @@
 
                         <!-- <span class="text-red-400">@error('emp_role') {{ $message }} @enderror</span> -->
                     </div>
+
                     <div class="mb-4">
                         <select required name="district" id="district" class="hidden w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                             <option selected disabled>District</option>
@@ -134,7 +154,7 @@
                         </select>
                     </div>
                     <div class="mb-4">
-                        <select required name="subcategories" id="subcategory" class="hidden w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                        <select required name="subcategories" id="subcategories" class="hidden w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                             <option selected disabled>Subcategory</option>
                             <!-- @foreach($categories as $category)
                             @if($category->category === 'Education')
@@ -148,19 +168,7 @@
                 </div>
                 <!-- Category End -->
 
-                <div id="postImage1" class="flex items-center justify-center w-full hidden">
-                    <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                            <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
-                            </svg>
-                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
-                        </div>
-                        <input id="dropzone-file" type="file" name="image" class="hidden" onchange="previewImage(event)" required />
-                    </label>
-                </div>
-                <img id="selected-image" class="hidden" src="#" alt="Selected Image" />
+
             </div>
             <div class="mt-4">
                 <button type="submit" class="inline-flex items-center px-4 py-2 bg-blue-500 border border-transparent rounded-md font-semibold text-white uppercase tracking-widest hover:bg-blue-600 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-200 active:bg-blue-700 transition ease-in-out duration-150">
@@ -206,7 +214,7 @@
 
     document.getElementById('category').addEventListener('change', function() {
         var selectedCategory = this.value;
-        var categorySelect = document.getElementById('subcategory');
+        var categorySelect = document.getElementById('subcategories');
 
         if (selectedCategory) {
             categorySelect.style.display = 'block';

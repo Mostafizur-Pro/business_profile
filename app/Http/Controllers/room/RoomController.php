@@ -39,7 +39,7 @@ class RoomController extends Controller
                     ->orWhere('area', 'LIKE', '%' . $search . '%');
             });
         }
-       
+
 
         $posts = $posts->get();
 
@@ -55,43 +55,20 @@ class RoomController extends Controller
 
         return view('room/room', compact('division', 'areas', 'posts', 'users', 'categories'));
     }
-    // public function room_page(Request $request)
-    // {      
-    //     $division = DB::table('division')->get();
-    //     $areas = DB::table('area')->get();
-    //     $categories = DB::table('categories_list')->get();
-
-    //     $selectedArea = $request->input('searchField'); // Assuming you're sending the selected area from the frontend
-
-    //     $posts = DB::table('user_post')
-
-    //         ->orderBy('created_at', 'desc')
-    //         ->get();
-
-    //     $userIds = $posts->pluck('user_id')->unique();
-
-    //     $users = [];
-    //     foreach ($userIds as $userId) {
-    //         $user = User::find($userId);
-    //         if ($user) {
-    //             $users[$userId] = $user;
-    //         }
-    //     }
-
-    //     return view('room/room', compact('division', 'areas', 'posts', 'users', 'categories'));
-    // }
 
 
 
     // Post
     public function hallRoomPost(Request $request)
     {
-        // dd($request);
+        // dd($request);       
 
         $post = array();
+        $post['title'] = $request->title;
         $post['post'] = $request->post;
         $post['category'] = $request->category;
         $post['subcategories'] = $request->subcategories;
+        // $post['subcategories'] = $request->subcategories;
         $post['division'] = $request->division;
         $post['district'] = $request->district;
         if ($request->has('area')) {
@@ -101,14 +78,19 @@ class RoomController extends Controller
         $post['role'] = 'pending';
 
         if ($request->hasFile('image')) {
-
             $imagePath = $request->file('image')->move('images/post', uniqid() . '.' . $request->file('image')->extension());
-            // The second parameter of storeAs is the file name; here, I used uniqid() to generate a unique filename
             $post['image'] = 'images/post/' . basename($imagePath);
         }
 
-        $post['created_at'] = Carbon::now()->setTimezone('Asia/Dhaka');
-        $post['updated_at'] = now();
+        // $post['created_at'] = now();
+        // $post['updated_at'] = now();
+        // $post['created_at'] = Carbon::now()->setTimezone('Asia/Dhaka');
+        // $post['updated_at'] = Carbon::now()->setTimezone('Asia/Dhaka');
+
+                $currentDateTime = Carbon::now()->setTimezone('Asia/Dhaka');
+        $post['created_at'] = $currentDateTime->toDateTimeString();
+        $post['updated_at'] = $currentDateTime->toDateTimeString();
+        // dd($post);
 
         $contact = DB::table('user_post')->insertGetId($post);
 
@@ -122,6 +104,7 @@ class RoomController extends Controller
     {
         // dd($request);
         $updateData = [
+            'title' => $request->input('title'),
             'post' => $request->input('post'),
             'category' => $request->input('category'),
             'subcategories' => $request->input('subcategories'),
@@ -145,4 +128,23 @@ class RoomController extends Controller
             return redirect("/room")->with('Fail', 'Profile update failed');
         }
     }
+    public function delete_hallRoomPost(Request $request, $id)
+    {
+        $post = DB::table('user_post')->where('id', $id)->first();
+
+        if ($post !== null) {
+            // Delete the record
+            DB::table('user_post')->where('id', $id)->delete();
+            // Handle success or redirect
+            return redirect('/room')->with('Success', 'Post deleted successfully');
+        } else {
+            return redirect('/room')->with('Fail', 'Post delete failed');
+            // Handle case where the record with the given ID is not found
+        }
+        
+       
+    }
+
+
+
 }
