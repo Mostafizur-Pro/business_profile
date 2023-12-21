@@ -14,18 +14,25 @@
 <body>
 
 
-@include('layouts/share/roomNavbar')
+    @include('layouts/share/roomNavbar')
 
-<div class="grid grid-cols-3 lg:grid-cols-4 gap-10 mt-10">
-    <div class="col-span-1 lg:col-span-1">
-        @include('components/room/left')
-    </div>
-    <div class="col-span-2 lg:col-span-2">
-        @include('components/room/middle')
-    </div>
-    <div class="hidden sm:block lg:col-span-1">right Side</div>
-</div>
 
+
+    <div class="grid grid-cols-3 lg:grid-cols-4 gap-10 mt-10">
+        <div class="col-span-1 lg:col-span-1">
+            @include('components/room/left')
+        </div>
+        <div class="col-span-2 lg:col-span-2">
+            @include('components/room/middle')
+        </div>
+        <div class="hidden sm:block lg:col-span-1">
+            @include('components/room/right')
+        </div>
+    </div>
+
+    <div class=" mt-10 ">
+        @include('components.logger.logger')
+    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>

@@ -31,6 +31,8 @@
                 @method('PUT')
 
                 <div>
+                    <input id="title" name="title" rows="4" cols="50" type="text" class="mt-1  p-3 font-bold focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm  rounded-md" value="{{ $post->title }}" placeholder="">
+
                     <textarea id="post" name="post" rows="4" cols="50" class="mt-1 p-3 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">{{ $post->post }}</textarea>
                     <div id="editPostImage" onclick="toggleVisibility('editPostImage', 'editPostImage1')">
                         <img class="w-[50%] mx-auto" src="{{$post->image}}" alt="Selected Image" />
@@ -83,16 +85,16 @@
                     <div class="my-5">
                         <div class="mb-4">
                             <p>Category</p>
-                            <select required name="category" id="editCategory" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
-                                <option class="text-red-400" >{{$post->category}}, {{$post->subcategories}}</option>
+                            <select name="category" id="editCategory" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                                <option class="text-red-400" value="{{ $post->category }}">{{$post->category}}, {{$post->subcategories}}</option>
                                 @foreach($categories as $category)
                                 <option value="{{ $category->category }}">{{ $category->category }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="mb-4">
-                            <select required name="subcategories" id="editSubcategory" class="hidden w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
-                                <option>Subcategory</option>
+                            <select name="subcategories" id="editSubcategories" class="hidden w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
+                                <option value="{{ $post->subcategories }}">{{ $post->subcategories }}</option>
                             </select>
                         </div>
                     </div>
@@ -147,7 +149,7 @@
 
     document.getElementById('editCategory').addEventListener('change', function() {
         var selectedCategory = this.value;
-        var categorySelect = document.getElementById('editSubcategory');
+        var categorySelect = document.getElementById('editSubcategories');
 
         if (selectedCategory) {
             categorySelect.style.display = 'block';
@@ -176,6 +178,7 @@
                     var option = document.createElement('option');
                     option.value = subcategory;
                     option.text = subcategory;
+                    
                     categorySelect.appendChild(option);
                 });
             }

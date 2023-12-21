@@ -15,6 +15,7 @@ class CreateUserPostTable extends Migration
     {
         Schema::create('user_post', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
             $table->string('post');
             $table->string('category');
             $table->string('subcategories');
