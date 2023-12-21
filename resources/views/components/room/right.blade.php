@@ -2,8 +2,8 @@
     <h1 class="text-2xl font-bold mb-5">You might like</h1>
 
 
-    @foreach($posts as $post)
-    <div>
+    @foreach($posts->take(6) as $post)
+    <div class="mb-5">
         <div class="">
             <!-- Related post -->
             <a href="#" class="flex gap-2">
@@ -17,16 +17,16 @@
                         <span>{{$user->owner_name}}</span>
                     </div>
                     @endif
-
                     @endforeach
                 </div>
             </a>
             <!-- Add similar structures for other related posts -->
         </div>
-
     </div>
-
     @endforeach
 
+
+
+    
 
 </div>
