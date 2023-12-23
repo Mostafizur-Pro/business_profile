@@ -7,17 +7,16 @@
 
     <h1 class="text-4xl text-center font-bold my-10">Video Section</h1>
 
-    <div class="grid grid-cols-3 gap-10">
-        <div class="col-span-2 relative">
+    <div class="grid grid-cols-2 gap-10 ">
+        <div class="col-span-1 relative">
             <div class="video-overlay"></div>
-            <video class="w-full h-full rounded-lg" controls autoplay muted>
-
+            <video class=" w-5/6 h-5/6  rounded-lg" controls autoplay muted>
                 <source src="{{ asset('assets/video/kajkormo.mp4') }}" type="video/mp4" />
             </video>
         </div>
 
-        <div class="col-span-1">
-            <h3 class="text-2xl font-semibold sm:text-4xl hover:underline">Noster tincidunt reprimique ad pro</h3>
+        <div class="col-span-1  mt-10">
+            <h3 class="text-2xl mb-3 font-semibold sm:text-4xl hover:underline">Noster tincidunt reprimique ad pro</h3>
             <span class="text-xs dark:text-gray-400 block my-2">February 19, 2021</span>
             <p class="text-sm dark:text-gray-500">Ei delenit sensibus liberavisse pri. Quod suscipit no nam. Est in graece fuisset, eos affert putent doctus id.</p>
         </div>

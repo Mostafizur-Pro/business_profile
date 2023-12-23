@@ -55,6 +55,10 @@ class RoomController extends Controller
 
         return view('room/room', compact('division', 'areas', 'posts', 'users', 'categories'));
     }
+    public function room_page1(Request $request)
+    {
+        return view('room/profile');
+    }
 
 
 

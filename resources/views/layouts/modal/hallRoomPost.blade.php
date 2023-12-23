@@ -100,7 +100,7 @@
                         <p class="text-italic">Location</p>
                         <select required name="division" id="division" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                             <option selected disabled>Division</option>
-                            @foreach($division as $div)
+                            @foreach($divisions as $div)
                             <option value="{{ $div->division }}">{{ $div->division }}</option>
                             @endforeach
                         </select>
@@ -111,7 +111,7 @@
                     <div class="mb-4">
                         <select required name="district" id="district" class="hidden w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500">
                             <option selected disabled>District</option>
-                            <!-- @foreach($division as $div)
+                            <!-- @foreach($divisions as $div)
                                     @if($div->division === 'Dhaka Division')
                                     @foreach(json_decode($div->districts) as $district)
                                     <option value="{{ $district }}">{{ $district }}</option>
@@ -266,7 +266,7 @@
         defaultOption.disabled = true;
         districtSelect.appendChild(defaultOption);
 
-        var divisions = @json($division); // Assuming $division contains division data
+        var divisions = @json($divisions); // Assuming $division contains division data
         divisions.forEach(function(division) {
             if (division.division === selectedDivision) {
                 var districts = JSON.parse(division.districts);

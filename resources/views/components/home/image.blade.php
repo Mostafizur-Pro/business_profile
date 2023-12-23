@@ -15,75 +15,23 @@
             </div>
         </div>
         <div class="grid justify-between grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            @foreach($posts as $post)
             <div rel="noopener noreferrer" href="#" class="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900">
-                <!-- <div class="overflow-hidden rounded-2xl bg-cover ">
-                    <img src="assets/images/city net.png" class="transition duration-300 ease-in-out hover:scale-110 object-cover w-full  rounded-2xl  dark:bg-gray-500" alt="Louvre" />
-                </div> -->
-                <img role="presentation" class="object-cover w-full rounded h-44 dark:bg-gray-500" src="assets/images/city net.png">
+                <img role="presentation" class="object-cover w-full rounded h-44 dark:bg-gray-500" src="{{$post->image}}">
                 <div class=" space-y-2">
-                    <h3 class="text-2xl font-semibold group-hover:underline group-focus:underline">In usu laoreet repudiare legendos</h3>
-                    <span class="text-xs dark:text-gray-400">January 21, 2021</span>
-                    <p>Mei ex aliquid eleifend forensibus, quo ad dicta apeirian neglegentur, ex has tantas percipit perfecto. At per tempor albucius perfecto, ei probatus consulatu patrioque mea, ei vocent delicata indoctum pri.</p>
+                    <h3 class="text-2xl font-semibold group-hover:underline group-focus:underline">{{$post->title}}</h3>
+                    <span class="text-xs dark:text-gray-400">Posted on {{ \Carbon\Carbon::parse($post->created_at)->isoFormat('MMM, Do YYYY h:mm A') }}
+                    </span>
+                    <p>{{$post->post}}</p>
                     <div class="flex justify-center">
                         <button type="button" class="px-6 py-3 text-lg text-red-500 rounded-md hover:underline dark:bg-gray-900 dark:text-gray-400">More Details...</button>
                     </div>
                 </div>
             </div>
-            <div rel="noopener noreferrer" href="#" class="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900">
-                <img role="presentation" class="object-cover w-full rounded h-44 dark:bg-gray-500" src="assets/images/online coaching.png">
-                <div class=" space-y-2">
-                    <h3 class="text-2xl font-semibold group-hover:underline group-focus:underline">In usu laoreet repudiare legendos</h3>
-                    <span class="text-xs dark:text-gray-400">January 22, 2021</span>
-                    <p>Mei ex aliquid eleifend forensibus, quo ad dicta apeirian neglegentur, ex has tantas percipit perfecto. At per tempor albucius perfecto, ei probatus consulatu patrioque mea, ei vocent delicata indoctum pri.</p>
-                    <div class="flex justify-center">
-                        <button type="button" class="px-6 py-3 text-lg text-red-500 rounded-md hover:underline dark:bg-gray-900 dark:text-gray-400">More Details...</button>
-                    </div>
-                </div>
-            </div>
-            <div rel="noopener noreferrer" href="#" class="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900">
-                <img role="presentation" class="object-cover w-full rounded h-44 dark:bg-gray-500" src="assets/images/papri beauty parler.png">
-                <div class=" space-y-2">
-                    <h3 class="text-2xl font-semibold group-hover:underline group-focus:underline">In usu laoreet repudiare legendos</h3>
-                    <span class="text-xs dark:text-gray-400">January 23, 2021</span>
-                    <p>Mei ex aliquid eleifend forensibus, quo ad dicta apeirian neglegentur, ex has tantas percipit perfecto. At per tempor albucius perfecto, ei probatus consulatu patrioque mea, ei vocent delicata indoctum pri.</p>
-                    <div class="flex justify-center">
-                        <button type="button" class="px-6 py-3 text-lg text-red-500 rounded-md hover:underline dark:bg-gray-900 dark:text-gray-400">More Details...</button>
-                    </div>
-                </div>
-            </div>
-            <div rel="noopener noreferrer" href="#" class="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 hidden sm:block">
-                <img role="presentation" class="object-cover w-full rounded h-44 dark:bg-gray-500" src="assets/images/princess cake 2.png">
-                <div class=" space-y-2">
-                    <h3 class="text-2xl font-semibold group-hover:underline group-focus:underline">In usu laoreet repudiare legendos</h3>
-                    <span class="text-xs dark:text-gray-400">January 24, 2021</span>
-                    <p>Mei ex aliquid eleifend forensibus, quo ad dicta apeirian neglegentur, ex has tantas percipit perfecto. At per tempor albucius perfecto, ei probatus consulatu patrioque mea, ei vocent delicata indoctum pri.</p>
-                    <div class="flex justify-center">
-                        <button type="button" class="px-6 py-3 text-lg text-red-500 rounded-md hover:underline dark:bg-gray-900 dark:text-gray-400">More Details...</button>
-                    </div>
-                </div>
-            </div>
-            <div rel="noopener noreferrer" href="#" class="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 hidden sm:block">
-                <img role="presentation" class="object-cover w-full rounded h-44 dark:bg-gray-500" src="assets/images/princess cake.png">
-                <div class=" space-y-2">
-                    <h3 class="text-2xl font-semibold group-hover:underline group-focus:underline">In usu laoreet repudiare legendos</h3>
-                    <span class="text-xs dark:text-gray-400">January 25, 2021</span>
-                    <p>Mei ex aliquid eleifend forensibus, quo ad dicta apeirian neglegentur, ex has tantas percipit perfecto. At per tempor albucius perfecto, ei probatus consulatu patrioque mea, ei vocent delicata indoctum pri.</p>
-                    <div class="flex justify-center">
-                        <button type="button" class="px-6 py-3 text-lg text-red-500 rounded-md hover:underline dark:bg-gray-900 dark:text-gray-400">More Details...</button>
-                    </div>
-                </div>
-            </div>
-            <div rel="noopener noreferrer" href="#" class="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900 hidden sm:block">
-                <img role="presentation" class="object-cover w-full rounded h-44 dark:bg-gray-500" src="assets/images/anondo confectionary.png">
-                <div class=" space-y-2">
-                    <h3 class="text-2xl font-semibold group-hover:underline group-focus:underline">In usu laoreet repudiare legendos</h3>
-                    <span class="text-xs dark:text-gray-400">January 26, 2021</span>
-                    <p>Mei ex aliquid eleifend forensibus, quo ad dicta apeirian neglegentur, ex has tantas percipit perfecto. At per tempor albucius perfecto, ei probatus consulatu patrioque mea, ei vocent delicata indoctum pri.</p>
-                    <div class="flex justify-center">
-                        <button type="button" class="px-6 py-3 text-lg text-red-500 rounded-md hover:underline dark:bg-gray-900 dark:text-gray-400">More Details...</button>
-                    </div>
-                </div>
-            </div>
+
+            @endforeach
+
+
         </div>
         <div class="flex justify-center">
             <a href="{{url('/room')}}">
