@@ -1,6 +1,6 @@
 <div class="">
     @foreach ($data as $item)
-    <div class="flex justify-left gap-10 mb-5">
+    <div class="flex justify-left gap-10 mb-5 shadow-xl">
 
         <figure><img class="w-44" src="/assets/profile/profile.png" alt="Movie" /></figure>
         <div>

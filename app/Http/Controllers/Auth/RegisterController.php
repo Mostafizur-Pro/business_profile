@@ -18,6 +18,8 @@ class RegisterController extends Controller
     
     public function register_user(Request $request)
     {
+        dd($request);
+        
         $request->validate([
             'owner_name' => 'required|string|max:50',
             'organization_name' => 'required|string|max:50',
