@@ -169,7 +169,7 @@
             <div class="dropdown dropdown-end">
                 <label tabindex="0" class="flex items-center  gap-3">
 
-                    <div >
+                    <div>
                         <img class="w-10 rounded-full" src="{{ $userData->owner_image }}" />
                     </div>
                     <div>
@@ -251,19 +251,48 @@
                             <path fill="currentColor" d="M441.9 167.3l-19.8-19.8c-4.7-4.7-12.3-4.7-17 0L224 328.2 42.9 147.5c-4.7-4.7-12.3-4.7-17 0L6.1 167.3c-4.7 4.7-4.7 12.3 0 17l209.4 209.4c4.7 4.7 12.3 4.7 17 0l209.4-209.4c4.7-4.7 4.7-12.3 0-17z"></path>
                         </svg>
                     </label>
-                    <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-white rounded-box w-52 mt-4">
-                        <li><a href="{{url('/companies/country')}}">Country</a></li>
-                        <li><a href="{{url('/companies/product')}}">Product</a></li>
+                    <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-white rounded-box w-96 mt-4">
+                        <li>
+                            <details close>
+                                <summary>Country</summary>
+                                <ul>
+                                    <li>
+                                        <details close>
+                                            <summary>Bangladesh</summary>
+                                            @foreach ($divisions as $division)
+                                            <ul>
+                                                <li>
+                                                    <details close>
+                                                        <summary>{{$division->division}}</summary>
+                                                        <ul>
+                                                            @foreach(json_decode($division->districts) as $district)
+                                                            <li>
+                                                                {{ $district }}
+                                                            </li>
 
+                                                            @endforeach
+
+                                                        </ul>
+                                                    </details>
+                                                </li>
+                                            </ul>
+
+                                            @endforeach
+
+                                        </details>
+                                    </li>
+                                    <li><a>India</a></li>
+                                    <li><a>Nepal</a></li>
+
+                                </ul>
+                            </details>
+                        </li>
+                        <li><a href="{{url('/companies/product')}}">Product</a></li>
                         <li><a href="{{url('/members/our-clients')}}">Our Clients</a></li>
                         <li><a href="{{url('/members/our-best-clients')}}">Our Best Clients</a></li>
-
                         <li><a href="{{url('/members/our-employees')}}">Our Employees</a></li>
                         <li><a href="{{url('/members/our-best-employees')}}">Our Best Employees</a></li>
                         <li><a href="{{url('/members/our-old-clients')}}">Our Old Clients</a></li>
-
-
-
                     </ul>
                 </div>
             </li>
