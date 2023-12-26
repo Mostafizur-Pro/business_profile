@@ -13,7 +13,7 @@ class UserInfo extends Model
         'organization_name',
         'owner_image',
         'owner_number',
-        'owner_address',
+        'division',
         'business_type',
         'owner_email',
         'password',

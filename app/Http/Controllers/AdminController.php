@@ -174,7 +174,7 @@ class AdminController extends Controller
                     ->orWhere('owner_role', 'LIKE', '%' . $search . '%')
                     ->orWhere('emp_id', 'LIKE', '%' . $search . '%')
                     ->orWhere('business_type', 'LIKE', '%' . $search . '%')
-                    ->orWhere('owner_address', 'LIKE', '%' . $search . '%');
+                    ->orWhere('division', 'LIKE', '%' . $search . '%');
             });
 
         $userInfoNew = $query->paginate($perPage)->onEachSide(1)->withQueryString();
@@ -221,7 +221,7 @@ class AdminController extends Controller
         $updateData = [
             'owner_name' => $request->input('owner_name'),
             'organization_name' => $request->input('organization_name'),
-            'owner_address' => $request->input('owner_address'),
+            'division' => $request->input('division'),
             'business_type' => $request->input('business_type'),
             'owner_email' => $request->input('owner_email'),
             'owner_number' => $request->input('owner_number'),
@@ -266,7 +266,7 @@ class AdminController extends Controller
             'organization_name' => $update->organization_name,
             'owner_image' => $update->owner_image,
             'owner_number' => $update->owner_number,
-            'owner_address' => $update->owner_address,
+            'division' => $update->division,
             'business_type' => $update->business_type,
             'owner_email' => $update->owner_email,
             // 'password' => $update->password,

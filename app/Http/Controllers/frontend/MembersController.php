@@ -31,7 +31,7 @@ class MembersController extends Controller
                     ->orWhere('owner_email', 'LIKE', '%' . $search . '%')
                     ->orWhere('organization_name', 'LIKE', '%' . $search . '%')
                     ->orWhere('owner_number', 'LIKE', '%' . $search . '%')
-                    ->orWhere('owner_address', 'LIKE', '%' . $search . '%');
+                    ->orWhere('division', 'LIKE', '%' . $search . '%');
             });
             // dd($hi);
         }

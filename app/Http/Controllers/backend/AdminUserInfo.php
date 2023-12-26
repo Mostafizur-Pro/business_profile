@@ -27,7 +27,7 @@ class AdminUserInfo extends Controller
                     ->orWhere('owner_role', 'LIKE', '%' . $search . '%')
                     ->orWhere('emp_id', 'LIKE', '%' . $search . '%')
                     ->orWhere('business_type', 'LIKE', '%' . $search . '%')
-                    ->orWhere('owner_address', 'LIKE', '%' . $search . '%');
+                    ->orWhere('division', 'LIKE', '%' . $search . '%');
             });
 
         $userInfoNew = $query->paginate($perPage)->onEachSide(1)->withQueryString();
@@ -58,7 +58,7 @@ class AdminUserInfo extends Controller
             'owner_name' => 'required',
             'organization_name' => 'required',
             'owner_number' => 'required|max:11|unique:user_info,owner_number,' . $id,
-            'owner_address' => 'required',
+            'division' => 'required',
             'business_type' => 'required',
             'owner_email' => 'required|email|unique:user_info,owner_email,' . $id,
             'owner_image' => 'file|mimes:jpeg,png,jpg,gif|max:2048',
@@ -75,7 +75,7 @@ class AdminUserInfo extends Controller
         $updateData = [
             'owner_name' => $request->input('owner_name'),
             'organization_name' => $request->input('organization_name'),
-            'owner_address' => $request->input('owner_address'),
+            'division' => $request->input('division'),
             'business_type' => $request->input('business_type'),
             'owner_email' => $request->input('owner_email'),
             'owner_number' => $request->input('owner_number'),
@@ -184,7 +184,7 @@ class AdminUserInfo extends Controller
                     ->orWhere('owner_role', 'LIKE', '%' . $search . '%')
                     ->orWhere('emp_id', 'LIKE', '%' . $search . '%')
                     ->orWhere('business_type', 'LIKE', '%' . $search . '%')
-                    ->orWhere('owner_address', 'LIKE', '%' . $search . '%');
+                    ->orWhere('division', 'LIKE', '%' . $search . '%');
             });
 
         $userInfoNew = $query->paginate($perPage)->onEachSide(1)->withQueryString();

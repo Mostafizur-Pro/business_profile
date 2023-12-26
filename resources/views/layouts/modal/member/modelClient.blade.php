@@ -17,7 +17,7 @@
                         <p class="pt-2"><strong>Organization:</strong> {{$item->organization_name}}</p>
                         <p class="pt-2"><strong>Contact Number:</strong> {{$item->owner_number}}</p>
                         <p class="pt-2"><strong>Business Type:</strong> {{$item->business_type}}</p>
-                        <p class="pt-2"><strong>Address:</strong> {{$item->owner_address}}</p>
+                        <p class="pt-2"><strong>Address:</strong> {{$item->division}}</p>
                         <p class="pt-2"><strong>Email:</strong> {{$item->owner_email}}</p>
                         <p class="pt-2"><strong>Employee ID:</strong> {{$item->emp_id}}</p>
                     </div>

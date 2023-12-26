@@ -129,7 +129,7 @@ class EmployeeController extends Controller
         $updateData = [
             'owner_name' => $request->input('owner_name'),
             'organization_name' => $request->input('organization_name'),
-            'owner_address' => $request->input('owner_address'),
+            'division' => $request->input('division'),
             'business_type' => $request->input('business_type'),
             'owner_email' => $request->input('owner_email'),
             'owner_number' => $request->input('owner_number'),
@@ -173,7 +173,7 @@ class EmployeeController extends Controller
                     ->orWhere('owner_role', 'LIKE', '%' . $search . '%')
                     ->orWhere('emp_id', 'LIKE', '%' . $search . '%')
                     ->orWhere('business_type', 'LIKE', '%' . $search . '%')
-                    ->orWhere('owner_address', 'LIKE', '%' . $search . '%');
+                    ->orWhere('division', 'LIKE', '%' . $search . '%');
             })
             ->when(isset($empId), function ($query) use ($empId) {
                 // Add a condition to match 'emp_id' with the 'empId' value

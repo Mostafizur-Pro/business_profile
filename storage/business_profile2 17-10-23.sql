@@ -148,7 +148,7 @@ CREATE TABLE `pending` (
   `organization_name` varchar(255) NOT NULL,
   `owner_image` varchar(255) NOT NULL DEFAULT 'https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png',
   `owner_number` varchar(11) NOT NULL,
-  `owner_address` varchar(255) NOT NULL,
+  `division` varchar(255) NOT NULL,
   `business_type` varchar(255) NOT NULL,
   `owner_email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -169,7 +169,7 @@ CREATE TABLE `pending` (
 -- Dumping data for table `pending`
 --
 
-INSERT INTO `pending` (`id`, `owner_id`, `owner_name`, `organization_name`, `owner_image`, `owner_number`, `owner_address`, `business_type`, `owner_email`, `password`, `owner_role`, `emp_id`, `emp_name`, `admin_id`, `admin_name`, `adminTime`, `supperAdmin_id`, `supperAdmin_name`, `SupperAdminTime`, `created_at`, `updated_at`) VALUES
+INSERT INTO `pending` (`id`, `owner_id`, `owner_name`, `organization_name`, `owner_image`, `owner_number`, `division`, `business_type`, `owner_email`, `password`, `owner_role`, `emp_id`, `emp_name`, `admin_id`, `admin_name`, `adminTime`, `supperAdmin_id`, `supperAdmin_name`, `SupperAdminTime`, `created_at`, `updated_at`) VALUES
 (17, '1', 'Md noor islam Sardar', 'M/S Allahar Dan Varaities cloth & shoe house', 'https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png', '01922485183', 'Opposite molla shopping complex Daulatpur Khulna', 'Garments Products', 'noor@gmail.com', '12345', 'normal', NULL, NULL, '2', 'Admin', '2023-10-14 09:53:34', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -202,7 +202,7 @@ CREATE TABLE `user_info` (
   `organization_name` varchar(255) NOT NULL,
   `owner_image` varchar(255) NOT NULL DEFAULT 'https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png',
   `owner_number` varchar(11) NOT NULL,
-  `owner_address` varchar(255) NOT NULL,
+  `division` varchar(255) NOT NULL,
   `business_type` varchar(255) NOT NULL,
   `owner_email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -224,7 +224,7 @@ CREATE TABLE `user_info` (
 -- Dumping data for table `user_info`
 --
 
-INSERT INTO `user_info` (`id`, `owner_name`, `organization_name`, `owner_image`, `owner_number`, `owner_address`, `business_type`, `owner_email`, `password`, `owner_role`, `emp_id`, `emp_name`, `admin_id`, `admin_name`, `adminTime`, `supperAdmin_id`, `supperAdmin_name`, `SupperAdminTime`, `pending`, `created_at`, `updated_at`) VALUES
+INSERT INTO `user_info` (`id`, `owner_name`, `organization_name`, `owner_image`, `owner_number`, `division`, `business_type`, `owner_email`, `password`, `owner_role`, `emp_id`, `emp_name`, `admin_id`, `admin_name`, `adminTime`, `supperAdmin_id`, `supperAdmin_name`, `SupperAdminTime`, `pending`, `created_at`, `updated_at`) VALUES
 (1, 'Md noor islam Sardar a', 'M/S Allahar Dan Varaities cloth & shoe house', 'https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png', '01922485183', 'Opposite molla shopping complex Daulatpur Khulna', 'Garments Products', 'noor@gmail.com', '12345', 'normal', NULL, NULL, '2', 'Admin', '2023-10-14 05:12:08', '1', 'Supper Admin', '2023-10-14 07:56:20', 'pending', '2023-10-11 05:31:51', '2023-10-11 05:31:51'),
 (2, 'Mahmudul Islam (Manik)', 'Rahimart hi', 'https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png', '32165498712', 'Dhaka', 'Hospital', 'manik@gmail.com', '12345', 'normal', 'IITABBP08230012', 'mostafiz', '2', 'Admin', '2023-10-14 06:24:22', '1', 'Supper Admin  a', '2023-10-14 12:44:46', '', '2023-10-11 06:18:18', '2023-10-11 06:18:18'),
 (3, 'Noman Islam', 'Noman Islam', 'https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png', '12345678925', 'Savar', 'medical', 'noman@gmail.com', '12345', 'normal', 'IITABBP08230011', 'rafi', '2', 'Admin', '2023-10-12 11:41:05', '1', 'Supper Admin  vai', '2023-10-14 05:11:00', '', '2023-10-11 06:44:25', '2023-10-11 06:44:25'),

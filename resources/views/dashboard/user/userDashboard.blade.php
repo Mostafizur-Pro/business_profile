@@ -43,7 +43,7 @@
 
                 <div class="mb-4">
                     <label for="email" class="block text-gray-700 font-bold mb-2">Address:</label>
-                    <p class="text-gray-800">{{ $userData->owner_address }}</p>
+                    <p class="text-gray-800">{{ $userData->division}}</p>
                 </div>
                 <div class="mb-4">
                     <label for="email" class="block text-gray-700 font-bold mb-2">Designation:</label>

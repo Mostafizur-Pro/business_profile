@@ -45,8 +45,8 @@
                     </div>
 
                     <div class="mb-4">
-                        <label for="owner_address" class="block text-gray-700 font-bold mb-2">Address:</label>
-                        <input type="text" id="owner_address" name="owner_address" value="{{$editUserInfo->owner_address}}" class="w-full border rounded py-2 px-3 text-gray-800">
+                        <label for="division" class="block text-gray-700 font-bold mb-2">Address:</label>
+                        <input type="text" id="division" name="division" value="{{$editUserInfo->division}}" class="w-full border rounded py-2 px-3 text-gray-800">
                     </div>
                     <div class="mb-4">
                         <label for="business_type" class="block text-gray-700 font-bold mb-2">Business Type:</label>

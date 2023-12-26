@@ -1,63 +1,66 @@
 [
-    {
-      "title": "Basic",
-      "price": "200",
-      "details": [
-        "24/7 Customer Support",
-        "Powerful User Dashboard",
-        "Basic Analytics",
-        "3 Standard Images",
-        "0 Standard Videos"
-      ],
-      "description": "Essential package with customer support, user dashboard, basic analytics, and limited media."
-    },
-    {
-      "title": "Standard",
-      "price": "400",
-      "details": [
-        "24/7 Customer Support",
-        "Powerful User Dashboard",
-        "Standard Analytics",
-        "6 Standard Images",
-        "1 Standard Video"
-      ],
-      "description": "More features than Basic, including extra images and a standard video."
-    },
-    {
-      "title": "Advanced",
-      "price": "600",
-      "details": [
-        "24/7 Customer Support",
-        "Powerful User Dashboard",
-        "Advanced Analytics",
-        "9 Standard Images",
-        "2 Standard Videos"
-      ],
-      "description": "For advanced users with enhanced analytics and more media options."
-    },
-    {
-      "title": "Plus",
-      "price": "800",
-      "details": [
-        "24/7 Customer Support",
-        "Powerful User Dashboard",
-        "Plus Analytics",
-        "12 Standard Images",
-        "3 Standard Videos"
-      ],
-      "description": "Premium package with more analytics, images, and multiple videos."
-    },
-    {
-      "title": "Pro",
-      "price": "1000",
-      "details": [
-        "24/7 Customer Support",
-        "Powerful User Dashboard",
-        "Professional Analytics",
-        "15 Standard Images",
-        "4 Standard Videos"
-      ],
-      "description": "Professional-grade with advanced analytics, numerous images, and multiple videos."
-    }
-  ]
+  {
+    "title": "Basic",
+    "price": "200",
+    "details": [
+      "24/7 Customer Support",
+      "Powerful User Dashboard",
+      "Basic Analytics",
+      "3 Standard Images",
+      "0 Standard Videos"
+    ],
+    "description": "Essential package with customer support, user dashboard, basic analytics, and limited media."
+  },
+  {
+    "title": "Standard",
+    "price": "400",
+    "details": [
+      "24/7 Customer Support",
+      "Powerful User Dashboard",
+      "Standard Analytics",
+      "6 Standard Images",
+      "1 Standard Video"
+    ],
+    "description": "More features than Basic, including extra images and a standard video."
+  },
+  {
+    "title": "Advanced",
+    "price": "600",
+    "details": [
+      "24/7 Customer Support",
+      "Powerful User Dashboard",
+      "Advanced Analytics",
+      "9 Standard Images",
+      "2 Standard Videos"
+    ],
+    "description": "For advanced users with enhanced analytics and more media options."
+  },
+  {
+    "title": "Plus",
+    "price": "800",
+    "details": [
+      "24/7 Customer Support",
+      "Powerful User Dashboard",
+      "Plus Analytics",
+      "12 Standard Images",
+      "3 Standard Videos"
+    ],
+    "description": "Premium package with more analytics, images, and multiple videos."
+  },
+  {
+    "title": "Pro",
+    "price": "1000",
+    "details": [
+      "24/7 Customer Support",
+      "Powerful User Dashboard",
+      "Professional Analytics",
+      "15 Standard Images",
+      "4 Standard Videos"
+    ],
+    "description": "Professional-grade with advanced analytics, numerous images, and multiple videos."
+  }
+]
   
+
+
+

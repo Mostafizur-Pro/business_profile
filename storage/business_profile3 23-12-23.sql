@@ -333,7 +333,7 @@ CREATE TABLE `pending` (
   `organization_name` varchar(255) NOT NULL,
   `owner_image` varchar(255) NOT NULL DEFAULT 'https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png',
   `owner_number` varchar(11) NOT NULL,
-  `owner_address` varchar(255) NOT NULL,
+  `division` varchar(255) NOT NULL,
   `business_type` varchar(255) NOT NULL,
   `owner_email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -354,7 +354,7 @@ CREATE TABLE `pending` (
 -- Dumping data for table `pending`
 --
 
-INSERT INTO `pending` (`id`, `owner_id`, `owner_name`, `organization_name`, `owner_image`, `owner_number`, `owner_address`, `business_type`, `owner_email`, `password`, `owner_role`, `emp_id`, `emp_name`, `admin_id`, `admin_name`, `adminTime`, `supperAdmin_id`, `supperAdmin_name`, `SupperAdminTime`, `created_at`, `updated_at`) VALUES
+INSERT INTO `pending` (`id`, `owner_id`, `owner_name`, `organization_name`, `owner_image`, `owner_number`, `division`, `business_type`, `owner_email`, `password`, `owner_role`, `emp_id`, `emp_name`, `admin_id`, `admin_name`, `adminTime`, `supperAdmin_id`, `supperAdmin_name`, `SupperAdminTime`, `created_at`, `updated_at`) VALUES
 (18, '15', 'Sohan aa', 'sohan', 'https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png', '12345678912', 's', 's', 's@gmail.com', '12345', 'normal', 'IITABBP08230011', 'rafi ss', '2', 'Admin', '2023-10-17 12:33:14', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
@@ -387,7 +387,7 @@ CREATE TABLE `user_info` (
   `organization_name` varchar(255) NOT NULL,
   `owner_image` varchar(255) NOT NULL DEFAULT 'https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png',
   `owner_number` varchar(11) NOT NULL,
-  `owner_address` varchar(255) NOT NULL,
+  `division` varchar(255) NOT NULL,
   `business_type` varchar(255) NOT NULL,
   `owner_email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -409,7 +409,7 @@ CREATE TABLE `user_info` (
 -- Dumping data for table `user_info`
 --
 
-INSERT INTO `user_info` (`id`, `owner_name`, `organization_name`, `owner_image`, `owner_number`, `owner_address`, `business_type`, `owner_email`, `password`, `owner_role`, `emp_id`, `emp_name`, `admin_id`, `admin_name`, `adminTime`, `supperAdmin_id`, `supperAdmin_name`, `SupperAdminTime`, `pending`, `created_at`, `updated_at`) VALUES
+INSERT INTO `user_info` (`id`, `owner_name`, `organization_name`, `owner_image`, `owner_number`, `division`, `business_type`, `owner_email`, `password`, `owner_role`, `emp_id`, `emp_name`, `admin_id`, `admin_name`, `adminTime`, `supperAdmin_id`, `supperAdmin_name`, `SupperAdminTime`, `pending`, `created_at`, `updated_at`) VALUES
 (1, 'Md noor islam Sardar', 'M/S Allahar Dan Varaities cloth & shoe house', 'images/user/profile\\php4FBA.tmp', '01922485183', 'Opposite molla shopping complex Daulatpur Khulna', 'Garments Products', 'noor@gmail.com', '12345', 'normal', NULL, NULL, '2', 'Admin', '2023-10-14 09:53:34', '6', 'Mostafizur Rahman', '2023-12-05 09:28:53', '', '2023-10-11 05:31:51', '2023-12-06 04:43:21'),
 (2, 'Mahmudul Islam (Manik) a', 'Rahimart', 'images/user_image/TAxzC7zuvu9sShdACFDuyA3d3aofm5t33sLAsPFB.jpg', '32165498712', 'Dhaka', 'Hospital a', 'manik@gmail.com', '12345', 'normal', 'IITABBP08230012', 'mostafiz', '2', 'Admin', '2023-10-14 06:24:22', '6', 'Mostafizur Rahman', '2023-11-29 07:06:31', '', '2023-10-11 06:18:18', '2023-11-29 01:06:31'),
 (3, 'Noman Islam a', 'Noman Islam', 'https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png', '12345678925', 'Savar', 'medical a', 'noman@gmail.com', '12345', 'normal', 'IITABBP08230011', 'rafi', '2', 'Admin', '2023-10-12 11:41:05', '1', 'Supper Admin', '2023-10-17 12:06:54', '', '2023-10-11 06:44:25', '2023-10-11 06:44:25');
