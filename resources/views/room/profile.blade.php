@@ -53,16 +53,18 @@
         </div>
     </div>
     @endif
+
+
     @if($userData)
     <div class="max-w-7xl  md:mx-auto lg:mx-auto xl:mx-auto mt-14 bg-white shadow-xl rounded-lg text-gray-900">
         <div class="rounded-t-lg h-96 overflow-hidden">
             <img class="object-cover object-top w-full" src='https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ' alt='Mountain'>
         </div>
         <div class="mx-auto w-32 h-32 relative -mt-16 border-4 border-white rounded-full overflow-hidden">
-            <img class="object-cover object-center h-32" src='https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ' alt='Woman looking front'>
+            <img class=" h-32" src='{{ $userData->owner_image }}' alt='Woman looking front'>
         </div>
         <div class="text-center mt-2">
-            <h2 class="font-semibold"> {{ $userData->owner_name }}</h2>
+            <h2 class="font-semibold capitalize"> {{ $userData->owner_name }}</h2>
             <p class="text-gray-500"> {{ $userData->owner_number }}</p>
         </div>
         <ul class="py-4 mt-2 text-gray-700 flex items-center justify-around">
