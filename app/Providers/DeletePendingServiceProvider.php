@@ -29,6 +29,7 @@ class DeletePendingServiceProvider extends ServiceProvider
         View::composer('*', function ($view) {
             if(DB::table('pending')){
                 $pendingData = DB::table('pending');
+                
                 $view->              
                  with('pendingData', $pendingData);
             }

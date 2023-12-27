@@ -90,7 +90,7 @@
                 <td class="pr-3 "> {{ $userInfo->organization_name }} </td>
                 <td class="pr-3 "> {{ $userInfo->owner_number }} </td>
                 <td class="pr-3 "> {{ $userInfo->business_type }} </td>
-                <td class="pr-3 "> {{ $userInfo->owner_address }} </td>
+                <td class="pr-3 "> {{ $userInfo->division}} </td>
                 <td class="pr-3 "> {{ $userInfo->owner_email }} </td>
                 <td class="pr-3 "> {{ $userInfo->emp_id }} </td>
                 <td class="pr-3 "> {{ $userInfo->emp_name }} </td>

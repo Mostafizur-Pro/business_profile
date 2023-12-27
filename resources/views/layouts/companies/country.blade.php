@@ -10,7 +10,21 @@
     @include('components/cover/coverText')
     <!-- Cover Page -->
 
-    About Page
+    <div class="grid grid-cols-3 lg:grid-cols-4 gap-10 mt-10">
+        <div class="col-span-1 lg:col-span-1">
+        @include('components/member/countries/leftSide')
+        </div>
+        <div class="col-span-2 lg:col-span-2">
+        @include('components/member/countries/middle')
+        </div>
+        <div class="hidden sm:block lg:col-span-1">
+            Right Side
+        </div>
+    </div>
+
+    <div class=" mt-10 ">
+        @include('components.logger.logger')
+    </div>
 </div>
 
 @endsection

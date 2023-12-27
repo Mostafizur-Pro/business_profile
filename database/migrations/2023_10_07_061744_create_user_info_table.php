@@ -19,7 +19,7 @@ class CreateUserInfoTable extends Migration
             $table->string('organization_name');
             $table->string('owner_image')->default('https://static.vecteezy.com/system/resources/previews/011/675/374/original/man-avatar-image-for-profile-png.png');
             $table->string('owner_number', 11)->unique();
-            $table->string('owner_address');
+            $table->string('division');
             $table->string('business_type');
             $table->string('owner_email')->unique();
             $table->string('password');

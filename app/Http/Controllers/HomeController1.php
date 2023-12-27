@@ -89,7 +89,7 @@ class HomeController extends Controller
                     ->orWhere('organization_name', 'LIKE', '%' . $search . '%')
                     ->orWhere('owner_email', 'LIKE', '%' . $search . '%')
                     ->orWhere('owner_number', 'LIKE', '%' . $search . '%')
-                    ->orWhere('owner_address', 'LIKE', '%' . $search . '%')
+                    ->orWhere('division', 'LIKE', '%' . $search . '%')
                     ->orWhere('emp_id', 'LIKE', '%' . $search . '%');
             });
         }

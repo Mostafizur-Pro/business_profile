@@ -43,7 +43,7 @@
 
                 <div class="mb-4">
                     <label for="email" class="block text-gray-700 font-bold mb-2">Address:</label>
-                    <p class="text-gray-800">{{ $userData->owner_address }}</p>
+                    <p class="text-gray-800">{{ $userData->division}}, {{ $userData->district}}, {{ $userData->area}}, {{ $userData->road}}</p>
                 </div>
                 <div class="mb-4">
                     <label for="email" class="block text-gray-700 font-bold mb-2">Designation:</label>
@@ -54,7 +54,7 @@
             </div>
             <div>
                 <img class="w-44" src="{{ $userData->owner_image }}" alt="User Photo" />
-                <img class="w-10 rounded-full" src="{{ $userData->owner_image }}" />
+                <!-- <img class="w-10 rounded-full" src="{{ $userData->owner_image }}" /> -->
             </div>
         </div>
 

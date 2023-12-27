@@ -4,7 +4,7 @@
             <summary class="text-sm ">Location</summary>
             <div class="px-4 my-10 text-lg">
                 <h1 class=" text-stone-500 my-1">All Bangladesh</h1>
-                @foreach($division as $div)
+                @foreach($divisions as $div)
                 <div class="collapse collapse-plus">
                     <input type="radio" name="my-accordion-3" />
                     <div class="collapse-title m-0 text-lg font-bold ">

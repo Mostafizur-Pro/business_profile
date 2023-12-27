@@ -62,7 +62,7 @@
                 <td class="pr-3 "> {{ $userInfoEmp->organization_name }} </td>
                 <td class="pr-3 "> {{ $userInfoEmp->owner_number }} </td>
                 <td class="pr-3 "> {{ $userInfoEmp->business_type }} </td>
-                <td class="pr-3 "> {{ $userInfoEmp->owner_address }} </td>
+                <td class="pr-3 "> {{ $userInfoEmp->division}} </td>
                 <td class="pr-3 "> {{ $userInfoEmp->owner_email }} </td>
 
                 <td class="pr-3 "> {{ $userInfoEmp->emp_id }} </td>

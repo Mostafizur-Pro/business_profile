@@ -75,7 +75,7 @@ class UserDashboardController extends Controller
                     'organization_name' => $request->input('organization_name'),
                     'owner_number' => $request->input('owner_number'),
                     'owner_image' => $owner_image,
-                    'owner_address' => $request->input('owner_address'),
+                    'division' => $request->input('division'),
                     'business_type' => $request->input('business_type'),
 
                 ]);
