@@ -1,4 +1,4 @@
-@if ($posts->count() === 0)
+@if ($allPosts->count() === 0)
 <div class=" my-10 ">
 
     <h1 class="text-3xl">No posts were found based on the provided criteria. <a class="text-primary" href="/room">Go to Hall Room</a></h1>
@@ -6,7 +6,7 @@
 @endif
 
 
-@foreach($posts as $post)
+@foreach($allPosts as $post)
 
 
 

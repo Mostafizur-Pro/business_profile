@@ -256,9 +256,10 @@
                             <details close>
                                 <summary>Country</summary>
                                 <ul>
+                                    <li><a href="{{url('companies/country')}}">Bangladesh</a></li>
                                     <li>
                                         <details close>
-                                            <summary>Bangladesh</summary>
+                                            <summary>Bangladesh All Division</summary>
                                             @foreach ($divisions as $division)
                                             <ul>
                                                 <li>
@@ -266,9 +267,13 @@
                                                         <summary>{{$division->division}}</summary>
                                                         <ul>
                                                             @foreach(json_decode($division->districts) as $district)
-                                                            <li>
-                                                                {{ $district }}
-                                                            </li>
+                                                            <!-- <li>
+                                                                <a href="{{url('companies/country')}}">{{ $district }}</a>
+
+                                                            </li> -->
+                                                            <form method="GET">
+                                                                <li> <button class=" text-black" type="submit" name="district" value="{{ $district }}">{{ $district }}</button></li>
+                                                            </form>
 
                                                             @endforeach
 

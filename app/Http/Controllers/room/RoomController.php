@@ -41,8 +41,9 @@ class RoomController extends Controller
         }
 
 
-        $posts = $posts->get();
+        $allPosts = $posts->get();
 
+        // dd($allPosts);
         $userIds = $posts->pluck('user_id')->unique();
 
         $users = [];
@@ -53,7 +54,7 @@ class RoomController extends Controller
             }
         }
 
-        return view('room/room', compact('division', 'areas', 'posts', 'users', 'categories'));
+        return view('room/room', compact('division', 'areas', 'allPosts', 'users', 'categories'));
     }
     public function room_page1(Request $request)
     {

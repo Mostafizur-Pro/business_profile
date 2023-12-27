@@ -1,3 +1,13 @@
+@if ($data->count() === 0)
+<div class=" my-10 ">
+
+    <h1 class="text-3xl">No data were found based on the provided criteria. <a class="text-primary" href="/companies/country">Go to All Division</a></h1>
+</div>
+@endif
+
+
+
+
 <div class="">
     @foreach ($data as $item)
     <div class="flex justify-left gap-10 mb-5 shadow-xl">
