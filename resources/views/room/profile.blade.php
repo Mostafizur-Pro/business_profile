@@ -15,8 +15,9 @@
 
 
     @include('layouts/share/roomNavbar')
-
-    @if($adminData)
+@if()
+<h1>hi</h1>
+    @elseif($adminData)
     <div class="max-w-7xl  md:mx-auto lg:mx-auto xl:mx-auto mt-14 bg-white shadow-xl rounded-lg text-gray-900">
         <div class="rounded-t-lg h-96 overflow-hidden">
             <img class="object-cover object-top w-full" src='https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ' alt='Mountain'>
@@ -53,7 +54,6 @@
         </div>
     </div>
     @endif
-
 
     @if($userData)
     <div class="max-w-7xl  md:mx-auto lg:mx-auto xl:mx-auto mt-14 bg-white shadow-xl rounded-lg text-gray-900">

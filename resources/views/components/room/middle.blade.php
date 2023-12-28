@@ -63,10 +63,13 @@
                                 </svg>
                             </span>
                             <span>
-                                <span class="fond-bold">View Profile</span>
+                                <a href="{{ url('/room/' . $post->user_id) }}" class="fond-bold">View Profile</a>
                             </span>
                         </a>
                     </li>
+
+
+                    @if($userData->id === $post->user_id)
                     <li><a>
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -94,6 +97,8 @@
                             </form>
                         </a>
                     </li>
+
+                    @endif
                     <li><a>
                             <span>
                                 <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
