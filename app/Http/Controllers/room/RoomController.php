@@ -56,9 +56,21 @@ class RoomController extends Controller
 
         return view('room/room', compact('division', 'areas', 'allPosts', 'users', 'categories'));
     }
+
+
     public function room_page1(Request $request)
     {
-        return view('room/profile');
+
+
+
+        $url = $request->getRequestUri();
+        $parts = explode('/', $url); // Split the string by '/'
+        $id = end($parts);
+        
+        
+        $userDataRoom = DB::table('user_info')->find($id);
+        // dd($userDataRoom);
+        return view('room/profile', compact('userDataRoom'));
     }
 
 
@@ -92,7 +104,7 @@ class RoomController extends Controller
         // $post['created_at'] = Carbon::now()->setTimezone('Asia/Dhaka');
         // $post['updated_at'] = Carbon::now()->setTimezone('Asia/Dhaka');
 
-                $currentDateTime = Carbon::now()->setTimezone('Asia/Dhaka');
+        $currentDateTime = Carbon::now()->setTimezone('Asia/Dhaka');
         $post['created_at'] = $currentDateTime->toDateTimeString();
         $post['updated_at'] = $currentDateTime->toDateTimeString();
         // dd($post);
@@ -133,6 +145,7 @@ class RoomController extends Controller
             return redirect("/room")->with('Fail', 'Profile update failed');
         }
     }
+
     public function delete_hallRoomPost(Request $request, $id)
     {
         $post = DB::table('user_post')->where('id', $id)->first();
@@ -146,10 +159,5 @@ class RoomController extends Controller
             return redirect('/room')->with('Fail', 'Post delete failed');
             // Handle case where the record with the given ID is not found
         }
-        
-       
     }
-
-
-
 }
