@@ -68,9 +68,9 @@ class RoomController extends Controller
         $id = end($parts);
         
         
-        $userData = DB::table('user_info')->find($id);
-        dd($userData);
-        return view('room/profile', compact('userData'));
+        $userDataRoom = DB::table('user_info')->find($id);
+        // dd($userDataRoom);
+        return view('room/profile', compact('userDataRoom'));
     }
 
 
@@ -145,6 +145,7 @@ class RoomController extends Controller
             return redirect("/room")->with('Fail', 'Profile update failed');
         }
     }
+
     public function delete_hallRoomPost(Request $request, $id)
     {
         $post = DB::table('user_post')->where('id', $id)->first();
