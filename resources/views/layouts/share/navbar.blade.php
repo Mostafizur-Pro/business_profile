@@ -271,7 +271,7 @@
                                                                 <a href="{{url('companies/country')}}">{{ $district }}</a>
 
                                                             </li> -->
-                                                            <form method="GET">
+                                                            <form action="/companies/country" method="GET">
                                                                 <li> <button class=" text-black" type="submit" name="district" value="{{ $district }}">{{ $district }}</button></li>
                                                             </form>
 
