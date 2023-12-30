@@ -1,13 +1,13 @@
-<div class="menu text-lg">
+<div class="menu">
     <li>
         <details open>
-            <summary class="text-sm ">Location</summary>
-            <div class="px-4 my-10 text-lg">
-                <h1 class=" text-stone-500 my-1">All Bangladesh</h1>
+            <summary class="text-sm">Location</summary>
+            <div class="px-4 md:my-10 md:text-lg">
+                <h1 class="text-stone-500 my-1">All Bangladesh</h1>
                 @foreach($divisions as $div)
-                <div class="collapse collapse-plus">
+                <div class="collapse collapse-plus ">
                     <input type="radio" name="my-accordion-3" />
-                    <div class="collapse-title m-0 text-lg font-bold ">
+                    <div class="collapse-title m-0  sm:text-sm md:text-lg sm:font-semibold md:font-bold">
                         {{ $div->division }}
                     </div>
                     <div class="collapse-content text-blue-500">
@@ -20,13 +20,13 @@
                                     </summary>
                                     <ul>
                                         @foreach($areas as $area)
-                                        @if($area->districts === $district )
+                                        @if($area->districts === $district)
                                         @foreach(json_decode($area->area) as $location)
-
                                         <form method="GET">
-                                            <li> <button class=" text-black" type="submit" name="location" value="{{ $location }}">{{ $location }}</button></li>
+                                            <li>
+                                                <button class="text-black" type="submit" name="location" value="{{ $location }}">{{ $location }}</button>
+                                            </li>
                                         </form>
-
                                         @endforeach
                                         @endif
                                         @endforeach
@@ -42,10 +42,3 @@
         </details>
     </li>
 </div>
-
-<!-- <form method="GET">
-    @foreach (range('A', 'Z') as $letter)
-    <button type="submit" name="letter" value="{{ $letter }}" class="btn btn-outline-primary">{{ $letter }}</button>
-    @endforeach
-    <button type="submit" name="letter" value="" class="btn btn-outline-primary">All</button>
-</form> -->
