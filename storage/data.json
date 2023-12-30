@@ -1,0 +1,55 @@
+// post
+[
+  {
+    "_id": "1",
+    "post_title": "1",
+    "post_details": "1",
+    "post_status": "1", // pending, publish, editing 
+    "post_type": "1", //category
+    "post_image": "1",    
+    "comments_status": "1", //comments id
+    "revision_by": "1", //admin
+    "user_id": "1",  //foreign key
+    "read_count": "1",  //total view count
+    "created_at": "1", // create time
+    "updated_at": "1",  // update time
+    "deleted_at": "Yes" //yes or no
+  }
+]
+
+// order
+[
+  {
+    "_id": "1",
+    "order_number": "000001",
+    "name": "Sumon",
+    "email": "sumon@gmail.com",
+    "phone": "01950165017",
+    "amount": "4870", //total amount
+    "needToPay": "2435", //paid amount
+    "dueForProducts": "2435",  //due amount
+    "address": "Dhaka division, dhaka, mirpur",
+    "status": "Partial Paid", //Partial Paid, Waiting for Payment, 
+    "transaction_id": "SSL605edf69c4e69", //bkash
+    "currency": "BDT", 
+    "coupon_code": "NULL", 
+    "coupon_victory": "NULL", 
+    "user_id": "3",  //FK
+    "created_at": "1", // create time
+    "updated_at": "1",  // update time
+    "deleted_at": "Yes" //yes or no
+  }
+]
+
+// wishlists
+[
+  {
+    "_id": "1",
+    "product_id": "24", //FK
+    "item_id": "1",
+    "user_id": "1",    //FK   
+    "created_at": "1", // create time
+    "updated_at": "1",  // update time
+    "deleted_at": "Yes" //yes or no
+  }
+]

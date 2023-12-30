@@ -210,7 +210,7 @@
 
 
 <header class="bg-white shadow-lg h-16 hidden md:flex">
-    <a href="" class="w-1/6  border flex-shrink-0 flex items-center justify-center px-4 lg:px-6 xl:px-8">
+    <a href="{{url('/')}}" class="w-1/6  border flex-shrink-0 flex items-center justify-center px-4 lg:px-6 xl:px-8">
         <img alt="logo" src="/assets/logo/logo.png" />
     </a>
 
@@ -271,7 +271,7 @@
                                                                 <a href="{{url('companies/country')}}">{{ $district }}</a>
 
                                                             </li> -->
-                                                            <form method="GET">
+                                                            <form action="/companies/country" method="GET">
                                                                 <li> <button class=" text-black" type="submit" name="district" value="{{ $district }}">{{ $district }}</button></li>
                                                             </form>
 

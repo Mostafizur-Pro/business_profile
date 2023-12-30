@@ -8,7 +8,7 @@
 
 
 
-<div class="">
+<div class="ml-10">
     @foreach ($data as $item)
     <div class="flex justify-left gap-10 mb-5 shadow-xl">
 
