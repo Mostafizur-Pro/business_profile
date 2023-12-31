@@ -16,11 +16,12 @@ class RoomController extends Controller
     {
         $division = DB::table('division')->get();
         $areas = DB::table('area')->get();
+        
+        $location = $request->input('location');
+        $subcategories = $request->input('subcategory');
         $categories = DB::table('categories_list')->get();
 
         $search = $request->input('search');
-        $location = $request->input('location');
-        $subcategories = $request->input('subcategory');
 
         $posts = DB::table('user_post')
             ->orderBy('created_at', 'desc');

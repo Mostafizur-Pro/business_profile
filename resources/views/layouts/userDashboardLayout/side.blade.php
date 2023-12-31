@@ -1,8 +1,8 @@
 <aside class="fixed hidden md:block lg:block inset-y-0 left-0  bg-white  border-r shadow-xl     z-50">
     <!-- Logo and close button -->
     <div class="h-20 relative">
-        <i class="absolute top-0 right-0 p-4 opacity-50 cursor-pointer fas fa-times text-slate-400 dark:text-white xl:hidden" aria-hidden="true" sidenav-close-btn=""></i>
-        <a href="/" class="block p-6 text-sm whitespace-nowrap text-slate-700 dark:text-white">
+        <i class="absolute top-0 right-0 p-4 opacity-50 cursor-pointer fas fa-times text-slate-400  xl:hidden" aria-hidden="true" sidenav-close-btn=""></i>
+        <a href="/" class="block p-6 text-sm whitespace-nowrap text-slate-700 ">
             <img src="/assets/logo/logo.png" class="inline-block h-full max-w-full transition-all duration-200 ease-in-out max-h-12 dark:hidden" alt="main_logo">
         </a>
     </div>
@@ -32,7 +32,7 @@
                             </summary>
                             <ul>
                                 <li>
-                                    <a href="/user/dashboard" class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Profile</a>
+                                    <a href="/user/profile" class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Profile</a>
                                 </li>
                                 <li>
                                     <a href="{{ url('/user/edit_userInfo_profile', $userData->id) }}" class="text-base text-gray-900 transition duration-75 pl-11 group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700">Settings</a>

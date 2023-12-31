@@ -16,7 +16,7 @@
 
 
     <div>
-        <form class=" mx-auto my-10 bg-white p-6 rounded-md shadow-md">
+        <!-- <form class=" mx-auto my-10 bg-white p-6 rounded-md shadow-md">
             <label class="block text-xl font-bold mb-2" for="title">Title:</label>
             <input class="input input-bordered input-primary w-full mb-4 max-w-xs rounded-md" type="text" id="title" name="title">
 
@@ -55,7 +55,7 @@
             <button class="btn btn-success bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 mr-2" type="button" onclick="addDataItem()">Add Data Item</button>
 
             <button class="btn btn-primary bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600" type="submit">Submit</button>
-        </form>
+        </form> -->
 
         <script>
             function addDataItem() {

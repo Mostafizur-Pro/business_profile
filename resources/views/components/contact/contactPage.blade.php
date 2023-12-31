@@ -57,7 +57,7 @@
                 </div>
               </div>
               <div class="ml-6 grow">
-                <p class="mb-2 font-bold dark:text-white">
+                <p class="mb-2 font-bold ">
                   Technical support
                 </p>
                 <p class="text-neutral-500 dark:text-neutral-200">
@@ -81,7 +81,7 @@
                 </div>
               </div>
               <div class="ml-6 grow">
-                <p class="mb-2 font-bold dark:text-white">
+                <p class="mb-2 font-bold ">
                   Sales questions
                 </p>
                 <p class="text-neutral-500 dark:text-neutral-200">
@@ -105,7 +105,7 @@
                 </div>
               </div>
               <div class="ml-6 grow">
-                <p class="mb-2 font-bold dark:text-white">Press</p>
+                <p class="mb-2 font-bold ">Press</p>
                 <p class="text-neutral-500 dark:text-neutral-200">
                   press@example.com
                 </p>
@@ -127,7 +127,7 @@
                 </div>
               </div>
               <div class="ml-6 grow">
-                <p class="mb-2 font-bold dark:text-white">Bug report</p>
+                <p class="mb-2 font-bold ">Bug report</p>
                 <p class="text-neutral-500 dark:text-neutral-200">
                   bugs@example.com
                 </p>

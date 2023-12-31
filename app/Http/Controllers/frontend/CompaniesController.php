@@ -11,11 +11,28 @@ class CompaniesController extends Controller
 {
     public function country(Request $request)
     {
-        $district = $request->input('district');
-
         $divisions = DB::table('division')->get();
 
-        $data = User::where('district', 'LIKE', '%' . $district . '%')->get();
+
+        $district = $request->input('district');
+        $division = $request->input('division');
+        $areas = DB::table('area')->get();
+
+
+
+        $location = $request->input('location');
+
+
+        if ($location) {
+            $data =  User::where('area', 'LIKE', $location . '%')->get();
+        } elseif ($division) {
+            $data =  User::where('division', 'LIKE', $division . '%')->get();
+        } 
+        else {
+
+            $data = User::where('district', 'LIKE', '%' . $district . '%')->get();
+        }
+
 
         return view('layouts.companies.country', compact('data', 'divisions'));
     }

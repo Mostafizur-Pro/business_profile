@@ -7,7 +7,7 @@
                <span class="mb-2 block text-lg font-semibold text-primary">
                   Pricing Table
                </span>
-               <h2 class="mb-3 text-3xl leading-[1.208] font-bold text-dark dark:text-white sm:text-4xl md:text-[40px]">
+               <h2 class="mb-3 text-3xl leading-[1.208] font-bold text-dark  sm:text-4xl md:text-[40px]">
                   Our Package Plan
                </h2>
                <p class="text-base text-body-color dark:text-dark-6">
@@ -27,7 +27,7 @@
                   {{$package->title}}
 
                </span>
-               <h2 class="mb-5 text-[42px] font-bold text-dark dark:text-white">
+               <h2 class="mb-5 text-[42px] font-bold text-dark ">
                   <span> ৳{{$package->price}}</span>
                   <span class="text-base font-medium text-body-color dark:text-dark-6">
                      / month

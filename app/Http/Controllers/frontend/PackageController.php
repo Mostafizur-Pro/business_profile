@@ -4,15 +4,11 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Package;
-use Illuminate\Http\Request;
-use DB;
 
 class PackageController extends Controller
 {
     public function package_page()
     {
-     
-        
         $packagesList = Package::get();
 
         return view('package', compact('packagesList'));
@@ -22,7 +18,5 @@ class PackageController extends Controller
     {
 
         echo "hello";
-     
-
     }
 }

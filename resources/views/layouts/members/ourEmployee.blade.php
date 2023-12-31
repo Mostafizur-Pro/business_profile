@@ -19,7 +19,7 @@
                 <span class="mb-2 block text-lg font-semibold text-primary">
                     Employees Table
                 </span>
-                <h2 class="mb-3 text-3xl leading-[1.208] font-bold text-dark dark:text-white sm:text-4xl md:text-[40px]">
+                <h2 class="mb-3 text-3xl leading-[1.208] font-bold text-dark  sm:text-4xl md:text-[40px]">
                     Our Employees List
                 </h2>
                 <p class="text-base text-body-color dark:text-dark-6">

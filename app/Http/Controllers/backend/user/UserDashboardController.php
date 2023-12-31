@@ -23,6 +23,20 @@ class UserDashboardController extends Controller
         // dd($userData);
         return view('dashboard.user.userDashboard', compact('userData', 'allUserData'));
     }
+    
+    public function user_profile()
+    {
+        // echo 'user dashboard';
+        $data = null;
+        if (Session::has('userId')) {
+            $userId = Session::get('userId');
+            $userData = User::find($userId);
+            // dd($empData);
+            $allUserData = User::get();
+        }
+        // dd($userData);
+        return view('dashboard.user.userProfile', compact('userData', 'allUserData'));
+    }
 
     public function logout()
     {
@@ -68,6 +82,13 @@ class UserDashboardController extends Controller
             } else {
                 $owner_image = $userData->owner_image;
             }
+
+
+
+            // if ($request->hasFile('owner_image')) {
+            //     $imagePath = $request->file('image')->move('images/post', uniqid() . '.' . $request->file('image')->extension());
+            //     $post['image'] = 'images/post/' . basename($imagePath);
+            // }
 
             $userData = User::where('id', $id)
                 ->update([
