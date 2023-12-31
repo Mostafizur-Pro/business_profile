@@ -110,7 +110,7 @@
     </div>
     <div class="navbar-end hidden sm:block">
         <div class=" flex justify-between ">
-            <!-- <a class="block  p-6 text-sm whitespace-nowrap text-slate-700 dark:text-white">
+            <!-- <a class="block  p-6 text-sm whitespace-nowrap text-slate-700 ">
                 <img src="/assets/logo/logo.png" class="sm:block md:hidden h-full max-w-full transition-all duration-200 ease-in-out max-h-8 dark:hidden" alt="main_logo">
             </a> -->
             <div class="flex items-center gap-5">

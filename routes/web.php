@@ -91,6 +91,7 @@ Route::group(['prefix' => '/employee', 'namespace' => 'employee'], function () {
 
 Route::group(['prefix' => '/user', 'namespace' => 'user'], function () {
     Route::get('/dashboard', [UserDashboardController::class, 'user_dashboard'])->name('userDashboard');
+    Route::get('/profile', [UserDashboardController::class, 'user_profile'])->name('userDashboard');
     Route::get('/edit_userInfo_profile/{id}', [UserDashboardController::class, 'editUserProfile'])->name('editUserProfile');
     Route::put('/updateUserInfoProfile/{id}', [UserDashboardController::class, 'update_user_Profile'])->name('updateUserInfoProfile');
     Route::get('/userLogout', [UserDashboardController::class, 'logout']);
