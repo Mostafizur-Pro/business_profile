@@ -4,15 +4,15 @@
 </div>
 <p class="text-center">Choose the perfect solution for your business</p>
 
-<section class="  my-10">
-    <div class="  space-y-6 sm:space-y-12">
+<section class="  mt-10">
+    <div class=" border-2 border-indigo-600/100 space-y-6 sm:space-y-12">
         <div>
             @if($posts->count() > 0)
             @php
             $randomIndex = rand(0, $posts->count() - 1);
             $randomPost = $posts[$randomIndex];
             @endphp
-            <div id="autoPost" class="block border-2 bg-[#282560] p-10 text-white max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12">
+            <div id="autoPost" class="block  bg-[#282560] p-10 text-white max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12">
                 <div id="postImage" class="lg:col-span-7 rounded-2xl overflow-hidden bg-cover">
                     <img src="{{$randomPost->image}}" class="transition duration-300 ease-in-out hover:scale-110 object-cover w-full h-64 rounded-2xl sm:h-96" alt="Louvre" />
                 </div>
@@ -24,9 +24,9 @@
             </div>
             @endif
         </div>
-        <div class="grid justify-between grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="grid mx-5  justify-between grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
             @foreach($posts as $post)
-            <div rel="noopener noreferrer" href="#" class="max-w-sm mx-auto group hover:no-underline focus:no-underline">
+            <div rel="noopener noreferrer" href="#" class="max-w-sm mx-auto group hover:no-underline focus:no-underline mt-10">
                 <img role="presentation" class="object-cover w-full rounded h-44" src="{{$post->image}}">
                 <div class="space-y-2">
                     <h3 class="text-2xl font-semibold group-hover:underline group-focus:underline">{{$post->title}}</h3>
@@ -41,9 +41,9 @@
 
 
         </div>
-        <div class="flex justify-center">
+        <div class="flex justify-center ">
             <a href="{{url('/room')}}">
-                <button type="button" class="text-lg btn btn-accent rounded-md hover:text-white  ">Load more posts...</button>
+                <button type="button" class="text-lg btn btn-accent rounded-md hover:text-white mb-5 ">Load more posts...</button>
             </a>
         </div>
     </div>

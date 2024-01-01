@@ -12,7 +12,8 @@
     @include('components/cover/cover')
     <!-- Cover Page -->
 
-    Service Page
+    @include('components/home/service')
+    @include('components/service/service')
 
 
     <div>

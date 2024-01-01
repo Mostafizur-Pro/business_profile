@@ -88,7 +88,7 @@
             <button class="w-1/2 block mx-auto rounded-full bg-gray-900 hover:shadow-lg font-semibold text-white px-6 py-2">Follow</button>
         </div>
     </div>
-    @elseif($userData->id !== $userDataRoom->id)
+    @elseif($userData && $userData->id !== $userDataRoom->id)
     <div class="max-w-7xl  md:mx-auto lg:mx-auto xl:mx-auto mt-14 bg-white shadow-xl rounded-lg text-gray-900">
         <div class="rounded-t-lg h-96 overflow-hidden">
             <img class="object-cover object-top w-full" src='https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ' alt='Mountain'>
@@ -169,7 +169,7 @@
 
     <div class=" max-w-7xl mx-auto grid grid-cols-3 lg:grid-cols-4 gap-10 mt-20">
         <div class="col-span-1 lg:col-span-1">
-            Left {{$userData->id}}, {{$userDataRoom->id}}
+            Left 
         </div>
         <div class="col-span-2 lg:col-span-2">
             Middle

@@ -26,7 +26,8 @@ class AdminLoginController extends Controller
             'password' => 'required|string|min:4',
             'role' => 'required|in:admin,superAdmin',
         ]);
-        $user_id = Admin::table('admin_info')->insert([
+        // dd($request);
+        $admin = Admin::insert([
             'admin_name' => $request->input('admin_name'),
             'number' => $request->input('number'),
             'admin_email' => $request->input('admin_email'),
@@ -35,6 +36,8 @@ class AdminLoginController extends Controller
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+
+        // dd($admin);
         return redirect('admin')->with('Success', 'Registration Successful! Please log in.');
     }
 

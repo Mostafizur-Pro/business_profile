@@ -1,10 +1,10 @@
 <div class="lg:px-20 md:px-6 px-4 py-12">
-<div class="t-head my-2 text-center">
+    <div class="t-head my-2 text-center">
         <h1 class="tracking-tight hover:tracking-wide text-center text-3xl font-bold">Business Promote <span class="text-purple-600">Services</span></h1>
     </div>
     <p class="text-center">Choose the perfect solution for your business</p>
 
-    
+
 
 
     <div class="grid grid-cols-2 md:grid-cols-4  w-full  items-center  gap-6 mt-10">
