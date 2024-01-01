@@ -3,9 +3,13 @@
 
 
 
-<div class="my-20">
+<div class="">
 
-    <h1 class="text-4xl text-center font-bold my-10">Video Section</h1>
+    <div class="t-head my-2 text-center">
+        <h1 class="tracking-tight hover:tracking-wide  text-3xl font-bold">Promote <span class="text-purple-600">Video</span></h1>
+    </div>
+    <p class="text-center">Choose the perfect solution for your business</p>
+
 
     <div class="grid grid-cols-2 gap-10 ">
         <div class="col-span-1 relative">

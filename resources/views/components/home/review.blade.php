@@ -1,8 +1,12 @@
 <div class="lg:px-20 md:px-6 px-4 py-12">
-    <div class="flex flex-col items-center justify-center">
-        <h1 class="lg:text-4xl text-3xl font-bold text-center text-gray-800  ">Hear from our clients</h1>
-        <p class="text-base leading-6 mt-4 text-center text-gray-600   2xl:w-2/5 ">Here is why you should trust us with your work achievements</p>
+ 
+
+    <div class="t-head my-2 text-center mt-10">
+        <h1 class="tracking-tight hover:tracking-wide  text-3xl font-bold">Our Client <span class="text-purple-600">Review</span></h1>
     </div>
+    <p class="text-center">Here is why you should trust us with your work achievements</p>
+
+
     <div class="w-full lg:flex items-center  gap-6 mt-10">
         <div class="lg:w-1/3">
             <div class="bg-white   border rounded-md border-gray-200 dark:border-gray-700  relative sm:p-10 p-6" style="border-radius:10px 60px ">

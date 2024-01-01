@@ -1,7 +1,11 @@
 <div class="mb-10">
-    <div class="t-head">
-        <h1 class="tracking-tight hover:tracking-wide text-center text-3xl font-black">Coverage <span class="text-purple-600">Area</span></h1>
+
+
+    
+    <div class="t-head my-2 text-center mt-10">
+        <h1 class="tracking-tight hover:tracking-wide  text-3xl font-bold">Coverage <span class="text-purple-600">Area</span></h1>
     </div>
+    <p class="text-center">Here is why you should trust us with your work achievements</p>
 
     <div class="grid grid-cols-3 gap-10 m-5">
         @foreach($divisions as $div)
