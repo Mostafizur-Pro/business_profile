@@ -11,6 +11,7 @@
 
 
     @include('components/home/slider')
+    @include('components/home/service')
     @include('components/home/video')
 
     @include('components/home/image')
