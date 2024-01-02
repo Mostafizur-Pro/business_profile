@@ -108,6 +108,7 @@
             top: -14%;
             right: -2px;
             width: 90%;
+            z-index: -1;
         }
 
         .circle-one {

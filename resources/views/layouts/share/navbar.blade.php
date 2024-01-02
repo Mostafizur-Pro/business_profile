@@ -316,6 +316,7 @@
         </ul>
     </nav>
 
+    <!-- Social Media -->
     <nav class="hidden 2xl:contents">
         <ul class="flex items-center mr-4 lg:mr-6 xl:mr-8">
             <li class="p-1">
@@ -337,6 +338,8 @@
         </ul>
     </nav>
 
+
+<!-- Search Option -->
     <div class="border flex items-center gap-5 px-4 lg:px-6 xl:px-8">
 
         <div class="dropdown dropdown-end">
@@ -368,7 +371,7 @@
 
 
 
-
+        <!-- User Profile -->
         <div>
             @if($adminData || $empData || $userData)
 
