@@ -56,12 +56,14 @@
 
                   </ol>
                </div>
+
+
                @if($package->price === '600')
-               <a href="javascript:void(0)" class="block w-full rounded-md border border-primary bg-primary p-3 text-center text-base font-medium text-white transition hover:bg-opacity-90">
+               <a href="{{url('package/package_order', $package->id)}}" class="block w-full rounded-md border border-primary bg-primary p-3 text-center text-base font-medium text-white transition hover:bg-opacity-90">
                   Choose
                </a>
                @else
-               <a href="javascript:void(0)" class="block w-full rounded-md border border-stroke dark:border-dark-3 bg-transparent p-3 text-center text-base font-medium text-primary transition hover:border-primary hover:bg-primary hover:text-white">
+               <a href="{{url('package/package_order', $package->id)}}" class="block w-full rounded-md border border-stroke dark:border-dark-3 bg-transparent p-3 text-center text-base font-medium text-primary transition hover:border-primary hover:bg-primary hover:text-white">
                   Choose
                </a>
 

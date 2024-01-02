@@ -24,8 +24,10 @@
     }
 </style>
 
-<div class="navbar md:hidden">
-    <div class="navbar-start">
+
+<!-- Mobile Device -->
+<div class="navbar lg:hidden">
+    <nav class="navbar-start">
         <div class="dropdown">
             <label tabindex="0" class="btn btn-ghost ">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -95,9 +97,9 @@
                 <img class="w-48" src="/assets/logo/logo.png" alt="Business Profile">
             </a>
         </div>
-    </div>
+    </nav>
 
-
+    <!-- Room -->
     <div>
         <a href="{{url('/room')}}">
             <div class="w-[100px] transition duration-300 ease-in-out hover:scale-110 object-cover">
@@ -106,7 +108,7 @@
         </a>
     </div>
 
-
+    <!-- Search & Profile -->
     <div class="navbar-end">
         <div class=" flex  items-center px-4 lg:px-6 xl:px-8">
             <a href="" class="mr-4 lg:mr-6 xl:mr-8">
@@ -208,12 +210,14 @@
 
 
 
-
-<header class="bg-white shadow-lg h-16 hidden md:flex">
+<!-- Computer Device -->
+<header class="bg-white shadow-lg h-16 hidden lg:flex">
+    <!-- Logo -->
     <a href="{{url('/')}}" class="w-1/6  border flex-shrink-0 flex items-center justify-center px-4 lg:px-6 xl:px-8">
         <img alt="logo" src="/assets/logo/logo.png" />
     </a>
 
+    <!-- Navbar -->
     <nav class="header-links contents font-semibold text-base lg:text-lg">
         <ul class="flex items-center ml-4 xl:ml-4 mr-auto">
 
