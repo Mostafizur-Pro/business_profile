@@ -3,7 +3,7 @@
 
 
 
-<div class="">
+<div class="mx-10">
 
     <div class="t-head my-2 text-center">
         <h1 class="tracking-tight hover:tracking-wide  text-3xl font-bold">Promote <span class="text-purple-600">Video</span></h1>
@@ -11,7 +11,7 @@
     <p class="text-center">Choose the perfect solution for your business</p>
 
 
-    <div class="grid grid-cols-2 gap-10 ">
+    <div class="grid grid-cols-2 gap-10 mt-10 ">
         <div class="col-span-1 relative">
             <div class="video-overlay"></div>
             <video class=" w-5/6 h-5/6  rounded-lg" controls autoplay muted>

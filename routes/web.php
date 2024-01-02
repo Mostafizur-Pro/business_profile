@@ -22,6 +22,7 @@ use App\Http\Controllers\room\RoomController;
 Route::get('/', [FrontendHomeController::class, 'home_page'])->name('home');
 Route::get('/service', [FrontendHomeController::class, 'service_page'])->name('service');
 Route::get('/package', [PackageController::class, 'package_page'])->name('package');
+Route::get('/package/package_order/{id}', [PackageController::class, 'package_order'])->name('packageOrder');
 Route::get('/about', [FrontendHomeController::class, 'about_page'])->name('about');
 Route::get('/contact', [FrontendHomeController::class, 'contact_page'])->name('contact');
 

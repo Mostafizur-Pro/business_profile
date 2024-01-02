@@ -4,6 +4,7 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Package;
+use Carbon\Carbon;
 
 class PackageController extends Controller
 {
@@ -18,5 +19,15 @@ class PackageController extends Controller
     {
 
         echo "hello";
+    }
+    public function package_order($id)
+    {
+        $packagesOrder = Package::find($id);
+        $packagesList = Package::get();
+        // $todayDate = Carbon::now()->format('F d, Y');
+        $currentDate = Carbon::now();
+        $todayDate = $currentDate->addMonth()->format('F d, Y');
+        // dd($packagesOrder);
+        return view('components/package/packageOrder', compact('packagesOrder', 'todayDate', 'packagesList'));
     }
 }
