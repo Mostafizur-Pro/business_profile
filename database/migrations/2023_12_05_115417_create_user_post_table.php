@@ -23,8 +23,10 @@ class CreateUserPostTable extends Migration
             $table->string('district');
             $table->string('area');
             $table->string('image')->nullable();
+
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('user_info')->onDelete('cascade');
+            
             $table->string('role');
             $table->json('like')->nullable();
             $table->timestamps();

@@ -17,7 +17,7 @@
                         <p class="pt-2"><strong>Employee Role:</strong> {{$item->emp_role}}</p>
                         <p class="pt-2"><strong>Employee Id:</strong> {{$item->emp_id}}</p>
                         <p class="pt-2"><strong>Contact Number:</strong> {{$item->emp_number}}</p>
-                        <p class="pt-2"><strong>NID:</strong> {{$item->emp_nid}}</p>
+                        <!-- <p class="pt-2"><strong>NID:</strong> {{$item->emp_nid}}</p> -->
                         <p class="pt-2"><strong>Address:</strong> {{$item->emp_address}}</p>
                         <p class="pt-2"><strong>Email:</strong> {{$item->emp_email}}</p>
                         
