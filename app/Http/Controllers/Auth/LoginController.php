@@ -16,6 +16,12 @@ class LoginController extends Controller
     {
         return view('auth/login');
     }
+
+    // public function redirectPath()
+    // {
+    //   return route(home_route());
+    // }
+  
     public function login(Request $request)
     {
         $request->validate([
@@ -48,7 +54,7 @@ class LoginController extends Controller
                     Session::put('userId', $result->id);
                     Session::put('user_email', $request->user_email);
                     return Redirect::to('/user/dashboard');
-                    // return back()->withInput();
+                    // return redirect()->intended($this->redirectPath());
                 }
                 else {
                     return redirect('login')->with('Fail', 'Login fail! Please log in again.');
