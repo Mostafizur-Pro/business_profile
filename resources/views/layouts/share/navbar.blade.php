@@ -386,7 +386,8 @@
                 <label tabindex="0" class="flex items-center  gap-3">
 
                     <div class="w-10 rounded-full">
-                        <img class="w-10 rounded-full" src="{{ $adminData->admin_image }}" />
+                        <img class="w-10 rounded-full" src="{{ asset($adminData->admin_image) }}" />
+                        
                     </div>
                     <div>
                         <p class="font-semibold">{{ $adminData->admin_name }}</p>
@@ -410,7 +411,7 @@
                 <label tabindex="0" class="flex items-center  gap-3">
 
                     <div class="w-10 rounded-full">
-                        <img class="w-10 rounded-full" src="{{ $empData->emp_image }}" />
+                        <img class="w-10 rounded-full" src="{{ asset($empData->emp_image )}}" />
                     </div>
                     <div>
                         <p class="font-semibold">{{ $empData->emp_name }}</p>
@@ -434,7 +435,7 @@
                 <label tabindex="0" class="flex items-center  gap-3">
 
                     <div class="w-10 rounded-full">
-                        <img class="w-10 rounded-full" src="{{ $userData->owner_image }}" />
+                        <img class="w-10 rounded-full" src="{{ asset($userData->owner_image) }}" />
                     </div>
                     <div>
                         <p class="font-semibold">{{ $userData->owner_name }}</p>

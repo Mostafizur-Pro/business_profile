@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend\user;
 use App\Http\Controllers\Controller;
 use App\Models\Package;
 use App\Models\User;
+use App\Models\UserPost;
 use Illuminate\Http\Request;
 use Session;
 
@@ -17,13 +18,16 @@ class UserDashboardController extends Controller
         if (Session::has('userId')) {
             $userId = Session::get('userId');
             $userData = User::find($userId);
-            // dd($empData);
+            // dd($userId);
             $allUserData = User::get();
         }
-        // dd($userData);
-        return view('dashboard.user.userDashboard', compact('userData', 'allUserData'));
+
+        $userPosts = UserPost::where('user_id', 'LIKE', '%' . $userId . '%')->get();
+
+        // dd($userPosts);
+        return view('dashboard.user.userDashboard', compact('userData', 'allUserData', 'userPosts'));
     }
-    
+
     public function user_profile()
     {
         // echo 'user dashboard';
@@ -68,7 +72,7 @@ class UserDashboardController extends Controller
         if (!$userData) {
             return redirect("/edituserprofile");
         }
-        
+
         $request->validate([
             'owner_number' => 'unique:user_info,owner_number,' . $id,
         ]);
@@ -78,7 +82,7 @@ class UserDashboardController extends Controller
                 $request->validate([
                     'owner_image' => 'file|mimes:jpeg,png,jpg,gif|max:2048',
                 ]);
-                
+
                 $owner_image = $request->file('owner_image')->move('images/user', $id . '_' . uniqid() . '.' . $request->file('owner_image')->extension());
             } else {
                 $owner_image = $userData->owner_image;
@@ -91,6 +95,9 @@ class UserDashboardController extends Controller
                     'owner_number' => $request->input('owner_number'),
                     'owner_image' => $owner_image,
                     'division' => $request->input('division'),
+                    'district' => $request->input('district'),
+                    'area' => $request->input('area'),
+                    'road' => $request->input('road'),
                     'business_type' => $request->input('business_type'),
 
                 ]);
@@ -109,7 +116,7 @@ class UserDashboardController extends Controller
         $packagesList = Package::get();
 
         // dd($packagesList);
-            //   return view('package', compact('packagesList'));
+        //   return view('package', compact('packagesList'));
         return view('dashboard.user.package', compact('packagesList'));
     }
 }

@@ -103,7 +103,7 @@
             <div class="flex items-center gap-5">
                 <div class="flex items-center gap-2">
                     <div>
-                        <img class="w-10 rounded-full" src="{{ $adminData->admin_image }}" />
+                        <img class="w-10 rounded-full" src="{{ asset($adminData->admin_image) }}" />
                     </div>
                     <div>
                         <p class="font-semibold">{{ $adminData->admin_name }}</p>

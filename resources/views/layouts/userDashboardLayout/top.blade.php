@@ -116,7 +116,7 @@
             <div class="flex items-center gap-5">
                 <div class="flex items-center gap-2">
                     <div class="">
-                        <img class="w-10 rounded-full" src="{{ $userData->owner_image }}" />
+                        <img class="w-10 rounded-full" src="{{ asset($userData->owner_image) }}" />
                     </div>
                     <div>
                         <p class="font-semibold">{{$userData->owner_name}}</p>
