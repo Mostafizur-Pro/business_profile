@@ -78,17 +78,11 @@ class UserDashboardController extends Controller
                 $request->validate([
                     'owner_image' => 'file|mimes:jpeg,png,jpg,gif|max:2048',
                 ]);
-                $owner_image = $request->file('owner_image')->move('images/user/profile');
+                
+                $owner_image = $request->file('owner_image')->move('images/user', $id . '_' . uniqid() . '.' . $request->file('owner_image')->extension());
             } else {
                 $owner_image = $userData->owner_image;
             }
-
-
-
-            // if ($request->hasFile('owner_image')) {
-            //     $imagePath = $request->file('image')->move('images/post', uniqid() . '.' . $request->file('image')->extension());
-            //     $post['image'] = 'images/post/' . basename($imagePath);
-            // }
 
             $userData = User::where('id', $id)
                 ->update([

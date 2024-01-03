@@ -43,6 +43,7 @@ Route::delete('/hallRoomPost/{id}', [RoomController::class, 'delete_hallRoomPost
 // User & Employee Login
 // Route::get('/login', [LoginController::class, 'login_page'])->middleware('login');
 Route::get('/login', [LoginController::class, 'login_page']);
+
 Route::post('/login', [LoginController::class, 'login']);
 
 

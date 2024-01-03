@@ -9,10 +9,9 @@
   </aside>
   <nav>
     <header class="footer-title">Services</header>
-    <a class="link link-hover">Branding</a>
-    <a class="link link-hover">Design</a>
-    <a class="link link-hover">Marketing</a>
-    <a class="link link-hover">Advertisement</a>
+    <a href="{{'/service'}}" class="link link-hover">Our Service</a>
+    <a href="{{'/room'}}" class="link link-hover">Hall Room </a>
+    <a href="{{'/members/our-clients'}}"  class="link link-hover">Our clints</a>
   </nav>
   <nav>
     <header class="footer-title">Company</header>
