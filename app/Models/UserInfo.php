@@ -27,4 +27,10 @@ class UserInfo extends Model
         'supperAdmin_name',
         'SupperAdminTime',
     ];
+    protected $table = "user_info";
+
+    public function isUser()
+    {
+        return $this->role === 'admin'; // Assuming 'role' is a column in your users table
+    }
 }
