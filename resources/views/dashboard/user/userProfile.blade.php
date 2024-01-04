@@ -53,7 +53,7 @@
 
             </div>
             <div>
-                <img class="w-44" src="{{ $userData->owner_image }}" alt="User Photo" />
+                <img class="w-44" src="{{ asset($userData->owner_image)}}" alt="User Photo" />
                 <!-- <img class="w-10 rounded-full" src="{{ $userData->owner_image }}" /> -->
             </div>
         </div>

@@ -81,11 +81,11 @@ Route::group(['prefix' => '/companies', 'namespace' => 'companies'], function ()
 
 Route::group(['prefix' => '/employee', 'namespace' => 'employee'], function () {
     Route::get('/dashboard', [EmployeeDashboardController::class, 'emp_dashboard'])->name('empDashboard');
-    Route::get('/edit_empInfo_profile/{id}', [EmployeeController::class, 'editEmpProfile'])->name('editEmpInfoProfile');
-    Route::put('/updateEmpProfile/{id}', [EmployeeController::class, 'update_Emp_Profile'])->name('updateEmpProfile');
-    Route::get('/edit_user_profile/{id}', [EmployeeController::class, 'editUserInfoProfile'])->name('userInfoEditProfile');
-    Route::put('/updateUserProfile/{id}', [EmployeeController::class, 'update_user_Profile'])->name('updateUserProfile');
-    Route::get('/userInfo_emp', [EmployeeController::class, 'user_info'])->name('userInfo_emp');
+    Route::get('/edit_empInfo_profile/{id}', [EmployeeDashboardController::class, 'editEmpProfile'])->name('editEmpInfoProfile');
+    Route::put('/updateEmpProfile/{id}', [EmployeeDashboardController::class, 'update_Emp_Profile'])->name('updateEmpProfile');
+    Route::get('/userInfo_emp', [EmployeeDashboardController::class, 'user_info'])->name('userInfo_emp');
+    Route::get('/edit_user_profile/{id}', [EmployeeDashboardController::class, 'editUserInfoProfile'])->name('empInfoEditProfile');
+    Route::put('/updateUserProfile/{id}', [EmployeeDashboardController::class, 'update_user_Profile'])->name('updateUserProfile');
     Route::get('/packageItem', [EmployeeDashboardController::class, 'package_List'])->name('packageList');
 });
 

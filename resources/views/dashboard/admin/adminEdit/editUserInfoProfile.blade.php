@@ -15,7 +15,7 @@
         </div>
         <hr class="my-5" />
 
-        <form action="{{ url('admin/updateUserInfo', $editUserInfo->id) }}"  method="POST" enctype="multipart/form-data">
+        <form action="{{ url('admin/updateUserInfo', $editUserInfo->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -61,13 +61,13 @@
                     <p class="text-gray-600 text-sm">Upload a new profile image (optional)</p>
                 </div>
             </div>
-    </div>
 
-    <div class="mt-4">
-        <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Save Changes</button>
+
+            <div class="mt-4">
+                <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Save Changes</button>
+            </div>
+        </form>
     </div>
-    </form>
-</div>
 </div>
 
 
