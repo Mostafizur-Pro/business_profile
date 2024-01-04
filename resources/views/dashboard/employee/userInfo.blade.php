@@ -67,7 +67,7 @@
 
                 <td class="pr-3 "> {{ $userInfoEmp->emp_id }} </td>
                 <td class="pr-3 ">
-                    <a href="{{ url('edit_user_profile', $userInfoEmp->id) }}" class="btn btn-sm bg-blue-500 hover:bg-blue-700 text-white">Edit</a>
+                    <a href="{{ url('employee/edit_user_profile', $userInfoEmp->id) }}" class="btn btn-sm bg-blue-500 hover:bg-blue-700 text-white">Edit</a>
 
                 </td>
                 <!-- <td class="pr-3 "> <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a> </td> -->

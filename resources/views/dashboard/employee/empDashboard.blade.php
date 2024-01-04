@@ -46,7 +46,7 @@
 
             </div>
             <div>
-                <img class="w-44" src="{{ $empData->emp_image }}" alt="User Photo" />
+                <img class="w-44" src="{{ asset($empData->emp_image) }}" alt="User Photo" />
             </div>
         </div>
         <!-- toast -->
