@@ -127,7 +127,7 @@ class EmployeeDashboardController extends Controller
     {
         $data = null;
         $userInfo = DB::table('user_info')->find($id);
-        // dd($userInfo->emp_id);
+        // dd($userInfo);
 
         $userId = Session::get('empId');
         $empUser = DB::table('employee_info')->find($userId);
@@ -164,19 +164,23 @@ class EmployeeDashboardController extends Controller
             // $uploadedImage = $request->file('owner_image');
             // $imagePath = $uploadedImage->store('images/user_image');
             // $user_image = $imagePath;
-            $user_image = $request->file('emp_image')->move('images/employee', $id . '_' . uniqid() . '.' . $request->file('emp_image')->extension());
+            $owner_image = $request->file('owner_image')->move('images/user', $id . '_' . uniqid() . '.' . $request->file('owner_image')->extension());
         } else {
-            $user_image = $update->owner_image;
+            $owner_image = $update->owner_image;
         }
 
         $updateData = [
             'owner_name' => $request->input('owner_name'),
             'organization_name' => $request->input('organization_name'),
             'division' => $request->input('division'),
+            'district' => $request->input('district'),
+            'area' => $request->input('area'),
+            'road' => $request->input('road'),
+            'gender' => $request->input('gender'),
+            'owner_image' => $owner_image,
             'business_type' => $request->input('business_type'),
             'owner_email' => $request->input('owner_email'),
             'owner_number' => $request->input('owner_number'),
-            'emp_image' => $user_image,
         ];
 
         // dd($updateData);
